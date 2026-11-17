@@ -26,3 +26,23 @@ def test_output_cannot_overwrite_capture(tmp_path):
 def test_frame_count_validation_precedes_writes(tmp_path):
     with pytest.raises(ValueError, match='two frames'):
         preflight.run(tmp_path, tmp_path / 'unused', 1)
+
+
+def test_resource_extrapolation_is_explicit_and_nonoverwriting(tmp_path):
+    import json
+    spec = importlib.util.spec_from_file_location('m2_summary', Path(__file__).parents[1] / 'scripts/summarize_m2_preflight.py')
+    summary_tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(summary_tool)
+    (tmp_path / 'inventory.json').write_text(json.dumps({'valid_points_total': 400, 'map_position_color_bytes': 400 * 48, 'rgb_count': 20}))
+    run_dir = tmp_path / 'frames_05'
+    run_dir.mkdir()
+    measured = {'frames': list(range(1, 6)), 'peak_rss_bytes': 300 * 2**20,
+                'rss_at_start_bytes': 100 * 2**20, 'raw_points_total': 100, 'reconstruction_s': 10}
+    source = json.dumps(measured)
+    (run_dir / 'summary.json').write_text(source)
+    result = summary_tool.summarize(tmp_path)
+    assert result['full_batch_estimates'][0]['full_peak_GiB_estimate'] == pytest.approx(900 / 1024)
+    assert result['full_batch_estimates'][0]['full_reconstruction_s_estimate'] == 40
+    assert (run_dir / 'summary.json').read_text() == source
+    with pytest.raises(FileExistsError):
+        summary_tool.summarize(tmp_path)
