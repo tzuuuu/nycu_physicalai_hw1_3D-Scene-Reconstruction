@@ -499,18 +499,68 @@ def visualize_and_evaluate(reconstructed_pcd, predicted_cam_poses, data_root,
     """
     # TODO: Load `GT_pose.npy` when present and map requested `frames` to
     # the correct ground-truth rows while preserving requested order.
+    # GT 僅在評估階段載入；影格編號對應共同檔名的排序位置，而非 stem-1。
+    gt = None
+    gt_path = os.path.join(data_root, "GT_pose.npy") if data_root is not None else None
+    if gt_path is not None and os.path.isfile(gt_path):
+        gt = np.asarray(np.load(gt_path), dtype=np.float64)
+        if gt.ndim != 2 or gt.shape[1] != 7 or not np.isfinite(gt).all():
+            raise ValueError("GT_pose.npy must contain finite (N,7) poses")
+    prediction = (np.empty((0, 3)) if predicted_cam_poses is None
+                  else np.asarray(predicted_cam_poses, dtype=np.float64))
+    if prediction.size == 0:
+        prediction = np.empty((0, 3))
+    if prediction.ndim != 2 or prediction.shape[1] != 3 or not np.isfinite(prediction).all():
+        raise ValueError("Predicted camera centres must be finite (N,3) positions")
+    selection = None if frames is None else list(frames)
+    rows = []
+    if gt is not None and len(gt):
+        if selection is None:
+            rows = [(i, i) for i in range(min(len(prediction), len(gt)))]
+        else:
+            stems_by_kind = []
+            for kind in ("rgb", "depth"):
+                stems_by_kind.append({int(os.path.splitext(name)[0])
+                    for name in os.listdir(os.path.join(data_root, kind))
+                    if name.lower().endswith(".png")})
+            ordered = sorted(stems_by_kind[0] & stems_by_kind[1])
+            if selection and (not ordered or selection[0] != ordered[0]):
+                raise ValueError("Selected frames must start with the capture's first frame")
+            ordinal = {stem: i for i, stem in enumerate(ordered)}
+            rows = [(i, ordinal[stem]) for i, stem in enumerate(selection)
+                    if stem in ordinal and ordinal[stem] < len(gt)]
+
     # TODO: Handle missing or empty ground truth and empty predictions
     # without raising; return an infinite mean error when no score can be
     # computed.
+    # 缺資料或預測數量不符時不猜影格身分，回傳無法評分的無限誤差。
+    expected_count = len(selection) if selection is not None else (0 if gt is None else len(gt))
+    if len(prediction) != expected_count:
+        rows = []
+    n = len(rows)
+    mean_l2_error = float("inf")
+
     # TODO: Reconcile predicted and ground-truth coordinate conventions
     # using the existing camera-axis and frame-0 alignment conventions.
+    # 固定翻轉 Y/Z；GT 使用原始首姿態，不以最佳擬合重新對齊軌跡。
+    pred_disp = prediction @ CAM_TO_GT_AXES
+    gt_disp = np.empty((0, 3))
+    if gt is not None and len(gt):
+        qw, qx, qy, qz = gt[0, 3:7]
+        rotation0 = Rotation.from_quat([qx, qy, qz, qw]).as_matrix()
+        gt_disp = (gt[:, :3] - gt[0, :3]) @ rotation0
+
     # TODO: Compute mean camera-centre L2 distance:
     #   dx = predicted_x - gt_x
     #   dy = predicted_y - gt_y
     #   dz = predicted_z - gt_z
     #   L2 = sqrt(dx**2 + dy**2 + dz**2)
     #   mean_l2 = mean(L2)
-    raise NotImplementedError("TODO: implement trajectory evaluation")
+    # 只對已確認一一對應的相機中心計算平均歐氏距離。
+    if n:
+        predicted_rows, gt_rows = np.asarray(rows).T
+        mean_l2_error = float(np.linalg.norm(
+            pred_disp[predicted_rows] - gt_disp[gt_rows], axis=1).mean())
     print(f"Mean L2 distance: {mean_l2_error:.6f} meters  (over {n} frames, "
           f"{0 if predicted_cam_poses is None else len(predicted_cam_poses)} "
           f"reconstructed)")
@@ -521,11 +571,37 @@ def visualize_and_evaluate(reconstructed_pcd, predicted_cam_poses, data_root,
     if not show:
         return mean_l2_error
     # TODO: Create a `LineSet` for the estimated trajectory colored red.
+    # 預測軌跡先轉為 Habitat 首相機軸向，使用紅線連接相機中心。
+    geoms = []
+    if len(pred_disp) > 1:
+        estimated = o3d.geometry.LineSet()
+        estimated.points = o3d.utility.Vector3dVector(pred_disp)
+        estimated.lines = o3d.utility.Vector2iVector(
+            [[i, i + 1] for i in range(len(pred_disp) - 1)])
+        estimated.paint_uniform_color([1, 0, 0])
+        geoms.append(estimated)
+
     # TODO: Create a `LineSet` for the ground-truth trajectory colored black.
+    # GT 顯示相同評估子集，避免把未使用影格誤畫成比較樣本。
+    display_rows = [row for _, row in rows]
+    if len(display_rows) > 1:
+        truth = o3d.geometry.LineSet()
+        truth.points = o3d.utility.Vector3dVector(gt_disp[display_rows])
+        truth.lines = o3d.utility.Vector2iVector(
+            [[i, i + 1] for i in range(len(display_rows) - 1)])
+        truth.paint_uniform_color([0, 0, 0])
+        geoms.append(truth)
+
     # TODO: Add the available map and trajectories to the Open3D
     # visualization when `show=True`; keep headless scoring functional when
     # `show=False`.
-    raise NotImplementedError("TODO: implement trajectory visualization")
+    # 地圖副本套用同一固定軸向轉換，不修改原重建結果；無幾何時不開視窗。
+    if reconstructed_pcd is not None and len(reconstructed_pcd.points):
+        axes = np.eye(4)
+        axes[:3, :3] = CAM_TO_GT_AXES
+        geoms.insert(0, o3d.geometry.PointCloud(reconstructed_pcd).transform(axes))
+    if not geoms:
+        return mean_l2_error
     print(f"[visualize] opening visualiser for {title} …  (press Q to close)")
     o3d.visualization.draw_geometries(
         geoms, window_name=f'HW1 Reconstruction - {title}',
