@@ -146,6 +146,19 @@ def preprocess_point_cloud(pcd, voxel_size):
     return pcd_down, fpfh
 
 
+def _global_registration(source, target, source_fpfh, target_fpfh,
+                         voxel_size, seed):
+    """以真實 FPFH/RANSAC 估計 source 到 target 的粗轉換。"""
+    o3d.utility.random.seed(int(seed))
+    distance = voxel_size * 1.5
+    return o3d.pipelines.registration.registration_ransac_based_on_feature_matching(
+        source, target, source_fpfh, target_fpfh, True, distance,
+        o3d.pipelines.registration.TransformationEstimationPointToPoint(False),
+        3, [o3d.pipelines.registration.CorrespondenceCheckerBasedOnEdgeLength(0.9),
+            o3d.pipelines.registration.CorrespondenceCheckerBasedOnDistance(distance)],
+        o3d.pipelines.registration.RANSACConvergenceCriteria(100000, 0.999))
+
+
 def local_icp_algorithm(source_down, target_down, trans_init, threshold):
     """Refine an initial alignment with point-to-plane ICP.
 
@@ -276,6 +289,11 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
             # TODO Stage 6: For every frame after the first processed frame,
             # perform global FPFH feature matching and RANSAC registration
             # to obtain `trans_init`.
+            # 當前點雲為 source、上一成功影格為 target；保留粗配準原始統計。
+            coarse_result = _global_registration(
+                cur_down, prev_down, cur_fpfh, prev_fpfh,
+                voxel_size, registration_seed)
+            trans_init = coarse_result.transformation
             # TODO Stage 7: Run the selected local backend: Open3D
             # Point-to-Plane ICP for `version == "open3d"`, otherwise the
             # custom ICP backend.
