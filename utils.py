@@ -327,6 +327,16 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
     # 只讀取本批 RGB-D 與內參；缺 scale 時依既有擷取器的毫米編碼相容處理。
     intrinsics, pairs, depth_scale = _capture_inputs(data_root, frames)
     width, height, hfov = (intrinsics[key] for key in ("width", "height", "hfov"))
+    if version != "open3d":
+        raise ValueError("M1 reconstruction requires the open3d backend; Bonus is unavailable")
+    if pairs and frames is not None:
+        _, complete_pairs, _ = _capture_inputs(data_root, None)
+        if pairs[0] != complete_pairs[0]:
+            raise ValueError("Selected frames must start with the capture's first frame")
+    if down_voxel is not None and (not np.isscalar(down_voxel)
+            or np.asarray(down_voxel).dtype.kind not in "uif"
+            or not np.isfinite(down_voxel) or down_voxel <= 0):
+        raise ValueError("down_voxel must be finite and positive")
 
     T_global = np.eye(4)          # frame i -> frame-0 camera frame
     pred_cam_pos = []
@@ -344,6 +354,8 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
         # OpenCV 保留深度位元數，僅在這一層除以尺度；反投影接收公尺。
         stem = int(os.path.splitext(os.path.basename(depth_path))[0])
         rgb, depth_m = _read_rgbd(rgb_path, depth_path, depth_scale)
+        if i == 0 and (rgb is None or depth_m is None):
+            raise ValueError("The reference first RGB-D frame is unreadable")
         if rgb is None or depth_m is None:
             if verbose:
                 print(f"  Warning: could not load frame {i}, skipping.")
@@ -376,6 +388,7 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
             # TODO Stage 7: Run the selected local backend: Open3D
             # Point-to-Plane ICP for `version == "open3d"`, otherwise the
             # custom ICP backend.
+            # Stage 1 已限制正式後端為 Open3D；保留教師原有後端分支。
             if version == 'open3d':
                 result_icp = local_icp_algorithm(
                     cur_down, prev_down, trans_init, icp_thr)
@@ -387,6 +400,17 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
             # frame into the frame-0 camera coordinate system;
             # registration is always current frame to the previous
             # processed frame).
+            # 無內點的零 RMSE 不是成功；失敗時附真實統計中止，不產生假軌跡。
+            for label, result in (("RANSAC", coarse_result), ("ICP", result_icp)):
+                if (len(result.correspondence_set) == 0
+                        or not np.isfinite(result.fitness) or result.fitness <= 0
+                        or not np.isfinite(result.inlier_rmse)
+                        or not np.isfinite(result.transformation).all()):
+                    raise RuntimeError(
+                        f"{label} failed for {prev_stem}->{stem}: "
+                        f"fitness={result.fitness}, RMSE={result.inlier_rmse}, "
+                        f"correspondences={len(result.correspondence_set)}")
+            T_global = T_global @ result_icp.transformation
             if pipeline_callback is not None and prev_pair_index == i - 1:
                 pipeline_callback("pair", {
                     "prev_stem": prev_stem,
@@ -417,6 +441,7 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
 
         # TODO Stage 10: Append the current camera position to
         # `pred_cam_pos` (one entry per successfully processed frame).
+        # 累積轉換的平移即相機中心；每個成功處理影格記錄一次。
         pred_cam_pos.append(T_global[:3, 3].copy())
 
         if build_cloud:
@@ -424,10 +449,14 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
             # downsample only the merged map, transform the current cloud
             # by the accumulated transform, and add it to `global_pcd`.
             # This must not alter trajectory estimation.
-            pass
+            # 地圖使用獨立副本，僅降低地圖點數，避免修改配準輸入。
+            map_cloud = (pcd.voxel_down_sample(down_voxel) if down_voxel is not None
+                         else pcd.select_by_index(range(len(pcd.points))))
+            global_pcd += map_cloud.transform(T_global)
 
         # TODO Stage 12: Update previous-frame state and preserve progress
         # reporting.
+        # 上一影格僅在本影格完成後更新，沿用原有進度與回呼配對規則。
         prev_down, prev_fpfh = cur_down, cur_fpfh
         prev_depth_path = depth_path
         prev_stem = stem
