@@ -111,14 +111,39 @@ def preprocess_point_cloud(pcd, voxel_size):
     its FPFH feature set. Pairwise registration is performed by reconstruct().
     """
     # TODO: Voxel-downsample `pcd` with `voxel_size`.
+    # 先拒絕無效尺度與座標，再由 Open3D 合併同一體素內的點。
+    if (not np.isscalar(voxel_size)
+            or np.asarray(voxel_size).dtype.kind not in "uif"):
+        raise ValueError("voxel_size must be a finite positive number")
+    voxel_size = float(voxel_size)
+    if (not np.isfinite(voxel_size) or voxel_size <= 0
+            or not np.isfinite(voxel_size * 5)):
+        raise ValueError("voxel_size and its search radii must be finite and positive")
+    points = np.asarray(pcd.points)
+    if len(points) == 0 or not np.isfinite(points).all():
+        raise ValueError("Point cloud must contain finite points and must not be empty")
+    pcd_down = pcd.voxel_down_sample(voxel_size)
+
     # TODO: Estimate normals for `pcd_down`, because Point-to-Plane ICP
     # requires them. Use a hybrid KD-tree search radius of
     # `voxel_size * 2` and at most 30 neighbours.
+    # 少於三點無法支持平面估計；其餘交由指定鄰域的實際幾何估算法向量。
+    if len(pcd_down.points) < 3:
+        raise ValueError("At least 3 downsampled points are required to estimate normals")
+    pcd_down.estimate_normals(o3d.geometry.KDTreeSearchParamHybrid(
+        radius=voxel_size * 2, max_nn=30))
+
     # TODO: Compute FPFH features for `pcd_down` using radius
     # `voxel_size * 5` and at most 100 neighbours.
+    # 使用降採樣點與其法向量計算真實 FPFH，保持特徵欄與點的對應。
+    fpfh = o3d.pipelines.registration.compute_fpfh_feature(
+        pcd_down, o3d.geometry.KDTreeSearchParamHybrid(
+            radius=voxel_size * 5, max_nn=100))
+
     # TODO: Return the downsampled cloud and its FPFH feature object as
     # `(pcd_down, fpfh)`.
-    raise NotImplementedError("TODO: implement preprocess_point_cloud")
+    # 一併回傳處理後的點雲與特徵，供後續已授權階段使用。
+    return pcd_down, fpfh
 
 
 def local_icp_algorithm(source_down, target_down, trans_init, threshold):
