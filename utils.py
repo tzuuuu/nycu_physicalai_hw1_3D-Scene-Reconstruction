@@ -249,6 +249,52 @@ def remove_ceiling_points(point_cloud, margin=1.0):
 # ══════════════════════════════════════════════════════════════════════════════
 #  Reconstruction (headless) + metric
 # ══════════════════════════════════════════════════════════════════════════════
+def _capture_inputs(data_root, frames):
+    """讀取本批內參並按數字檔名配對，明確揭露未配對檔案。"""
+    import warnings
+    with open(os.path.join(data_root, "intrinsics.json"), encoding="utf-8") as fh:
+        intrinsics = json.load(fh)
+    paired = []
+    for name in ("rgb", "depth"):
+        indexed = {}
+        for entry in os.scandir(os.path.join(data_root, name)):
+            if entry.is_file() and entry.name.lower().endswith(".png"):
+                stem = int(os.path.splitext(entry.name)[0])
+                if stem in indexed:
+                    raise ValueError(f"Duplicate numeric frame stem in {name}: {stem}")
+                indexed[stem] = entry.path
+        paired.append(indexed)
+    rgb, depth = paired
+    if set(rgb) != set(depth):
+        warnings.warn(f"Unpaired RGB/depth stems: {sorted(set(rgb) ^ set(depth))}",
+                      RuntimeWarning)
+    common = sorted(set(rgb) & set(depth))
+    selected = common if frames is None else list(frames)
+    if any(isinstance(s, (bool, np.bool_)) or not isinstance(s, (int, np.integer))
+           or s not in common for s in selected):
+        raise ValueError("Selected frames must be integer stems present in RGB and depth")
+    if len(set(selected)) != len(selected):
+        raise ValueError("Selected frame stems must be unique")
+    scale = intrinsics.get("depth_scale", DEPTH_SCALE)
+    if (not np.isscalar(scale) or np.asarray(scale).dtype.kind not in "uif"
+            or not np.isfinite(scale) or scale <= 0):
+        raise ValueError("depth_scale must be a finite positive divisor")
+    return intrinsics, [(rgb[s], depth[s]) for s in selected], float(scale)
+
+
+def _read_rgbd(rgb_path, depth_path, depth_scale):
+    """只在讀檔邊界將 uint16 深度依來源尺度轉成公尺。"""
+    import warnings
+    rgb = cv2.imread(rgb_path, cv2.IMREAD_COLOR)
+    raw = cv2.imread(depth_path, cv2.IMREAD_UNCHANGED)
+    if rgb is None or raw is None:
+        warnings.warn(f"Unreadable RGB-D frame: {rgb_path}, {depth_path}", RuntimeWarning)
+        return rgb, None
+    if raw.dtype != np.uint16 or raw.ndim != 2:
+        raise ValueError(f"Expected uint16 depth PNG: {depth_path}; got {raw.dtype}, {raw.shape}")
+    return rgb, raw.astype(np.float64) / depth_scale
+
+
 def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
                 build_cloud=True, frames=None,
                 down_voxel=None, registration_seed=0,
@@ -278,7 +324,9 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
     # `hfov`) and select RGB/depth frame pairs in the requested order.
     # `frames=None` uses numeric batch order; an explicit `frames` list
     # keeps its given order.
-    raise NotImplementedError("TODO: implement reconstruct")
+    # 只讀取本批 RGB-D 與內參；缺 scale 時依既有擷取器的毫米編碼相容處理。
+    intrinsics, pairs, depth_scale = _capture_inputs(data_root, frames)
+    width, height, hfov = (intrinsics[key] for key in ("width", "height", "hfov"))
 
     T_global = np.eye(4)          # frame i -> frame-0 camera frame
     pred_cam_pos = []
@@ -293,6 +341,9 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
         # TODO Stage 2: Read the RGB-D frame, skip unreadable frames using
         # the existing warning and control-flow behavior, and convert depth
         # to metres.
+        # OpenCV 保留深度位元數，僅在這一層除以尺度；反投影接收公尺。
+        stem = int(os.path.splitext(os.path.basename(depth_path))[0])
+        rgb, depth_m = _read_rgbd(rgb_path, depth_path, depth_scale)
         if rgb is None or depth_m is None:
             if verbose:
                 print(f"  Warning: could not load frame {i}, skipping.")
@@ -300,9 +351,11 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
 
         # TODO Stage 3: Convert the frame to a point cloud with
         # `depth_image_to_point_cloud`.
+        # 對應本影格的 BGR 色彩與公尺深度，沿用已驗收的手寫反投影。
         pcd = depth_image_to_point_cloud(rgb, depth_m, width, height, hfov)
         # TODO Stage 4: Preprocess it with `preprocess_point_cloud` for
         # voxel downsampling, normals, and FPFH.
+        # 沿用已驗收的前處理，保留真實 Voxel 前後點數供回呼取值。
         cur_down, cur_fpfh = preprocess_point_cloud(pcd, voxel_size)
         if pipeline_callback is not None:
             pipeline_callback("frame", {
