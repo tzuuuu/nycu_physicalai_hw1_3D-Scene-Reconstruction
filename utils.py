@@ -34,14 +34,50 @@ def depth_image_to_point_cloud(rgb, depth_m, width, height, hfov):
     """
     # TODO: Convert `rgb` and `depth_m` to NumPy-compatible arrays and
     # validate that the depth shape agrees with `(height, width)`.
+    # 確認尺寸與色彩契約，避免像素與相機參數錯配。
+    rgb = np.asarray(rgb)
+    depth_m = np.asarray(depth_m)
+    if any(isinstance(size, (bool, np.bool_))
+           or not isinstance(size, (int, np.integer)) or size <= 0
+           for size in (width, height)):
+        raise ValueError("width and height must be positive integers")
+    if depth_m.shape != (height, width):
+        raise ValueError("Depth image shape must match (height, width)")
+    if rgb.shape != (height, width, 3):
+        raise ValueError("BGR image shape must match (height, width, 3)")
+    if rgb.dtype != np.uint8:
+        raise ValueError("BGR image must have uint8 channels")
+
     # TODO: Convert depth values to metres when the input representation
     # requires it; follow the capture convention used by the caller and do
     # not hardcode camera parameters from another capture.
+    # depth_m 依契約已是公尺；僅轉浮點數，不重複換算毫米或依型別猜單位。
+    if depth_m.dtype.kind not in "uif":
+        raise ValueError("depth_m must contain real numeric depths in metres")
+    depth_m = depth_m.astype(np.float64, copy=False)
+
     # TODO: Create a row-major pixel grid `(u, v)` covering the image.
+    # 列為 v、欄為 u；後續以同一遮罩維持點與色彩的逐列順序。
+    v, u = np.indices((height, width), dtype=np.float64)
+
     # TODO: Build a validity mask and discard invalid depth values
     # (`depth <= 0`).
+    # 僅保留有限正深度，避免 NaN 或無限值進入點雲。
+    valid = np.isfinite(depth_m) & (depth_m > 0)
+    z = depth_m[valid]
+
     # TODO: Derive focal lengths and the principal point from `width`,
     # `height`, and `hfov`.
+    # 水平視角使用度數；方形像素令兩軸焦距相同，主點取影像中心。
+    if not np.isscalar(hfov) or np.asarray(hfov).dtype.kind not in "uif":
+        raise ValueError("hfov must be a finite angle between 0 and 180 degrees")
+    hfov = float(hfov)
+    if not np.isfinite(hfov) or not 0 < hfov < 180:
+        raise ValueError("hfov must be a finite angle between 0 and 180 degrees")
+    fx = width / (2.0 * np.tan(np.deg2rad(hfov) / 2.0))
+    fy = fx
+    cx, cy = width / 2.0, height / 2.0
+
     # TODO: Implement pinhole unprojection:
     #   x = (u - CX) * z / FX
     #   y = (v - CY) * z / FY
@@ -50,9 +86,19 @@ def depth_image_to_point_cloud(rgb, depth_m, width, height, hfov):
     # assignment variant that uses a camera looking toward `-Z`, the final
     # line is `z = -depth`; reconcile that choice with the existing
     # docstring and `CAM_TO_GT_AXES` convention before implementing.
+    # 自行套用針孔公式，保留相機座標右、下、前的正軸；此處不做 GT 翻軸。
+    x = (u[valid] - cx) * z / fx
+    y = (v[valid] - cy) * z / fy
+    points = np.column_stack((x, y, z))
+
     # TODO: Construct and return an Open3D `PointCloud`, including RGB
     # colors normalized to `[0, 1]` and preserving row-major point order.
-    raise NotImplementedError("TODO: implement depth_image_to_point_cloud")
+    # BGR 轉 RGB 並正規化；Open3D 僅接收已手算完成的座標與色彩。
+    colors = rgb[valid][:, ::-1].astype(np.float64) / 255.0
+    pcd = o3d.geometry.PointCloud()
+    pcd.points = o3d.utility.Vector3dVector(points)
+    pcd.colors = o3d.utility.Vector3dVector(colors)
+    return pcd
 
 
 def preprocess_point_cloud(pcd, voxel_size):
