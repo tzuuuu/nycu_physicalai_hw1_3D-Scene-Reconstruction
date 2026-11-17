@@ -415,3 +415,144 @@ pixi run -e habitat python load.py \
 ```
 
 > **提醒：**以上僅是流程範例，不是要求立刻執行；尤其 `load.py` 的清除行為、`reconstruct.py` 的 selected 寫入條件、現有 `pixi test` 是否指向不存在的測試檔，都必須先核對實際程式。
+
+
+## 補充規範：官方實驗工作流程與最終繳交驗收
+
+### 1. 最高優先原則
+
+本專案所有開發、實驗與最終繳交，必須完整符合老師提供的 `HW1_3D Scene Reconstruction.pdf`。
+
+除了完成 `utils.py` 中的演算法 TODO，也必須實際執行並驗證 PDF 第 3.2.1～3.2.4 節的官方實驗工作流程。
+
+**不得自行以其他實驗流程取代老師指定的 `api.py`、`reconstruct.py`、Ontology、Turtle 與 SPARQL 機制。**
+
+可以新增獨立的實驗分析、參數紀錄或測試工具，但不得取代正式要求的實驗紀錄。
+
+原始 PDF 與現有交接文件發生衝突時，以 PDF 為準，並回報差異。
+
+### 2. M2：Phase 1 官方 Baseline 流程
+
+完成 Preflight 後，正式 Baseline 必須依序執行：
+
+**Step 1：Experiment Declaration**
+
+使用 `api.py declare` 建立實驗工作目錄。
+
+必須產生：
+
+- `experiments/<experiment-name>/`
+- `experiments/<experiment-name>/<experiment-name>.ttl`
+- `experiments/<experiment-name>/plots/`
+- `experiments/<experiment-name>/queries/`
+
+Declaration 的實驗假設、Pipeline Prediction 及 Baseline Prediction，應於正式重建之前記錄，不得事後依結果倒填。
+
+**Step 2：First-Pass Reconstruction**
+
+使用老師指定的 `reconstruct.py --experiment` 入口，對完整一樓 Capture 執行 Baseline。
+
+必須使用 Open3D Point-to-Plane ICP，並由實際 Pipeline 產生八項 Quality Factors：
+
+- RawPointCount
+- VoxelizedPointYield
+- CoarseRANSACFitness
+- CoarseRANSACRMSE
+- CoarseRANSACCorrespondences
+- ICPInlierFitness
+- ICPInlierRMSE
+- ICPInlierCorrespondences
+
+每張 Depth Image 必須有兩項量測，每對相鄰 Depth Images 必須有六項量測。
+
+若 Capture 包含 N 張有效且完整處理的影格，預期因素總數為 `8N - 6`。
+
+必須驗證 Turtle 可解析、Sealed Machine Section 合法、因素完整，且 Baseline Reconstruction Run 確實存在。
+
+**Step 3：Inspect, Plot, Evaluate**
+
+必須實際驗證：
+
+- `api.py explore`
+- `api.py explore --launch-dashboard`（在環境允許下）
+- `experiments/<experiment-name>/plots/` 的實際輸出
+
+分析內容至少包含八項因素的時間序列、數值分布、異常區間及重建結果。
+
+須記錄 Mean L2、原始與實際評估影格數、保留比例、總執行時間、完整超參數、Seed、Git Commit 與軟體版本。
+
+**M2 完成後停止，不得自行開始 M3 的改善實驗。**
+
+### 3. M3：Phase 1 Data Intervention
+
+依照 PDF 第 3.2.4 節：
+
+1. 先分析 Baseline 的真實量測證據。
+2. 提出 Observation、Hypothesis、Intervention、Expected Effect。
+3. 等待使用者核准改善策略。
+4. 使用正式 CLI 執行 Intervention。
+5. 比較 Baseline 與 Selected Reconstruction。
+6. 保存每次實驗的參數、執行時間、指標、地圖與診斷結果。
+
+若使用 SPARQL 影格篩選：
+
+- 查詢放在實驗的 `queries/` 目錄。
+- 先使用 `api.py query --query-file` 檢查實際選取結果。
+- 再使用 `reconstruct.py --selection-query` 執行重建。
+- 注意 `FILTER NOT EXISTS` 的實際排除語意，不得誤解老師的範例。
+- 依目前固定首相機參考系的設計，Selected 必須保留原始第一張影格並置於第一位；若與官方要求發生衝突，必須回報。
+- 驗證 Selected Run 確實寫入 Turtle，且不覆蓋原始 Baseline 因素。
+- 應先確認現有 CLI 實際支援的寫入選項，不得假設 PDF 範例指令會自動保存 Selected Run。
+
+不得只輸出重建圖片或 Mean L2，就宣稱完成 Data Intervention。
+
+### 4. M4：Phase 2 官方流程
+
+Phase 2 必須同樣符合老師對自行擷取、First-Pass Reconstruction、Data Verification、Intervention 及結果比較的要求。
+
+實驗設計依既定規劃：
+
+- P2-A：自行擷取的主要完整路線。
+- P2-B：從 P2-A 資料建立較稀疏的影格子集，研究拍攝間隔與視角重疊。
+- P2-C：另外擷取不同路線，研究路線選擇的影響。
+
+P2-A 必須完成正式 Baseline、八項因素分析及證據導向改善。P2-B 作為影格選取 Intervention；P2-C 作為獨立 Capture Batch，需有自己的實驗宣告、重建及品質分析紀錄，並依實驗證據評估適當介入。
+
+須記錄各資料集的擷取路線、路線差異、影格數、相機設定及實際結果。
+
+正式 Phase 2 仍使用 Open3D Point-to-Plane ICP，不使用 Bonus ICP。
+
+### 5. M6：正式 ZIP 與可重現性驗收
+
+最後必須依 PDF 指定的目錄與內容建立 `<student-id>_hw1.zip`，至少包含指定的：
+
+- `load.py`
+- `reconstruct.py`
+- `utils.py`
+- `api.py`
+- `ontology/hw1.ttl`
+- `report.pdf`
+- `README.md`
+
+必須核對 PDF 關於完整原始碼與排除實驗產物的規定，釐清 `plot.py`、simulator 套件及其他必要相依原始碼的打包方式，不得自行假設最小檔案清單已足夠重現流程。
+
+最終驗收必須確認：
+
+1. ZIP 的程式碼與正式實驗使用的版本一致。
+2. 必要的 Depth Unprojection 仍為自行實作。
+3. Phase 1、Phase 2 的正式 ICP 仍為 Open3D Point-to-Plane。
+4. Bonus Point-to-Point + Kabsch SVD 獨立實作及比較，不覆蓋正式成果。
+5. 官方 Declare → First-Pass → Explore → Query → Selected 工作流程可重現。
+6. Turtle 包含完整因素、合法封存與必要的 Baseline／Selected Run。
+7. 英文 PDF 報告中的數值、圖表、影格數、執行時間、參數與實際實驗紀錄一致。
+8. ZIP 不包含 PDF 明確排除的大型資料、實驗生成檔或無關建置產物。
+
+如果任何一項尚未驗證，必須明確標示為未完成，不得宣稱整份作業已完全符合規範。
+
+### 6. 開發與修改權限
+
+維持既定三級修改權限、Git 小步 Commit 及各階段人工驗收制度。
+
+如果老師原有的 CLI、API 或 Ontology 無法完成正式工作流程，必須先分析原因、提出最小修改建議及影響範圍，取得使用者核准後才能修改。
+
+不得為了讓測試或評分通過而偽造實驗因素、修改 Ground Truth、隱藏配準失敗，或跳過老師規定的實驗步驟。
