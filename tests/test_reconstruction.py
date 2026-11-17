@@ -126,3 +126,22 @@ def test_registration_failure_is_explicit(rgbd_capture, monkeypatch):
     monkeypatch.setattr(utils, 'local_icp_algorithm', lambda *args: o3d.pipelines.registration.RegistrationResult())
     with pytest.raises(RuntimeError, match='RANSAC failed.*fitness=0.0.*correspondences=0'):
         utils.reconstruct(rgbd_capture, voxel_size=0.08, verbose=False)
+
+
+def test_existing_cli_refuses_incomplete_factors_before_evaluation_or_sealing(rgbd_capture, monkeypatch):
+    import sys
+    import reconstruct as cli
+    (rgbd_capture / 'depth' / '20.png').write_bytes(b'corrupt')
+    monkeypatch.setattr(sys, 'argv', ['reconstruct.py', '--experiment', 'synthetic-only.ttl', '--voxel-size', '0.08', '--no-vis'])
+    monkeypatch.setattr(api, 'is_assessed', lambda path: False)
+    monkeypatch.setattr(api, 'read_declaration', lambda path: {
+        'batch_path': str(rgbd_capture), 'required': {'icpBackend': 'open3d'}})
+    def forbidden(*args, **kwargs):
+        pytest.fail('incomplete evidence reached evaluation/sealing/run writer')
+    monkeypatch.setattr(api, 'seal_experiment', forbidden)
+    monkeypatch.setattr(api, 'write_run', forbidden)
+    monkeypatch.setattr(utils, 'visualize_and_evaluate', forbidden)
+    with pytest.warns(RuntimeWarning, match='Unreadable'):
+        with pytest.raises(RuntimeError, match='failed to record all pipeline factors'):
+            cli.main()
+    assert not list(rgbd_capture.rglob('*.ttl'))
