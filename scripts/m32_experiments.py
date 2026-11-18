@@ -128,6 +128,9 @@ def suite_prepare(output):
 def sensitivity_authorization(suite):
     """僅獨立研究排程的新政策：演算法失敗可列為終態，系統異常仍鎖定。"""
     suite = Path(suite)
+    if (suite/'resume_04/authorization.json').exists():
+        from scripts.m32_permission_recovery import authorization
+        return authorization(suite)
     if (suite/'resume_03/authorization.json').exists():
         from scripts.m32_final_recovery import authorization
         return authorization(suite)
@@ -148,6 +151,9 @@ def sensitivity_authorization(suite):
 
 
 def terminal_receipt(suite, condition):
+    if (Path(suite)/'resume_04/authorization.json').exists():
+        from scripts.m32_permission_recovery import terminal
+        return terminal(suite,condition)
     path = Path(suite)/'resume_02/status'/(condition+'.json')
     if condition in ['C2','C3','C4'] and (Path(suite)/'resume_03/authorization.json').exists():
         from scripts.m32_final_recovery import authorization, C2_STATUS
@@ -237,7 +243,7 @@ def condition_prepare(suite, condition):
                     git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                     original_suite_commit=plan['git_commit'],
                     recording_tool_sha256=sha(Path(__file__)), suite=str(suite.resolve()),
-                    sensitivity_authorization_sha256=sha(suite/('resume_03/authorization.json' if (suite/'resume_03/authorization.json').exists() else 'resume_02/authorization.json')) if policy is not None else None,
+                    sensitivity_authorization_sha256=sha(suite/('resume_04/authorization.json' if (suite/'resume_04/authorization.json').exists() else 'resume_03/authorization.json' if (suite/'resume_03/authorization.json').exists() else 'resume_02/authorization.json')) if policy is not None else None,
                     hypothesis=hypothesis,frames=list(range(1,192)),factor_count=1522,
                     prediction='Outcome unknown; pose flip may persist or move. All outcomes retained.',
                     official_entrypoint=[sys.executable,str(ROOT/'reconstruct.py')]+cli_args(exp,v,item['seed']),
