@@ -12,7 +12,11 @@ def authorized(tmp_path, monkeypatch):
     for name in r.LINKS:
         p = tmp_path/name; p.parent.mkdir(exist_ok=True); p.write_text('{}'); links[name] = x.sha(p)
     auth = dict(remaining_conditions=['C3','C4'], C2_reconstruction_authorized=False,
-        metadata_exclusion=['experiments/.DS_Store'],historical_links=links,tool_sha256={})
+        metadata_exclusion=list(r.EXACT_PATHS),historical_links=links,tool_sha256={},
+        prior_recovery_links={},B0_postprocess_output=str(tmp_path/'B0_postprocess'))
+    for name in r.PRIOR_LINKS:
+        p = tmp_path/name; p.parent.mkdir(parents=True,exist_ok=True); p.write_text('{}')
+        auth['prior_recovery_links'][name] = x.sha(p)
     (recovery/'authorization.json').write_text(json.dumps(auth))
     return recovery, auth
 
@@ -51,3 +55,16 @@ def test_final_authorization_cannot_expand_scope(tmp_path, monkeypatch, change):
     else: auth['metadata_exclusion'] = ['*.DS_Store']
     (recovery/'authorization.json').write_text(json.dumps(auth))
     with pytest.raises(RuntimeError, match='scope'): x.sensitivity_authorization(tmp_path)
+
+
+def test_final_recovery_keeps_historical_b0_postprocessing_location(tmp_path, monkeypatch):
+    recovery, auth = authorized(tmp_path, monkeypatch)
+    result = x.evidence_directory(tmp_path, {'condition':'B0'})
+    assert result == tmp_path/'B0_postprocess'
+
+
+def test_final_recovery_checks_previous_metadata_stop_evidence(tmp_path, monkeypatch):
+    recovery, auth = authorized(tmp_path, monkeypatch)
+    (tmp_path/r.PRIOR_LINKS[0]).write_text('changed')
+    with pytest.raises(RuntimeError, match='Protected'):
+        x.sensitivity_authorization(tmp_path)

@@ -9,6 +9,7 @@ import subprocess
 import sys
 import time
 import traceback
+import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -18,15 +19,17 @@ from scripts import m32_analysis as a
 from scripts import m32_status_review as review
 from scripts import m3_diagnose as m
 from scripts import record_command
-from scripts.m32_metadata_policy import metadata_policy
+from scripts.m32_metadata_policy import metadata_policy, EXACT_PATHS
 from scripts.m31_analysis import read_jsonl, cumulative
 from scripts.validate_baseline import summarize_rows
 import numpy as np
 
 SUITE = s.SUITE
 RECOVERY = SUITE/'resume_03'
-C2_STATUS = 'Reconstruction Completed / Scientific Integrity Verified / Original Metadata Guard Stop Preserved'
+C2_STATUS = 'Reconstruction Completed / Scientific Integrity Verified / Historical Metadata Guard Stop Preserved'
 LINKS = s.HISTORICAL + ['suite.json', 'resume_02/authorization.json', 'resume_02/system_stopped.json']
+PRIOR_LINKS = ['research_outputs/m32_20261118_final_recovery_stop_01/'+n for n in
+               ['system_stopped.json','manifest.json','final_provenance.json','final_manifest.json']]
 
 
 def authorization(suite):
@@ -35,12 +38,14 @@ def authorization(suite):
         raise RuntimeError('Final recovery system stopped; no automatic retry')
     auth = x.read(recovery/'authorization.json')
     if (auth['remaining_conditions'] != ['C3', 'C4'] or auth['C2_reconstruction_authorized'] is not False
-            or auth['metadata_exclusion'] != ['experiments/.DS_Store']
-            or set(auth['historical_links']) != set(LINKS)):
+            or auth['metadata_exclusion'] != list(EXACT_PATHS)
+            or set(auth['historical_links']) != set(LINKS)
+            or set(auth['prior_recovery_links']) != set(PRIOR_LINKS)):
         raise RuntimeError('Invalid final recovery scope')
     for name, digest in auth['historical_links'].items():
         if x.sha(suite/name) != digest:
             raise RuntimeError('Historical marker changed: '+name)
+    x.verify_hashes(auth['prior_recovery_links'])
     x.verify_hashes(auth['tool_sha256'])
     return auth
 
@@ -63,6 +68,9 @@ def protected_files():
 
 def initialize():
     if RECOVERY.exists(): raise FileExistsError('Final recovery already exists')
+    files = protected_files()
+    RECOVERY.mkdir(); (RECOVERY/'status').mkdir()
+    m.dump(RECOVERY/'protected.before.json', m.fingerprint(files))
     plan = x.read(SUITE/'suite.json'); s.environment(plan)
     # 先審查全部既有清單；任何非核准差異都在建立恢復授權前停止。
     inventories = {}
@@ -70,8 +78,9 @@ def initialize():
                          ('resume02', SUITE/'resume_02/protected.before.json'),
                          ('C2', Path(item_for('C2')['output'])/'protected.before.json')]:
         hashes = x.read(path); delta = review.differences(hashes)
-        if any(d['path'] != 'experiments/.DS_Store' or d['after'] is None for d in delta):
+        if any(d['path'] not in EXACT_PATHS or d['after'] is None or (ROOT/d['path']).is_symlink() for d in delta):
             raise RuntimeError('Unauthorized prior file change: '+repr(delta))
+        x.verify_hashes(hashes)
         inventories[label] = dict(count=len(hashes), differences=delta)
     for c in ['B0','B1','B2','C1']: x.terminal_receipt(SUITE, c)
     for c in ['C3','C4']:
@@ -80,16 +89,23 @@ def initialize():
             raise FileExistsError('Condition already used: '+c)
     if x.read(SUITE/'resume_02/system_stopped.json')['condition'] != 'C2':
         raise RuntimeError('Unexpected original stop')
-    files = protected_files()
-    RECOVERY.mkdir(); (RECOVERY/'status').mkdir()
-    m.dump(RECOVERY/'protected.before.json', m.fingerprint(files))
     m.dump(RECOVERY/'historical_differences.json', inventories)
-    shutil.copyfile(ROOT/'experiments/.DS_Store', RECOVERY/'experiments_DS_Store_at_resume.bin')
+    for name in EXACT_PATHS:
+        shutil.copyfile(ROOT/name, RECOVERY/(name.split('/')[0]+'_DS_Store_at_resume.bin'))
+    previous = x.read(SUITE/'resume_02/authorization.json')
+    for name, digest in previous['historical_links'].items():
+        if x.sha(SUITE/name) != digest: raise RuntimeError('Historical authorization link changed')
+    git_state = subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True)
+    if git_state or subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip() != 'main':
+        raise RuntimeError('Expected clean main branch')
     m.dump(RECOVERY/'authorization.json', dict(
-        user_instruction='M3.2 最終恢復授權：精確OS Metadata Policy、C2唯讀後置審計、C3再C4各一次',
+        user_instruction='M3.2 最終恢復授權（OS Metadata 精確排除）：僅experiments/.DS_Store與research_outputs/.DS_Store；C2唯讀審計後C3再C4各一次',
         remaining_conditions=['C3','C4'], C2_reconstruction_authorized=False,
-        metadata_exclusion=['experiments/.DS_Store'], registration_failure_policy='preserve_verify_then_continue',
+        metadata_exclusion=list(EXACT_PATHS), registration_failure_policy='preserve_verify_then_continue',
         historical_links={n:x.sha(SUITE/n) for n in LINKS},
+        prior_recovery_links=m.fingerprint([ROOT/n for n in PRIOR_LINKS]),
+        B0_postprocess_output=previous['B0_postprocess_output'],
+        prior_authorization_sha256=x.sha(SUITE/'resume_02/authorization.json'),
         tool_sha256=m.fingerprint([ROOT/'scripts'/n for n in [
             'm32_final_recovery.py','m32_metadata_policy.py','m32_experiments.py',
             'm32_sensitivity.py','m32_analysis.py','record_command.py']]),
@@ -164,10 +180,9 @@ def run(condition):
     x.condition_prepare(SUITE,condition)
     item = item_for(condition); out = Path(item['output'])
     # 子程序只繼承固定政策日誌路徑；不改老師核心或正式CLI。
-    env = os.environ.copy(); env['M32_FINAL_METADATA_LOG'] = str(RECOVERY/'metadata_changes.jsonl')
     argv = [sys.executable,str(ROOT/'scripts/m32_final_recovery.py'),'observe','--condition',condition]
     # record_command繼承環境，子程序由相同授權檢查限制。
-    os.environ['M32_FINAL_METADATA_LOG'] = env['M32_FINAL_METADATA_LOG']
+    os.environ['M32_FINAL_METADATA_POLICY'] = x.sha(RECOVERY/'authorization.json')
     result = record_command.run(argv,out/'command',3)
     if result['resource_guard']['reason']: raise RuntimeError('Resource/monitoring failure')
     if result['exit_code'] != 0:
@@ -189,13 +204,16 @@ if __name__ == '__main__':
     parser.add_argument('mode', choices=['initialize','audit-c2','run','observe','compare','verify'])
     parser.add_argument('--condition',choices=['C3','C4'])
     args = parser.parse_args()
+    # 活躍日誌在暫存目錄追加，結束後獨立保全；不將正在寫入的日誌當凍結產物。
+    journal_dir = Path(tempfile.mkdtemp(prefix='physicalai-m32-metadata-'))
+    journal = journal_dir/'checks.jsonl'
     try:
-        with metadata_policy(RECOVERY/'metadata_changes.jsonl'):
+        with metadata_policy(journal):
             if args.mode == 'initialize': initialize()
             elif args.mode == 'audit-c2': audit_c2()
             elif args.mode == 'observe':
                 authorization(SUITE)
-                if os.environ.get('M32_FINAL_METADATA_LOG') != str(RECOVERY/'metadata_changes.jsonl'):
+                if os.environ.get('M32_FINAL_METADATA_POLICY') != x.sha(RECOVERY/'authorization.json'):
                     raise RuntimeError('Missing explicit metadata policy context')
                 x.observe(item_for(args.condition)['output'])
             elif args.mode == 'run': run(args.condition)
@@ -214,3 +232,9 @@ if __name__ == '__main__':
             m.dump(RECOVERY/'system_stopped.json',dict(mode=args.mode,condition=args.condition,
                 traceback=traceback.format_exc(),unix=time.time(),action='STOP; no automatic retry'))
         raise
+
+    finally:
+        if RECOVERY.exists() and journal.exists():
+            logs = RECOVERY/'metadata_checks'
+            logs.mkdir(exist_ok=True)
+            shutil.copyfile(journal,logs/(args.mode+'_'+str(args.condition)+'_'+str(time.time_ns())+'.jsonl'))

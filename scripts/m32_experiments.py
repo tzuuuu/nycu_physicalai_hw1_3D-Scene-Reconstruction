@@ -156,7 +156,8 @@ def terminal_receipt(suite, condition):
     else:
         C2_STATUS = None
     receipt = read(path)
-    if receipt['condition'] != condition or receipt['status'] not in ['Success','Failed Registration',C2_STATUS] or not receipt['integrity_verified']:
+    allowed = ['Success','Failed Registration'] + ([C2_STATUS] if condition == 'C2' and C2_STATUS is not None else [])
+    if receipt['condition'] != condition or receipt['status'] not in allowed or not receipt['integrity_verified']:
         raise RuntimeError('Prior condition has no verified terminal status')
     verify_hashes(receipt['evidence_sha256'])
     return receipt
