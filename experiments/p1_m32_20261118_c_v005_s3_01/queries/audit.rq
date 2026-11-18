@@ -1,0 +1,6 @@
+PREFIX hw1: <http://taica.course/hw1/ontology#>
+PREFIX exp: <http://taica.course/hw1/experiment/>
+SELECT DISTINCT ?frameIndex WHERE {
+ exp:p1_m32_20261118_c_v005_s3_01 hw1:onBatch ?batch .
+ ?batch hw1:hasFrame ?frame . ?frame hw1:frameIndex ?frameIndex .
+} ORDER BY ASC(?frameIndex)
