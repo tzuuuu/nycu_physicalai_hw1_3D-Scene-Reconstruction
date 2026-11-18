@@ -69,6 +69,7 @@ def compare_factors(events, rows):
 
 def gt_camera_poses(gt):
     """世界中的 Habitat 相機姿態轉為首影格影像軸；不做最佳擬合。"""
+    gt = np.asarray(gt, dtype=np.float64)  # 與官方評估一致：運算前即轉為雙精度。
     rotations = Rotation.from_quat(gt[:, [4, 5, 6, 3]]).as_matrix()
     axes = utils.CAM_TO_GT_AXES
     poses = np.repeat(np.eye(4)[None], len(gt), axis=0)

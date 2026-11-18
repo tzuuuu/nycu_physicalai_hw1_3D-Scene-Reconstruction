@@ -33,6 +33,14 @@ def test_known_translation_and_rotation_error():
     assert metrics['icp_correction_rotation_deg'] == pytest.approx(30)
 
 
+def test_float32_gt_matches_official_evaluation_precision(tmp_path):
+    gt = np.array([[3.141592,2.718281,-5.123456,1,0,0,0],
+                   [4.234567,2.718282,-6.234567,1,0,0,0]], dtype=np.float32)
+    np.save(tmp_path/'GT_pose.npy',gt)
+    centres = m.gt_camera_poses(gt)[:,:3,3]
+    assert m.utils.visualize_and_evaluate(None,centres,str(tmp_path),show=False) == 0
+
+
 def test_factor_identity_precision_and_missing_detection():
     events = [{'kind':'pair','prev_stem':1,'stem':2,'icp_rmse':.0123456789}]
     rows = [{'factor':'ICPInlierRMSE','previous':'1','current':'2','value':m.api._storable(.0123456789)}]
