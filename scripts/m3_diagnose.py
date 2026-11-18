@@ -102,11 +102,13 @@ def fresh_output(output):
     return output
 
 
-def capture(output):
+def capture(output, supervisor_output=None):
     output = fresh_output(output)
+    supervisor = Path(supervisor_output).resolve() if supervisor_output else None
     config = json.loads((BASE / 'config.before_run.json').read_text())
     protected = [p for root in [ROOT / 'research_outputs', ROOT / 'experiments', DATA]
-                 for p in root.rglob('*') if output not in p.parents]
+                 for p in root.rglob('*') if output not in p.parents
+                 and (supervisor is None or supervisor not in p.parents)]
     protected += [ROOT / name for name in ['utils.py', 'api.py', 'reconstruct.py',
                                          'ontology/hw1.ttl', 'pixi.toml', 'pixi.lock']]
     before = fingerprint(protected)
@@ -117,7 +119,7 @@ def capture(output):
         original = subprocess.check_output(['git', 'show', config['git_commit'] + ':' + name], cwd=ROOT)
         if original != (ROOT / name).read_bytes():
             raise RuntimeError('Core source differs: ' + name)
-    experiment = api.read_experiment(str(EXP))
+    experiment = api.read_experiment(str(EXP / (EXP.name + '.ttl')))
     frames = [int(s) for s, _, _ in api._pair_frames(str(DATA))]
     if frames != experiment['frame_indices'] or len(frames) != 191 or not experiment['complete']:
         raise RuntimeError('Formal full-batch frame identity/completeness mismatch')
@@ -333,12 +335,14 @@ def make_plots(output, rows, pairs, positions, truth, correlations):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='mode', required=True)
-    sub.add_parser('capture').add_argument('--output', required=True)
+    c = sub.add_parser('capture')
+    c.add_argument('--output', required=True)
+    c.add_argument('--supervisor-output')
     a = sub.add_parser('analyze')
     a.add_argument('--run', required=True)
     a.add_argument('--output', required=True)
     args = parser.parse_args()
     if args.mode == 'capture':
-        capture(args.output)
+        capture(args.output, args.supervisor_output)
     else:
         analyze(args.run, args.output)
