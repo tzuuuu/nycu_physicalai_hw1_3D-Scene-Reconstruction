@@ -31,3 +31,15 @@ def test_resource_guard_stops_child_and_preserves_evidence(tmp_path, monkeypatch
     assert result['status'] == 'failed'
     assert 'exceeds' in result['resource_guard']['reason']
     assert (tmp_path / 'guarded' / 'memory_samples.jsonl').exists()
+
+
+def test_monitor_unavailable_terminates_live_child_and_preserves_reason(tmp_path, monkeypatch):
+    def unavailable(pid):
+        raise PermissionError('synthetic ps permission denied')
+    monkeypatch.setattr(recorder, '_rss_bytes', unavailable)
+    result = recorder.run([sys.executable, '-c', "import time; print('live',flush=True); time.sleep(10)"],
+                          tmp_path/'unavailable', rss_limit_gib=3)
+    assert result['exit_code'] != 0 and result['total_process_s'] < 3
+    assert result['rss_limit_gib'] == 3
+    assert result['resource_guard']['reason'] == 'synthetic ps permission denied'
+    assert json.loads((tmp_path/'unavailable/execution.json').read_text()) == result
