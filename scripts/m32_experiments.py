@@ -38,8 +38,10 @@ def read(path):
 
 
 def verify_hashes(hashes):
+    from scripts.m32_metadata_policy import record_exclusion
     changed = [name for name, value in hashes.items()
-               if not (ROOT/name).is_file() or sha(ROOT/name) != value]
+               if not record_exclusion(ROOT, name, value)
+               and (not (ROOT/name).is_file() or sha(ROOT/name) != value)]
     if changed:
         raise RuntimeError('Protected files changed: ' + repr(changed))
     return len(hashes)
