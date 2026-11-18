@@ -196,7 +196,13 @@ Capture SHA-256：`22270c4923745ffdf9b3a1fbe98bf311ac05721a54e37eec6ff3c16a59e22
 3. `resume_02/system_stopped.json`：C2已重建，但原finalize因`experiments/.DS_Store`差異停止。
 4. `research_outputs/m32_20261118_final_recovery_stop_01/`：前次精確排除僅一個路徑，發現第二個`research_outputs/.DS_Store`差異，依原規則停止。
 5. `resume_03/C2_audit/`：新增兩路徑授權後完成C2唯讀科學審計；`resume_03/system_stopped.json`保留C3啟動前`PermissionError: Operation not permitted: ps`。
-6. `resume_04/`：本次正式權限修復、沙箱／核准環境監控測試、C3／C4各一次成功receipt、最終比較與完整性；沒有新的系統停止。
+6. `resume_04/`：本次正式權限修復、沙箱／核准環境監控測試、C3／C4各一次成功receipt、最終比較與第一次最終完整性驗證均完成；收尾重複驗證的寫入一次護欄停止另列如下。
+
+### 收尾重複驗證的寫入一次護欄停止（不覆寫已成功審計）
+
+完成C3／C4、全部比較與第一次`verify`後，收尾不必要地再次呼叫同一`verify`入口。科學SHA與終態核對通過後，入口嘗試以`open('x')`再次建立既有`final_integrity.json`，觸發`FileExistsError`。原成功審計檔沒有覆寫，所有正式重建與比較產物保持完整；此為重複收尾入口的檔案建立衝突，不是新配準失敗或3 GiB超限。
+
+`resume_04/system_stopped.json`保留原始Traceback與停止時間，不刪除、不改寫；因此不能宣稱本次沒有新停止。後續保全不重新執行`verify`／`finalize`，只直接核對凍結證據SHA並另存`closing_preservation.json`及最終provenance／manifest，明列`closing_guard_stop_preserved=True`。第一次`final_integrity.json`仍是先前真正成功的結果，不把重複呼叫說成成功。已完成的七條件與五seed分析可供人工審查，研究維持停止。
 
 原B0／B1停止版驗收另保留於`M3_Parameter_Experiment_B0_Stop_Record.md`與`M3_Parameter_Experiment_B1_Stop_Record.md`；本次改寫前完整驗收文件另存`resume_04/acceptance.before.md`，Git亦保留所有歷史。未修改舊停止JSON、Traceback或歷史SHA清單。
 
