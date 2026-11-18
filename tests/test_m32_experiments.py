@@ -111,3 +111,21 @@ def test_frame_validation_requires_both_full_sets_and_gt_header(tmp_path):
     x.validate_frames(tmp_path)
     (tmp_path/'depth/104.png').unlink()
     with pytest.raises(ValueError,match='191'): x.validate_frames(tmp_path)
+
+
+def test_historical_comparison_serializes_and_detects_each_difference():
+    import json
+    poses=np.repeat(np.eye(4)[None],3,axis=0)
+    comparison={'mismatch_count':0,'differences':[]}
+    result=x.historical_comparison(np.float64(3.17),3.17,comparison,poses,poses.copy())
+    assert json.loads(json.dumps(result))['matched'] is True
+    moved=poses.copy(); moved[1,0,3]=1
+    assert not x.historical_comparison(3.17,3.17,comparison,poses,moved)['matched']
+    assert not x.historical_comparison(4.,3.17,comparison,poses,poses)['matched']
+    assert not x.historical_comparison(3.17,3.17,{'mismatch_count':1},poses,poses)['matched']
+
+
+def test_stopped_suite_cannot_start_another_condition(tmp_path):
+    (tmp_path/'suite_stopped.json').write_text('{"stopped":true}')
+    with pytest.raises(RuntimeError,match='explicitly stopped'):
+        x.condition_prepare(tmp_path,'B1')

@@ -125,6 +125,8 @@ def suite_prepare(output):
 
 def condition_prepare(suite, condition):
     suite = Path(suite)
+    if (suite/'suite_stopped.json').exists():
+        raise RuntimeError('Suite explicitly stopped; further execution needs user acceptance')
     plan = read(suite/'suite.json')
     item = next(i for i in plan['conditions'] if i['condition']==condition)
     index = plan['conditions'].index(item)
@@ -330,6 +332,17 @@ def validate_evidence(ttl, output, expected_frames):
     return exp, rows, l2
 
 
+def historical_comparison(l2, historical, comparison, old_poses, new_poses):
+    """將數值核對轉為可完整序列化的證據，不修改任何原始成果。"""
+    pose_difference = float(np.max(np.abs(old_poses-new_poses)))
+    return {'mean_l2_m':float(l2),'historical_mean_l2_m':float(historical),
+            'difference_m':float(l2-historical),'factors':comparison,
+            'diagnostic_pose_max_abs_difference':pose_difference,
+            'matched':bool(abs(l2-historical)<=1e-10 and comparison['mismatch_count']==0
+                           and pose_difference<=1e-10),
+            'historical_pose_source':'M3.0 matched diagnostic, not original formal M2 poses'}
+
+
 def finalize(output):
     output = Path(output).resolve(); p = read(output/'preregistration.json')
     execution = read(output/'command/execution.json')
@@ -346,11 +359,7 @@ def finalize(output):
         historical = read(m.BASE/'validation.json')['mean_l2_raw_m']
         old_poses = cumulative(read_jsonl(ROOT/'research_outputs/m3_20261118_diagnostic_02/transforms.jsonl'))
         new_poses = np.load(output/'observation/camera_poses.npy')
-        result = {'mean_l2_m':l2,'historical_mean_l2_m':historical,'difference_m':l2-historical,
-                  'factors':comparison,'diagnostic_pose_max_abs_difference':float(np.max(np.abs(old_poses-new_poses))),
-                  'matched':abs(l2-historical)<=1e-10 and comparison['mismatch_count']==0
-                            and np.max(np.abs(old_poses-new_poses))<=1e-10,
-                  'historical_pose_source':'M3.0 matched diagnostic, not original formal M2 poses'}
+        result = historical_comparison(l2,historical,comparison,old_poses,new_poses)
         m.dump(output/'historical_comparison.json',result)
         if not result['matched']:
             raise RuntimeError('B0 differs from historical baseline; STOP')
