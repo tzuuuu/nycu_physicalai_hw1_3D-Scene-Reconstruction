@@ -1,5 +1,44 @@
 # M3.2 Registration Parameter Experiment：已執行結果與系統停止驗收
 
+## 最新狀態：最終恢復在前置完整性檢查停止（2026-11-18）
+
+**未完成M3.2最終驗收；C2新後置審計、C3與C4均未啟動。** 使用者本輪只核准精確排除 `experiments/.DS_Store`，並明定任何其他未授權檔案異動立即停止。新恢復入口在 `initialize` 比對原suite清單時發現 **`research_outputs/.DS_Store` 也已變動**，因此正確停止；未擴大政策、未建立 `resume_03`、未重建任何條件，亦未開始D、Phase 2、Bonus或英文報告。
+
+已完成且獨立提交的範圍：
+
+- `d5e34c3`：精確OS Metadata Exclusion Policy及先寫的測試。只有明確啟用的恢復範圍可將既存一般檔案 `experiments/.DS_Store` 從科學資料停止比較排除；每次仍另存前後SHA。其他路徑、缺檔、符號連結與同時發生的科學檔案異動仍停止；預設驗證器仍嚴格拒絕。相關33項測試通過。
+- `8244add`：有限恢復工具、歷史停止／工具SHA綁定、獨立C2審計終態與C3→C4排程，以及對應測試；執行前完整 **218 passed in 15.69s**。這代表工具驗證通過，**不代表C2新審計或C3／C4已執行成功**。
+
+本輪新增保全：`research_outputs/m32_20261118_final_recovery_stop_01/`。其中 `system_stopped.json`、`initialize.stderr.log`、三份歷史清單副本、兩個中繼檔目前bytes、原停止紀錄副本及 `manifest.json`，記錄此次實際停止。原始清單與停止檔均未改寫，沒有刪除或還原任何 `.DS_Store`。
+
+|差異檔案|歷史SHA-256|本輪SHA-256|本輪判定|
+|---|---|---|---|
+|`experiments/.DS_Store`|`c58b7c32125c5542846c1a020beff62119d939b6320db407c45f801705e3a6ad`|`4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad`|唯一核准的非科學中繼檔排除範圍|
+|`research_outputs/.DS_Store`|`538937e5925c6023d088ceac2ed85d40b6f99c2b2288893bd99628ffe8f954cb`|`b081d97c635cd8261dbc837e2259761f6f6077df73b1ef6a0cd47851dcdb274d`|未授權異動；立即停止|
+
+原suite清單553項中551項未變；resume_02清單669項中667項未變；C2開始前清單792項中790項未變；三份清單的差異皆僅為上列兩個精確路徑。教師核心、正式CLI、API、Ontology、load／plot與pixi設定／lock的8項SHA均相符。上述清單涵蓋的RGB-D、GT、既有正式成果及研究產物均未出現其他差異；這是停止後保全核對，**不冒充尚未執行的完整C2補充審計**。目前bytes與歷史SHA差異已保留；未持有的變更前bytes不能由SHA重建，也不宣稱已取得逐位元差異或確定寫入來源。
+
+|條件|Registration Voxel (m)|Seed|實際狀態|完整191張Mean L2 (m)|
+|---|---:|---:|---|---:|
+|B0|0.05|0|既有正式成功|3.174055104788|
+|B1|0.03|0|70→71配準失敗|無完整值|
+|B2|0.08|0|既有正式成功|0.274959466593|
+|C1|0.05|1|既有正式成功|0.155696709607|
+|C2|0.05|2|既有191張正式重建完成；原停止保留，本輪新審計未啟動|3.165352438552|
+|C3|0.05|3|未執行：本輪前置完整性停止|未執行|
+|C4|0.05|4|未執行：本輪前置完整性停止|未執行|
+
+七條件仍只有5次正式嘗試、4次完整重建、1次配準失敗、2組未執行。C2沒有新增成功 `integrity.after.json` 或原finalize成功receipt；本輪**未標示** `Reconstruction Completed / Scientific Integrity Verified / Original Metadata Guard Stop Preserved`，因為新的完整審計尚未執行。
+
+B／C圖表、103→104局部誤差、八因素、地圖、Runtime／RSS及seed0／1／2分布仍引用下列前輪真實結果，沒有以未執行的C3／C4更新成五seed比較。B2與C1不能被宣稱為可泛化的最佳Voxel或Seed。所有Discussion and Future Work維持規劃狀態。
+
+**依使用者停止規則維持停止，等待對新增精確路徑差異的人工決策；尚不能申請M3.2完整驗收或Phase 1結束。** `main`與 `snapshot/pre-implementation = 291209750bd8ecf84f337112c9b92307e6be192a` 保持；實驗產物不加入Git。
+
+---
+
+以下第1–12節連同其前言為前輪停止後的歷史驗收紀錄；其中「本輪」與「僅experiments/.DS_Store差異」指前次審計當時狀態，最新結果以本節為準。
+
+
 日期：2026-11-18（臺灣）。**原訂七條件尚未全部執行，不申請完整B＋C驗收通過。** 本輪在明確核准的新政策下，沒有重跑B0／B1；依序完成B2、C1、C2的完整191張正式重建。C2後置作業的全檔SHA護欄發現 `experiments/.DS_Store` 改變，觸發系統／完整性停止，C3、C4未啟動。
 
 累計5次正式嘗試：4個完整重建成功、1個Failed Registration，另2個Not Executed。**Success在本文件表示重建完整返回並有真實官方成果，不等於姿態正確；C2另有尚未通過全檔完整性護欄的明確註記。** 無額外候選、重試、跳幀、GT補正、核心修改、D、Phase 2、Bonus或最終英文報告。
