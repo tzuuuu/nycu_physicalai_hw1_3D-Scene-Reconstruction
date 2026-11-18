@@ -116,7 +116,7 @@ def read_csv(path):
 
 def describe(values):
     a=np.asarray(values,dtype=float)
-    return {'count':len(a),'mean_m':float(a.mean()),'sample_std_m':float(a.std(ddof=1)),
+    return {'count':len(a),'mean_m':float(a.mean()),'sample_std_m':float(a.std(ddof=1)) if len(a)>1 else None,
             'median_m':float(np.median(a)),'min_m':float(a.min()),'max_m':float(a.max()),
             'range_m':float(np.ptp(a))}
 
@@ -125,14 +125,16 @@ def compare(suite,group,output):
     suite=Path(suite); target=Path(output).resolve(); target.mkdir(exist_ok=False)
     plan=x.read(suite/'suite.json')
     desired=['B0','B1','B2'] if group=='B' else ['B0','C1','C2','C3','C4'] if group=='C' else [c[0] for c in x.CONDITIONS]
-    items=[i for i in plan['conditions'] if i['condition'] in desired]
+    all_items=[i for i in plan['conditions'] if i['condition'] in desired]
+    statuses={i['condition']:x.terminal_receipt(suite,i['condition']) for i in all_items} if (suite/'resume_02/authorization.json').exists() else {}
+    items=[i for i in all_items if not statuses or statuses[i['condition']]['status']=='Success']
     summaries=[x.read(Path(i['output'])/'analysis/summary.json') for i in items]
     frames=[read_csv(Path(i['output'])/'analysis/frames.csv') for i in items]
     pairs=[read_csv(Path(i['output'])/'analysis/pairs.csv') for i in items]
     rows=[]
     for s in summaries:
         p=s['pair103_104']
-        rows.append({'condition':s['condition'],'voxel_m':s['voxel_m'],'seed':s['seed'],'frames':191,
+        rows.append({'condition':s['condition'],'status':'Success','failure_pair':None,'voxel_m':s['voxel_m'],'seed':s['seed'],'frames':191,
             'mean_l2_m':s['mean_l2_m'],'ransac103_104_rotation_deg':p['coarse_rotation_error_deg'],
             'icp103_104_rotation_deg':p['relative_rotation_error_deg'],
             'ransac103_104_translation_m':p['coarse_translation_error_m'],
@@ -142,9 +144,19 @@ def compare(suite,group,output):
             'total_process_s':s['total_process_s'],'reconstruction_s':s['reconstruction_s'],
             'cpu_user_s':s['cpu_user_s'],'cpu_system_s':s['cpu_system_s'],
             'peak_rss_bytes':s['peak_rss_bytes'],'peak_rss_gib':s['peak_rss_bytes']/2**30})
+    for item in all_items:
+        if statuses and statuses[item['condition']]['status']=='Failed Registration':
+            e=x.read(Path(item['output'])/'command/execution.json')
+            failed={key:None for key in rows[0]}
+            f=statuses[item['condition']]['failure']
+            failed.update(condition=item['condition'],status='Failed Registration',failure_pair=str(f['previous'])+'->'+str(f['current']),voxel_m=item['voxel'],seed=item['seed'],frames=f['accepted_pairs']+1,total_process_s=e['total_process_s'],peak_rss_bytes=e['child_peak_rss_bytes'],peak_rss_gib=e['child_peak_rss_bytes']/2**30)
+            rows.append(failed)
+    rows.sort(key=lambda r:desired.index(r['condition']))
     m.write_csv(target/'comparison.csv',rows)
     result={'group':group,'runs':summaries,'mean_l2_distribution':describe([s['mean_l2_m'] for s in summaries]),
-            'seed0_shared_B0':True,'analysis_script_sha256':x.sha(Path(__file__))}
+            'seed0_shared_B0':True,'statuses':{k:v['status'] for k,v in statuses.items()},
+            'successful_full191_count':len(summaries),'planned_count':len(all_items),'completion_fraction':len(summaries)/len(all_items),
+            'statistics_conditioned_on_complete_success':True,'analysis_script_sha256':x.sha(Path(__file__))}
     m.dump(target/'comparison.json',result)
     import matplotlib
     matplotlib.use('Agg')
@@ -158,7 +170,7 @@ def compare(suite,group,output):
     ax[0].set_ylabel('Frame L2 (m)'); ax[1].set_yscale('symlog',linthresh=.01); ax[1].set_ylabel('L2 (m, symlog)')
     ax[2].set_ylabel('Global orientation error (deg)'); ax[2].set_xlabel('Frame')
     for a in ax: a.axvline(104,color='gray',alpha=.5); a.grid(alpha=.25)
-    ax[0].legend(fontsize=8,ncol=2); fig.suptitle('M3.2 '+group+' — all 191 frames, no best-fit alignment')
+    ax[0].legend(fontsize=8,ncol=2); fig.suptitle('M3.2 '+group+' — complete successes only; failures listed separately; no alignment fit')
     fig.savefig(target/'frame_errors.png',dpi=150); plt.close(fig)
     fig,ax=plt.subplots(2,2,figsize=(14,9),constrained_layout=True)
     keys=['coarse_rotation_error_deg','relative_rotation_error_deg','coarse_translation_error_m','relative_translation_error_m']
@@ -194,6 +206,9 @@ def compare(suite,group,output):
     fig.savefig(target/'map_trajectories.png',dpi=150); plt.close(fig)
     text='|條件|v (m)|seed|Mean L2 (m)|103→104 RANSAC誤差 (°)|ICP誤差 (°)|總秒數|峰值GiB|\n|---|---:|---:|---:|---:|---:|---:|---:|\n'
     for r in rows:
+        if r['status']!='Success':
+            text+='|{condition}|{voxel_m}|{seed}|Failed Registration ({failure_pair})|未到達|未到達|{total_process_s:.3f}|{peak_rss_gib:.4f}|\n'.format(**r)
+            continue
         text+='|{condition}|{voxel_m}|{seed}|{mean_l2_m:.9f}|{ransac103_104_rotation_deg:.6f}|{icp103_104_rotation_deg:.6f}|{total_process_s:.3f}|{peak_rss_gib:.4f}|\n'.format(**r)
     (target/'comparison.md').write_text(text)
     m.dump(target/'manifest.json',{str(p.relative_to(m.ROOT)):x.sha(p) for p in target.rglob('*') if p.is_file()})

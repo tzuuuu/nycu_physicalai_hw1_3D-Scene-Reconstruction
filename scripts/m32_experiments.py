@@ -123,9 +123,38 @@ def suite_prepare(output):
     print(json.dumps({'prepared':str(output),'conditions':7,'disk_free_bytes':free},indent=2))
 
 
+def sensitivity_authorization(suite):
+    """僅獨立研究排程的新政策：演算法失敗可列為終態，系統異常仍鎖定。"""
+    suite = Path(suite)
+    directory = suite/'resume_02'
+    if (directory/'system_stopped.json').exists():
+        raise RuntimeError('Sensitivity suite stopped by system/integrity failure')
+    auth = read(directory/'authorization.json')
+    if (auth['remaining_conditions'] != ['B2','C1','C2','C3','C4']
+            or auth['registration_failure_policy'] != 'preserve_verify_then_continue'
+            or auth['B0_B1_rerun_authorized'] is not False):
+        raise RuntimeError('Invalid sensitivity resume scope')
+    for name, digest in auth['historical_links'].items():
+        if sha(suite/name) != digest:
+            raise RuntimeError('Historical stop/authorization changed: '+name)
+    if auth['suite_sha256'] != sha(suite/'suite.json'):
+        raise RuntimeError('Suite conditions changed')
+    return auth
+
+
+def terminal_receipt(suite, condition):
+    receipt = read(Path(suite)/'resume_02/status'/(condition+'.json'))
+    if receipt['condition'] != condition or receipt['status'] not in ['Success','Failed Registration'] or not receipt['integrity_verified']:
+        raise RuntimeError('Prior condition has no verified terminal status')
+    verify_hashes(receipt['evidence_sha256'])
+    return receipt
+
+
 def resume_authorization(suite):
     """保留原停止檔，以另存的明確恢復授權銜接；失敗後不得自動再恢復。"""
     suite = Path(suite)
+    if (suite/'resume_02/authorization.json').exists():
+        return sensitivity_authorization(suite)
     if (suite/'resume_failed.json').exists():
         raise RuntimeError('Resumed suite failed; stop without retry')
     auth_path = suite/'resume_authorization.json'
@@ -153,13 +182,19 @@ def condition_prepare(suite, condition):
         resume_authorization(suite)
         if condition=='B0':
             raise RuntimeError('B0 reconstruction must never be repeated')
+    policy = sensitivity_authorization(suite) if (suite/'resume_02/authorization.json').exists() else None
+    if policy is not None and condition not in policy['remaining_conditions']:
+        raise RuntimeError('B0/B1 cannot be rerun under sensitivity resume')
     plan = read(suite/'suite.json')
     item = next(i for i in plan['conditions'] if i['condition']==condition)
     index = plan['conditions'].index(item)
     for previous in plan['conditions'][:index]:
-        check = read(evidence_directory(suite,previous)/'integrity.after.json')
-        if not check['passed']:
-            raise RuntimeError('Prior condition did not pass')
+        if policy is not None:
+            terminal_receipt(suite, previous['condition'])
+        else:
+            check = read(evidence_directory(suite,previous)/'integrity.after.json')
+            if not check['passed']:
+                raise RuntimeError('Prior condition did not pass')
     if index and not read(evidence_directory(suite,plan['conditions'][0])/'historical_comparison.json')['matched']:
         raise RuntimeError('B0 has not matched M2')
     verify_hashes(read(suite/'protected.before.json'))
@@ -189,6 +224,7 @@ def condition_prepare(suite, condition):
                     git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                     original_suite_commit=plan['git_commit'],
                     recording_tool_sha256=sha(Path(__file__)), suite=str(suite.resolve()),
+                    sensitivity_authorization_sha256=sha(suite/'resume_02/authorization.json') if policy is not None else None,
                     hypothesis=hypothesis,frames=list(range(1,192)),factor_count=1522,
                     prediction='Outcome unknown; pose flip may persist or move. All outcomes retained.',
                     official_entrypoint=[sys.executable,str(ROOT/'reconstruct.py')]+cli_args(exp,v,item['seed']),
