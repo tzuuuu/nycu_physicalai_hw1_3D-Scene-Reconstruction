@@ -77,3 +77,13 @@ def test_official_selected_writer_preserves_sealed_baseline(rgbd_capture,tmp_pat
     api.write_run(str(path),'baseline',{'mapMeanL2':999},frame_count=3)
     with pytest.raises(RuntimeError,match='baseline'):
         a.verify_preservation(before,a.snapshot(path))
+
+
+def test_coverage_grid_handles_negative_coordinates_and_shared_support():
+    from scripts.m31_analysis import cell_rows
+    # 這是離線評估格網，沒有參與配準或影格選取。
+    retained=cell_rows(np.array([[-.01,0,0],[.01,0,0],[.02,0,0]]))
+    removed=cell_rows(np.array([[-.02,0,0],[.15,0,0]]))
+    assert len(retained)==2
+    assert len(np.union1d(retained,removed))==3
+    assert len(np.setdiff1d(removed,retained))==1
