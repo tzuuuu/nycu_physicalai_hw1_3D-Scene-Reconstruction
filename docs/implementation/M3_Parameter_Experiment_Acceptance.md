@@ -1,6 +1,60 @@
 # M3.2 Registration Parameter Experiment：已執行結果與系統停止驗收
 
-## 最新狀態：最終恢復在前置完整性檢查停止（2026-11-18）
+## 最新狀態：兩路徑政策與C2審計完成；C3啟動前資源監測權限停止
+
+本次使用者明確核准將 **`experiments/.DS_Store`、`research_outputs/.DS_Store`** 兩個精確路徑列為非科學性OS中繼資料，並恢復C2後置審計與C3→C4。**兩路徑政策與C2補充審計已完成；C3正式重建與C4均未啟動，M3.2尚未完成最終驗收。**
+
+### 本次已完成範圍與測試
+
+- `945aa7a`：獨立提交精確兩路徑政策與先寫的測試。只有明確恢復範圍內的既存一般檔案可以排除；符號連結（即使目標SHA相同）、缺檔、目錄、第三路徑與科學檔案異動仍停止。每次記錄路徑、前後SHA、存在狀態、檔案類型、是否排除與差異；預設驗證器不啟用例外。相關21項測試通過。
+- `d91dfa3`：恢復授權綁定前次停止／授權SHA，保留B0後置證據位置；活躍中繼檔檢查日誌在暫存目錄追加，每個入口結束後獨立保存為不可覆寫的研究紀錄，避免將正在追加的日誌誤當凍結產物。正式恢復前完整 **227 passed in 7.03s**，`git diff --check`通過。
+- 新恢復紀錄為 `research_outputs/m32_20261118_suite_01/resume_03/`，其中 `authorization.json` 引用原suite、原停止、前次授權及前次恢復停止保全紀錄SHA；不改寫任何歷史清單、停止JSON或Traceback。原864個既有保護項目另存 `protected.before.json`。
+
+### C2補充審計：成功，原finalize失敗歷史保留
+
+結果另存 `resume_03/C2_audit/`：核對正式Mean L2、1522因素及同次觀測、Turtle／Seal、唯一FullBatch Baseline、實際參數、固定環境／執行緒紀錄、1..191影格及190對身分、保存位姿與矩陣連乘、正式Declare／Explore／Query紀錄與地圖、研究紀錄及重要檔案SHA。重建與資源紀錄為原同次執行，沒有新增重建。
+
+**狀態：`Reconstruction Completed / Scientific Integrity Verified / Historical Metadata Guard Stop Preserved`**。
+
+原始float64 Mean L2仍為 **3.1653524385522602 m**。新審計保存 `summary.json`、`analysis/`（逐幀、逐對CSV、位姿與誤差圖）、正式結果的唯讀複本 `official_snapshot/`，及獨立 `resume_03/status/C2.json` 審計終態。該終態明列 `original_finalize_succeeded=False`；原C2目錄及 `resume_02/status/` 沒有補造成功receipt，原缺少的 `integrity.after.json` 仍未建立。`full_workflow_complete=False` 專指原finalize未成功，不推翻本次科學資料審計通過。
+
+C2的103→104與前輪相同：RANSAC旋轉誤差172.158898863°、平移誤差1.253175719 m；ICP旋轉誤差179.776546688°、平移誤差0.946915449 m；重大錯解位置仍為current frame104。其八因素、原Runtime／RSS與地圖指標沿用下列實際數值，不將審計耗時冒充新重建耗時。
+
+### 新停止原因：沙箱禁止ps，發生於C3正式流程之前
+
+執行 `scripts/m32_final_recovery.py run --condition C3` 時，在 `record_command._rss_bytes(os.getpid())` 的資源監測可用性檢查遭沙箱拒絕：
+
+```text
+PermissionError: [Errno 1] Operation not permitted: 'ps'
+```
+
+此錯誤發生於 `condition_prepare`、官方Declare與Reconstruction之前。C3沒有workspace、研究目錄、`execution.started.json`或正式重建；C4亦未啟動。**這是資源監測工具的執行權限異常，不是RANSAC／ICP配準失敗，也沒有RSS超限量測值。** 不繞過監測、不換工具、不重試，不把它列入正式演算法嘗試分母。
+
+新的原始停止保存在 `resume_03/system_stopped.json`；`stop_preservation/C3_entrypoint.console.log`保存入口Traceback。`stop_preservation/summary.json`與中繼檔bytes、獨立SHA日誌保存停止後核對。初始553項、resume_02的669項、C2開始前792項及本次864項清單的科學資料比較均通過，只有兩個已核准中繼檔採精確排除；未發現第三個未授權SHA差異。歷史停止／授權、B0／B1／B2／C1／C2證據SHA、教師核心與環境SHA、原始capture及M2／M3.1正式成果也經停止後唯讀保全核對。
+
+### 七條件目前實際結果
+
+|條件|Registration Voxel (m)|Seed|實際狀態|完整191張Mean L2 (m)|
+|---|---:|---:|---|---:|
+|B0|0.05|0|既有正式成功|3.174055104788|
+|B1|0.03|0|70→71配準失敗|無完整值|
+|B2|0.08|0|既有正式成功|0.274959466593|
+|C1|0.05|1|既有正式成功|0.155696709607|
+|C2|0.05|2|正式重建完成；本次補充科學完整性審計通過，歷史停止保留|3.165352438552|
+|C3|0.05|3|未執行；啟動前ps權限錯誤停止|未執行|
+|C4|0.05|4|未執行；依系統停止規則未啟動|未執行|
+
+正式演算法嘗試仍5次：4次完整191張重建、1次配準失敗、2組未執行。B組完整重建2／3；C組實際嘗試seed0／1／2皆完整，原計畫仍只有3／5已有結果。C組Mean L2分布仍n=3：平均2.165034750982 m、樣本標準差1.740143229016 m、中位數3.165352438552 m、最小0.155696709607 m、最大3.174055104788 m；**不是五seed研究結果**。B／C既有比較圖、全序列錯解、八因素、Runtime／RSS及地圖結果保留；C2本次新增審計誤差圖不冒充完整五seed比較圖。未產生C3／C4數值或圖表。
+
+B2與C1仍不能被宣稱為可泛化的最佳Voxel或Seed。原Discussion and Future Work（含B1失敗、逐對Registration Success Rate、Failure-aware Frame Selection及Robustness與Accuracy區別）保持規劃，沒有實作。未改教師核心、CLI、API、Ontology、lock或原始資料；未重跑B0至C2。保持main、既有Snapshot與實驗產物不加入Git。
+
+**依工具異常停止規則維持停止。後續若核准恢復，須使用新授權紀錄並在允許既有ps資源監測的執行權限下先驗證監測可用性；不刪除本次停止、不降低3 GiB護欄。尚不能申請M3.2完整驗收或Phase 1結束。**
+
+---
+
+以下為前次及更早的歷史驗收紀錄；與本次狀態不同之處以本節為準。
+
+## 歷史狀態：前次最終恢復在中繼檔檢查停止（2026-11-18）
 
 **未完成M3.2最終驗收；C2新後置審計、C3與C4均未啟動。** 使用者本輪只核准精確排除 `experiments/.DS_Store`，並明定任何其他未授權檔案異動立即停止。新恢復入口在 `initialize` 比對原suite清單時發現 **`research_outputs/.DS_Store` 也已變動**，因此正確停止；未擴大政策、未建立 `resume_03`、未重建任何條件，亦未開始D、Phase 2、Bonus或英文報告。
 
