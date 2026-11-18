@@ -21,3 +21,13 @@ def test_records_actual_exit_output_and_does_not_overwrite(tmp_path, code):
     assert result['status'] == ('process_completed_requires_artifact_validation' if code == 0 else 'failed')
     with pytest.raises(FileExistsError):
         recorder.run([sys.executable, '-c', 'pass'], output)
+
+
+def test_resource_guard_stops_child_and_preserves_evidence(tmp_path, monkeypatch):
+    monkeypatch.setattr(recorder, '_rss_bytes', lambda pid: 20 * 2**20)
+    result = recorder.run([sys.executable, '-c', "import time; print('started', flush=True); time.sleep(10)"],
+                          tmp_path / 'guarded', rss_limit_gib=0.01)
+    assert result['exit_code'] != 0
+    assert result['status'] == 'failed'
+    assert 'exceeds' in result['resource_guard']['reason']
+    assert (tmp_path / 'guarded' / 'memory_samples.jsonl').exists()
