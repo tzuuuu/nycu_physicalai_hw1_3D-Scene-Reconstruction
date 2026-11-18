@@ -127,10 +127,11 @@ def compare(suite,group,output):
     desired=['B0','B1','B2'] if group=='B' else ['B0','C1','C2','C3','C4'] if group=='C' else [c[0] for c in x.CONDITIONS]
     all_items=[i for i in plan['conditions'] if i['condition'] in desired]
     statuses={i['condition']:x.terminal_receipt(suite,i['condition']) for i in all_items} if (suite/'resume_02/authorization.json').exists() else {}
-    items=[i for i in all_items if not statuses or statuses[i['condition']]['status']=='Success']
-    summaries=[x.read(Path(i['output'])/'analysis/summary.json') for i in items]
-    frames=[read_csv(Path(i['output'])/'analysis/frames.csv') for i in items]
-    pairs=[read_csv(Path(i['output'])/'analysis/pairs.csv') for i in items]
+    items=[i for i in all_items if not statuses or statuses[i['condition']]['status']!='Failed Registration']
+    locations=[Path(statuses.get(i['condition'],{}).get('analysis_directory',str(Path(i['output'])/'analysis'))) for i in items]
+    summaries=[x.read(p/'summary.json') for p in locations]
+    frames=[read_csv(p/'frames.csv') for p in locations]
+    pairs=[read_csv(p/'pairs.csv') for p in locations]
     rows=[]
     for s in summaries:
         p=s['pair103_104']
@@ -157,6 +158,8 @@ def compare(suite,group,output):
             'seed0_shared_B0':True,'statuses':{k:v['status'] for k,v in statuses.items()},
             'successful_full191_count':len(summaries),'planned_count':len(all_items),'completion_fraction':len(summaries)/len(all_items),
             'statistics_conditioned_on_complete_success':True,'analysis_script_sha256':x.sha(Path(__file__))}
+    result['C2_original_metadata_guard_stop_preserved'] = 'C2' in statuses
+    result['C2_original_finalize_succeeded'] = False if 'C2' in statuses else None
     m.dump(target/'comparison.json',result)
     import matplotlib
     matplotlib.use('Agg')
