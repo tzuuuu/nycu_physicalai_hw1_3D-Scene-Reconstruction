@@ -8,6 +8,7 @@ os.environ.setdefault("OMP_NUM_THREADS", "1")
 import sys
 import argparse
 import shutil
+import math
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,6 +87,9 @@ def main():
                              'that records a different backend is an error.')
     parser.add_argument('--voxel-size', type=float, default=0.05,
                         help='registration voxel size in metres (default: 0.05)')
+    # 僅降低地圖副本密度；省略時沿用原有完整點雲行為。
+    parser.add_argument('--down-voxel', type=float, default=None,
+                        help='optional map-only voxel size in metres (default: no map downsampling)')
     parser.add_argument('--seed', type=int, default=0,
                         help='Open3D RANSAC seed (default: 0)')
     parser.add_argument('--no-vis', action='store_true',
@@ -106,6 +110,9 @@ def main():
                         help='explicit dry run (default behavior): print the results but write nothing into the '
                              'experiment file')
     args = parser.parse_args()
+    if args.down_voxel is not None and (not math.isfinite(args.down_voxel)
+                                        or args.down_voxel <= 0):
+        parser.error("--down-voxel must be finite and positive")
 
     args.experiment = api.resolve_experiment_path(args.experiment)
     if args.selection_query and not os.path.isfile(args.selection_query):
@@ -156,7 +163,8 @@ def main():
         pcd, pred_cam_pos = utils.reconstruct(
             data_root, version, frames=[int(stem) for stem, _, _ in frames],
             build_cloud=build_cloud, voxel_size=args.voxel_size,
-            registration_seed=args.seed, pipeline_callback=pipe_cb)
+            registration_seed=args.seed, pipeline_callback=pipe_cb,
+            down_voxel=args.down_voxel)
 
         # Require one set of frame factors per consumed frame and one set of
         # pair factors per adjacent consumed frame. An incomplete pipeline run
@@ -254,6 +262,7 @@ def main():
     pcd, pred_cam_pos = utils.reconstruct(
         data_root, version, frames=frames, build_cloud=build_cloud,
         voxel_size=args.voxel_size, registration_seed=args.seed,
+        down_voxel=args.down_voxel,
         )
     exp_dir = api._workspace_for_experiment_file(args.experiment)
     png_path = os.path.join(exp_dir, "reconstruction.png")
