@@ -129,3 +129,28 @@ def test_stopped_suite_cannot_start_another_condition(tmp_path):
     (tmp_path/'suite_stopped.json').write_text('{"stopped":true}')
     with pytest.raises(RuntimeError,match='explicitly stopped'):
         x.condition_prepare(tmp_path,'B1')
+
+
+def test_resume_is_bound_to_original_stop_and_preserves_b0_mapping(tmp_path):
+    import json
+    stop=tmp_path/'suite_stopped.json'; stop.write_text('{"reason":"original failure"}')
+    suite=tmp_path/'suite.json'; suite.write_text('{"conditions":[]}')
+    evidence=tmp_path/'recovered_b0'; evidence.mkdir()
+    auth={'user_instruction':'核准繼續，恢復後置作業與剩餘六組',
+          'remaining_conditions':['B1','B2','C1','C2','C3','C4'],
+          'original_stop_sha256':x.sha(stop),'original_suite_sha256':x.sha(suite),
+          'B0_postprocess_output':str(evidence)}
+    original=stop.read_bytes()
+    (tmp_path/'resume_authorization.json').write_text(json.dumps(auth))
+    assert x.resume_authorization(tmp_path)==auth
+    assert x.evidence_directory(tmp_path,{'condition':'B0','output':'old'})==evidence
+    with pytest.raises(RuntimeError,match='never be repeated'): x.condition_prepare(tmp_path,'B0')
+    assert stop.read_bytes()==original
+    auth['remaining_conditions'].append('D1')
+    (tmp_path/'resume_authorization.json').write_text(json.dumps(auth))
+    with pytest.raises(RuntimeError,match='does not match'): x.resume_authorization(tmp_path)
+
+
+def test_resume_failure_locks_all_further_conditions(tmp_path):
+    (tmp_path/'resume_failed.json').write_text('{}')
+    with pytest.raises(RuntimeError,match='failed'): x.resume_authorization(tmp_path)

@@ -42,7 +42,8 @@ def severe(pairs,key,threshold):
 def analyze(output, audit=None):
     output=Path(output).resolve()
     if audit is None:
-        check=x.read(output/'integrity.after.json')
+        plan=x.read(output/'preregistration.json')
+        check=x.read(x.evidence_directory(plan['suite'],plan)/'integrity.after.json')
         if not check['passed']:
             raise RuntimeError('Incomplete official run; no success analysis')
     else:

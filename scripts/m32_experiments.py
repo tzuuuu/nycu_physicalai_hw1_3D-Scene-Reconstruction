@@ -123,18 +123,44 @@ def suite_prepare(output):
     print(json.dumps({'prepared':str(output),'conditions':7,'disk_free_bytes':free},indent=2))
 
 
+def resume_authorization(suite):
+    """保留原停止檔，以另存的明確恢復授權銜接；失敗後不得自動再恢復。"""
+    suite = Path(suite)
+    if (suite/'resume_failed.json').exists():
+        raise RuntimeError('Resumed suite failed; stop without retry')
+    auth_path = suite/'resume_authorization.json'
+    if not auth_path.is_file():
+        raise RuntimeError('Suite explicitly stopped; further execution needs user acceptance')
+    auth = read(auth_path)
+    if (auth['user_instruction'] != '核准繼續，恢復後置作業與剩餘六組'
+            or auth['remaining_conditions'] != ['B1','B2','C1','C2','C3','C4']
+            or auth['original_stop_sha256'] != sha(suite/'suite_stopped.json')
+            or auth['original_suite_sha256'] != sha(suite/'suite.json')):
+        raise RuntimeError('Resume authorization does not match stopped suite')
+    return auth
+
+
+def evidence_directory(suite, item):
+    suite = Path(suite)
+    if item['condition']=='B0' and (suite/'resume_authorization.json').is_file():
+        return Path(resume_authorization(suite)['B0_postprocess_output'])
+    return Path(item['output'])
+
+
 def condition_prepare(suite, condition):
     suite = Path(suite)
     if (suite/'suite_stopped.json').exists():
-        raise RuntimeError('Suite explicitly stopped; further execution needs user acceptance')
+        resume_authorization(suite)
+        if condition=='B0':
+            raise RuntimeError('B0 reconstruction must never be repeated')
     plan = read(suite/'suite.json')
     item = next(i for i in plan['conditions'] if i['condition']==condition)
     index = plan['conditions'].index(item)
     for previous in plan['conditions'][:index]:
-        check = read(Path(previous['output'])/'integrity.after.json')
+        check = read(evidence_directory(suite,previous)/'integrity.after.json')
         if not check['passed']:
             raise RuntimeError('Prior condition did not pass')
-    if index and not read(Path(plan['conditions'][0]['output'])/'historical_comparison.json')['matched']:
+    if index and not read(evidence_directory(suite,plan['conditions'][0])/'historical_comparison.json')['matched']:
         raise RuntimeError('B0 has not matched M2')
     verify_hashes(read(suite/'protected.before.json'))
     verify_hashes(plan['core_sha256'])
@@ -160,7 +186,9 @@ def condition_prepare(suite, condition):
                   'Fixed-scale seeds probe sampling stability; lower GT error does not define a general seed strategy.')
     manifest = dict(item, algorithm=algorithm, versions=plan['versions'],
                     capture_sha256=plan['capture_sha256'],core_sha256=plan['core_sha256'],
-                    git_commit=plan['git_commit'], suite=str(suite.resolve()),
+                    git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+                    original_suite_commit=plan['git_commit'],
+                    recording_tool_sha256=sha(Path(__file__)), suite=str(suite.resolve()),
                     hypothesis=hypothesis,frames=list(range(1,192)),factor_count=1522,
                     prediction='Outcome unknown; pose flip may persist or move. All outcomes retained.',
                     official_entrypoint=[sys.executable,str(ROOT/'reconstruct.py')]+cli_args(exp,v,item['seed']),
