@@ -46,3 +46,10 @@ def test_resource_extrapolation_is_explicit_and_nonoverwriting(tmp_path):
     assert (run_dir / 'summary.json').read_text() == source
     with pytest.raises(FileExistsError):
         summary_tool.summarize(tmp_path)
+
+
+@pytest.mark.parametrize('value', [0, -0.05, float('nan'), float('inf')])
+def test_recorder_rejects_invalid_map_voxel_before_writing(tmp_path, value):
+    with pytest.raises(ValueError, match='down_voxel'):
+        preflight.run(tmp_path, tmp_path / 'unused', 5, down_voxel=value)
+    assert not (tmp_path / 'unused').exists()

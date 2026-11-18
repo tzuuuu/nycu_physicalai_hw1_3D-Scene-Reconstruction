@@ -31,9 +31,11 @@ def factor_summary(frame, pair):
             for values in [[float(record['value']) for key, record in records.items() if key[0] == name]]}
 
 
-def run(data_root, output, frame_count):
+def run(data_root, output, frame_count, down_voxel=None):
     if frame_count < 2:
         raise ValueError('Preflight requires at least two frames')
+    if down_voxel is not None and (not np.isfinite(down_voxel) or down_voxel <= 0):
+        raise ValueError('down_voxel must be finite and positive')
     data_root = Path(data_root).resolve()
     output = Path(output).resolve()
     # 禁止輸出進入原始 capture，且不覆蓋任何既有執行目錄。
@@ -53,7 +55,7 @@ def run(data_root, output, frame_count):
                'data_root': str(data_root), 'output': str(output), 'frames': frames,
                'git_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
                'parameters': {'version': 'open3d', 'voxel_size': 0.05,
-                              'registration_seed': 0, 'build_cloud': True, 'down_voxel': None},
+                              'registration_seed': 0, 'build_cloud': True, 'down_voxel': down_voxel},
                'python': platform.python_version(), 'open3d': o3d.__version__,
                'numpy': np.__version__, 'rss_at_start_bytes': peak_rss_bytes()}
     log = (output / 'events.jsonl').open('x', encoding='utf-8')
@@ -113,6 +115,7 @@ if __name__ == '__main__':
     parser.add_argument('--data-root', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--frames', required=True, type=int)
+    parser.add_argument('--down-voxel', type=float, default=None)
     args = parser.parse_args()
-    result = run(args.data_root, args.output, args.frames)
+    result = run(args.data_root, args.output, args.frames, down_voxel=args.down_voxel)
     raise SystemExit(0 if result['status'] == 'completed_requires_review' else 1)
