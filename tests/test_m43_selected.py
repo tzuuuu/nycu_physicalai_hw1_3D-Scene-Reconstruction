@@ -131,3 +131,15 @@ def test_offline_report_pipeline_with_synthetic_saved_data(rgbd_capture,tmp_path
     assert comparison['new_selected_measurements']==10
     assert len(list((out/'figures').glob('*.png')))==6
     assert (out/'scene_coverage.json').is_file() and (out/'figure_manifest.json').is_file()
+
+
+def test_float32_gt_promoted_before_first_camera_subtraction():
+    # Saved capture GT is float32; official evaluation promotes BEFORE subtraction.
+    gt=np.array([[10.123,-20.321,30.234,1,0,0,0],
+                 [12.7,4.2,-2.2,1,0,0,0]],dtype=np.float32)
+    positions=np.array([[0,0,0],[2.5,-24.5,32.5]],dtype=np.float64)
+    expected_gt=gt.astype(np.float64)[:,:3]-gt.astype(np.float64)[0,:3]
+    expected_error=np.linalg.norm(positions*[1,-1,-1]-expected_gt,axis=1)
+    _,truth,error=r.frame_errors(positions,gt,[1,2])
+    np.testing.assert_array_equal(truth,expected_gt)
+    np.testing.assert_allclose(error,expected_error,rtol=0,atol=1e-12)

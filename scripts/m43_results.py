@@ -12,6 +12,8 @@ from scripts.m4_capture_check import sha
 
 
 def frame_errors(positions,gt,indices):
+    # Match official utils.visualize_and_evaluate: promote before subtraction.
+    gt=np.asarray(gt,dtype=np.float64)
     q=gt[0,3:7];rotation=Rotation.from_quat([q[1],q[2],q[3],q[0]]).as_matrix()
     truth=(gt[:,:3]-gt[0,:3])@rotation
     pred=np.asarray(positions)*np.array([1.,-1.,-1.])
@@ -76,14 +78,15 @@ def occupancy(points,size=.20):
     return result
 
 
-def results(out):
+def results(out,source=None):
     import api
     from scripts.m43_selected import graph_delta
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    out=Path(out);frames=read(a.SPEC)['selected_indices'];n=len(frames);obs=out/'observation'
-    delta=graph_delta(out/'baseline.before.ttl',a.TTL,frames)
+    out=Path(out);source=out if source is None else Path(source)
+    frames=read(a.SPEC)['selected_indices'];n=len(frames);obs=source/'observation'
+    delta=graph_delta(source/'baseline.before.ttl',a.TTL,frames)
     arrays=validated_arrays(obs,frames)
     events=a.lines(obs/'events.jsonl');fr=[r['stem'] for r in events if r['kind']=='frame']
     if fr!=frames:raise RuntimeError('Wrong frame event order')
@@ -131,7 +134,7 @@ def results(out):
     write(out/'scene_coverage.json',dict(baseline_to_selected=bc,selected_to_baseline=sc,occupancy=occ,regions=regions,
         limitation='Relative observed-map agreement in fixed reference; combines changed viewpoints, density and pose error. No absolute room/surface completeness GT.'))
     csv_write(out/'spatial_coverage.csv',regions)
-    baseexec=read(a.BASE/'command/execution.json');selexec=read(out/'command/execution.json')
+    baseexec=read(a.BASE/'command/execution.json');selexec=read(source/'command/execution.json')
     baseobs=read(a.BASE/'observation/observer_summary.json');selobs=read(obs/'observer_summary.json')
     summary=[]
     for name,count,errors,ex,ob,points,same_errors in [

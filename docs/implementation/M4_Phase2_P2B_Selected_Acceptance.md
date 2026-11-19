@@ -2,7 +2,7 @@
 
 日期：2026-11-19（臺灣）。
 
-**目前狀態：P2-A 資料驗證完成、唯一 P2-B 規則與索引已凍結；正式 Selected 尚未開始，M4.3 尚未完成驗收。** Codex 沙箱已實測禁止 `/bin/ps` 讀取程序樹；正式負載必須由下列整合式 Mac Terminal 命令通過原生 Preflight 後啟動。本文件不把合成資料測試當成正式結果。
+**M4.3 技術驗收通過：唯一正式 Selected 成功、同次科學成果保全、比較與圖表完成、已停止；供人工最終驗收。** 原生 Terminal 的11項必要 Preflight全部通過，40項測試通過、0失敗、0略過。正式重建僅一次；其後離線後處理精度缺陷已修復，原失敗紀錄完整保留，未重新重建。未提交最終作業。
 
 ## 1. 計畫決策與來源
 
@@ -89,13 +89,13 @@
 
 唯一正式目錄：`research_outputs/m43_p2b_selected_01/`。全部必要 Preflight 通過後以 `mkdir(exist_ok=False)` 建立永久單次鎖；失敗不得清除鎖或自動重跑。每次 Preflight 有唯一時間戳目錄，未通過不建立正式目錄、不啟動負載。
 
-在 **Mac Terminal** 執行以下單一命令（本次已授權，不需逐項核准）：
+以下為**已執行的一次性歷史命令**；正式目錄及Selected Run已存在，不再執行：
 
 ```bash
 cd /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1 && OMP_NUM_THREADS=1 MPLCONFIGDIR=/private/tmp/m43_matplotlib /Users/alyssa/.pixi/bin/pixi run -e habitat python -m scripts.m43_selected run
 ```
 
-此命令整合所有原生 Preflight、正式一次 Selected、RSS監測、同次輸出、圖表與來源驗證。正式 Selected 的核心 CLI 由 runner 原樣傳入 `reconstruct.py --experiment … --selection-query … --override-experiment --version open3d --voxel-size 0.05 --seed 0 --down-voxel 0.05 --no-vis`。只有合成資料測試可以多次執行，不碰正式Capture。
+此次命令已完成所有原生 Preflight及正式一次 Selected；比較後處理其後以離線方式修復完成。正式 Selected 的核心 CLI 由 runner 原樣傳入 `reconstruct.py --experiment … --selection-query … --override-experiment --version open3d --voxel-size 0.05 --seed 0 --down-voxel 0.05 --no-vis`。只有合成資料測試可以多次執行，不碰正式Capture。
 
 ## 6. 事前比較方式與驗收準則
 
@@ -103,13 +103,13 @@ cd /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1 && OMP_NUM_THREADS=1 M
 
 |比較項目|P2-A|P2-B|
 |---|---|---|
-|完整輸入數|320|204（凍結）|
-|完整Mean L2 (m)|0.07025845236530649|待正式執行|
-|Same-Frame Mean L2|由保存的320個位姿取S，不重建|新建的S位姿，待執行|
-|Worker時間 (s)|220.751497|待正式執行|
-|重建函式觀測時間 (s)|207.318515709|待正式執行|
-|完整Map Point Count|2,054,529|待正式執行|
-|八因素來源|正式Turtle及同次Observer2554筆|新Observer1626筆，待實測|
+|完整輸入數|320|204（凍結且實測）|
+|完整Mean L2 (m)|0.07025845236530649|0.04487258932911286|
+|Same-Frame Mean L2|0.07170949737501646（保存位姿取S）|0.04487258932911286（只用S重建）|
+|Worker時間 (s)|220.751497|163.365968959|
+|重建函式觀測時間 (s)|207.318515709|145.343667667|
+|完整Map Point Count|2,054,529|1,277,572|
+|八因素來源|正式Turtle及同次Observer2554筆|新Observer1626筆，已驗證|
 
 兩者 Worker 時間均含匯入、Observer、完整地圖／位姿保存、評估、原生圖及官方Run寫入；不含Preflight或後續獨立比較Worker。Baseline另有因素量測／Seal成本，Selected另有Query／usedFrame寫入成本；另列重建函式call-to-return計時及Observer成本，避免把不同儲存成本當成純演算法加速。
 
@@ -121,14 +121,102 @@ Coverage使用完整同次地圖，不用繪圖樣本；固定座標中的相對
 
 ## 7. 正式結果產物與交接
 
-正式執行成功後新增 `comparison.csv/json`、`same_frame_l2.csv`、`selected_factors.csv`、`factor_statistics.json`、`scene_coverage.json`、`spatial_coverage.csv`、完整點雲距離陣列、`research_conclusions.md`，並產生共同尺度俯視／3D、紅Estimated黑GT軌跡、Same-Frame L2、八因素分布及時間／誤差／影格數圖。完整資料與確定性stride繪圖樣本分開，`figure_manifest.json`記錄來源與SHA；不以隱藏第二次重建補造缺失。
+離線結案目錄 `research_outputs/m43_p2b_closeout_01/analysis/` 已新增 `comparison.csv/json`、`same_frame_l2.csv`、`selected_factors.csv`、`factor_statistics.json`、`scene_coverage.json`、`spatial_coverage.csv`、完整點雲距離陣列、`research_conclusions.md`，並產生共同尺度俯視／3D、紅Estimated黑GT軌跡、Same-Frame L2、八因素分布及時間／誤差／影格數圖。完整資料與確定性stride繪圖樣本分開，`figure_manifest.json`記錄來源與SHA；不以隱藏第二次重建補造缺失。
 
 失敗則保存真實最後配對、部分因素與變換、完成前綴、traceback及監測原因；沒有完整結果就不報完整L2／地圖／成功Run，也不自動換Seed、Voxel或Selection重跑。
 
-目前六項研究問題（時間、定位精度、因素關聯、受影響場景、效率品質取捨、結果限制）尚不能以Selected實證回答。已具備分析與檢核流程，正式數值須等上述唯一執行。成功回傳後仍需檢視共同尺度圖、缺失結構與失敗位置，更新本驗收及Phase2交接；不得由一次實驗推論顯著性或最佳影格比例。
+六項研究問題的正式回答見第11節。共同尺度俯視、3D、軌跡、八因素與分區圖片已檢視；技術驗證完成，人工最終驗收仍由使用者決定。不得由一次實驗推論顯著性或最佳影格比例。
 
 Git僅提交必要新程式、測試、規則／Query、決策及驗收文件。Capture、生成Turtle、NPY點雲、圖表、大型研究產物都保持忽略。來源綁定在 `m43/readiness.json`；正式執行收據另記實際Git commit及所有tracked sources SHA。Manifest不含自身。本次不開始P2-C、Bonus、新Seed／Voxel、英文報告或Submission ZIP；不宣稱最終作業已提交。
 
 ## 8. 沙箱工程測試紀錄（正式執行前）
 
-整合測試結果：**34 passed、6 skipped**。6項skip全部為已知沙箱`ps`限制的原生程序樹測試，不能視為原生Preflight已通過；Mac Terminal將以`M42_REQUIRE_NATIVE=1`強制40項全部通過、零skip。合成測試涵蓋官方Selected CLI／跨格配對／GT延後讀取、歷史triple保全、同次完整地圖與位姿、失敗前綴、正式鎖與Preflight拒絕、固定首相機／索引誤差、完整比較圖表／Coverage流程。沒有使用正式Capture進行測試重建。
+整合測試結果：**34 passed、6 skipped**。6項skip全部為已知沙箱`ps`限制的原生程序樹測試；其後Mac Terminal以`M42_REQUIRE_NATIVE=1`實際取得40項全部通過、零skip，不以沙箱結果代替原生驗證。合成測試涵蓋官方Selected CLI／跨格配對／GT延後讀取、歷史triple保全、同次完整地圖與位姿、失敗前綴、正式鎖與Preflight拒絕、固定首相機／索引誤差、完整比較圖表／Coverage流程。沒有使用正式Capture進行測試重建。
+
+
+## 9. 正式執行與離線修復歷史
+
+執行來源 Git：`c91078d879f4a65c9525bcfcfc76468929c7a292`。正式目錄 `research_outputs/m43_p2b_selected_01/` 已消耗本次唯一授權；`observation/observer_summary.json`證明reconstruct_calls=1、204張／203對完整回傳，Worker exit=0、reason=null。沒有新Capture、Baseline重跑、第二次隱藏重建或參數／索引調整。
+
+Terminal最初的`terminal_status.json`保留 **Selected stopped; acceptance withheld; no retry**，原因是獨立後處理在驗證Baseline時遇到3.2020728846×10⁻⁹m差異。這不是RANSAC／ICP失敗：正式Selected與Turtle Run在此之前已成功保存。
+
+根因為Capture GT本身是float32，而新離線`frame_errors`在轉float64前便做了首相機平移相減；官方`utils.visualize_and_evaluate`與M4.2則先轉float64。先以實際保存資料及最小合成float32測試重現失敗，再補上明確float64轉型；維持1e-12檢查，不放寬容許值。修復後Baseline及Selected重算Mean L2與官方值差異皆為0。回歸與相關測試 **10 passed**，未碰核心、GT、正式位姿或地圖。原合成測試主要用float64／零首平移，未涵蓋真實float32在非零首相機位置下的相減精度；新增此回歸案例以避免再發生。
+
+原Terminal文件已逐位元封存於`m43_p2b_closeout_01/terminal_generated_acceptance_original.md`，原Manifest的39項已先完整驗證。原失敗後處理的stdout／stderr／RSS、terminal_status及manifest不修改；新結果存到獨立結案目錄。執行時的原程式及文件bytes依Git及preregistration SHA存於`execution_sources/`，與本次修復來源分開。
+
+|階段|時間(s)|程序樹RSS峰值(bytes)|狀態|
+|---|---:|---:|---|
+|P2-A正式重建Worker|220.751497|1198620672|原M4.2成功|
+|P2-B正式重建Worker|163.365968959|751648768|成功，唯一一次|
+|P2-B原離線後處理|4.117353542|374587392|精度檢核停止，保留原紀錄|
+|離線修復／完整比較Worker|20.751796916|741687296|成功，無重建|
+|離線詳細圖表Worker|7.627151791|779075584|成功，無重建|
+
+全部上述負載均由原程序樹監測器與3GiB護欄監測，watchdog解除。正式Selected共324筆RSS取樣。離線後處理與圖表成本獨立揭露，不混入Selected重建runtime。Observer額外觀測時間：P2-A0.525915282s、P2-B0.891288812s；函式時間含函式執行期間的Observer，完整回傳地圖匯出在函式計時停止後，仍屬Worker時間。
+
+## 10. 八因素、累積漂移與場景比較
+
+下表為全體各自結果的**中位數**；原始所有min／p05／mean／std／median／p95／max見`analysis/factor_statistics.json`。原Turtle為官方儲存精度，Selected為同次Observer原始浮點；兩者不是相同配對母體。
+
+|因素|P2-A中位數|P2-B中位數|
+|---|---:|---:|
+|CoarseRANSACCorrespondences|10558|9873|
+|CoarseRANSACFitness|0.9509453|0.916987137|
+|CoarseRANSACRMSE|0.02705007|0.0277390976|
+|ICPInlierCorrespondences|10557|9833|
+|ICPInlierFitness|0.9475837|0.915486726|
+|ICPInlierRMSE|0.01883593|0.0198003471|
+|RawPointCount|262144|262144|
+|VoxelizedPointYield|11022|10893.5|
+
+Selected的單張RawPointCount及VoxelizedPointYield已按相同原索引逐筆核對Baseline，全部相等；其整體分布變動來自抽樣組成。新配對量測包含87對原索引步距1、116對步距2，全部正支援、有限有效變換。步距2的ICP Fitness中位數0.897988，步距1為0.920283；Selected整體Fitness比FullBatch低，RMSE略高、對應點中位數略少，與跨格較低局部重疊相容。步距1組亦受保守保留弱邊的選擇影響，不能將兩組當成隨機對照。
+
+最低Coarse／ICP Fitness在43→45，分別0.709430756／0.711858235，仍成功；19→21、289→291亦較低。最低Coarse／ICP Correspondences仍在147→148，3672／3639；該弱支援橋接邊實際保留。最高Coarse RMSE在257→258（0.044040255m），最高ICP RMSE在254→255（0.028664935m）。沒有失敗影格或零支援配對；不可把這些低值配對標成重建失敗。
+
+Selected最大L2為0.155863799533m、位於原Frame320；中位數0.038434006764m、p95為0.106105297949m。Baseline最大為0.283142486707m，也在320。末段誤差仍上升；Selected最大的單步L2增加在296→297（0.018766536m）、300→301（0.017985431m）、297→299（0.014809328m）。這些只是事後診斷，沒有回頭調整選幀。
+
+|原索引區間|S內張數|P2-A Same-Frame Mean L2(m)|P2-B Mean L2(m)|
+|---|---:|---:|---:|
+|1–100|59|0.010996572|0.010693896|
+|101–200|64|0.050127230|0.043368311|
+|201–296|63|0.110270786|0.060791704|
+|297–320|18|0.212485416|0.106534391|
+
+204個共同索引中仍有36張Selected誤差高於Baseline；平均改善不代表逐張改善。六個配對因素與Selected L2增量的描述性Spearman係數約−0.024至0.063，未顯示單一局部因素能直接解釋累積誤差；不作顯著性檢定或因果結論。完整配對、低尾與誤差增量位置見`report_details/selected_pair_diagnostics.csv`、`diagnostics_summary.json`。
+
+完整地圖比較（固定原首相機，未擬合）：
+
+- Baseline→Selected全點最近鄰≤0.20m：**99.997517679%**；距離中位數0.014976430m、p95 0.066840584m。
+- Selected→Baseline≤0.20m：99.998982445%；中位數0.013606843m、p95 0.062359547m。
+- 0.20m佔據體素：Baseline6433、Selected6158、交集5615、聯集6976，IoU **0.804902523**。較寬的距離門檻接近飽和，不能將99.9975%宣稱為實際房間／表面完整率；IoU對體素邊界與位姿差異敏感。
+- 超過0.20m的Baseline點共51個（不是51個表面）：原相機LowX／HighZ43個、HighX／HighZ7個、LowX／LowZ1個，HighX／LowZ0個；多在顯示圖下端的外緣／零散結構。`relative_map_disagreement.png`以全51點標示，背景才使用繪圖抽樣。
+
+視覺檢視：下端封閉區、中央狹長連通、低X側寬廣區、右側矩形分支與高顯示Z端區，在兩個地圖仍可辨識，未見整個大型區塊消失。Selected完整地圖點數較少，圖中部分外緣及細小結構較稀疏；但兩圖stride不同，不能直接由顯示密度量化觀測損失。高顯示Z端紅／黑軌跡分離較小，但仍存在。不能把原本留白認定為刪幀造成的房間漏建；也不能只靠stride點圖區分未觀測、遮蔽、深度缺失、去天花板或真正幾何缺失。
+
+分區圖的Low／High Z依**原相機Z**，顯示垂直座標為−原Z；不是房間名稱。兩個3D報告圖使用相同尺度／視角／座標範圍。原並排3D圖右側標籤邊距不足仍保留，報告使用另存的`reconstruction_3d_baseline_report.png`及`reconstruction_3d_selected_report.png`；只改顯示邊距，沒有補面、改位姿或重建。
+
+## 11. 六項研究回答與驗收
+
+1. **是否降低時間？** 是，本次Worker減少57.385528041s（25.9955%）；同一重建函式邊界由207.318515709s降至145.343667667s（29.8935%）。兩者Worker均含完整輸出及官方寫入，但Baseline量測／Seal與Selected Query／Run寫入成本不同，不能稱為純演算法加速比例。
+2. **定位精度如何？** 本次相同S集合Mean L2由0.071709497375m降至0.044872589329m，下降0.026836908046m。各自完整結果則為0.070258452365m／0.044872589329m，必須與Same-Frame結果分開。沒有GT最佳擬合，未聲稱輸入資訊相同。
+3. **哪些因素相關？** 較少影格與203而非319對配準對應較低計算量；跨格重疊降低使Fitness下降、RMSE略升，弱Correspondences橋接區仍存在。局部品質下降而全域平均誤差下降，顯示這些代理量不能單獨預測累積漂移；因果機制可能涉及配對路徑與誤差抵消，現有單次資料無法確認。
+4. **哪些場景受影響？** 可見大型布局與中央連通保留；相對差異主要是下端邊緣、零散結構與密度變化。沒有足夠證據斷言特定命名房間漏建或所有表面完整；上端與末段仍見軌跡偏離。
+5. **是否支持效率品質取捨？** 是，本次三項事前條件全部通過：Worker較短、Same-Frame Mean L2增加≤0.05m、Baseline點雲≥85%位於Selected的0.20m內。這支持此Capture下的sparse-v1介入，並非因Selected更準才事後定義成功。
+6. **限制？** 單Capture／單路線／單Seed／單次正式Selected；無統計顯著性、無最佳保留率或跨路線泛化結論。0.20m距離指標寬鬆、完整點有重複取樣權重；相對Coverage受雙方漂移、取樣、遮蔽、深度與官方去天花板影響。沒有真實表面GT，局部配準成功不保證無全域漂移。
+
+**M4.3技術驗收通過並停止，人工最終驗收待使用者確認。** 正式實驗一次完成、後處理修復不消耗新的重建、凍結規則未變、科學來源驗證通過。Phase2研究結果整理與交接完成；P2-C已取消，不列為剩餘實驗。未開始新Capture、Bonus、其他Seed／Voxel、英文報告、Submission ZIP，未宣稱最終作業提交。
+
+## 12. Git／SHA與交接位置
+
+正式Selected完整保存在`m43_p2b_selected_01/observation/`：204組float64(4,4)位姿、203組RANSAC與ICP變換、1,277,572點／色，皆為同次正式回傳，非第二次重建。Selected新因素1626筆另存JSONL／CSV；原Turtle2554筆Baseline因素不變。歷史22692個RDF triples全部保留，僅新增211個Selected triples；Declaration bytes不變、Seal有效。
+
+- Selected map_points SHA256：`9567cd97ff77babefe025a20452d8cc1b69d36044cf5fbafdc64683302224726`
+- Selected map_colors SHA256：`9c08bcf5aeebc831904792344f99ea6cf4aed6cff5fb2affab4a82771a8dd81b`
+- Selected camera_poses SHA256：`788d78560711ba9e7c325f7144030937d8c5a09570da80eb356c976a91d80a68`
+- Selected pairwise ICP SHA256：`a6d99cea545e9e9ead3fb3e4d378d8abcab3cb4722521af621b36b046d2730c1`
+
+未變動的原readiness／preregistration仍指向正式執行前Git與SHA，不將離線修復倒填成當時版本。原M4.2 Manifest的Turtle／共享圖SHA對照Selected執行前完整快照，M4.3原Manifest的文件SHA對照Terminal文件快照；新最終文件另由結案Manifest與Git綁定。不是改寫舊SHA使舊驗證假通過。
+
+`m43_p2b_closeout_01/audit_before_analysis.json`／`audit_after_analysis.json`／`audit_final.json`記錄642項Frozen Capture、2099項受保護科學檔案、77項M4.2結案Manifest及62項原M4.2 Manifest（含原文件快照）、39項原M4.3 Manifest。`.DS_Store`僅依原分層政策記錄前後；科學SHA不放寬。結案`provenance.json`綁定修復來源Git、來源SHA與文件版本轉換，`manifest.json`不含自身。
+
+完整圖表來源、stride及SHA見`analysis/figure_manifest.json`、`report_details/figure_provenance.json`。Baseline繪圖stride14／146753點；Selected stride9／141953點，兩者都未替代完整地圖；Coverage計算使用全部點。另見 [Phase2交接](Phase2_Final_Handoff.md)。Git僅保存必要程式／測試／文件；所有生成Turtle、Capture、點雲及大型研究產物保持Git忽略。
