@@ -82,8 +82,30 @@ def kill_group(pgid):
     # SIGKILL prevents a TERM handler from spawning children or ignoring the stop.
     try:
         os.killpg(pgid, signal.SIGKILL)
+        return dict(status='signal_sent',pgid=pgid,signal='SIGKILL')
     except ProcessLookupError:
-        pass
+        return dict(status='group_absent',pgid=pgid)
+    except PermissionError as denied:
+        # Darwin can return EPERM for a group containing only unreaped zombies.
+        # This is NOT a blanket permission exception: ps must succeed and prove
+        # that there are no live members. Any live/unknown state still raises.
+        table=process_table()
+        members=[row for row in table.values() if row['pgid']==pgid]
+        live=[row for row in members if not row['state'].startswith('Z')]
+        if live:
+            raise
+        if not members:
+            # Missing PID information alone is not proof of termination.
+            # Require the kernel to confirm that the group no longer exists.
+            try:
+                os.killpg(pgid,0)
+            except ProcessLookupError:
+                return dict(status='group_absent',pgid=pgid,original_errno='EPERM')
+            except PermissionError:
+                raise denied
+            raise denied
+        return dict(status='no_live_members_verified',pgid=pgid,
+                    original_errno='EPERM',verified_members=members,unix=time.time())
 
 
 def watchdog(fd, pgid, output):
@@ -108,8 +130,14 @@ def watchdog(fd, pgid, output):
         reason = traceback.format_exc()
     finally:
         os.close(fd)
-    kill_group(pgid)
+    try:
+        termination=kill_group(pgid)
+    except BaseException:
+        write(Path(output)/'watchdog.json',dict(status='termination_failed',reason=reason,pgid=pgid,
+            traceback=traceback.format_exc(),unix=time.time()))
+        raise
     write(Path(output)/'watchdog.json', {'status':'terminated_workload', 'reason':reason,
+                                        'termination':termination,
                                         'pgid':pgid, 'unix':time.time()})
 
 
@@ -127,6 +155,13 @@ def run(argv, output, limit_bytes=3*2**30, *, sampler=process_table, crash_after
     worker = guard = None
     control = gate_write = None
     known = set()
+    def stop_workload():
+        try:
+            result=kill_group(worker.pid)
+            append(output/'termination.jsonl',result)
+        except BaseException:
+            append(output/'termination.jsonl',dict(status='failed_closed',traceback=traceback.format_exc(),unix=time.time()))
+            raise
     try:
         sampler()  # No workload is launched if permissions already fail.
         gate_read, gate_write = os.pipe()
@@ -181,15 +216,15 @@ def run(argv, output, limit_bytes=3*2**30, *, sampler=process_table, crash_after
             time.sleep(max(0,INTERVAL-(time.monotonic()-tick)))
     except BaseException:
         reason = traceback.format_exc()
-        if worker is not None:
-            kill_group(worker.pid)
         (output/'failure.traceback.txt').write_text(reason)
+        if worker is not None:
+            stop_workload()
     finally:
         if gate_write is not None:
             os.close(gate_write)
         if worker is not None:
             if reason:
-                kill_group(worker.pid)
+                stop_workload()
             worker.wait(timeout=5)
         if guard is not None:
             # Only disarm after workload exit, or after forced whole-group kill.
@@ -198,10 +233,10 @@ def run(argv, output, limit_bytes=3*2**30, *, sampler=process_table, crash_after
                     os.write(control,b'D')
                     guard.wait(timeout=3)
                 except BaseException:
-                    kill_group(worker.pid)
+                    stop_workload()
                     reason = (reason or '') + '\nWatchdog disarm failed: '+traceback.format_exc()
             elif reason is None:
-                kill_group(worker.pid)
+                stop_workload()
                 reason = 'Watchdog unexpectedly stopped'
         if control is not None:
             os.close(control)

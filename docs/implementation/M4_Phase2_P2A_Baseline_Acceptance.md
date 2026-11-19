@@ -72,3 +72,17 @@ RSS是0.5秒取樣的保守程序樹加總，共享頁可能重複計算；不�
 尚無正式Mean L2、2554筆因素、正式Seal或完整二樓重建圖。合成圖只用於工程驗證，不冒充正式重建結果。正式成功後的區域圖以地圖象限呈現；缺少逐段route_notes，不能編造房間名稱或絕對全樓層完整率。房間涵蓋與缺失仍需根據正式圖像及人工路線記錄解讀。
 
 至此交付方案B。未開始P2-B、P2-C、新seed／voxel實驗、Experiment D、Bonus、最終英文報告或Submission ZIP。
+
+## Terminal 第一次執行後的工程修正（2026-11-19）
+
+第一次 Terminal Preflight：`research_outputs/m42_preflight_20261119T072234Z_3bc540ab/`。原生 ps 權限已通過；必要自我測試為 **24 passed、3 failed、0 skipped**，其餘必要檢查通過。因此未建立正式宣告／Experiment／一次性輸出目錄，**正式 First-Pass 尚未執行，單次額度未使用**。原失敗 Preflight 與原工程證據完整保留，不改成通過。
+
+三項失敗均發生在終止後的重複清理：首次 SIGKILL 成功，監測器已寫出原始停止原因；finally 再次對只剩未回收殭屍程序的群組送 SIGKILL 時，Darwin 回傳 EPERM。沙箱最小案例及先紅後綠的回歸測試已重現此行為，不能把該 EPERM 直接解讀成第一次無法終止程序。
+
+修正僅影響輔助監測器：收到 EPERM 後，必須成功讀取程序表並證明群組成員全部是殭屍程序，才記為 `no_live_members_verified`；若程序表沒有該群組，還必須以 signal 0 取得 ESRCH，證明群組已不存在。**仍有存活成員、必要資訊缺失、程序表不可讀或真正權限拒絕皆不放行。** 每次終止嘗試新增 `termination.jsonl`，保存原始錯誤、驗證成員與處理結果；停止原因先寫入磁碟，再嘗試清理。watchdog 終止失敗也保留明確失敗收據。
+
+修正證據獨立放在 `research_outputs/m42_monitor_cleanup_fix_01/`，包含原 Preflight／原工程清單SHA、舊版原始碼副本、red／green回歸與新來源版本。pytest暫存原生測試目錄已被後續pytest保留政策清除；已讀取的診斷值以明列來源的擷取紀錄保存，不冒稱完整原始檔副本。原持久化測試輸出、XML及Preflight均未修改。
+
+新版固定來源改由該新目錄的 `readiness.json` 綁定；原 `m42_engineering_01/readiness.json` 不覆寫。上方單一 Mac Terminal 命令維持不變；再次執行時先在新 Preflight 目錄重做全部必要實測，必須零失敗、零略過，才會使用尚未動用的一次正式重建授權。**新版原生監測完整測試仍待 Terminal 驗證，不宣稱已通過。**
+
+新版沙箱回歸：**65 passed、6 skipped in 18.66s**，見新修正證據目錄 `regression_verified.log`／XML。最小缺陷測試先得到1 failed、2 passed，再修正至通過；新增案例另確認存活子程序、無法讀取程序表及必要PID缺失都不會被EPERM例外放行。預防措施是保留這組Darwin重複終止回歸，並繼續要求完整原生測試作正式執行門檻。

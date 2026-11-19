@@ -31,6 +31,7 @@ CAPTURE=ROOT/'eval/_data/second_floor/114753116/P2_A_01'
 EXPERIMENT=ROOT/'experiments'/NAME
 FORMAL=ROOT/'research_outputs/m42_p2_a01_baseline_01'
 ENGINEERING=ROOT/'research_outputs/m42_engineering_01'
+READINESS=ROOT/'research_outputs/m42_monitor_cleanup_fix_01/readiness.json'
 SNAPSHOT='291209750bd8ecf84f337112c9b92307e6be192a'
 TESTS=['tests/test_m42_monitor.py','tests/test_m42_observer.py','tests/test_m42_integrity.py',
        'tests/test_m42_baseline.py']
@@ -49,7 +50,7 @@ def clean_git():
     if git('branch','--show-current')!='main' or git('status','--porcelain','--untracked-files=all'):
         raise RuntimeError('Require clean main; never stash/reset/delete to obtain it')
     if git('rev-parse','snapshot/pre-implementation')!=SNAPSHOT: raise RuntimeError('Snapshot mismatch')
-    ready=read(ENGINEERING/'readiness.json')
+    ready=read(READINESS)
     if git('rev-parse','HEAD')!=ready['git_commit']: raise RuntimeError('Prepared commit changed')
     verify(ready['tracked_sources'])
     if sha(ENGINEERING/'authorization.txt')!=ready['authorization_sha256']:

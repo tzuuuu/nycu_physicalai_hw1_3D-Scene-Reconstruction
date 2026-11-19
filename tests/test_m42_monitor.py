@@ -168,3 +168,40 @@ def test_independent_watchdog_pipe_exit_and_disarm_without_ps(tmp_path,disarm):
         if write_fd is not None: os.close(write_fd)
         if worker.poll() is None: worker.kill()
         worker.wait()
+
+
+def test_darwin_repeated_kill_of_zombie_group_is_verified_not_false_permission_failure(tmp_path,monkeypatch):
+    worker=subprocess.Popen([sys.executable,'-c','import time; time.sleep(30)'],start_new_session=True)
+    try:
+        m.kill_group(worker.pid)
+        time.sleep(.05)  # Do not reap: Darwin retains a zombie-only group and returns EPERM.
+        monkeypatch.setattr(m,'process_table',lambda:{worker.pid:dict(pid=worker.pid,ppid=os.getpid(),
+            pgid=worker.pid,rss_bytes=0,state='Z')})
+        result=m.kill_group(worker.pid)
+        assert result['status'] in ['no_live_members_verified','group_absent']
+        assert worker.wait(timeout=5)==-signal.SIGKILL
+    finally:
+        if worker.poll() is None: worker.kill()
+        worker.wait()
+
+
+def test_real_permission_denial_for_live_group_is_never_ignored(monkeypatch):
+    def denied(*args): raise PermissionError('synthetic live-group denial')
+    monkeypatch.setattr(m.os,'killpg',denied)
+    monkeypatch.setattr(m,'process_table',lambda:{34567:dict(pid=34567,ppid=1,pgid=34567,rss_bytes=0,state='Z'),
+        34568:dict(pid=34568,ppid=1,pgid=34567,rss_bytes=1024,state='S')})
+    with pytest.raises(PermissionError,match='live-group denial'): m.kill_group(34567)
+
+
+def test_denied_cleanup_with_unreadable_process_table_fails_closed(monkeypatch):
+    def denied(*args): raise PermissionError('synthetic denial')
+    monkeypatch.setattr(m.os,'killpg',denied)
+    monkeypatch.setattr(m,'process_table',denied)
+    with pytest.raises(PermissionError): m.kill_group(34567)
+
+
+def test_missing_pid_information_does_not_turn_denial_into_success(monkeypatch):
+    def denied(*args): raise PermissionError('required group information unavailable')
+    monkeypatch.setattr(m.os,'killpg',denied)
+    monkeypatch.setattr(m,'process_table',lambda:{})
+    with pytest.raises(PermissionError,match='unavailable'): m.kill_group(34567)
