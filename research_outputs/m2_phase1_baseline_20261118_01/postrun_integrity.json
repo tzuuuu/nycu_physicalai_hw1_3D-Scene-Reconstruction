@@ -1,0 +1,12 @@
+{
+  "input_sha256_unchanged": true,
+  "turtle_unchanged_after_explore": true,
+  "core_sources_unchanged_since_run_launch": true,
+  "dashboard_live_url_verified": "http://localhost:63032/",
+  "dashboard_views_verified": [
+    "Factor timelines",
+    "Factor distributions",
+    "Selection tradeoff"
+  ],
+  "dashboard_closed_after_verification": true
+}

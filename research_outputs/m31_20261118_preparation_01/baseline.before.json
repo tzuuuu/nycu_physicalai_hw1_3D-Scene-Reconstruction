@@ -1,0 +1,15 @@
+{
+  "turtle_sha256": "5ee9f6c35c61bfe5ccabb068bc4fb18fce54fbd4005465645e925ce5a2192bb6",
+  "declaration_sha256": "3306cd6f0729b45b9583edcf31772df314b18347487621dc1b2eec84c8e09ab5",
+  "seal": "3306cd6f0729b45b9583edcf31772df314b18347487621dc1b2eec84c8e09ab5",
+  "seal_valid": true,
+  "complete": true,
+  "measured_factors": 1522,
+  "baseline_run_sha256": "ebf1bc5d48ad83ac86d8def01dd96993454295558638b1cf6de9fa627af1805b",
+  "baseline_mean_l2_stored_m": 3.174055,
+  "baseline_frame_count": 191,
+  "preserved_graph_sha256": "ea7828f4427bf18873e69a449181b2dd1906f136b3b768916ff3b7097c3ad8af",
+  "run_nodes": [
+    "http://taica.course/hw1/experiment/p1_baseline_20261118_map005_s0_01/run/baseline"
+  ]
+}

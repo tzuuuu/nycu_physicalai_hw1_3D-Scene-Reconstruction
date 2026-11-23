@@ -1,0 +1,14 @@
+{
+  "final_git_commit": "e3f00b190bdf9bc9fcfef0c62fa763311f0e7aff",
+  "branch": "main",
+  "working_tree_clean": true,
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "tests": "227 passed in 7.03s",
+  "C2_scientific_integrity_verified": true,
+  "C2_original_finalize_succeeded": false,
+  "C3_C4_formal_reconstructions_executed": false,
+  "M32_complete": false,
+  "stop_reason": "sandbox denied ps during pre-reconstruction RSS availability check",
+  "system_stop_sha256": "79fd06289cffeb83b033119be1918a4f5f0702db06821cc23e730d1fd5c435b5",
+  "acceptance_document_sha256": "4dd08d6ba73b4af34aea1ba9fa456c22c3f4dafe05091e4522fa04a5b6044024"
+}

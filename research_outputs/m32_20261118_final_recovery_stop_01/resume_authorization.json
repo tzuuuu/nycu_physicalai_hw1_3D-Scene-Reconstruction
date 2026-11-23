@@ -1,0 +1,18 @@
+{
+  "user_instruction": "\u6838\u51c6\u7e7c\u7e8c\uff0c\u6062\u5fa9\u5f8c\u7f6e\u4f5c\u696d\u8207\u5269\u9918\u516d\u7d44",
+  "remaining_conditions": [
+    "B1",
+    "B2",
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "original_stop_sha256": "233919e3e5382f7316213adef8405c3c664c7b7701235d7ee533dd10b26ffdbb",
+  "original_suite_sha256": "11e41dffa5a2bcbec5ebc4cf809da42d4f0b15621dd0e07524bb6ddbe950b535",
+  "B0_postprocess_output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess",
+  "B0_reconstruction_repeated": false,
+  "resumed_unix": 1795006803.361845,
+  "resume_git_commit": "ac5495f8b5770193f78935392c2dc95fe1b29092",
+  "scope": "Only missing B0 postprocessing and remaining six original conditions; preserve failed evidence"
+}

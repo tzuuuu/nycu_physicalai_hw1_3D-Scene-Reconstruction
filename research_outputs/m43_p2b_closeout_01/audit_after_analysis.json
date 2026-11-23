@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "formal_manifest_verified_items": 39,
+  "baseline_closeout_verified_items": 77,
+  "baseline_manifest_verified_items": 62,
+  "protected_scientific_files": 2099,
+  "frozen_capture_files": 642,
+  "execution_git_commit": "c91078d879f4a65c9525bcfcfc76468929c7a292",
+  "native_tests": {
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "rule_sha256": "2117058e33c89b84f44c63a8ae3e1f48592e86e1d15d5db47889924605d8dabe",
+  "query_sha256": "0252c1cd23cceeb3ac1b1953d67a672f116d3a7f51ef050501a3039f7abf834d",
+  "turtle": {
+    "historical_triples": 22692,
+    "added_selected_triples": 211,
+    "baseline_factors_retained": 2554,
+    "declaration_bytes_unchanged": true,
+    "seal_valid": true
+  },
+  "original_execution_sources_preserved": [
+    {
+      "path": "docs/implementation/M4_Phase2_P2B_Selected_Acceptance.md",
+      "execution_sha256": "9dda60fbaddd4d4d72292df356e4e66eb68eb4cbc1e2478d753ae33113ad80c2",
+      "current_sha256": "e94a90be5016d3999dc53303cfbdd55ea19646a58f6c77f0f1d301bef6f5056e",
+      "reason": "Post-run offline precision fix/regression test/final document; never changed formal execution"
+    },
+    {
+      "path": "scripts/m43_results.py",
+      "execution_sha256": "da756e666bebf3698b4b9c30cc8c9b1b24c2efc2733bdbaef2e8ca8332f7ce52",
+      "current_sha256": "b08a2180b4ca4c65c28be7c5f50043c54a0e6c1f2cd8742cf40f4761a561293a",
+      "reason": "Post-run offline precision fix/regression test/final document; never changed formal execution"
+    },
+    {
+      "path": "tests/test_m43_selected.py",
+      "execution_sha256": "2ecc240c4c5b92fa77a244557796fe2b85937a2eb9398a91e4b7400255df627c",
+      "current_sha256": "f777ea38d9e1ccdfece3c3a38e8ff486d0b3692313184f17cf4e0ec412a6b6aa",
+      "reason": "Post-run offline precision fix/regression test/final document; never changed formal execution"
+    }
+  ],
+  "core_sha256": {
+    "utils.py": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "load.py": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+    "plot.py": "7a624b52bc8f9121fd9fc69d7045404d8c62566d018e776a4541460e4d6e6337",
+    "ontology/hw1.ttl": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+    "pixi.toml": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+    "pixi.lock": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794"
+  },
+  "monitors": [
+    {
+      "stage": "command",
+      "argv": [
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+        "-m",
+        "scripts.m43_selected",
+        "_worker"
+      ],
+      "exit_code": 0,
+      "reason": null,
+      "passed": true,
+      "elapsed_s": 163.365968959,
+      "peak_tree_rss_bytes": 751648768,
+      "samples": 324,
+      "interval_s": 0.5,
+      "watchdog_timeout_s": 8.0,
+      "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+      "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s",
+      "max_sample_gap_s": 0.6222096250000106
+    },
+    {
+      "stage": "postprocess_command",
+      "argv": [
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+        "-m",
+        "scripts.m43_selected",
+        "_postprocess"
+      ],
+      "exit_code": 1,
+      "reason": null,
+      "passed": false,
+      "elapsed_s": 4.117353541999989,
+      "peak_tree_rss_bytes": 374587392,
+      "samples": 9,
+      "interval_s": 0.5,
+      "watchdog_timeout_s": 8.0,
+      "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+      "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s",
+      "max_sample_gap_s": 0.5196264580000047
+    }
+  ],
+  "reconstruction_calls": 1,
+  "hidden_reconstruction": false,
+  "scope": "Only offline analysis repaired; formal attempt and failed postprocess history preserved"
+}

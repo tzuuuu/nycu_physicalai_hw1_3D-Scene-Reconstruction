@@ -1,0 +1,209 @@
+{
+  "valid_turtle": true,
+  "seal_valid": true,
+  "declaration_unchanged": true,
+  "frames": 191,
+  "evaluated_frames": 191,
+  "retained_fraction": 1.0,
+  "factor_occurrences": 1522,
+  "factor_summary": {
+    "CoarseRANSACCorrespondences": {
+      "count": 190,
+      "min": 3546.0,
+      "max": 37479.0,
+      "mean": 18514.07894736842,
+      "median": 17108.5,
+      "min_frames": [
+        25
+      ],
+      "max_frames": [
+        133
+      ]
+    },
+    "CoarseRANSACFitness": {
+      "count": 190,
+      "min": 0.6228355,
+      "max": 1.0,
+      "mean": 0.9227952642105263,
+      "median": 0.9584478999999999,
+      "min_frames": [
+        151
+      ],
+      "max_frames": [
+        147,
+        148
+      ]
+    },
+    "CoarseRANSACRMSE": {
+      "count": 190,
+      "min": 0.009524659,
+      "max": 0.03834294,
+      "mean": 0.026938471415789467,
+      "median": 0.026952410000000003,
+      "min_frames": [
+        147
+      ],
+      "max_frames": [
+        105
+      ]
+    },
+    "ICPInlierCorrespondences": {
+      "count": 190,
+      "min": 3539.0,
+      "max": 37642.0,
+      "mean": 18525.64210526316,
+      "median": 17093.0,
+      "min_frames": [
+        25
+      ],
+      "max_frames": [
+        133
+      ]
+    },
+    "ICPInlierFitness": {
+      "count": 190,
+      "min": 0.6189574,
+      "max": 1.0,
+      "mean": 0.9236869957894738,
+      "median": 0.9581493000000001,
+      "min_frames": [
+        151
+      ],
+      "max_frames": [
+        147,
+        148
+      ]
+    },
+    "ICPInlierRMSE": {
+      "count": 190,
+      "min": 0.01022277,
+      "max": 0.03109302,
+      "mean": 0.020875942947368418,
+      "median": 0.02069315,
+      "min_frames": [
+        144
+      ],
+      "max_frames": [
+        104
+      ]
+    },
+    "RawPointCount": {
+      "count": 191,
+      "min": 177608.0,
+      "max": 262144.0,
+      "mean": 249540.30890052355,
+      "median": 262141.0,
+      "min_frames": [
+        114
+      ],
+      "max_frames": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        47,
+        48,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        190,
+        191
+      ]
+    },
+    "VoxelizedPointYield": {
+      "count": 191,
+      "min": 4003.0,
+      "max": 39638.0,
+      "mean": 19943.71727748691,
+      "median": 18659.0,
+      "min_frames": [
+        148
+      ],
+      "max_frames": [
+        116
+      ]
+    }
+  },
+  "baseline_run_exists": true,
+  "selected_run_exists": false,
+  "mean_l2_raw_m": 3.174055104788137,
+  "mean_l2_stored_m": 3.174055,
+  "prefix_factor_comparison_count": 154,
+  "prefix_matches_at_official_precision": true,
+  "turtle_sha256": "5ee9f6c35c61bfe5ccabb068bc4fb18fce54fbd4005465645e925ce5a2192bb6"
+}

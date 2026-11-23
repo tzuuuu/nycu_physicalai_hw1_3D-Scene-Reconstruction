@@ -1,0 +1,242 @@
+{
+  "original_manifest_sha256": "f3e8d59d8a9c46610713008e28ff657c0896e97c1e799378116d183153179a78",
+  "scientific_files": 2681,
+  "scientific_all_match": true,
+  "os_metadata": [
+    {
+      "path": "eval/_data/.DS_Store",
+      "historical_sha256": "087ba3c0df3dfe3b776e010b724e949aa432e0747a17e11f49c44e29bf42eed0",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "087ba3c0df3dfe3b776e010b724e949aa432e0747a17e11f49c44e29bf42eed0"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "eval/_data/first_floor/.DS_Store",
+      "historical_sha256": "382cc84dd10e9e27e63c215ad17a6d9bf0309572ddd0c1f64a39fd2de05eac0a",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/first_floor/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "382cc84dd10e9e27e63c215ad17a6d9bf0309572ddd0c1f64a39fd2de05eac0a"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "eval/_data/second_floor/.DS_Store",
+      "historical_sha256": "4809a73fa9c2fe9f60e7deb62dba2884135ad96a41aa653f962d922415c0141c",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "4809a73fa9c2fe9f60e7deb62dba2884135ad96a41aa653f962d922415c0141c"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "eval/_data/second_floor/114753116/.DS_Store",
+      "historical_sha256": "38b2f4ee3e1fec43bf41b76d40f53b929266418fb1e61cbcb3f00020b12c350c",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/114753116/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "38b2f4ee3e1fec43bf41b76d40f53b929266418fb1e61cbcb3f00020b12c350c"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "eval/_data/second_floor/114753116/P2_A_01/.DS_Store",
+      "historical_sha256": "382cc84dd10e9e27e63c215ad17a6d9bf0309572ddd0c1f64a39fd2de05eac0a",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/114753116/P2_A_01/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "382cc84dd10e9e27e63c215ad17a6d9bf0309572ddd0c1f64a39fd2de05eac0a"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "experiments/.DS_Store",
+      "historical_sha256": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "experiments/p1_baseline_20261118_map005_s0_01/.DS_Store",
+      "historical_sha256": "3c967676166eaf8a64bd51e009215734151f3407f0d6be5d4598376558948cd5",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_baseline_20261118_map005_s0_01/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "3c967676166eaf8a64bd51e009215734151f3407f0d6be5d4598376558948cd5"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/.DS_Store",
+      "historical_sha256": "3509b26dade6dff72ff0003d84cf8f88dbd3157336e3ee1e8a695f38c1a6bf9b",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "a9677d0a49afa2702927f968124e5ca878d230b74b8db79dec8a556efdb3b9dc"
+      },
+      "differs": true,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/m2_20261118_preflight_01/.DS_Store",
+      "historical_sha256": "f30abbdc8cbdc60238bec9c7264c2be29b249c4cdb9e4544476c1e6a4a0eac36",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m2_20261118_preflight_01/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "f30abbdc8cbdc60238bec9c7264c2be29b249c4cdb9e4544476c1e6a4a0eac36"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/m31_20261118_preparation_01/official_before/.DS_Store",
+      "historical_sha256": "3c967676166eaf8a64bd51e009215734151f3407f0d6be5d4598376558948cd5",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m31_20261118_preparation_01/official_before/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "3c967676166eaf8a64bd51e009215734151f3407f0d6be5d4598376558948cd5"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/m32_20261118_suite_01/.DS_Store",
+      "historical_sha256": "3dc8cb90f936202424e02d95fe4db736e45d7fe2b05ae4b4675c91b6aa0268db",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "3dc8cb90f936202424e02d95fe4db736e45d7fe2b05ae4b4675c91b6aa0268db"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/m32_20261118_suite_01/official_before/.DS_Store",
+      "historical_sha256": "3c967676166eaf8a64bd51e009215734151f3407f0d6be5d4598376558948cd5",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/official_before/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "3c967676166eaf8a64bd51e009215734151f3407f0d6be5d4598376558948cd5"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/m32_20261118_suite_01/resume_03/.DS_Store",
+      "historical_sha256": "b2434e5cfcb180b2bc80429d3ed749e34578f00eaf4b6788f206143db5048eb6",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/resume_03/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "b2434e5cfcb180b2bc80429d3ed749e34578f00eaf4b6788f206143db5048eb6"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/.DS_Store",
+      "historical_sha256": "209eee5b10ea7a91c7e2e1870f7bd5cee605506556e1666eefcb45846aca6de8",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/resume_03/C2_audit/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "209eee5b10ea7a91c7e2e1870f7bd5cee605506556e1666eefcb45846aca6de8"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/phase1_closeout_audit/.DS_Store",
+      "historical_sha256": "585813bf82a003044f34843a2bbaa8b11f9c615e708034a0db202a50090ee1db",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/phase1_closeout_audit/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "585813bf82a003044f34843a2bbaa8b11f9c615e708034a0db202a50090ee1db"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/phase1_closeout_audit/resume_01/.DS_Store",
+      "historical_sha256": "6ed98b10eb695a80f58bc0cb53706f2560a93351c003d4cd39b7b316a4e21ad4",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/phase1_closeout_audit/resume_01/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "6ed98b10eb695a80f58bc0cb53706f2560a93351c003d4cd39b7b316a4e21ad4"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/phase1_closeout_audit/resume_01/F2_draft_02/.DS_Store",
+      "historical_sha256": "3426b5ee1e1ec29fed1cebdffce70609523e6e35747cab81a04c909bd1460a3e",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/phase1_closeout_audit/resume_01/F2_draft_02/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "3426b5ee1e1ec29fed1cebdffce70609523e6e35747cab81a04c909bd1460a3e"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/.DS_Store",
+      "historical_sha256": "006f6213d15321cae0294c5f54ed897acbe361880fe8874340de1f4414107410",
+      "current": {
+        "path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/phase1_report_assets/.DS_Store",
+        "exists": true,
+        "type": "Apple Desktop Services Store",
+        "header_hex": "0000000142756431",
+        "sha256": "006f6213d15321cae0294c5f54ed897acbe361880fe8874340de1f4414107410"
+      },
+      "differs": false,
+      "policy": "new-m42-comparison-only"
+    }
+  ],
+  "historical_verifiers_modified": false
+}

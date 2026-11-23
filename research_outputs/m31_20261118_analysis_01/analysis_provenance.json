@@ -1,0 +1,9 @@
+{
+  "kind": "Exploratory Ablation",
+  "selection_informed_by_gt_diagnosis": true,
+  "formal_execution_commit": "911736e6de7d6d8e7f563740feced1ef1183c37a",
+  "reconstruction_calls": 1,
+  "baseline_trajectory_source": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m3_20261118_diagnostic_02",
+  "baseline_trajectory_limitation": "M3.0 matching diagnostic; original formal CLI did not save per-frame poses",
+  "source_sha256": "b9e3d867f1ba098b8ec6b2f2618162cb511b756ccef1454e77b6392e0305c1a7"
+}

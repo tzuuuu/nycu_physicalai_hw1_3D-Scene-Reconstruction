@@ -1,0 +1,13 @@
+{
+  "frozen_scientific_files": 642,
+  "core_sha256": {
+    "utils.py": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "load.py": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+    "plot.py": "7a624b52bc8f9121fd9fc69d7045404d8c62566d018e776a4541460e4d6e6337",
+    "ontology/hw1.ttl": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+    "pixi.toml": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+    "pixi.lock": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794"
+  }
+}

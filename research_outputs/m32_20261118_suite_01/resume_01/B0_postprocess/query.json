@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/api.py",
+    "query",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_b_v005_s0_01",
+    "--query-file",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_b_v005_s0_01/queries/audit.rq",
+    "--format",
+    "csv"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 0.5006294580000006
+}

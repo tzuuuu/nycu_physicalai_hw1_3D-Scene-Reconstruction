@@ -1,0 +1,29 @@
+{
+  "arrays": {
+    "map_points": {
+      "shape": [
+        1406769,
+        3
+      ],
+      "dtype": "float64",
+      "sha256": "04ba8eae7872712dc0216583921eb4acd53e7ed5a1fb29a4e653c6daa38790ff"
+    },
+    "map_colors": {
+      "shape": [
+        1406769,
+        3
+      ],
+      "dtype": "float64",
+      "sha256": "2dcca73589de2cece9ceec6b4cdb0bffd75b61f883aa4709dc4c596244982679"
+    }
+  },
+  "point_count": 1406769,
+  "full_returned_map": true,
+  "sample_stride": 1,
+  "coordinate_system": "first captured camera; +X right +Y down +Z forward",
+  "map_only_down_voxel_m": 0.05,
+  "ceiling_crop": "teacher remove_ceiling_points: Y > min(Y)+1m",
+  "export_s": 0.07334029200001169,
+  "peak_rss_increase_bytes": 0,
+  "storage": "separate uncompressed NPY files, NumPy contiguous views, streamed file writes"
+}

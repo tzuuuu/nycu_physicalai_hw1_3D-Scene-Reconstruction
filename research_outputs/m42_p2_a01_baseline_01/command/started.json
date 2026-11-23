@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_baseline.py",
+    "_worker",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m42_p2_a01_baseline_01"
+  ],
+  "pid": 38042,
+  "pgid": 38042,
+  "watchdog_pid": 38043,
+  "unix": 1795073954.273649,
+  "limit_bytes": 3221225472
+}

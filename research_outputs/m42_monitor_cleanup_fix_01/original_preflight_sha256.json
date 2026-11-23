@@ -1,0 +1,14 @@
+{
+  "policy": "m42-layered-v1",
+  "scientific": {
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/historical_preservation.json": "0f5f1ef021c0db9225bc54e8e05c7ac827a5ec2adeed29e44c18be20af6a2b65",
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/map_capacity.json": "61114a2c3d1503200c899c2ded58ca8aa80df400ed646dc7633a5ea07d8f0ede",
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/official_cli_help.txt": "65197d81e5d5058bf292ec712bb653914ca9d735da14ac02f7105daef2463e22",
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/preflight.json": "2469b282bbb6cb71532e1ebdfd9a070a5caaff922dea45ba0254c416e85398c3",
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/protected.before.json": "c1b69b3d308ff3e1b3aaa6d0a25c489321ae49f8ae659c2f5d352d76bb251ef0",
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/selftests.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/selftests.stdout.log": "7090f135a5f9dcafa316e58cc02003d409d3fcaccd74d897b7f14259f4a85f80",
+    "research_outputs/m42_preflight_20261119T072234Z_3bc540ab/selftests.xml": "bd4b6f7354b1a9d045c3b0d78b4ee80c317de5e6bd0b96e811dae47399f4c384"
+  },
+  "os_metadata": {}
+}

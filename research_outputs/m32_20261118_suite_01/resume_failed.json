@@ -1,0 +1,7 @@
+{
+  "mode": "run",
+  "condition": "B1",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_resume.py\", line 115, in <module>\n    else: run(a.condition)\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_resume.py\", line 103, in run\n    raise RuntimeError('Formal execution/resource guard failed; no retry')\nRuntimeError: Formal execution/resource guard failed; no retry\n",
+  "unix": 1795007119.096343,
+  "action": "STOP; no automatic retry"
+}

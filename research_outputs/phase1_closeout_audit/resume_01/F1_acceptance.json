@@ -1,0 +1,18 @@
+{
+  "F1_complete": true,
+  "required_code_gap_found": false,
+  "scientific_integrity_verified": true,
+  "submission_package_ready": false,
+  "open_risks": [
+    "plot.py dependency",
+    "simulator/configs",
+    "editable paths",
+    "query packaging",
+    "README",
+    "stale Pixi test task",
+    "teacher vocabulary declarations"
+  ],
+  "tests": "247 passed in 16.18s",
+  "F2_F3_authorized_to_continue": true,
+  "F1_document_sha256": "8f871fa1c79346ce953bd0fd39692738fb1ed6f7d8e3c80df636782d4cabdc16"
+}

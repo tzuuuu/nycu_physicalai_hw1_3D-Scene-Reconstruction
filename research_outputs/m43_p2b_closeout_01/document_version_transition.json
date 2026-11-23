@@ -1,0 +1,8 @@
+{
+  "terminal_original_sha256": "e94a90be5016d3999dc53303cfbdd55ea19646a58f6c77f0f1d301bef6f5056e",
+  "original_formal_manifest_document_sha256": "e94a90be5016d3999dc53303cfbdd55ea19646a58f6c77f0f1d301bef6f5056e",
+  "audited_pre_polish_document_sha256": "feb78c32330595f208a73bf9a90688155b450dd5db1a13a8dca28bd3e118f0b5",
+  "final_document_sha256": "eb1cdc6d597131bc37ea611d3274f02c7a43ecd5c903186e5883f1a7b310c5ab",
+  "final_git_commit": "9ebc514ad0568351d2fb21745b31d20c4d91b4a1",
+  "reason": "Final scientific acceptance and precise plot-density caveat; original failure document and old manifest preserved, final bytes independently sealed"
+}

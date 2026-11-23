@@ -1,0 +1,10 @@
+{
+  "open3d": "0.18.0",
+  "rdflib": "7.1.4",
+  "opencv-python": "4.8.0.76",
+  "numpy": "1.26.4",
+  "scipy": "1.13.1",
+  "panel": "1.4.5",
+  "bokeh": "3.4.3",
+  "habitat-lab": "0.3.3"
+}

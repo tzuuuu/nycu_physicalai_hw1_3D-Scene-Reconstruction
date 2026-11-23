@@ -1,0 +1,26 @@
+{
+  "head": "f55b64f7dac44cfc460401e2cbdad01c2d782f1b",
+  "tool_commit": "3aa1b3e",
+  "plan_commit": "f55b64f",
+  "branch": "main",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "git_status": "",
+  "protected_count": 2024,
+  "protected_changes": [],
+  "formal_capture_root_exists": false,
+  "phase2_capture_or_reconstruction_executed": false,
+  "source_sha256": {
+    "docs/implementation/M4_Phase2_Capture_Plan.md": "2a28182889a51cc0e0d9465010e5e3d9c8775bf608838d863d810c14e9fff519",
+    "scripts/m4_capture_check.py": "b42ed76ab468fa2fee33210be6070f4a27a8fe4c3d0716cd47fb3b4c3526ca09",
+    "tests/test_m4_capture_check.py": "f37d53459e15b3ce5208c176a90ce4b94f80be7f78ff6e713a7ccef06c2b7f02",
+    "docs/assignments/HW1_3D Scene Reconstruction.pdf": "78768e49fed674c1c81ea0f7cdd07f7a7abd9b4c3431a589f38b048f54e91023",
+    "load.py": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+    "utils.py": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "ontology/hw1.ttl": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+    "configs/second_floor.yaml": "75242c19ac58570407b8282cf8073b10b97104d25a00551092cdac17e77dc3d5",
+    "pixi.toml": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+    "pixi.lock": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794"
+  }
+}

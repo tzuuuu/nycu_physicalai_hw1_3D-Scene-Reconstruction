@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_permission_recovery.py",
+    "observe",
+    "--condition",
+    "C4"
+  ],
+  "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+  "started_utc": "2026-11-18T15:48:41.820389+00:00",
+  "total_process_s": 306.57731725,
+  "exit_code": 0,
+  "child_peak_rss_bytes": 874381312,
+  "timing_boundary": "child startup through official command exit, including all command outputs",
+  "rss_limit_gib": 3,
+  "resource_guard": {
+    "reason": null,
+    "sampled_peak_rss_bytes": 830308352
+  },
+  "status": "process_completed_requires_artifact_validation"
+}

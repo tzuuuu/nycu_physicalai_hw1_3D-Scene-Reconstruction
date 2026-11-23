@@ -1,0 +1,27 @@
+{
+  "original_status_label_inaccurate": true,
+  "actual_status": "Official First-Pass started, then KeyboardInterrupt; incomplete, no registration failure proven",
+  "preflight": "research_outputs/m42_preflight_20261119T073112Z_21735c0c/preflight.json",
+  "native_selftests": {
+    "passed": 31,
+    "failed": 0,
+    "skipped": 0
+  },
+  "frames_preprocessed": 245,
+  "completed_returned_pairs": 243,
+  "last_completed_pair": [
+    243,
+    244
+  ],
+  "interrupted_pair": [
+    244,
+    245
+  ],
+  "full_mean_l2_m": null,
+  "full_map_saved": false,
+  "seal_created": false,
+  "baseline_run_written": false,
+  "observed_peak_rss_bytes": 741441536,
+  "cleanup": "First SIGKILL sent; repeated cleanup EPERM failed closed; watchdog later verified group absent",
+  "action": "User explicitly authorized removing interrupted active paths and one fresh execution; archives retained for scientific provenance"
+}

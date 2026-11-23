@@ -1,0 +1,22 @@
+{
+  "environment": {
+    "versions": {
+      "numpy": "1.26.4",
+      "open3d": "0.18.0",
+      "opencv-python": "4.8.0.76",
+      "scipy": "1.13.1",
+      "rdflib": "7.1.4",
+      "panel": "1.4.5",
+      "bokeh": "3.4.3"
+    },
+    "python": "3.9.23 | packaged by conda-forge | (main, Jun  4 2025, 18:02:02) \n[Clang 18.1.8 ]",
+    "executable": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "OMP_NUM_THREADS": "1"
+  },
+  "resources": {
+    "disk_free_bytes": 25970630656,
+    "reclaimable_memory_bytes": 4424794112,
+    "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                    30666.\nPages active:                                 240276.\nPages inactive:                               235216.\nPages speculative:                              4186.\nPages throttled:                                   0.\nPages wired down:                             175707.\nPages purgeable:                                1957.\n\"Translation faults\":                      279138226.\nPages copy-on-write:                         3749433.\nPages zero filled:                         163261761.\nPages reactivated:                          59377016.\nPages purged:                               15399228.\nFile-backed pages:                            172900.\nAnonymous pages:                              306778.\nPages stored in compressor:                   851907.\nPages occupied by compressor:                 321839.\nDecompressions:                             71846210.\nCompressions:                               81828474.\nPageins:                                     9877372.\nPageouts:                                     162725.\nSwapins:                                      431043.\nSwapouts:                                     731746.\n",
+    "limitation": "Reclaimable memory is a snapshot and not reserved; live RSS guard remains mandatory"
+  }
+}

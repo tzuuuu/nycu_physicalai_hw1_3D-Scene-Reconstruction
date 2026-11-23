@@ -1,0 +1,34 @@
+ WARN Could not read the virtual package detector registrations of the channels, using pixi's built-in detection only: failed to open '/Users/alyssa/Library/Caches/rattler/cache/repodata/fa96033f.shards-cache-v1'
+F..                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_darwin_repeated_kill_of_zombie_group_is_verified_not_false_permission_failure _
+
+tmp_path = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-32/test_darwin_repeated_kill_of_z0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107c961c0>
+
+    def test_darwin_repeated_kill_of_zombie_group_is_verified_not_false_permission_failure(tmp_path,monkeypatch):
+        worker=subprocess.Popen([sys.executable,'-c','import time; time.sleep(30)'],start_new_session=True)
+        try:
+            m.kill_group(worker.pid)
+            time.sleep(.05)  # Do not reap: Darwin retains a zombie-only group and returns EPERM.
+            monkeypatch.setattr(m,'process_table',lambda:{worker.pid:dict(pid=worker.pid,ppid=os.getpid(),
+                pgid=worker.pid,rss_bytes=0,state='Z')})
+>           result=m.kill_group(worker.pid)
+
+tests/test_m42_monitor.py:180: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pgid = 36144
+
+    def kill_group(pgid):
+        if pgid <= 1 or pgid == os.getpgrp():
+            raise RuntimeError('Refuse unsafe process group')
+        # SIGKILL prevents a TERM handler from spawning children or ignoring the stop.
+        try:
+>           os.killpg(pgid, signal.SIGKILL)
+E           PermissionError: [Errno 1] Operation not permitted
+
+scripts/m42_monitor.py:84: PermissionError
+=========================== short test summary info ============================
+FAILED tests/test_m42_monitor.py::test_darwin_repeated_kill_of_zombie_group_is_verified_not_false_permission_failure
+1 failed, 2 passed, 12 deselected in 0.12s

@@ -1,0 +1,9 @@
+{
+  "path": "docs/implementation/M4_Phase2_P2A_Baseline_Acceptance.md",
+  "runner_generated_snapshot_sha256": "16179a7c743c994c49a908e794339004bfb4809bc96c65fc5e0cac87fe49a9cd",
+  "preserved_original_snapshot": "research_outputs/m42_p2a_closeout_01/runner_generated_acceptance_original.md",
+  "final_document_sha256": "12de9ed1669713a82b5372d646af5c297bc2d3e97f08108f4166ccb274dcecf0",
+  "final_document_commit": "af1caa397f545960d7763f5fee4011e35575fc75",
+  "original_manifest_unchanged": true,
+  "reason": "Authorized final acceptance document adds independently verified visual review and actual rerun history; historical SHA expectations are not rewritten"
+}

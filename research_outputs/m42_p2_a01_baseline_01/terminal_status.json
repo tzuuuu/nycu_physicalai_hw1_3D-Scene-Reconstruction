@@ -1,0 +1,22 @@
+{
+  "status": "M4.2 scientific baseline accepted \u2014 visual interpretation pending",
+  "details": {
+    "run": "P2-A baseline",
+    "status": "Success",
+    "floor": 2,
+    "frames": 320,
+    "pairs": 319,
+    "factors": 2554,
+    "mean_l2_m": 0.07025845236530649,
+    "registration_voxel_m": 0.05,
+    "seed": 0,
+    "map_voxel_m": 0.05,
+    "runtime_s": 220.751497,
+    "runtime_boundary": "guarded worker incl imports, observation, export, evaluation, plots, seal and baseline write",
+    "returned_map_points": 2054529,
+    "peak_tree_rss_bytes": 1198620672
+  },
+  "unix": 1795074192.141962,
+  "first_pass_started": true,
+  "first_pass_returned": true
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    ".pixi/envs/habitat/bin/python",
+    "scripts/m3_diagnose.py",
+    "capture",
+    "--output",
+    "research_outputs/m3_20261118_diagnostic_01"
+  ],
+  "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+  "started_utc": "2026-11-18T04:42:36.367994+00:00",
+  "total_process_s": 2.035609625,
+  "exit_code": 1,
+  "child_peak_rss_bytes": 241188864,
+  "timing_boundary": "child startup through official command exit, including all command outputs",
+  "rss_limit_gib": 3.0,
+  "resource_guard": {
+    "reason": null,
+    "sampled_peak_rss_bytes": 210321408
+  },
+  "status": "failed"
+}

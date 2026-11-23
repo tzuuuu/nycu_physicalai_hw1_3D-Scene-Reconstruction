@@ -1,0 +1,29 @@
+{
+  "command": [
+    ".pixi/envs/habitat/bin/python",
+    "reconstruct.py",
+    "--experiment",
+    "experiments/p1_baseline_20261118_map005_s0_01",
+    "--version",
+    "open3d",
+    "--voxel-size",
+    "0.05",
+    "--seed",
+    "0",
+    "--down-voxel",
+    "0.05",
+    "--no-vis"
+  ],
+  "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+  "started_utc": "2026-11-18T02:11:44.953832+00:00",
+  "total_process_s": 286.378044042,
+  "exit_code": 0,
+  "child_peak_rss_bytes": 891551744,
+  "timing_boundary": "child startup through official command exit, including all command outputs",
+  "rss_limit_gib": 3.0,
+  "resource_guard": {
+    "reason": null,
+    "sampled_peak_rss_bytes": 887275520
+  },
+  "status": "process_completed_requires_artifact_validation"
+}

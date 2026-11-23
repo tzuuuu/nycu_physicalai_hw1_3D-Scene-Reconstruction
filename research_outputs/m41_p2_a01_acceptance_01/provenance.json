@@ -1,0 +1,11 @@
+{
+  "completed_at_utc": "2026-11-19T06:42:19.442090+00:00",
+  "git_commit": "da3b2615df90f88d8eca2f84a9f2a10ee4494119",
+  "git_status": "",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "original_record_changes_during_this_attempt": [],
+  "capture_still_matches_existing_verification": true,
+  "new_document_sha256": "90db6bf916a1e16f2a3ed87ce5fe1c8e15ab9d0718533f278d5ad3c3f285f1ba",
+  "acceptance_status": "stopped_on_sha_anomalies",
+  "m42_executed": false
+}

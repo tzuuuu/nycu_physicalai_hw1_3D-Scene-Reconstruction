@@ -1,0 +1,1746 @@
+{
+  "assets": [
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/M2_baseline_native.png",
+      "sha256": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6",
+      "size_px": [
+        963,
+        985
+      ],
+      "caption": "Original M2 baseline reconstruction (191 frames; registration voxel 0.05 m, seed 0; map voxel 0.05 m; Mean L2 3.174055104788 m). The ceiling-cropped scene is shown with the estimated trajectory in red and ground truth in black, in the capture-first-camera reference. This is the original saved PNG; sparse legacy rendering and its native view limit visible scene detail.",
+      "experiments": [
+        "M2 Baseline"
+      ],
+      "kind": "native PNG copy",
+      "view": "native legacy view",
+      "coordinate_frame": "fixed first-camera display axes: image axes multiplied by diag(1,-1,-1); no fit",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl",
+          "sha256": "bba92ffc4a031772a8b1b6bc80dc3056b0c103a1b0382784c3c82d4edc3eb4b6"
+        },
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/reconstruction_baseline.png",
+          "sha256": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6"
+        },
+        {
+          "path": "research_outputs/m2_phase1_baseline_20261118_01/validation.json",
+          "sha256": "f87a5957be114303030874e892f8fefa8a440a8e89209e11ad05fd9218550cff"
+        }
+      ],
+      "limitations": [
+        "Original M2 did not retain its same-run full cloud or poses. The original PNG is preserved; no exact new M2 top-down map can be made without new reconstruction.",
+        "Original helper displayed approximately 5,000 map points; no denser original M2 cloud is available."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/M31_selected_native.png",
+      "sha256": "9d13b9cc27fc892aa0d9b6645a5e1da4af3ed6d92a139e032f3367297978567e",
+      "size_px": [
+        961,
+        985
+      ],
+      "caption": "Original M3.1 Selected reconstruction (190 frames, excluding frame 104; Mean L2 4.200397987246 m). The saved ceiling-cropped scene and red estimated / black GT trajectories show the negative ablation outcome. Native camera limits differ from the M2 screenshot; this copy is not a harmonized metric map comparison.",
+      "experiments": [
+        "Selected"
+      ],
+      "kind": "native PNG copy",
+      "view": "native legacy view",
+      "coordinate_frame": "fixed first-camera display axes: image axes multiplied by diag(1,-1,-1); no fit",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl",
+          "sha256": "bba92ffc4a031772a8b1b6bc80dc3056b0c103a1b0382784c3c82d4edc3eb4b6"
+        },
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/reconstruction_selected.png",
+          "sha256": "9d13b9cc27fc892aa0d9b6645a5e1da4af3ed6d92a139e032f3367297978567e"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/common_frame_errors.csv",
+          "sha256": "5fd33b5734dedd26c0d694a85b045954621cafcdcfc93b3f3613588e3790b4b2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/poses_offline.npz",
+          "sha256": "6a889192911f0ec247c1df57256761469f39b10195912e244306b7d8beb589c2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/selected_pair_metrics.csv",
+          "sha256": "15bd74ac08d51f066624ad5984853fedfd12a31b1523d86398663448d043616a"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/summary.json",
+          "sha256": "6eee52e317119929ae46e001dac0f088ab0332ba5b05ab824076acbdc292060f"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/events.jsonl",
+          "sha256": "f2c1ae19791b48d71c638abc43a3dd2a8df50707f9b34310b8b69ca92716b9ab"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/map_sample.npz",
+          "sha256": "412280d1ac5a163b7c15e6842f71911790f6a3d68358731441c56271e4e94d5b"
+        }
+      ],
+      "limitations": [
+        "Native automatic ranges are not common comparison bounds."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/Selected_topdown.png",
+      "sha256": "443e99301082088e6a6e1965cf330a782bb1c1d6e30d4673127b629c0d4c261c",
+      "size_px": [
+        2700,
+        2400
+      ],
+      "caption": "M3.1 Selected: exclude frame 104 reconstruction (190 frames; map voxel 0.05 m; Mean L2 4.200397987246 m). The saved ceiling-cropped scene is redrawn top-down with the estimated trajectory in red and ground truth in black, in the fixed first-camera frame, with no fitted alignment. The retained route is displaced and extended after the new 103-to-105 mismatch. Exploratory ablation informed by prior GT diagnosis; not a GT-independent selection rule.",
+      "experiments": [
+        "Selected"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -4.0,
+        10.0,
+        -24.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl",
+          "sha256": "bba92ffc4a031772a8b1b6bc80dc3056b0c103a1b0382784c3c82d4edc3eb4b6"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/common_frame_errors.csv",
+          "sha256": "5fd33b5734dedd26c0d694a85b045954621cafcdcfc93b3f3613588e3790b4b2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/poses_offline.npz",
+          "sha256": "6a889192911f0ec247c1df57256761469f39b10195912e244306b7d8beb589c2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/selected_pair_metrics.csv",
+          "sha256": "15bd74ac08d51f066624ad5984853fedfd12a31b1523d86398663448d043616a"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/summary.json",
+          "sha256": "6eee52e317119929ae46e001dac0f088ab0332ba5b05ab824076acbdc292060f"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/events.jsonl",
+          "sha256": "f2c1ae19791b48d71c638abc43a3dd2a8df50707f9b34310b8b69ca92716b9ab"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/map_sample.npz",
+          "sha256": "412280d1ac5a163b7c15e6842f71911790f6a3d68358731441c56271e4e94d5b"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/B0_topdown.png",
+      "sha256": "06dacc782af3b5d4f0bd9d436ee8ff80f3aa59bfde79c58310a586c6543e3562",
+      "size_px": [
+        2700,
+        2400
+      ],
+      "caption": "B0: v=0.05 m, seed=0 reconstruction (191 frames; map voxel 0.05 m; Mean L2 3.174055104788 m). The saved ceiling-cropped scene is redrawn top-down with the estimated trajectory in red and ground truth in black, in the fixed first-camera frame, with no fitted alignment. The late route is visibly displaced following the 103-to-104 rotation mismatch. ",
+      "experiments": [
+        "B0"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -4.0,
+        12.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/B2_topdown.png",
+      "sha256": "6d4708481f3b819e5d9a62b6e018972fe0141530c0880a717dd29912702eb4fd",
+      "size_px": [
+        2700,
+        2400
+      ],
+      "caption": "B2: v=0.08 m, seed=0 reconstruction (191 frames; map voxel 0.05 m; Mean L2 0.274959466593 m). The saved ceiling-cropped scene is redrawn top-down with the estimated trajectory in red and ground truth in black, in the fixed first-camera frame, with no fitted alignment. The estimated route is closer to GT than the flipped controls, but residual displacement remains. ",
+      "experiments": [
+        "B2"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -4.0,
+        8.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v008_s0_01/p1_m32_20261118_b_v008_s0_01.ttl",
+          "sha256": "cf87f42267315f89fe190de4cb860f5690888eef4be628afc4beb19c8f871944"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/frames.csv",
+          "sha256": "99627c858a7ae1b29e0299e48e82a2589ed8243338d4fae295fd7cd7fa5ec93b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/pairs.csv",
+          "sha256": "133f00474575fe15e15d70ad018ec342f9f833d252819460da28a3d53bcdb278"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/summary.json",
+          "sha256": "b4ca5033cb49d8a5bdf703cd32e1723ee47e14c81fb23c031b38fae450b65427"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/events.jsonl",
+          "sha256": "e34c17a69741c46ba711ddecb5b5be485626c9cb52d814592d635dc0c0d4831c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/map_sample.npz",
+          "sha256": "efdcfd15ff9817f346c76e3b81434dd85df9895a822e257f74ac2a5944449e56"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C1_topdown.png",
+      "sha256": "c4da653696c8bddbaab0bcd43bceb82cee256b596102dcae86936cb78153ecd8",
+      "size_px": [
+        2700,
+        2400
+      ],
+      "caption": "C1: v=0.05 m, seed=1 reconstruction (191 frames; map voxel 0.05 m; Mean L2 0.155696709607 m). The saved ceiling-cropped scene is redrawn top-down with the estimated trajectory in red and ground truth in black, in the fixed first-camera frame, with no fitted alignment. The estimated route is closer to GT than the flipped controls, but residual displacement remains. ",
+      "experiments": [
+        "C1"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -5.0,
+        8.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s1_01/p1_m32_20261118_c_v005_s1_01.ttl",
+          "sha256": "00474b06667531213d2d7f8481f7ad11712ee97467d8916b4a29048ee211266d"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/frames.csv",
+          "sha256": "20f060b56d332baabf41b73189fb54e5604674770b5841f18b0225289701bf7e"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/pairs.csv",
+          "sha256": "903769dcbff79e3316103eb62f20ca1ff3cd1df7e7e06b59b58b94e79daab32f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/summary.json",
+          "sha256": "438f687739f90c16c2a4b05b356d5b3001c2dd4a5b6a5de54428dd3beae5af9c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/events.jsonl",
+          "sha256": "6711e1c0e70d7fe40e3cf0435157d90f0b351b8d9d0bc758f130abfcc1e9adfe"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/map_sample.npz",
+          "sha256": "3cf7871fd29ea9352d0d05e16ab7e1964af1378c9e236a5445d8021e5d609db2"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C2_topdown.png",
+      "sha256": "34b57b7a331f89e0501d9314c392a325d1157be656cd88cb0be762e8e9969487",
+      "size_px": [
+        2700,
+        2400
+      ],
+      "caption": "C2: v=0.05 m, seed=2 reconstruction (191 frames; map voxel 0.05 m; Mean L2 3.165352438552 m). The saved ceiling-cropped scene is redrawn top-down with the estimated trajectory in red and ground truth in black, in the fixed first-camera frame, with no fitted alignment. The late route is visibly displaced following the 103-to-104 rotation mismatch. C2 supplemental scientific audit passed; original finalize metadata stop preserved.",
+      "experiments": [
+        "C2"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -4.0,
+        12.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s2_01/p1_m32_20261118_c_v005_s2_01.ttl",
+          "sha256": "648bcf17206f10a9d37472ee22683a0bd026e3761568815db7569de779ad8500"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/frames.csv",
+          "sha256": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/pairs.csv",
+          "sha256": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/summary.json",
+          "sha256": "2c87a08f9322ab9ad453a1e2604acdc84c81a2e9b937ee94ad33637b9dc1245b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/events.jsonl",
+          "sha256": "08e9f5b86e21410544fa6a47183635f4c53fbe7e91513946499f806de2d56649"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/map_sample.npz",
+          "sha256": "bb2b4c6f23f324257cb12d6d9b552325fb01f6b6f4da0b2989da9390354905dc"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C3_topdown.png",
+      "sha256": "52718424ffb76eb2fd79f3c9182390469d53f32b4307ac0fdf4c4ec6f28f4a7e",
+      "size_px": [
+        2700,
+        2400
+      ],
+      "caption": "C3: v=0.05 m, seed=3 reconstruction (191 frames; map voxel 0.05 m; Mean L2 0.221466815796 m). The saved ceiling-cropped scene is redrawn top-down with the estimated trajectory in red and ground truth in black, in the fixed first-camera frame, with no fitted alignment. The estimated route is closer to GT than the flipped controls, but residual displacement remains. ",
+      "experiments": [
+        "C3"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -5.0,
+        8.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s3_01/p1_m32_20261118_c_v005_s3_01.ttl",
+          "sha256": "0cf575da57caa9d4eb17c812500b4e1da26f435328ece27177c37a7f848e0b9d"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frames.csv",
+          "sha256": "01d2583155d6e9364b443595390b01ecbcd675fb3101592e27f1b838725b8f96"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/pairs.csv",
+          "sha256": "faae75b3792c753eb5e584b85f6db266f8433d8e1fba40ce925f2628cfefcf14"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/summary.json",
+          "sha256": "c22e87b705001da05cae0b616dbdcd44516880aac0e3f968ec0a02f543c13e41"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/events.jsonl",
+          "sha256": "b0e75616cb6a787293973989d33aa344fbda8c241493b1965b2034e1ab442ec0"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/map_sample.npz",
+          "sha256": "72635fc637b3491f4bbfed36a558189afc9e03a01aa7927a7ef399057e6ef88d"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C4_topdown.png",
+      "sha256": "0517e7b939b5c6421b46611de1bc7026a55203147dda682b66ff259634c95726",
+      "size_px": [
+        2700,
+        2400
+      ],
+      "caption": "C4: v=0.05 m, seed=4 reconstruction (191 frames; map voxel 0.05 m; Mean L2 3.366709232590 m). The saved ceiling-cropped scene is redrawn top-down with the estimated trajectory in red and ground truth in black, in the fixed first-camera frame, with no fitted alignment. The late route is visibly displaced following the 103-to-104 rotation mismatch. ",
+      "experiments": [
+        "C4"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -5.0,
+        12.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl",
+          "sha256": "c121bd26340bd031889e320e480ce8e66edf683182b225db5ab70ff9f940ff96"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/frames.csv",
+          "sha256": "d500d0392ab220164c17ae92071b32b29dd09bba585ae9f4647c1e42abb8e286"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/pairs.csv",
+          "sha256": "5319ba6510aeccbed81def74d3894dce6ad737bdf763ce69b145c38144324cde"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/summary.json",
+          "sha256": "6430acf9c32b57c0a522645b4f54e0b5c67b678f56b80b1a4d136f585d092a56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/events.jsonl",
+          "sha256": "aca3f537b20c689635b820ad072a19fde0959e00ed38ae2f760621cec6e9c486"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/map_sample.npz",
+          "sha256": "2ed907b634e375ff5f18dbda110f5eee2081ea7971aae5eeffaab3af1413b714"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/A_baseline_reference_vs_selected_maps.png",
+      "sha256": "6a0e06e2bd48b2663f3ef34bf34a0c8ef533a03c91e92591404bf4856c2d33a5",
+      "size_px": [
+        3300,
+        3000
+      ],
+      "caption": "Harmonized top-down reference for the baseline/Selected comparison. Left: the separately measured B0 matched-control cloud (191 frames; Mean L2 3.174055104788 m), not the unavailable original M2 cloud. Right: actual M3.1 Selected cloud (190 frames; Mean L2 4.200397987246 m). Red is estimated trajectory and black is GT. Common first-camera bounds and identical display sampling retain the displaced geometry. The original M2 baseline scores 3.185555603874 m on the common 190 frames; Selected is 31.86% worse. No alignment or reconstruction correction is applied.",
+      "experiments": [
+        "B0",
+        "Selected"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -4.0,
+        12.0,
+        -24.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl",
+          "sha256": "bba92ffc4a031772a8b1b6bc80dc3056b0c103a1b0382784c3c82d4edc3eb4b6"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/common_frame_errors.csv",
+          "sha256": "5fd33b5734dedd26c0d694a85b045954621cafcdcfc93b3f3613588e3790b4b2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/poses_offline.npz",
+          "sha256": "6a889192911f0ec247c1df57256761469f39b10195912e244306b7d8beb589c2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/selected_pair_metrics.csv",
+          "sha256": "15bd74ac08d51f066624ad5984853fedfd12a31b1523d86398663448d043616a"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/summary.json",
+          "sha256": "6eee52e317119929ae46e001dac0f088ab0332ba5b05ab824076acbdc292060f"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/events.jsonl",
+          "sha256": "f2c1ae19791b48d71c638abc43a3dd2a8df50707f9b34310b8b69ca92716b9ab"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/map_sample.npz",
+          "sha256": "412280d1ac5a163b7c15e6842f71911790f6a3d68358731441c56271e4e94d5b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        }
+      ],
+      "limitations": [
+        "Original M2 did not retain its same-run full cloud or poses. The original PNG is preserved; no exact new M2 top-down map can be made without new reconstruction.",
+        "The harmonized Baseline/Selected map comparison uses the explicitly labeled B0 matched-control cloud; it is not the original M2 map.",
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/A_baseline_selected_errors.png",
+      "sha256": "9540ed8abc1d638951f0b6b561bd32513e2b7616b12efd17cb8a420920072de5",
+      "size_px": [
+        3300,
+        1740
+      ],
+      "caption": "Baseline/Selected camera-center errors on the common 190 frames. The original full-191 baseline Mean L2 is 3.174055104788 m; its matching M3.0 diagnostic scores 3.185555603874 m on the retained 190 frames. Selected scores 4.200397987246 m, 31.86% worse, with the new 103-to-105 mismatch. The diagnostic baseline trajectory is not an original same-run M2 pose export. Line colors identify runs, not trajectory roles.",
+      "experiments": [
+        "Selected"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl",
+          "sha256": "bba92ffc4a031772a8b1b6bc80dc3056b0c103a1b0382784c3c82d4edc3eb4b6"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/common_frame_errors.csv",
+          "sha256": "5fd33b5734dedd26c0d694a85b045954621cafcdcfc93b3f3613588e3790b4b2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/poses_offline.npz",
+          "sha256": "6a889192911f0ec247c1df57256761469f39b10195912e244306b7d8beb589c2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/selected_pair_metrics.csv",
+          "sha256": "15bd74ac08d51f066624ad5984853fedfd12a31b1523d86398663448d043616a"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/summary.json",
+          "sha256": "6eee52e317119929ae46e001dac0f088ab0332ba5b05ab824076acbdc292060f"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/events.jsonl",
+          "sha256": "f2c1ae19791b48d71c638abc43a3dd2a8df50707f9b34310b8b69ca92716b9ab"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/map_sample.npz",
+          "sha256": "412280d1ac5a163b7c15e6842f71911790f6a3d68358731441c56271e4e94d5b"
+        },
+        {
+          "path": "research_outputs/m3_20261118_analysis_02/frames.csv",
+          "sha256": "5b54a41a1c2feeb590a7b14f37cff083ec9fba5d3c76dbb4263cccf022b3b60f"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/B_maps.png",
+      "sha256": "dc6cee0a65ebf93784c1ef7dc9ad1cade7d1a13c58a64407d056caedfa38ffb5",
+      "size_px": [
+        3300,
+        1560
+      ],
+      "caption": "Registration Pipeline Scale, seed 0: B0 (v=0.05 m, 191 frames, Mean L2 3.174055104788 m), B1 (v=0.03 m, RANSAC failure at 70-to-71; no complete map or Mean L2), and B2 (v=0.08 m, 191 frames, Mean L2 0.274959466593 m). All actual saved ceiling-cropped scenes use common top-down X/Z limits, equal aspect, and identical display sampling. Estimated trajectories are red and GT black; no fitted alignment is used. Completed reconstructions can still have poor accuracy.",
+      "experiments": [
+        "B0",
+        "B2"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -4.0,
+        12.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_b_v008_s0_01/p1_m32_20261118_b_v008_s0_01.ttl",
+          "sha256": "cf87f42267315f89fe190de4cb860f5690888eef4be628afc4beb19c8f871944"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/frames.csv",
+          "sha256": "99627c858a7ae1b29e0299e48e82a2589ed8243338d4fae295fd7cd7fa5ec93b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/pairs.csv",
+          "sha256": "133f00474575fe15e15d70ad018ec342f9f833d252819460da28a3d53bcdb278"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/summary.json",
+          "sha256": "b4ca5033cb49d8a5bdf703cd32e1723ee47e14c81fb23c031b38fae450b65427"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/events.jsonl",
+          "sha256": "e34c17a69741c46ba711ddecb5b5be485626c9cb52d814592d635dc0c0d4831c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/map_sample.npz",
+          "sha256": "efdcfd15ff9817f346c76e3b81434dd85df9895a822e257f74ac2a5944449e56"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/B_mean_l2.png",
+      "sha256": "ff52d2995a4d8940fca4dbdedf5a0b8a8dfad258f70e07158753f32391d2775a",
+      "size_px": [
+        3000,
+        1650
+      ],
+      "caption": "Registration Pipeline Scale, seed 0: B0 (v=0.05 m, 191 frames, Mean L2 3.174055104788 m), B1 (v=0.03 m, RANSAC failure at 70-to-71; no complete map or Mean L2), and B2 (v=0.08 m, 191 frames, Mean L2 0.274959466593 m). All actual saved ceiling-cropped scenes use common top-down X/Z limits, equal aspect, and identical display sampling. Estimated trajectories are red and GT black; no fitted alignment is used. Completed reconstructions can still have poor accuracy. Bars report full-sequence errors only; no zero is inserted for B1.",
+      "experiments": [
+        "B0",
+        "B2"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_b_v008_s0_01/p1_m32_20261118_b_v008_s0_01.ttl",
+          "sha256": "cf87f42267315f89fe190de4cb860f5690888eef4be628afc4beb19c8f871944"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/frames.csv",
+          "sha256": "99627c858a7ae1b29e0299e48e82a2589ed8243338d4fae295fd7cd7fa5ec93b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/pairs.csv",
+          "sha256": "133f00474575fe15e15d70ad018ec342f9f833d252819460da28a3d53bcdb278"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/summary.json",
+          "sha256": "b4ca5033cb49d8a5bdf703cd32e1723ee47e14c81fb23c031b38fae450b65427"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/events.jsonl",
+          "sha256": "e34c17a69741c46ba711ddecb5b5be485626c9cb52d814592d635dc0c0d4831c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/map_sample.npz",
+          "sha256": "efdcfd15ff9817f346c76e3b81434dd85df9895a822e257f74ac2a5944449e56"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/C_maps.png",
+      "sha256": "9f4d6445475eb7ddfbc607a3bec7519434bd1a3fbaf81a67a0ac96e5f4b495c6",
+      "size_px": [
+        3300,
+        3120
+      ],
+      "caption": "RANSAC seed sensitivity at v=0.05 m, with 191 frames per run: seeds 0/1/2/3/4 have Mean L2 values 3.174055104788/0.155696709607/3.165352438552/0.221466815796/3.366709232590 m. Seeds 0, 2 and 4 have a major 103-to-104 rotation mismatch; seeds 1 and 3 do not. All actual saved ceiling-cropped scenes use common top-down X/Z limits, equal aspect, and identical display sampling. Estimated trajectories are red and GT black; no fitted alignment is used. Completed reconstructions can still have poor accuracy.",
+      "experiments": [
+        "B0",
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "kind": "offline redraw",
+      "view": "top-down",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": [
+        -5.0,
+        12.0,
+        -12.0,
+        6.0
+      ],
+      "sampling": "90,000 equally spaced indices of each saved sample (or all if smaller)",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s1_01/p1_m32_20261118_c_v005_s1_01.ttl",
+          "sha256": "00474b06667531213d2d7f8481f7ad11712ee97467d8916b4a29048ee211266d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s2_01/p1_m32_20261118_c_v005_s2_01.ttl",
+          "sha256": "648bcf17206f10a9d37472ee22683a0bd026e3761568815db7569de779ad8500"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s3_01/p1_m32_20261118_c_v005_s3_01.ttl",
+          "sha256": "0cf575da57caa9d4eb17c812500b4e1da26f435328ece27177c37a7f848e0b9d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl",
+          "sha256": "c121bd26340bd031889e320e480ce8e66edf683182b225db5ab70ff9f940ff96"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/frames.csv",
+          "sha256": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/pairs.csv",
+          "sha256": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/summary.json",
+          "sha256": "2c87a08f9322ab9ad453a1e2604acdc84c81a2e9b937ee94ad33637b9dc1245b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/frames.csv",
+          "sha256": "20f060b56d332baabf41b73189fb54e5604674770b5841f18b0225289701bf7e"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/pairs.csv",
+          "sha256": "903769dcbff79e3316103eb62f20ca1ff3cd1df7e7e06b59b58b94e79daab32f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/summary.json",
+          "sha256": "438f687739f90c16c2a4b05b356d5b3001c2dd4a5b6a5de54428dd3beae5af9c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/events.jsonl",
+          "sha256": "6711e1c0e70d7fe40e3cf0435157d90f0b351b8d9d0bc758f130abfcc1e9adfe"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/map_sample.npz",
+          "sha256": "3cf7871fd29ea9352d0d05e16ab7e1964af1378c9e236a5445d8021e5d609db2"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/events.jsonl",
+          "sha256": "08e9f5b86e21410544fa6a47183635f4c53fbe7e91513946499f806de2d56649"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/map_sample.npz",
+          "sha256": "bb2b4c6f23f324257cb12d6d9b552325fb01f6b6f4da0b2989da9390354905dc"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frames.csv",
+          "sha256": "01d2583155d6e9364b443595390b01ecbcd675fb3101592e27f1b838725b8f96"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/pairs.csv",
+          "sha256": "faae75b3792c753eb5e584b85f6db266f8433d8e1fba40ce925f2628cfefcf14"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/summary.json",
+          "sha256": "c22e87b705001da05cae0b616dbdcd44516880aac0e3f968ec0a02f543c13e41"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/events.jsonl",
+          "sha256": "b0e75616cb6a787293973989d33aa344fbda8c241493b1965b2034e1ab442ec0"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/map_sample.npz",
+          "sha256": "72635fc637b3491f4bbfed36a558189afc9e03a01aa7927a7ef399057e6ef88d"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/frames.csv",
+          "sha256": "d500d0392ab220164c17ae92071b32b29dd09bba585ae9f4647c1e42abb8e286"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/pairs.csv",
+          "sha256": "5319ba6510aeccbed81def74d3894dce6ad737bdf763ce69b145c38144324cde"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/summary.json",
+          "sha256": "6430acf9c32b57c0a522645b4f54e0b5c67b678f56b80b1a4d136f585d092a56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/events.jsonl",
+          "sha256": "aca3f537b20c689635b820ad072a19fde0959e00ed38ae2f760621cec6e9c486"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/map_sample.npz",
+          "sha256": "2ed907b634e375ff5f18dbda110f5eee2081ea7971aae5eeffaab3af1413b714"
+        }
+      ],
+      "limitations": [
+        "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered."
+      ]
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/C_mean_l2.png",
+      "sha256": "823ebebedac1b083fd4d97b1e41f25c97cb02c2f613869dbf9fba7905d87728b",
+      "size_px": [
+        3000,
+        1650
+      ],
+      "caption": "RANSAC seed sensitivity at v=0.05 m, with 191 frames per run: seeds 0/1/2/3/4 have Mean L2 values 3.174055104788/0.155696709607/3.165352438552/0.221466815796/3.366709232590 m. Seeds 0, 2 and 4 have a major 103-to-104 rotation mismatch; seeds 1 and 3 do not. All actual saved ceiling-cropped scenes use common top-down X/Z limits, equal aspect, and identical display sampling. Estimated trajectories are red and GT black; no fitted alignment is used. Completed reconstructions can still have poor accuracy. Bars report full-sequence errors only; no zero is inserted for B1.",
+      "experiments": [
+        "B0",
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s1_01/p1_m32_20261118_c_v005_s1_01.ttl",
+          "sha256": "00474b06667531213d2d7f8481f7ad11712ee97467d8916b4a29048ee211266d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s2_01/p1_m32_20261118_c_v005_s2_01.ttl",
+          "sha256": "648bcf17206f10a9d37472ee22683a0bd026e3761568815db7569de779ad8500"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s3_01/p1_m32_20261118_c_v005_s3_01.ttl",
+          "sha256": "0cf575da57caa9d4eb17c812500b4e1da26f435328ece27177c37a7f848e0b9d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl",
+          "sha256": "c121bd26340bd031889e320e480ce8e66edf683182b225db5ab70ff9f940ff96"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/frames.csv",
+          "sha256": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/pairs.csv",
+          "sha256": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/summary.json",
+          "sha256": "2c87a08f9322ab9ad453a1e2604acdc84c81a2e9b937ee94ad33637b9dc1245b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/frames.csv",
+          "sha256": "20f060b56d332baabf41b73189fb54e5604674770b5841f18b0225289701bf7e"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/pairs.csv",
+          "sha256": "903769dcbff79e3316103eb62f20ca1ff3cd1df7e7e06b59b58b94e79daab32f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/summary.json",
+          "sha256": "438f687739f90c16c2a4b05b356d5b3001c2dd4a5b6a5de54428dd3beae5af9c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/events.jsonl",
+          "sha256": "6711e1c0e70d7fe40e3cf0435157d90f0b351b8d9d0bc758f130abfcc1e9adfe"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/map_sample.npz",
+          "sha256": "3cf7871fd29ea9352d0d05e16ab7e1964af1378c9e236a5445d8021e5d609db2"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/events.jsonl",
+          "sha256": "08e9f5b86e21410544fa6a47183635f4c53fbe7e91513946499f806de2d56649"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/map_sample.npz",
+          "sha256": "bb2b4c6f23f324257cb12d6d9b552325fb01f6b6f4da0b2989da9390354905dc"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frames.csv",
+          "sha256": "01d2583155d6e9364b443595390b01ecbcd675fb3101592e27f1b838725b8f96"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/pairs.csv",
+          "sha256": "faae75b3792c753eb5e584b85f6db266f8433d8e1fba40ce925f2628cfefcf14"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/summary.json",
+          "sha256": "c22e87b705001da05cae0b616dbdcd44516880aac0e3f968ec0a02f543c13e41"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/events.jsonl",
+          "sha256": "b0e75616cb6a787293973989d33aa344fbda8c241493b1965b2034e1ab442ec0"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/map_sample.npz",
+          "sha256": "72635fc637b3491f4bbfed36a558189afc9e03a01aa7927a7ef399057e6ef88d"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/frames.csv",
+          "sha256": "d500d0392ab220164c17ae92071b32b29dd09bba585ae9f4647c1e42abb8e286"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/pairs.csv",
+          "sha256": "5319ba6510aeccbed81def74d3894dce6ad737bdf763ce69b145c38144324cde"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/summary.json",
+          "sha256": "6430acf9c32b57c0a522645b4f54e0b5c67b678f56b80b1a4d136f585d092a56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/events.jsonl",
+          "sha256": "aca3f537b20c689635b820ad072a19fde0959e00ed38ae2f760621cec6e9c486"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/map_sample.npz",
+          "sha256": "2ed907b634e375ff5f18dbda110f5eee2081ea7971aae5eeffaab3af1413b714"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/per_frame_l2.png",
+      "sha256": "f863190ede9c6536ce48e27b78335adc7db68f472a9e90d1a8df0967033aa69e",
+      "size_px": [
+        3600,
+        1800
+      ],
+      "caption": "Per-frame L2 errors from six complete M3.2 runs (191 frames each) and the actual M3.1 Selected run (190 frames). The original frame identity is preserved. B1 has no full-sequence curve because it failed at 70-to-71. Colors identify runs; this is an error plot, not a map. High-error seeds are retained.",
+      "experiments": [
+        "B0",
+        "B2",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "Selected"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl",
+          "sha256": "bba92ffc4a031772a8b1b6bc80dc3056b0c103a1b0382784c3c82d4edc3eb4b6"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_b_v008_s0_01/p1_m32_20261118_b_v008_s0_01.ttl",
+          "sha256": "cf87f42267315f89fe190de4cb860f5690888eef4be628afc4beb19c8f871944"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s1_01/p1_m32_20261118_c_v005_s1_01.ttl",
+          "sha256": "00474b06667531213d2d7f8481f7ad11712ee97467d8916b4a29048ee211266d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s2_01/p1_m32_20261118_c_v005_s2_01.ttl",
+          "sha256": "648bcf17206f10a9d37472ee22683a0bd026e3761568815db7569de779ad8500"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s3_01/p1_m32_20261118_c_v005_s3_01.ttl",
+          "sha256": "0cf575da57caa9d4eb17c812500b4e1da26f435328ece27177c37a7f848e0b9d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl",
+          "sha256": "c121bd26340bd031889e320e480ce8e66edf683182b225db5ab70ff9f940ff96"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/common_frame_errors.csv",
+          "sha256": "5fd33b5734dedd26c0d694a85b045954621cafcdcfc93b3f3613588e3790b4b2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/poses_offline.npz",
+          "sha256": "6a889192911f0ec247c1df57256761469f39b10195912e244306b7d8beb589c2"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/selected_pair_metrics.csv",
+          "sha256": "15bd74ac08d51f066624ad5984853fedfd12a31b1523d86398663448d043616a"
+        },
+        {
+          "path": "research_outputs/m31_20261118_analysis_01/summary.json",
+          "sha256": "6eee52e317119929ae46e001dac0f088ab0332ba5b05ab824076acbdc292060f"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/events.jsonl",
+          "sha256": "f2c1ae19791b48d71c638abc43a3dd2a8df50707f9b34310b8b69ca92716b9ab"
+        },
+        {
+          "path": "research_outputs/m31_20261118_official_observation_01/map_sample.npz",
+          "sha256": "412280d1ac5a163b7c15e6842f71911790f6a3d68358731441c56271e4e94d5b"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/frames.csv",
+          "sha256": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/pairs.csv",
+          "sha256": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/summary.json",
+          "sha256": "2c87a08f9322ab9ad453a1e2604acdc84c81a2e9b937ee94ad33637b9dc1245b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/frames.csv",
+          "sha256": "99627c858a7ae1b29e0299e48e82a2589ed8243338d4fae295fd7cd7fa5ec93b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/pairs.csv",
+          "sha256": "133f00474575fe15e15d70ad018ec342f9f833d252819460da28a3d53bcdb278"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/summary.json",
+          "sha256": "b4ca5033cb49d8a5bdf703cd32e1723ee47e14c81fb23c031b38fae450b65427"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/events.jsonl",
+          "sha256": "e34c17a69741c46ba711ddecb5b5be485626c9cb52d814592d635dc0c0d4831c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/map_sample.npz",
+          "sha256": "efdcfd15ff9817f346c76e3b81434dd85df9895a822e257f74ac2a5944449e56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/frames.csv",
+          "sha256": "20f060b56d332baabf41b73189fb54e5604674770b5841f18b0225289701bf7e"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/pairs.csv",
+          "sha256": "903769dcbff79e3316103eb62f20ca1ff3cd1df7e7e06b59b58b94e79daab32f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/summary.json",
+          "sha256": "438f687739f90c16c2a4b05b356d5b3001c2dd4a5b6a5de54428dd3beae5af9c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/events.jsonl",
+          "sha256": "6711e1c0e70d7fe40e3cf0435157d90f0b351b8d9d0bc758f130abfcc1e9adfe"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/map_sample.npz",
+          "sha256": "3cf7871fd29ea9352d0d05e16ab7e1964af1378c9e236a5445d8021e5d609db2"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/events.jsonl",
+          "sha256": "08e9f5b86e21410544fa6a47183635f4c53fbe7e91513946499f806de2d56649"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/map_sample.npz",
+          "sha256": "bb2b4c6f23f324257cb12d6d9b552325fb01f6b6f4da0b2989da9390354905dc"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frames.csv",
+          "sha256": "01d2583155d6e9364b443595390b01ecbcd675fb3101592e27f1b838725b8f96"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/pairs.csv",
+          "sha256": "faae75b3792c753eb5e584b85f6db266f8433d8e1fba40ce925f2628cfefcf14"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/summary.json",
+          "sha256": "c22e87b705001da05cae0b616dbdcd44516880aac0e3f968ec0a02f543c13e41"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/events.jsonl",
+          "sha256": "b0e75616cb6a787293973989d33aa344fbda8c241493b1965b2034e1ab442ec0"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/map_sample.npz",
+          "sha256": "72635fc637b3491f4bbfed36a558189afc9e03a01aa7927a7ef399057e6ef88d"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/frames.csv",
+          "sha256": "d500d0392ab220164c17ae92071b32b29dd09bba585ae9f4647c1e42abb8e286"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/pairs.csv",
+          "sha256": "5319ba6510aeccbed81def74d3894dce6ad737bdf763ce69b145c38144324cde"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/summary.json",
+          "sha256": "6430acf9c32b57c0a522645b4f54e0b5c67b678f56b80b1a4d136f585d092a56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/events.jsonl",
+          "sha256": "aca3f537b20c689635b820ad072a19fde0959e00ed38ae2f760621cec6e9c486"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/map_sample.npz",
+          "sha256": "2ed907b634e375ff5f18dbda110f5eee2081ea7971aae5eeffaab3af1413b714"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/local_registration_errors.png",
+      "sha256": "1d6ce0a7305770b74f16fbd2b233d982b9487ad258131bff1f4b6513ea8bee85",
+      "size_px": [
+        3300,
+        2400
+      ],
+      "caption": "RANSAC and ICP local rotation/translation errors for all six complete M3.2 runs, evaluated offline using their saved same-run matrices and fixed first-camera GT convention. B0/C2/C4 have major rotation mismatches at 103-to-104; B2/C1/C3 do not. B1 has no complete sequence. No registration is rerun and no matrix is replaced.",
+      "experiments": [
+        "B0",
+        "B2",
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_b_v008_s0_01/p1_m32_20261118_b_v008_s0_01.ttl",
+          "sha256": "cf87f42267315f89fe190de4cb860f5690888eef4be628afc4beb19c8f871944"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s1_01/p1_m32_20261118_c_v005_s1_01.ttl",
+          "sha256": "00474b06667531213d2d7f8481f7ad11712ee97467d8916b4a29048ee211266d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s2_01/p1_m32_20261118_c_v005_s2_01.ttl",
+          "sha256": "648bcf17206f10a9d37472ee22683a0bd026e3761568815db7569de779ad8500"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s3_01/p1_m32_20261118_c_v005_s3_01.ttl",
+          "sha256": "0cf575da57caa9d4eb17c812500b4e1da26f435328ece27177c37a7f848e0b9d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl",
+          "sha256": "c121bd26340bd031889e320e480ce8e66edf683182b225db5ab70ff9f940ff96"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/frames.csv",
+          "sha256": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/pairs.csv",
+          "sha256": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/summary.json",
+          "sha256": "2c87a08f9322ab9ad453a1e2604acdc84c81a2e9b937ee94ad33637b9dc1245b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/frames.csv",
+          "sha256": "99627c858a7ae1b29e0299e48e82a2589ed8243338d4fae295fd7cd7fa5ec93b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/pairs.csv",
+          "sha256": "133f00474575fe15e15d70ad018ec342f9f833d252819460da28a3d53bcdb278"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/summary.json",
+          "sha256": "b4ca5033cb49d8a5bdf703cd32e1723ee47e14c81fb23c031b38fae450b65427"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/events.jsonl",
+          "sha256": "e34c17a69741c46ba711ddecb5b5be485626c9cb52d814592d635dc0c0d4831c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/map_sample.npz",
+          "sha256": "efdcfd15ff9817f346c76e3b81434dd85df9895a822e257f74ac2a5944449e56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/frames.csv",
+          "sha256": "20f060b56d332baabf41b73189fb54e5604674770b5841f18b0225289701bf7e"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/pairs.csv",
+          "sha256": "903769dcbff79e3316103eb62f20ca1ff3cd1df7e7e06b59b58b94e79daab32f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/summary.json",
+          "sha256": "438f687739f90c16c2a4b05b356d5b3001c2dd4a5b6a5de54428dd3beae5af9c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/events.jsonl",
+          "sha256": "6711e1c0e70d7fe40e3cf0435157d90f0b351b8d9d0bc758f130abfcc1e9adfe"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/map_sample.npz",
+          "sha256": "3cf7871fd29ea9352d0d05e16ab7e1964af1378c9e236a5445d8021e5d609db2"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/events.jsonl",
+          "sha256": "08e9f5b86e21410544fa6a47183635f4c53fbe7e91513946499f806de2d56649"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/map_sample.npz",
+          "sha256": "bb2b4c6f23f324257cb12d6d9b552325fb01f6b6f4da0b2989da9390354905dc"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frames.csv",
+          "sha256": "01d2583155d6e9364b443595390b01ecbcd675fb3101592e27f1b838725b8f96"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/pairs.csv",
+          "sha256": "faae75b3792c753eb5e584b85f6db266f8433d8e1fba40ce925f2628cfefcf14"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/summary.json",
+          "sha256": "c22e87b705001da05cae0b616dbdcd44516880aac0e3f968ec0a02f543c13e41"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/events.jsonl",
+          "sha256": "b0e75616cb6a787293973989d33aa344fbda8c241493b1965b2034e1ab442ec0"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/map_sample.npz",
+          "sha256": "72635fc637b3491f4bbfed36a558189afc9e03a01aa7927a7ef399057e6ef88d"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/frames.csv",
+          "sha256": "d500d0392ab220164c17ae92071b32b29dd09bba585ae9f4647c1e42abb8e286"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/pairs.csv",
+          "sha256": "5319ba6510aeccbed81def74d3894dce6ad737bdf763ce69b145c38144324cde"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/summary.json",
+          "sha256": "6430acf9c32b57c0a522645b4f54e0b5c67b678f56b80b1a4d136f585d092a56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/events.jsonl",
+          "sha256": "aca3f537b20c689635b820ad072a19fde0959e00ed38ae2f760621cec6e9c486"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/map_sample.npz",
+          "sha256": "2ed907b634e375ff5f18dbda110f5eee2081ea7971aae5eeffaab3af1413b714"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/pose_flip_103_104.png",
+      "sha256": "1349412f099d2be1024be9f79f2910fcb44cecaed67ffa26595e69a96084b07f",
+      "size_px": [
+        3300,
+        2700
+      ],
+      "caption": "The saved B0 control (v=0.05 m, seed 0, 191 frames; full Mean L2 3.174055104788 m) shows a coarse rotation error of 176.074504 degrees at 103-to-104 and an ICP error of 179.778159 degrees. ICP reduces local residuals without recovering the correct pose; the wrong orientation then affects global motion accumulation. These are offline errors from frozen results, not a new registration experiment.",
+      "experiments": [
+        "B0"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/B_eight_factors.png",
+      "sha256": "1b92bccfaea9e66fe47b10c7abb6768b21dc9ce28f30e67f1325ba0911931546",
+      "size_px": [
+        3150,
+        3750
+      ],
+      "caption": "B pipeline-grounded factor timelines. Complete runs contain 191 single-frame and 190 pair measurements per factor type. B1 contributes only the actual unsealed prefix through its failed 70-to-71 pair (562 observed values total); it is not a complete factor set. Fitness and correspondence RMSE are internal metrics at native thresholds and do not establish GT pose accuracy. VoxelizedPointYield is a count, not a proportion.",
+      "experiments": [
+        "B0",
+        "B2"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_b_v008_s0_01/p1_m32_20261118_b_v008_s0_01.ttl",
+          "sha256": "cf87f42267315f89fe190de4cb860f5690888eef4be628afc4beb19c8f871944"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/observation/events.jsonl",
+          "sha256": "5d59a1924cab068b766bf22dfa88a9c746cc45ea61cd118961bbc7d0818c36f8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/frames.csv",
+          "sha256": "99627c858a7ae1b29e0299e48e82a2589ed8243338d4fae295fd7cd7fa5ec93b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/pairs.csv",
+          "sha256": "133f00474575fe15e15d70ad018ec342f9f833d252819460da28a3d53bcdb278"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/analysis/summary.json",
+          "sha256": "b4ca5033cb49d8a5bdf703cd32e1723ee47e14c81fb23c031b38fae450b65427"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/events.jsonl",
+          "sha256": "e34c17a69741c46ba711ddecb5b5be485626c9cb52d814592d635dc0c0d4831c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v008_s0_01/observation/map_sample.npz",
+          "sha256": "efdcfd15ff9817f346c76e3b81434dd85df9895a822e257f74ac2a5944449e56"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/C_eight_factors.png",
+      "sha256": "22093e8786619b689c3e20cccd8ad4e1a9963ec11783e3b85be853be94240b2a",
+      "size_px": [
+        3150,
+        3750
+      ],
+      "caption": "C pipeline-grounded factor timelines. Complete runs contain 191 single-frame and 190 pair measurements per factor type. All five seeds are shown, including overlapping raw-count/yield curves and high-error seeds. Fitness and correspondence RMSE are internal metrics at native thresholds and do not establish GT pose accuracy. VoxelizedPointYield is a count, not a proportion.",
+      "experiments": [
+        "B0",
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "kind": "offline redraw",
+      "view": "not a scene view",
+      "coordinate_frame": "fixed first-camera image axes: +X right, +Y down, +Z forward",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "experiments/p1_m32_20261118_b_v005_s0_01/p1_m32_20261118_b_v005_s0_01.ttl",
+          "sha256": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s1_01/p1_m32_20261118_c_v005_s1_01.ttl",
+          "sha256": "00474b06667531213d2d7f8481f7ad11712ee97467d8916b4a29048ee211266d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s2_01/p1_m32_20261118_c_v005_s2_01.ttl",
+          "sha256": "648bcf17206f10a9d37472ee22683a0bd026e3761568815db7569de779ad8500"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s3_01/p1_m32_20261118_c_v005_s3_01.ttl",
+          "sha256": "0cf575da57caa9d4eb17c812500b4e1da26f435328ece27177c37a7f848e0b9d"
+        },
+        {
+          "path": "experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl",
+          "sha256": "c121bd26340bd031889e320e480ce8e66edf683182b225db5ab70ff9f940ff96"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/frames.csv",
+          "sha256": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/pairs.csv",
+          "sha256": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89"
+        },
+        {
+          "path": "research_outputs/m32_20261118_suite_01/resume_03/C2_audit/analysis/summary.json",
+          "sha256": "2c87a08f9322ab9ad453a1e2604acdc84c81a2e9b937ee94ad33637b9dc1245b"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/frames.csv",
+          "sha256": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/pairs.csv",
+          "sha256": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/analysis/summary.json",
+          "sha256": "b2ca5568ba49ad721ed70c3b17f29844d1cc71dec3e24d0e9f1664e6f5300bf6"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/events.jsonl",
+          "sha256": "b3647d44f6d7a93740e48746f8f3047815046f0db04036b006d1a3a2f15dd25f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_b_v005_s0_01/observation/map_sample.npz",
+          "sha256": "4cc71cadd77b37552d4df7969e2a2701a028dac6f69d12ba9f97cb9b6405dcc8"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/frames.csv",
+          "sha256": "20f060b56d332baabf41b73189fb54e5604674770b5841f18b0225289701bf7e"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/pairs.csv",
+          "sha256": "903769dcbff79e3316103eb62f20ca1ff3cd1df7e7e06b59b58b94e79daab32f"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/analysis/summary.json",
+          "sha256": "438f687739f90c16c2a4b05b356d5b3001c2dd4a5b6a5de54428dd3beae5af9c"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/events.jsonl",
+          "sha256": "6711e1c0e70d7fe40e3cf0435157d90f0b351b8d9d0bc758f130abfcc1e9adfe"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s1_01/observation/map_sample.npz",
+          "sha256": "3cf7871fd29ea9352d0d05e16ab7e1964af1378c9e236a5445d8021e5d609db2"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/events.jsonl",
+          "sha256": "08e9f5b86e21410544fa6a47183635f4c53fbe7e91513946499f806de2d56649"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s2_01/observation/map_sample.npz",
+          "sha256": "bb2b4c6f23f324257cb12d6d9b552325fb01f6b6f4da0b2989da9390354905dc"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frames.csv",
+          "sha256": "01d2583155d6e9364b443595390b01ecbcd675fb3101592e27f1b838725b8f96"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/pairs.csv",
+          "sha256": "faae75b3792c753eb5e584b85f6db266f8433d8e1fba40ce925f2628cfefcf14"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/summary.json",
+          "sha256": "c22e87b705001da05cae0b616dbdcd44516880aac0e3f968ec0a02f543c13e41"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/events.jsonl",
+          "sha256": "b0e75616cb6a787293973989d33aa344fbda8c241493b1965b2034e1ab442ec0"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/observation/map_sample.npz",
+          "sha256": "72635fc637b3491f4bbfed36a558189afc9e03a01aa7927a7ef399057e6ef88d"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/frames.csv",
+          "sha256": "d500d0392ab220164c17ae92071b32b29dd09bba585ae9f4647c1e42abb8e286"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/pairs.csv",
+          "sha256": "5319ba6510aeccbed81def74d3894dce6ad737bdf763ce69b145c38144324cde"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/analysis/summary.json",
+          "sha256": "6430acf9c32b57c0a522645b4f54e0b5c67b678f56b80b1a4d136f585d092a56"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/events.jsonl",
+          "sha256": "aca3f537b20c689635b820ad072a19fde0959e00ed38ae2f760621cec6e9c486"
+        },
+        {
+          "path": "research_outputs/m32_p1_m32_20261118_c_v005_s4_01/observation/map_sample.npz",
+          "sha256": "2ed907b634e375ff5f18dbda110f5eee2081ea7971aae5eeffaab3af1413b714"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/existing_pair_cloud_projections.png",
+      "sha256": "52f0959af5a09e0b90f14517bdc144935b34a3b5b009da0aa7f533773987d362",
+      "size_px": [
+        2250,
+        1350
+      ],
+      "caption": "Existing M3.0 diagnostic cloud projections for 103-to-104. Saved coarse/ICP transforms and the offline GT reference are applied for diagnosis; no new RANSAC/ICP is run and GT is not used to correct a reconstruction. This is a local projection diagnostic, not a full-floor map.",
+      "experiments": [
+        "M3.0"
+      ],
+      "kind": "existing diagnostic PNG copy",
+      "view": "source local projections",
+      "coordinate_frame": "original source/target camera axes; local diagnostic",
+      "display_bounds_xz_m": null,
+      "sampling": "source-specific; see caption",
+      "source_files": [
+        {
+          "path": "research_outputs/m3_20261118_details_01/pair103_104_cloud_projections.png",
+          "sha256": "52f0959af5a09e0b90f14517bdc144935b34a3b5b009da0aa7f533773987d362"
+        },
+        {
+          "path": "research_outputs/m3_20261118_details_01/provenance.json",
+          "sha256": "ce5c0feac1499a63a28ca07b261b5a9e715954922f208c1b203d42d76d9f8d18"
+        }
+      ],
+      "limitations": [
+        "Original image resolution retained."
+      ]
+    }
+  ],
+  "limitations": [
+    "Original M2 did not retain its same-run full cloud or poses. The original PNG is preserved; no exact new M2 top-down map can be made without new reconstruction.",
+    "The harmonized Baseline/Selected map comparison uses the explicitly labeled B0 matched-control cloud; it is not the original M2 map.",
+    "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered.",
+    "Isometric views are not required here; original native PNGs provide their original viewpoints. No synthetic scene or repaired reconstruction is used."
+  ],
+  "source_code_sha256": "8a78e20ccafbc2bf2948d2d7dd142b54901cbc9818bae4c4f2aa8d2abb786ef3",
+  "rendering": {
+    "dpi": 300,
+    "display_limit": 90000,
+    "point_size": 0.32,
+    "point_alpha": 0.65,
+    "red": "estimated",
+    "black": "GT",
+    "fitted_alignment": false,
+    "registration_executed": false,
+    "original_RGBD_reconstructed": false
+  },
+  "visual_review_file": "visual_review.json",
+  "previews": [
+    "research_outputs/phase1_report_assets/previews/contact_01.png",
+    "research_outputs/phase1_report_assets/previews/contact_02.png",
+    "research_outputs/phase1_report_assets/previews/contact_03.png",
+    "research_outputs/phase1_report_assets/previews/contact_04.png",
+    "research_outputs/phase1_report_assets/previews/contact_05.png",
+    "research_outputs/phase1_report_assets/previews/contact_06.png"
+  ],
+  "files": {
+    "README.md": "1f6c8790fdca705bcec24450a78f338225f4611be9f291f4c18178b9a9a7cad8",
+    "captions/figure_captions.md": "21802cdacf1f510beb164aa9b36964872479a5234c237b05689fbc9898b7b813",
+    "comparisons/A_baseline_selected_errors.png": "9540ed8abc1d638951f0b6b561bd32513e2b7616b12efd17cb8a420920072de5",
+    "comparisons/C_mean_l2.png": "823ebebedac1b083fd4d97b1e41f25c97cb02c2f613869dbf9fba7905d87728b",
+    "comparisons/A_baseline_reference_vs_selected_maps.png": "6a0e06e2bd48b2663f3ef34bf34a0c8ef533a03c91e92591404bf4856c2d33a5",
+    "comparisons/B_mean_l2.png": "ff52d2995a4d8940fca4dbdedf5a0b8a8dfad258f70e07158753f32391d2775a",
+    "comparisons/C_maps.png": "9f4d6445475eb7ddfbc607a3bec7519434bd1a3fbaf81a67a0ac96e5f4b495c6",
+    "comparisons/B_maps.png": "dc6cee0a65ebf93784c1ef7dc9ad1cade7d1a13c58a64407d056caedfa38ffb5",
+    "diagnostics/existing_pair_cloud_projections.png": "52f0959af5a09e0b90f14517bdc144935b34a3b5b009da0aa7f533773987d362",
+    "diagnostics/local_registration_errors.png": "1d6ce0a7305770b74f16fbd2b233d982b9487ad258131bff1f4b6513ea8bee85",
+    "diagnostics/C_eight_factors.png": "22093e8786619b689c3e20cccd8ad4e1a9963ec11783e3b85be853be94240b2a",
+    "diagnostics/per_frame_l2.png": "f863190ede9c6536ce48e27b78335adc7db68f472a9e90d1a8df0967033aa69e",
+    "diagnostics/B_eight_factors.png": "1b92bccfaea9e66fe47b10c7abb6768b21dc9ce28f30e67f1325ba0911931546",
+    "diagnostics/pose_flip_103_104.png": "1349412f099d2be1024be9f79f2910fcb44cecaed67ffa26595e69a96084b07f",
+    "previews/contact_06.png": "2aa371bf63be585975300a6eaff1d4552128cd0053759d8522ba51ee044c736c",
+    "previews/contact_05.png": "3725b91b4d0d69ef9b854e0d7cfcf4c2a4a9f9e5c99fc968a382a4b4ff798039",
+    "previews/contact_04.png": "c71b1a8089bf0338359994cde2002d4ecdcd6afafb1bd989582f59f0551a4a60",
+    "previews/contact_01.png": "8ce77d24628162dc228445e8ebdf40d20f20ce787bb2dd45a2ac64681fa1cc4f",
+    "previews/contact_03.png": "fd0f5bb23d535ff6efe89327d444e334183af2ceeb267fe69f7ea451dcf930e2",
+    "previews/contact_02.png": "8e2eb23995553adc800f7a984a0cacdc4be5ccd2f6740f7749ff01cf3d2cb98c",
+    "data/native_png_index.json": "8f9b83222b0b8d7cd9f1395878ce34e70d6075e96afb41c6248b7d939ffa9851",
+    "data/run_comparison.csv": "39351a2731ff9d436dedf02dff23b6e97544cfcd304bdbcfb6fa16dea66b4aa2",
+    "single_runs/C1_topdown.png": "c4da653696c8bddbaab0bcd43bceb82cee256b596102dcae86936cb78153ecd8",
+    "single_runs/C4_topdown.png": "0517e7b939b5c6421b46611de1bc7026a55203147dda682b66ff259634c95726",
+    "single_runs/B2_topdown.png": "6d4708481f3b819e5d9a62b6e018972fe0141530c0880a717dd29912702eb4fd",
+    "single_runs/M2_baseline_native.png": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6",
+    "single_runs/C2_topdown.png": "34b57b7a331f89e0501d9314c392a325d1157be656cd88cb0be762e8e9969487",
+    "single_runs/B0_topdown.png": "06dacc782af3b5d4f0bd9d436ee8ff80f3aa59bfde79c58310a586c6543e3562",
+    "single_runs/Selected_topdown.png": "443e99301082088e6a6e1965cf330a782bb1c1d6e30d4673127b629c0d4c261c",
+    "single_runs/C3_topdown.png": "52718424ffb76eb2fd79f3c9182390469d53f32b4307ac0fdf4c4ec6f28f4a7e",
+    "single_runs/M31_selected_native.png": "9d13b9cc27fc892aa0d9b6645a5e1da4af3ed6d92a139e032f3367297978567e"
+  }
+}

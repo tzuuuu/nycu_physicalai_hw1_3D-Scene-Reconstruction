@@ -1,0 +1,7 @@
+{
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/pairs.csv": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/summary.json": "0cf46b5a799e81f6425720ec1a172d00c2b92ea40e18a9d72a287fb9fe98af6b",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/poses_offline.npz": "f90d2b3e1088ccb687fbe002581bfc2535ab37965cc79f8125942ad693d9e13f",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/frames.csv": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/frame_and_pair_errors.png": "903796f7035846db05d60a5f21f444a661c981b09fa257ade9841ccbab5bb378"
+}

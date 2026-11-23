@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_experiments.py", line 267, in execute_cli
+    runpy.run_path(str(ROOT/'reconstruct.py'),run_name='__main__')
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/reconstruct.py", line 309, in <module>
+    main()
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/reconstruct.py", line 163, in main
+    pcd, pred_cam_pos = utils.reconstruct(
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/utils.py", line 409, in reconstruct
+    raise RuntimeError(
+RuntimeError: RANSAC failed for 70->71: fitness=0.0, RMSE=0.0, correspondences=0

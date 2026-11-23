@@ -1,0 +1,22 @@
+{
+  "user_instruction": "\u6b63\u5f0f\u6838\u51c6\u6062\u5fa9\u57f7\u884c\u5269\u9918\u4e94\u500b\u689d\u4ef6\uff1aB2\u3001C1\u3001C2\u3001C3\u3001C4\uff1b\u771f\u5be6\u914d\u6e96\u5931\u6557\u4fdd\u5b58\u4e14\u9a57\u8b49\u5f8c\u53ef\u7e7c\u7e8c\uff0c\u7cfb\u7d71\u7570\u5e38\u4ecd\u505c\u6b62",
+  "remaining_conditions": [
+    "B2",
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "registration_failure_policy": "preserve_verify_then_continue",
+  "B0_B1_rerun_authorized": false,
+  "suite_sha256": "11e41dffa5a2bcbec5ebc4cf809da42d4f0b15621dd0e07524bb6ddbe950b535",
+  "historical_links": {
+    "suite_stopped.json": "233919e3e5382f7316213adef8405c3c664c7b7701235d7ee533dd10b26ffdbb",
+    "resume_failed.json": "30c3dadd3a83afcaf4a6a0f8c3349fe56ee8da1d47ae867de357678ecc5815d1",
+    "resume_authorization.json": "955e25fe324aa8f839ec3f7f497cb8bbdd4420cdbfd9b144d6a90733c8f11f8e"
+  },
+  "B0_postprocess_output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess",
+  "git_commit": "dc0cc16bcb005421130c3b568b62bd13edead1c3",
+  "created_unix": 1795009960.486165,
+  "rss_limit_gib": 3
+}

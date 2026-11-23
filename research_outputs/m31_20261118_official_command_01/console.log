@@ -1,0 +1,18 @@
+[reconstruct] /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl: experiment p1_baseline_20261118_map005_s0_01 on batch 'floor1_first_floor', 191 frames, 1522 factor occurrences
+[reconstruct] SPARQL selection: 2 segment(s), 190 frames [1..103(103), 105..191(87)]
+[reconstruct] === selected run ===
+  frame    0/189
+  frame   25/189
+  frame   50/189
+  frame   75/189
+  frame  100/189
+[1;33m[Open3D WARNING] Too few correspondences (762) after mutual filter, fall back to original correspondences.[0;m
+[1;33m[Open3D WARNING] Too few correspondences (460) after mutual filter, fall back to original correspondences.[0;m
+  frame  125/189
+  frame  150/189
+  frame  175/189
+  frame  189/189
+Mean L2 distance: 4.200398 meters  (over 190 frames, 190 reconstructed)
+Matplotlib is building the font cache; this may take a moment.
+[reconstruct] saved reconstruction image -> /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_baseline_20261118_map005_s0_01/reconstruction.png
+[reconstruct] wrote selected run: Mean L2 Distance = 4.200397987245927 (stored as hw1:mapMeanL2 at file precision), runFrameCount = 190 -> /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl

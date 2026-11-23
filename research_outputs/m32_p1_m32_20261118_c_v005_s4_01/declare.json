@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/api.py",
+    "declare",
+    "--name",
+    "p1_m32_20261118_c_v005_s4_01",
+    "--data-dir",
+    "eval/_data/first_floor",
+    "--floor",
+    "1"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 0.19679562500000003
+}

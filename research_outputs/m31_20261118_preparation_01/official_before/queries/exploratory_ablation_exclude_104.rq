@@ -1,0 +1,11 @@
+# M3.1 Exploratory Ablation：僅排除原始第104張，其他影格全部保留。
+# 此影格曾參考離線GT誤差診斷，不是GT獨立的通用篩選規則。
+PREFIX hw1: <http://taica.course/hw1/ontology#>
+PREFIX exp: <http://taica.course/hw1/experiment/>
+SELECT DISTINCT ?frameIndex WHERE {
+  exp:p1_baseline_20261118_map005_s0_01 hw1:onBatch ?batch .
+  ?batch hw1:hasFrame ?frame .
+  ?frame hw1:frameIndex ?frameIndex .
+  FILTER (?frameIndex != 104)
+}
+ORDER BY ASC(?frameIndex)

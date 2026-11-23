@@ -1,0 +1,10 @@
+{
+  "status": "M4.2 stopped before official reconstruction",
+  "details": {
+    "status": "M4.2 stopped before official reconstruction",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_baseline.py\", line 297, in terminal_run\n    execution=guarded([sys.executable,str(Path(__file__).resolve()),'_worker',str(out)],out/'command')\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_monitor.py\", line 227, in run\n    stop_workload()\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_monitor.py\", line 160, in stop_workload\n    result=kill_group(worker.pid)\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_monitor.py\", line 84, in kill_group\n    os.killpg(pgid, signal.SIGKILL)\nPermissionError: [Errno 1] Operation not permitted\n"
+  },
+  "unix": 1795073624.971505,
+  "first_pass_started": true,
+  "first_pass_returned": false
+}

@@ -1,0 +1,407 @@
+{"kind": "frame", "stem": 1, "raw_point_count": 262144, "point_yield": 4632}
+{"kind": "frame", "stem": 2, "raw_point_count": 262144, "point_yield": 5373}
+{"kind": "pair", "prev_stem": 1, "stem": 2, "coarse_fitness": 0.8257956448911222, "coarse_rmse": 0.026409877775369916, "coarse_correspondences": 4437, "icp_fitness": 0.8237483714870649, "icp_rmse": 0.02414833397232547, "icp_correspondences": 4426}
+{"kind": "frame", "stem": 3, "raw_point_count": 262144, "point_yield": 6136}
+{"kind": "pair", "prev_stem": 2, "stem": 3, "coarse_fitness": 0.8746740547588006, "coarse_rmse": 0.023037786197778683, "coarse_correspondences": 5367, "icp_fitness": 0.8735332464146024, "icp_rmse": 0.018951532504039602, "icp_correspondences": 5360}
+{"kind": "frame", "stem": 5, "raw_point_count": 262144, "point_yield": 7138}
+{"kind": "pair", "prev_stem": 3, "stem": 5, "coarse_fitness": 0.8069487251330905, "coarse_rmse": 0.026114582330448725, "coarse_correspondences": 5760, "icp_fitness": 0.8009246287475483, "icp_rmse": 0.01901650713010279, "icp_correspondences": 5717}
+{"kind": "frame", "stem": 6, "raw_point_count": 262144, "point_yield": 7617}
+{"kind": "pair", "prev_stem": 5, "stem": 6, "coarse_fitness": 0.9296310883549954, "coarse_rmse": 0.0350831089481405, "coarse_correspondences": 7081, "icp_fitness": 0.9197846921360116, "icp_rmse": 0.017105272339926873, "icp_correspondences": 7006}
+{"kind": "frame", "stem": 7, "raw_point_count": 262144, "point_yield": 7903}
+{"kind": "pair", "prev_stem": 6, "stem": 7, "coarse_fitness": 0.9320511198279134, "coarse_rmse": 0.027801477276843494, "coarse_correspondences": 7366, "icp_fitness": 0.9235733265848411, "icp_rmse": 0.01760936435852881, "icp_correspondences": 7299}
+{"kind": "frame", "stem": 9, "raw_point_count": 262144, "point_yield": 8538}
+{"kind": "pair", "prev_stem": 7, "stem": 9, "coarse_fitness": 0.8347388147107051, "coarse_rmse": 0.022317803456154032, "coarse_correspondences": 7127, "icp_fitness": 0.8353244319512766, "icp_rmse": 0.018082779670307598, "icp_correspondences": 7132}
+{"kind": "frame", "stem": 11, "raw_point_count": 262144, "point_yield": 8950}
+{"kind": "pair", "prev_stem": 9, "stem": 11, "coarse_fitness": 0.8422346368715083, "coarse_rmse": 0.022772274763075563, "coarse_correspondences": 7538, "icp_fitness": 0.8427932960893855, "icp_rmse": 0.017544221933417932, "icp_correspondences": 7543}
+{"kind": "frame", "stem": 13, "raw_point_count": 262144, "point_yield": 9834}
+{"kind": "pair", "prev_stem": 11, "stem": 13, "coarse_fitness": 0.8403498067927598, "coarse_rmse": 0.02425352169544938, "coarse_correspondences": 8264, "icp_fitness": 0.839536302623551, "icp_rmse": 0.01884698577274928, "icp_correspondences": 8256}
+{"kind": "frame", "stem": 15, "raw_point_count": 262144, "point_yield": 11342}
+{"kind": "pair", "prev_stem": 13, "stem": 15, "coarse_fitness": 0.8215482278257803, "coarse_rmse": 0.03340131269013399, "coarse_correspondences": 9318, "icp_fitness": 0.8131722800211603, "icp_rmse": 0.01950701448818026, "icp_correspondences": 9223}
+{"kind": "frame", "stem": 16, "raw_point_count": 262144, "point_yield": 11362}
+{"kind": "pair", "prev_stem": 15, "stem": 16, "coarse_fitness": 0.939799331103679, "coarse_rmse": 0.02361448154203512, "coarse_correspondences": 10678, "icp_fitness": 0.9383911283224784, "icp_rmse": 0.018010139793581594, "icp_correspondences": 10662}
+{"kind": "frame", "stem": 17, "raw_point_count": 262144, "point_yield": 12007}
+{"kind": "pair", "prev_stem": 16, "stem": 17, "coarse_fitness": 0.9212126259681852, "coarse_rmse": 0.03540051181370393, "coarse_correspondences": 11061, "icp_fitness": 0.9207962022153744, "icp_rmse": 0.018125507861898302, "icp_correspondences": 11056}
+{"kind": "frame", "stem": 19, "raw_point_count": 262144, "point_yield": 13366}
+{"kind": "pair", "prev_stem": 17, "stem": 19, "coarse_fitness": 0.7852012569205447, "coarse_rmse": 0.029883152602578233, "coarse_correspondences": 10495, "icp_fitness": 0.7839293730360617, "icp_rmse": 0.018423785806193447, "icp_correspondences": 10478}
+{"kind": "frame", "stem": 21, "raw_point_count": 262144, "point_yield": 17046}
+{"kind": "pair", "prev_stem": 19, "stem": 21, "coarse_fitness": 0.7172357151237827, "coarse_rmse": 0.03427102506651039, "coarse_correspondences": 12226, "icp_fitness": 0.713657162970785, "icp_rmse": 0.0183974098280342, "icp_correspondences": 12165}
+{"kind": "frame", "stem": 23, "raw_point_count": 262144, "point_yield": 18097}
+{"kind": "pair", "prev_stem": 21, "stem": 23, "coarse_fitness": 0.869867933911698, "coarse_rmse": 0.033570945997510794, "coarse_correspondences": 15742, "icp_fitness": 0.8696469028015693, "icp_rmse": 0.01938234853588819, "icp_correspondences": 15738}
+{"kind": "frame", "stem": 25, "raw_point_count": 262144, "point_yield": 17748}
+{"kind": "pair", "prev_stem": 23, "stem": 25, "coarse_fitness": 0.9057358575614154, "coarse_rmse": 0.02593917816257266, "coarse_correspondences": 16075, "icp_fitness": 0.9101870633310796, "icp_rmse": 0.01858640938375622, "icp_correspondences": 16154}
+{"kind": "frame", "stem": 27, "raw_point_count": 262144, "point_yield": 16657}
+{"kind": "pair", "prev_stem": 25, "stem": 27, "coarse_fitness": 0.9920153689139701, "coarse_rmse": 0.018654723903092474, "coarse_correspondences": 16524, "icp_fitness": 0.9924356126553401, "icp_rmse": 0.016334935208019735, "icp_correspondences": 16531}
+{"kind": "frame", "stem": 29, "raw_point_count": 262144, "point_yield": 15395}
+{"kind": "pair", "prev_stem": 27, "stem": 29, "coarse_fitness": 0.9921403052939266, "coarse_rmse": 0.02589341951983267, "coarse_correspondences": 15274, "icp_fitness": 0.9902565768106528, "icp_rmse": 0.016627627715015553, "icp_correspondences": 15245}
+{"kind": "frame", "stem": 31, "raw_point_count": 262144, "point_yield": 13984}
+{"kind": "pair", "prev_stem": 29, "stem": 31, "coarse_fitness": 0.9613129290617849, "coarse_rmse": 0.018431524485576667, "coarse_correspondences": 13443, "icp_fitness": 0.959525171624714, "icp_rmse": 0.014304316490612902, "icp_correspondences": 13418}
+{"kind": "frame", "stem": 33, "raw_point_count": 262144, "point_yield": 12806}
+{"kind": "pair", "prev_stem": 31, "stem": 33, "coarse_fitness": 0.9440887084179291, "coarse_rmse": 0.029267961127019286, "coarse_correspondences": 12090, "icp_fitness": 0.9369045759800094, "icp_rmse": 0.020128434824232887, "icp_correspondences": 11998}
+{"kind": "frame", "stem": 35, "raw_point_count": 262144, "point_yield": 11814}
+{"kind": "pair", "prev_stem": 33, "stem": 35, "coarse_fitness": 0.9014728288471305, "coarse_rmse": 0.02709425468403716, "coarse_correspondences": 10650, "icp_fitness": 0.8980023700694092, "icp_rmse": 0.01842523823522097, "icp_correspondences": 10609}
+{"kind": "frame", "stem": 37, "raw_point_count": 262144, "point_yield": 12178}
+{"kind": "pair", "prev_stem": 35, "stem": 37, "coarse_fitness": 0.859090162588274, "coarse_rmse": 0.027404485021566373, "coarse_correspondences": 10462, "icp_fitness": 0.8559697815733289, "icp_rmse": 0.01869462838242481, "icp_correspondences": 10424}
+{"kind": "frame", "stem": 39, "raw_point_count": 262144, "point_yield": 12829}
+{"kind": "pair", "prev_stem": 37, "stem": 39, "coarse_fitness": 0.8487021591706291, "coarse_rmse": 0.021768190995402874, "coarse_correspondences": 10888, "icp_fitness": 0.8442591004754852, "icp_rmse": 0.018819250226705032, "icp_correspondences": 10831}
+{"kind": "frame", "stem": 41, "raw_point_count": 262144, "point_yield": 12789}
+{"kind": "pair", "prev_stem": 39, "stem": 41, "coarse_fitness": 0.7931034482758621, "coarse_rmse": 0.027631444731168853, "coarse_correspondences": 10143, "icp_fitness": 0.7891156462585034, "icp_rmse": 0.020994770290405928, "icp_correspondences": 10092}
+{"kind": "frame", "stem": 43, "raw_point_count": 262144, "point_yield": 9838}
+{"kind": "pair", "prev_stem": 41, "stem": 43, "coarse_fitness": 0.8985566171986176, "coarse_rmse": 0.02162083929920311, "coarse_correspondences": 8840, "icp_fitness": 0.8993697906078472, "icp_rmse": 0.019099610164758765, "icp_correspondences": 8848}
+{"kind": "frame", "stem": 45, "raw_point_count": 262144, "point_yield": 8239}
+{"kind": "pair", "prev_stem": 43, "stem": 45, "coarse_fitness": 0.7094307561597282, "coarse_rmse": 0.0209362918632116, "coarse_correspondences": 5845, "icp_fitness": 0.7151353319577619, "icp_rmse": 0.0185544062210694, "icp_correspondences": 5892}
+{"kind": "frame", "stem": 46, "raw_point_count": 262144, "point_yield": 8197}
+{"kind": "pair", "prev_stem": 45, "stem": 46, "coarse_fitness": 0.9882883981944613, "coarse_rmse": 0.02897685701018154, "coarse_correspondences": 8101, "icp_fitness": 0.9860924728559229, "icp_rmse": 0.016798319797310324, "icp_correspondences": 8083}
+{"kind": "frame", "stem": 47, "raw_point_count": 262144, "point_yield": 7865}
+{"kind": "pair", "prev_stem": 46, "stem": 47, "coarse_fitness": 0.9727908455181182, "coarse_rmse": 0.024774726086083828, "coarse_correspondences": 7651, "icp_fitness": 0.9736808645899555, "icp_rmse": 0.02055633350967364, "icp_correspondences": 7658}
+{"kind": "frame", "stem": 48, "raw_point_count": 262144, "point_yield": 6991}
+{"kind": "pair", "prev_stem": 47, "stem": 48, "coarse_fitness": 0.9881275926190817, "coarse_rmse": 0.03777063872056002, "coarse_correspondences": 6908, "icp_fitness": 0.9904162494635961, "icp_rmse": 0.01923128200779685, "icp_correspondences": 6924}
+{"kind": "frame", "stem": 49, "raw_point_count": 262144, "point_yield": 7506}
+{"kind": "pair", "prev_stem": 48, "stem": 49, "coarse_fitness": 0.9212629896083133, "coarse_rmse": 0.022075144216430937, "coarse_correspondences": 6915, "icp_fitness": 0.9216626698641087, "icp_rmse": 0.017964249734381363, "icp_correspondences": 6918}
+{"kind": "frame", "stem": 51, "raw_point_count": 262144, "point_yield": 8093}
+{"kind": "pair", "prev_stem": 49, "stem": 51, "coarse_fitness": 0.8873100210058075, "coarse_rmse": 0.030451873146203873, "coarse_correspondences": 7181, "icp_fitness": 0.8840973680958853, "icp_rmse": 0.018007418168716875, "icp_correspondences": 7155}
+{"kind": "frame", "stem": 53, "raw_point_count": 262144, "point_yield": 8620}
+{"kind": "pair", "prev_stem": 51, "stem": 53, "coarse_fitness": 0.8955916473317865, "coarse_rmse": 0.027770487262935982, "coarse_correspondences": 7720, "icp_fitness": 0.8931554524361949, "icp_rmse": 0.01755706520585289, "icp_correspondences": 7699}
+{"kind": "frame", "stem": 55, "raw_point_count": 262144, "point_yield": 9005}
+{"kind": "pair", "prev_stem": 53, "stem": 55, "coarse_fitness": 0.9412548584119933, "coarse_rmse": 0.03420651441591185, "coarse_correspondences": 8476, "icp_fitness": 0.9400333148250972, "icp_rmse": 0.018306708489706523, "icp_correspondences": 8465}
+{"kind": "frame", "stem": 57, "raw_point_count": 262144, "point_yield": 8254}
+{"kind": "pair", "prev_stem": 55, "stem": 57, "coarse_fitness": 0.9938211776108553, "coarse_rmse": 0.024950940958384175, "coarse_correspondences": 8203, "icp_fitness": 0.9927307971892416, "icp_rmse": 0.021278620546829344, "icp_correspondences": 8194}
+{"kind": "frame", "stem": 59, "raw_point_count": 262144, "point_yield": 7061}
+{"kind": "pair", "prev_stem": 57, "stem": 59, "coarse_fitness": 0.9950431950148704, "coarse_rmse": 0.02039808916475141, "coarse_correspondences": 7026, "icp_fitness": 0.9950431950148704, "icp_rmse": 0.016070582170062096, "icp_correspondences": 7026}
+{"kind": "frame", "stem": 61, "raw_point_count": 262144, "point_yield": 8200}
+{"kind": "pair", "prev_stem": 59, "stem": 61, "coarse_fitness": 0.7803658536585366, "coarse_rmse": 0.02015634076788161, "coarse_correspondences": 6399, "icp_fitness": 0.785, "icp_rmse": 0.018218436652718144, "icp_correspondences": 6437}
+{"kind": "frame", "stem": 63, "raw_point_count": 262144, "point_yield": 9001}
+{"kind": "pair", "prev_stem": 61, "stem": 63, "coarse_fitness": 0.8215753805132763, "coarse_rmse": 0.02757214609450876, "coarse_correspondences": 7395, "icp_fitness": 0.8243528496833685, "icp_rmse": 0.018688241751372656, "icp_correspondences": 7420}
+{"kind": "frame", "stem": 65, "raw_point_count": 262144, "point_yield": 8502}
+{"kind": "pair", "prev_stem": 63, "stem": 65, "coarse_fitness": 0.8777934603622677, "coarse_rmse": 0.03345277662647056, "coarse_correspondences": 7463, "icp_fitness": 0.8668548576805457, "icp_rmse": 0.016638058785710196, "icp_correspondences": 7370}
+{"kind": "frame", "stem": 67, "raw_point_count": 262144, "point_yield": 8616}
+{"kind": "pair", "prev_stem": 65, "stem": 67, "coarse_fitness": 0.983983286908078, "coarse_rmse": 0.033570256761376, "coarse_correspondences": 8478, "icp_fitness": 0.9843314763231198, "icp_rmse": 0.018091731021066145, "icp_correspondences": 8481}
+{"kind": "frame", "stem": 69, "raw_point_count": 262144, "point_yield": 8706}
+{"kind": "pair", "prev_stem": 67, "stem": 69, "coarse_fitness": 0.9886285320468642, "coarse_rmse": 0.026559137270241426, "coarse_correspondences": 8607, "icp_fitness": 0.9851826326671261, "icp_rmse": 0.018030139394042688, "icp_correspondences": 8577}
+{"kind": "frame", "stem": 71, "raw_point_count": 262144, "point_yield": 8314}
+{"kind": "pair", "prev_stem": 69, "stem": 71, "coarse_fitness": 0.987130141929276, "coarse_rmse": 0.024941433331409364, "coarse_correspondences": 8207, "icp_fitness": 0.987009862881886, "icp_rmse": 0.02315899140651645, "icp_correspondences": 8206}
+{"kind": "frame", "stem": 73, "raw_point_count": 262144, "point_yield": 7720}
+{"kind": "pair", "prev_stem": 71, "stem": 73, "coarse_fitness": 0.8044041450777202, "coarse_rmse": 0.02382306350826195, "coarse_correspondences": 6210, "icp_fitness": 0.8055699481865285, "icp_rmse": 0.02148851332885819, "icp_correspondences": 6219}
+{"kind": "frame", "stem": 74, "raw_point_count": 262144, "point_yield": 8411}
+{"kind": "pair", "prev_stem": 73, "stem": 74, "coarse_fitness": 0.8184520271073594, "coarse_rmse": 0.0319621640179086, "coarse_correspondences": 6884, "icp_fitness": 0.8114374034003091, "icp_rmse": 0.018867280472996222, "icp_correspondences": 6825}
+{"kind": "frame", "stem": 75, "raw_point_count": 262144, "point_yield": 9138}
+{"kind": "pair", "prev_stem": 74, "stem": 75, "coarse_fitness": 0.7484132195228715, "coarse_rmse": 0.03145751763573822, "coarse_correspondences": 6839, "icp_fitness": 0.7600131319763624, "icp_rmse": 0.021436109720405404, "icp_correspondences": 6945}
+{"kind": "frame", "stem": 76, "raw_point_count": 262144, "point_yield": 9880}
+{"kind": "pair", "prev_stem": 75, "stem": 76, "coarse_fitness": 0.8111336032388664, "coarse_rmse": 0.02708232817416628, "coarse_correspondences": 8014, "icp_fitness": 0.8034412955465587, "icp_rmse": 0.019635449577364853, "icp_correspondences": 7938}
+{"kind": "frame", "stem": 77, "raw_point_count": 262144, "point_yield": 10391}
+{"kind": "pair", "prev_stem": 76, "stem": 77, "coarse_fitness": 0.8918294678086806, "coarse_rmse": 0.03758487363180172, "coarse_correspondences": 9267, "icp_fitness": 0.8874987970358964, "icp_rmse": 0.019852683425592543, "icp_correspondences": 9222}
+{"kind": "frame", "stem": 78, "raw_point_count": 262144, "point_yield": 10666}
+{"kind": "pair", "prev_stem": 77, "stem": 78, "coarse_fitness": 0.9225576598537408, "coarse_rmse": 0.037705646942094315, "coarse_correspondences": 9840, "icp_fitness": 0.9174948434277143, "icp_rmse": 0.019506843536999184, "icp_correspondences": 9786}
+{"kind": "frame", "stem": 79, "raw_point_count": 262144, "point_yield": 11080}
+{"kind": "pair", "prev_stem": 78, "stem": 79, "coarse_fitness": 0.9500902527075812, "coarse_rmse": 0.030056041366186212, "coarse_correspondences": 10527, "icp_fitness": 0.9473826714801444, "icp_rmse": 0.019350686733523182, "icp_correspondences": 10497}
+{"kind": "frame", "stem": 81, "raw_point_count": 262144, "point_yield": 10992}
+{"kind": "pair", "prev_stem": 79, "stem": 81, "coarse_fitness": 0.9375909752547307, "coarse_rmse": 0.025777874662865293, "coarse_correspondences": 10306, "icp_fitness": 0.9351346433770015, "icp_rmse": 0.019411927225667314, "icp_correspondences": 10279}
+{"kind": "frame", "stem": 83, "raw_point_count": 262144, "point_yield": 11529}
+{"kind": "pair", "prev_stem": 81, "stem": 83, "coarse_fitness": 0.9742388758782201, "coarse_rmse": 0.03051674561442401, "coarse_correspondences": 11232, "icp_fitness": 0.9741521380865643, "icp_rmse": 0.01966933923916928, "icp_correspondences": 11231}
+{"kind": "frame", "stem": 84, "raw_point_count": 262144, "point_yield": 12461}
+{"kind": "pair", "prev_stem": 83, "stem": 84, "coarse_fitness": 0.9220768798651794, "coarse_rmse": 0.04263921646376281, "coarse_correspondences": 11490, "icp_fitness": 0.9219966294839901, "icp_rmse": 0.023252409851593853, "icp_correspondences": 11489}
+{"kind": "frame", "stem": 85, "raw_point_count": 262144, "point_yield": 13022}
+{"kind": "pair", "prev_stem": 84, "stem": 85, "coarse_fitness": 0.9506988173859622, "coarse_rmse": 0.02871000805854404, "coarse_correspondences": 12380, "icp_fitness": 0.9503916449086162, "icp_rmse": 0.0162908015570053, "icp_correspondences": 12376}
+{"kind": "frame", "stem": 87, "raw_point_count": 262144, "point_yield": 12363}
+{"kind": "pair", "prev_stem": 85, "stem": 87, "coarse_fitness": 0.9838226967564507, "coarse_rmse": 0.025127378767260396, "coarse_correspondences": 12163, "icp_fitness": 0.9796165979131278, "icp_rmse": 0.017690053815620603, "icp_correspondences": 12111}
+{"kind": "frame", "stem": 89, "raw_point_count": 262144, "point_yield": 12453}
+{"kind": "pair", "prev_stem": 87, "stem": 89, "coarse_fitness": 0.9429856259535855, "coarse_rmse": 0.030005358377184068, "coarse_correspondences": 11743, "icp_fitness": 0.9412992853127761, "icp_rmse": 0.019543120152644432, "icp_correspondences": 11722}
+{"kind": "frame", "stem": 91, "raw_point_count": 262144, "point_yield": 11718}
+{"kind": "pair", "prev_stem": 89, "stem": 91, "coarse_fitness": 0.9578426352619901, "coarse_rmse": 0.028258837874920645, "coarse_correspondences": 11224, "icp_fitness": 0.9613415258576549, "icp_rmse": 0.019308851896178317, "icp_correspondences": 11265}
+{"kind": "frame", "stem": 93, "raw_point_count": 262144, "point_yield": 11662}
+{"kind": "pair", "prev_stem": 91, "stem": 93, "coarse_fitness": 0.9849939975990396, "coarse_rmse": 0.02343172766296866, "coarse_correspondences": 11487, "icp_fitness": 0.9851654947693363, "icp_rmse": 0.021118504877910085, "icp_correspondences": 11489}
+{"kind": "frame", "stem": 95, "raw_point_count": 262144, "point_yield": 12144}
+{"kind": "pair", "prev_stem": 93, "stem": 95, "coarse_fitness": 0.9281949934123848, "coarse_rmse": 0.02266886688346068, "coarse_correspondences": 11272, "icp_fitness": 0.927536231884058, "icp_rmse": 0.020482306489326717, "icp_correspondences": 11264}
+{"kind": "frame", "stem": 97, "raw_point_count": 262144, "point_yield": 12662}
+{"kind": "pair", "prev_stem": 95, "stem": 97, "coarse_fitness": 0.8997788658979624, "coarse_rmse": 0.024598243744696716, "coarse_correspondences": 11393, "icp_fitness": 0.8984362659927342, "icp_rmse": 0.01991998844829711, "icp_correspondences": 11376}
+{"kind": "frame", "stem": 99, "raw_point_count": 262144, "point_yield": 9650}
+{"kind": "pair", "prev_stem": 97, "stem": 99, "coarse_fitness": 0.9574093264248704, "coarse_rmse": 0.020161548045758114, "coarse_correspondences": 9239, "icp_fitness": 0.9581347150259067, "icp_rmse": 0.018839772449354343, "icp_correspondences": 9246}
+{"kind": "frame", "stem": 101, "raw_point_count": 262144, "point_yield": 6253}
+{"kind": "pair", "prev_stem": 99, "stem": 101, "coarse_fitness": 0.99392291699984, "coarse_rmse": 0.02813744874431157, "coarse_correspondences": 6215, "icp_fitness": 0.9838477530785223, "icp_rmse": 0.018721674226953613, "icp_correspondences": 6152}
+{"kind": "frame", "stem": 102, "raw_point_count": 262144, "point_yield": 5976}
+{"kind": "pair", "prev_stem": 101, "stem": 102, "coarse_fitness": 0.9511378848728246, "coarse_rmse": 0.03152613611096061, "coarse_correspondences": 5684, "icp_fitness": 0.9385876840696118, "icp_rmse": 0.017216329026146244, "icp_correspondences": 5609}
+{"kind": "frame", "stem": 103, "raw_point_count": 262144, "point_yield": 4822}
+{"kind": "pair", "prev_stem": 102, "stem": 103, "coarse_fitness": 0.9987557030277893, "coarse_rmse": 0.01252757401944376, "coarse_correspondences": 4816, "icp_fitness": 0.9987557030277893, "icp_rmse": 0.010300936882880583, "icp_correspondences": 4816}
+{"kind": "frame", "stem": 104, "raw_point_count": 262144, "point_yield": 5006}
+{"kind": "pair", "prev_stem": 103, "stem": 104, "coarse_fitness": 0.9510587295245705, "coarse_rmse": 0.03677259538282072, "coarse_correspondences": 4761, "icp_fitness": 0.9448661606072712, "icp_rmse": 0.01903591587470462, "icp_correspondences": 4730}
+{"kind": "frame", "stem": 105, "raw_point_count": 262144, "point_yield": 5563}
+{"kind": "pair", "prev_stem": 104, "stem": 105, "coarse_fitness": 0.8125112349451735, "coarse_rmse": 0.02702752625512061, "coarse_correspondences": 4520, "icp_fitness": 0.8125112349451735, "icp_rmse": 0.01861889657428884, "icp_correspondences": 4520}
+{"kind": "frame", "stem": 106, "raw_point_count": 262144, "point_yield": 6706}
+{"kind": "pair", "prev_stem": 105, "stem": 106, "coarse_fitness": 0.819862809424396, "coarse_rmse": 0.0275108460957614, "coarse_correspondences": 5498, "icp_fitness": 0.8107664777810916, "icp_rmse": 0.01899184515508881, "icp_correspondences": 5437}
+{"kind": "frame", "stem": 107, "raw_point_count": 262144, "point_yield": 7441}
+{"kind": "pair", "prev_stem": 106, "stem": 107, "coarse_fitness": 0.8336245128342965, "coarse_rmse": 0.02520166983934962, "coarse_correspondences": 6203, "icp_fitness": 0.8281145007391479, "icp_rmse": 0.0191871267316656, "icp_correspondences": 6162}
+{"kind": "frame", "stem": 108, "raw_point_count": 262144, "point_yield": 7684}
+{"kind": "pair", "prev_stem": 107, "stem": 108, "coarse_fitness": 0.9544508068714211, "coarse_rmse": 0.03451854866368514, "coarse_correspondences": 7334, "icp_fitness": 0.9600468505986466, "icp_rmse": 0.01829699929294766, "icp_correspondences": 7377}
+{"kind": "frame", "stem": 109, "raw_point_count": 262144, "point_yield": 7680}
+{"kind": "pair", "prev_stem": 108, "stem": 109, "coarse_fitness": 0.9981770833333333, "coarse_rmse": 0.021425481620039485, "coarse_correspondences": 7666, "icp_fitness": 0.9971354166666667, "icp_rmse": 0.016919776496391016, "icp_correspondences": 7658}
+{"kind": "frame", "stem": 111, "raw_point_count": 262144, "point_yield": 7487}
+{"kind": "pair", "prev_stem": 109, "stem": 111, "coarse_fitness": 0.8884733538132763, "coarse_rmse": 0.02433323100403231, "coarse_correspondences": 6652, "icp_fitness": 0.888606918659009, "icp_rmse": 0.01802107832233472, "icp_correspondences": 6653}
+{"kind": "frame", "stem": 113, "raw_point_count": 262144, "point_yield": 7196}
+{"kind": "pair", "prev_stem": 111, "stem": 113, "coarse_fitness": 0.9973596442468038, "coarse_rmse": 0.022253013993686264, "coarse_correspondences": 7177, "icp_fitness": 0.9987493051695386, "icp_rmse": 0.01677342014683173, "icp_correspondences": 7187}
+{"kind": "frame", "stem": 115, "raw_point_count": 260320, "point_yield": 5733}
+{"kind": "pair", "prev_stem": 113, "stem": 115, "coarse_fitness": 1.0, "coarse_rmse": 0.02910588296055306, "coarse_correspondences": 5733, "icp_fitness": 1.0, "icp_rmse": 0.02150965024110938, "icp_correspondences": 5733}
+{"kind": "frame", "stem": 117, "raw_point_count": 239562, "point_yield": 6323}
+{"kind": "pair", "prev_stem": 115, "stem": 117, "coarse_fitness": 0.9996836944488375, "coarse_rmse": 0.025017729710091433, "coarse_correspondences": 6321, "icp_fitness": 0.9998418472244188, "icp_rmse": 0.01977366302162961, "icp_correspondences": 6322}
+{"kind": "frame", "stem": 119, "raw_point_count": 252794, "point_yield": 5043}
+{"kind": "pair", "prev_stem": 117, "stem": 119, "coarse_fitness": 0.9992068213365061, "coarse_rmse": 0.029659548181690334, "coarse_correspondences": 5039, "icp_fitness": 0.999603410668253, "icp_rmse": 0.019557335828135586, "icp_correspondences": 5041}
+{"kind": "frame", "stem": 121, "raw_point_count": 243584, "point_yield": 5020}
+{"kind": "pair", "prev_stem": 119, "stem": 121, "coarse_fitness": 0.9946215139442232, "coarse_rmse": 0.021810810349176916, "coarse_correspondences": 4993, "icp_fitness": 0.9958167330677291, "icp_rmse": 0.019963937742521625, "icp_correspondences": 4999}
+{"kind": "frame", "stem": 122, "raw_point_count": 241482, "point_yield": 4732}
+{"kind": "pair", "prev_stem": 121, "stem": 122, "coarse_fitness": 0.9860524091293322, "coarse_rmse": 0.02599742107809762, "coarse_correspondences": 4666, "icp_fitness": 0.9830938292476754, "icp_rmse": 0.017334464965115856, "icp_correspondences": 4652}
+{"kind": "frame", "stem": 123, "raw_point_count": 252830, "point_yield": 4013}
+{"kind": "pair", "prev_stem": 122, "stem": 123, "coarse_fitness": 0.9406927485671568, "coarse_rmse": 0.027854916660146167, "coarse_correspondences": 3775, "icp_fitness": 0.9441814104161476, "icp_rmse": 0.01651558737621934, "icp_correspondences": 3789}
+{"kind": "frame", "stem": 124, "raw_point_count": 243336, "point_yield": 5166}
+{"kind": "pair", "prev_stem": 123, "stem": 124, "coarse_fitness": 0.772938443670151, "coarse_rmse": 0.031430596594076037, "coarse_correspondences": 3993, "icp_fitness": 0.7799070847851336, "icp_rmse": 0.02125854862835004, "icp_correspondences": 4029}
+{"kind": "frame", "stem": 125, "raw_point_count": 246136, "point_yield": 4784}
+{"kind": "pair", "prev_stem": 124, "stem": 125, "coarse_fitness": 0.8919314381270903, "coarse_rmse": 0.032648263314365454, "coarse_correspondences": 4267, "icp_fitness": 0.8846153846153846, "icp_rmse": 0.01645013934056272, "icp_correspondences": 4232}
+{"kind": "frame", "stem": 126, "raw_point_count": 239991, "point_yield": 5110}
+{"kind": "pair", "prev_stem": 125, "stem": 126, "coarse_fitness": 0.8816046966731899, "coarse_rmse": 0.027053996962388478, "coarse_correspondences": 4505, "icp_fitness": 0.8806262230919765, "icp_rmse": 0.025300557689371197, "icp_correspondences": 4500}
+{"kind": "frame", "stem": 127, "raw_point_count": 244165, "point_yield": 5290}
+{"kind": "pair", "prev_stem": 126, "stem": 127, "coarse_fitness": 0.8767485822306238, "coarse_rmse": 0.03139999795317593, "coarse_correspondences": 4638, "icp_fitness": 0.8856332703213611, "icp_rmse": 0.02055552938193733, "icp_correspondences": 4685}
+{"kind": "frame", "stem": 129, "raw_point_count": 254551, "point_yield": 6005}
+{"kind": "pair", "prev_stem": 127, "stem": 129, "coarse_fitness": 0.7513738551207327, "coarse_rmse": 0.0273563350195657, "coarse_correspondences": 4512, "icp_fitness": 0.7513738551207327, "icp_rmse": 0.019136454297713282, "icp_correspondences": 4512}
+{"kind": "frame", "stem": 130, "raw_point_count": 240856, "point_yield": 7296}
+{"kind": "pair", "prev_stem": 129, "stem": 130, "coarse_fitness": 0.8910361842105263, "coarse_rmse": 0.03436636097094244, "coarse_correspondences": 6501, "icp_fitness": 0.8792489035087719, "icp_rmse": 0.022123326335980586, "icp_correspondences": 6415}
+{"kind": "frame", "stem": 131, "raw_point_count": 262144, "point_yield": 6964}
+{"kind": "pair", "prev_stem": 130, "stem": 131, "coarse_fitness": 0.9112578977599081, "coarse_rmse": 0.03502061872411635, "coarse_correspondences": 6346, "icp_fitness": 0.8920160827110856, "icp_rmse": 0.021736976133862298, "icp_correspondences": 6212}
+{"kind": "frame", "stem": 133, "raw_point_count": 262144, "point_yield": 8506}
+{"kind": "pair", "prev_stem": 131, "stem": 133, "coarse_fitness": 0.8010815894662591, "coarse_rmse": 0.024149310410968017, "coarse_correspondences": 6814, "icp_fitness": 0.8023747942628733, "icp_rmse": 0.015220006209177237, "icp_correspondences": 6825}
+{"kind": "frame", "stem": 135, "raw_point_count": 262144, "point_yield": 8657}
+{"kind": "pair", "prev_stem": 133, "stem": 135, "coarse_fitness": 0.8233799237611181, "coarse_rmse": 0.021627323823737995, "coarse_correspondences": 7128, "icp_fitness": 0.8201455469562204, "icp_rmse": 0.014948652809638157, "icp_correspondences": 7100}
+{"kind": "frame", "stem": 137, "raw_point_count": 262144, "point_yield": 7671}
+{"kind": "pair", "prev_stem": 135, "stem": 137, "coarse_fitness": 0.9945248337895972, "coarse_rmse": 0.024984730460616538, "coarse_correspondences": 7629, "icp_fitness": 0.9949159170903402, "icp_rmse": 0.021179446344659857, "icp_correspondences": 7632}
+{"kind": "frame", "stem": 139, "raw_point_count": 262144, "point_yield": 7676}
+{"kind": "pair", "prev_stem": 137, "stem": 139, "coarse_fitness": 0.9501042209484106, "coarse_rmse": 0.02486465807367317, "coarse_correspondences": 7293, "icp_fitness": 0.9477592496091715, "icp_rmse": 0.019691116267669607, "icp_correspondences": 7275}
+{"kind": "frame", "stem": 141, "raw_point_count": 262144, "point_yield": 7674}
+{"kind": "pair", "prev_stem": 139, "stem": 141, "coarse_fitness": 0.8957518894970029, "coarse_rmse": 0.02900993198563604, "coarse_correspondences": 6874, "icp_fitness": 0.8922335157675267, "icp_rmse": 0.017964765252690567, "icp_correspondences": 6847}
+{"kind": "frame", "stem": 142, "raw_point_count": 262144, "point_yield": 6758}
+{"kind": "pair", "prev_stem": 141, "stem": 142, "coarse_fitness": 0.969665581532998, "coarse_rmse": 0.02619319356114466, "coarse_correspondences": 6553, "icp_fitness": 0.961379106244451, "icp_rmse": 0.019888547634230577, "icp_correspondences": 6497}
+{"kind": "frame", "stem": 143, "raw_point_count": 262144, "point_yield": 5582}
+{"kind": "pair", "prev_stem": 142, "stem": 143, "coarse_fitness": 0.9566463633106413, "coarse_rmse": 0.037905498882687134, "coarse_correspondences": 5340, "icp_fitness": 0.9702615549982085, "icp_rmse": 0.024995558118170193, "icp_correspondences": 5416}
+{"kind": "frame", "stem": 144, "raw_point_count": 262144, "point_yield": 5148}
+{"kind": "pair", "prev_stem": 143, "stem": 144, "coarse_fitness": 0.9660062160062161, "coarse_rmse": 0.026219070455230496, "coarse_correspondences": 4973, "icp_fitness": 0.9658119658119658, "icp_rmse": 0.019488205655893282, "icp_correspondences": 4972}
+{"kind": "frame", "stem": 145, "raw_point_count": 262144, "point_yield": 4949}
+{"kind": "pair", "prev_stem": 144, "stem": 145, "coarse_fitness": 0.9717114568599717, "coarse_rmse": 0.02430695602896545, "coarse_correspondences": 4809, "icp_fitness": 0.9700949686805416, "icp_rmse": 0.01887341152373542, "icp_correspondences": 4801}
+{"kind": "frame", "stem": 146, "raw_point_count": 262144, "point_yield": 4858}
+{"kind": "pair", "prev_stem": 145, "stem": 146, "coarse_fitness": 0.968299711815562, "coarse_rmse": 0.03334433842841091, "coarse_correspondences": 4704, "icp_fitness": 0.9662412515438452, "icp_rmse": 0.01735056053963729, "icp_correspondences": 4694}
+{"kind": "frame", "stem": 147, "raw_point_count": 262144, "point_yield": 4203}
+{"kind": "pair", "prev_stem": 146, "stem": 147, "coarse_fitness": 0.9671663097787295, "coarse_rmse": 0.0217876706433586, "coarse_correspondences": 4065, "icp_fitness": 0.9697834879847728, "icp_rmse": 0.017507678371093818, "icp_correspondences": 4076}
+{"kind": "frame", "stem": 148, "raw_point_count": 262144, "point_yield": 4969}
+{"kind": "pair", "prev_stem": 147, "stem": 148, "coarse_fitness": 0.7389816864560274, "coarse_rmse": 0.02499808570433554, "coarse_correspondences": 3672, "icp_fitness": 0.7383779432481384, "icp_rmse": 0.018666195947295225, "icp_correspondences": 3669}
+{"kind": "frame", "stem": 149, "raw_point_count": 262144, "point_yield": 6557}
+{"kind": "pair", "prev_stem": 148, "stem": 149, "coarse_fitness": 0.7518682324233643, "coarse_rmse": 0.02900006743966121, "coarse_correspondences": 4930, "icp_fitness": 0.758883635809059, "icp_rmse": 0.022100890670374757, "icp_correspondences": 4976}
+{"kind": "frame", "stem": 150, "raw_point_count": 262144, "point_yield": 8526}
+{"kind": "pair", "prev_stem": 149, "stem": 150, "coarse_fitness": 0.7796152943936195, "coarse_rmse": 0.029189247523237163, "coarse_correspondences": 6647, "icp_fitness": 0.790053952615529, "icp_rmse": 0.020064964633878267, "icp_correspondences": 6736}
+{"kind": "frame", "stem": 151, "raw_point_count": 262144, "point_yield": 10436}
+{"kind": "pair", "prev_stem": 150, "stem": 151, "coarse_fitness": 0.8115178229206592, "coarse_rmse": 0.03377390032199656, "coarse_correspondences": 8469, "icp_fitness": 0.8100804906094289, "icp_rmse": 0.020125547567340047, "icp_correspondences": 8454}
+{"kind": "frame", "stem": 153, "raw_point_count": 262144, "point_yield": 11195}
+{"kind": "pair", "prev_stem": 151, "stem": 153, "coarse_fitness": 0.8711924966502903, "coarse_rmse": 0.030403603833559566, "coarse_correspondences": 9753, "icp_fitness": 0.8689593568557392, "icp_rmse": 0.019379348859878753, "icp_correspondences": 9728}
+{"kind": "frame", "stem": 155, "raw_point_count": 262144, "point_yield": 11266}
+{"kind": "pair", "prev_stem": 153, "stem": 155, "coarse_fitness": 0.910527250133144, "coarse_rmse": 0.02714768874927494, "coarse_correspondences": 10258, "icp_fitness": 0.9096396236463696, "icp_rmse": 0.018641631779346555, "icp_correspondences": 10248}
+{"kind": "frame", "stem": 157, "raw_point_count": 262144, "point_yield": 12744}
+{"kind": "pair", "prev_stem": 155, "stem": 157, "coarse_fitness": 0.8357658505963591, "coarse_rmse": 0.02755151177963379, "coarse_correspondences": 10651, "icp_fitness": 0.8304300062774639, "icp_rmse": 0.019486553495565027, "icp_correspondences": 10583}
+{"kind": "frame", "stem": 159, "raw_point_count": 262144, "point_yield": 12865}
+{"kind": "pair", "prev_stem": 157, "stem": 159, "coarse_fitness": 0.9642440730664594, "coarse_rmse": 0.020156422143753714, "coarse_correspondences": 12405, "icp_fitness": 0.9637776914108045, "icp_rmse": 0.01853167357984239, "icp_correspondences": 12399}
+{"kind": "frame", "stem": 161, "raw_point_count": 262144, "point_yield": 14033}
+{"kind": "pair", "prev_stem": 159, "stem": 161, "coarse_fitness": 0.9025154991805031, "coarse_rmse": 0.03016189284602823, "coarse_correspondences": 12665, "icp_fitness": 0.8986674267797334, "icp_rmse": 0.0231111170915223, "icp_correspondences": 12611}
+{"kind": "frame", "stem": 163, "raw_point_count": 262144, "point_yield": 17136}
+{"kind": "pair", "prev_stem": 161, "stem": 163, "coarse_fitness": 0.7512254901960784, "coarse_rmse": 0.027034171621584332, "coarse_correspondences": 12873, "icp_fitness": 0.7518090569561158, "icp_rmse": 0.02220731394937225, "icp_correspondences": 12883}
+{"kind": "frame", "stem": 165, "raw_point_count": 262144, "point_yield": 14690}
+{"kind": "pair", "prev_stem": 163, "stem": 165, "coarse_fitness": 0.9584751531654186, "coarse_rmse": 0.03539862053193501, "coarse_correspondences": 14080, "icp_fitness": 0.9590878148400273, "icp_rmse": 0.018488644935591533, "icp_correspondences": 14089}
+{"kind": "frame", "stem": 167, "raw_point_count": 262144, "point_yield": 13250}
+{"kind": "pair", "prev_stem": 165, "stem": 167, "coarse_fitness": 0.8776603773584906, "coarse_rmse": 0.03380090316902856, "coarse_correspondences": 11629, "icp_fitness": 0.8766037735849057, "icp_rmse": 0.018650335837405094, "icp_correspondences": 11615}
+{"kind": "frame", "stem": 169, "raw_point_count": 262144, "point_yield": 9711}
+{"kind": "pair", "prev_stem": 167, "stem": 169, "coarse_fitness": 0.9889815672948203, "coarse_rmse": 0.03793161020388507, "coarse_correspondences": 9604, "icp_fitness": 0.9851714550509731, "icp_rmse": 0.017199701822368747, "icp_correspondences": 9567}
+{"kind": "frame", "stem": 170, "raw_point_count": 262144, "point_yield": 10368}
+{"kind": "pair", "prev_stem": 169, "stem": 170, "coarse_fitness": 0.8244598765432098, "coarse_rmse": 0.027459054089951893, "coarse_correspondences": 8548, "icp_fitness": 0.8256172839506173, "icp_rmse": 0.014543617308032058, "icp_correspondences": 8560}
+{"kind": "frame", "stem": 171, "raw_point_count": 262144, "point_yield": 11098}
+{"kind": "pair", "prev_stem": 170, "stem": 171, "coarse_fitness": 0.9092629302577041, "coarse_rmse": 0.03554787078470422, "coarse_correspondences": 10091, "icp_fitness": 0.9124166516489458, "icp_rmse": 0.01866683222686321, "icp_correspondences": 10126}
+{"kind": "frame", "stem": 173, "raw_point_count": 262144, "point_yield": 10992}
+{"kind": "pair", "prev_stem": 171, "stem": 173, "coarse_fitness": 0.9630640465793304, "coarse_rmse": 0.028977966790039267, "coarse_correspondences": 10586, "icp_fitness": 0.9607896652110626, "icp_rmse": 0.018403042541558303, "icp_correspondences": 10561}
+{"kind": "frame", "stem": 175, "raw_point_count": 262144, "point_yield": 13434}
+{"kind": "pair", "prev_stem": 173, "stem": 175, "coarse_fitness": 0.8057912758672027, "coarse_rmse": 0.027881637255430407, "coarse_correspondences": 10825, "icp_fitness": 0.8048980199493821, "icp_rmse": 0.01950634037099336, "icp_correspondences": 10813}
+{"kind": "frame", "stem": 177, "raw_point_count": 262144, "point_yield": 14431}
+{"kind": "pair", "prev_stem": 175, "stem": 177, "coarse_fitness": 0.9347931536276073, "coarse_rmse": 0.028652271759263218, "coarse_correspondences": 13490, "icp_fitness": 0.9406832513339339, "icp_rmse": 0.01911204429199132, "icp_correspondences": 13575}
+{"kind": "frame", "stem": 179, "raw_point_count": 262144, "point_yield": 14579}
+{"kind": "pair", "prev_stem": 177, "stem": 179, "coarse_fitness": 0.9338089032169559, "coarse_rmse": 0.024268130463705427, "coarse_correspondences": 13614, "icp_fitness": 0.9346320049386103, "icp_rmse": 0.018279132257272335, "icp_correspondences": 13626}
+{"kind": "frame", "stem": 181, "raw_point_count": 262144, "point_yield": 16727}
+{"kind": "pair", "prev_stem": 179, "stem": 181, "coarse_fitness": 0.8424702576672446, "coarse_rmse": 0.02471024147002097, "coarse_correspondences": 14092, "icp_fitness": 0.8404973994141208, "icp_rmse": 0.01870314803856246, "icp_correspondences": 14059}
+{"kind": "frame", "stem": 183, "raw_point_count": 262144, "point_yield": 17216}
+{"kind": "pair", "prev_stem": 181, "stem": 183, "coarse_fitness": 0.864660780669145, "coarse_rmse": 0.029216265743030333, "coarse_correspondences": 14886, "icp_fitness": 0.8588522304832714, "icp_rmse": 0.018743140035417882, "icp_correspondences": 14786}
+{"kind": "frame", "stem": 185, "raw_point_count": 262144, "point_yield": 17686}
+{"kind": "pair", "prev_stem": 183, "stem": 185, "coarse_fitness": 0.8863507859323759, "coarse_rmse": 0.027688250555867048, "coarse_correspondences": 15676, "icp_fitness": 0.8822232274115119, "icp_rmse": 0.018297811462578254, "icp_correspondences": 15603}
+{"kind": "frame", "stem": 187, "raw_point_count": 262144, "point_yield": 17682}
+{"kind": "pair", "prev_stem": 185, "stem": 187, "coarse_fitness": 0.8852505372695396, "coarse_rmse": 0.029367158100714615, "coarse_correspondences": 15653, "icp_fitness": 0.8790295215473363, "icp_rmse": 0.018409481376477608, "icp_correspondences": 15543}
+{"kind": "frame", "stem": 189, "raw_point_count": 262144, "point_yield": 15524}
+{"kind": "pair", "prev_stem": 187, "stem": 189, "coarse_fitness": 0.9829940736923474, "coarse_rmse": 0.024846635099098204, "coarse_correspondences": 15260, "icp_fitness": 0.9806106673537748, "icp_rmse": 0.014320264443850287, "icp_correspondences": 15223}
+{"kind": "frame", "stem": 191, "raw_point_count": 262144, "point_yield": 13374}
+{"kind": "pair", "prev_stem": 189, "stem": 191, "coarse_fitness": 0.9926723493345296, "coarse_rmse": 0.03154710981399707, "coarse_correspondences": 13276, "icp_fitness": 0.990429190967549, "icp_rmse": 0.015900865228752174, "icp_correspondences": 13246}
+{"kind": "frame", "stem": 193, "raw_point_count": 262144, "point_yield": 12630}
+{"kind": "pair", "prev_stem": 191, "stem": 193, "coarse_fitness": 0.978701504354711, "coarse_rmse": 0.022802559723139697, "coarse_correspondences": 12361, "icp_fitness": 0.9783847980997624, "icp_rmse": 0.0179309751481581, "icp_correspondences": 12357}
+{"kind": "frame", "stem": 195, "raw_point_count": 262144, "point_yield": 10795}
+{"kind": "pair", "prev_stem": 193, "stem": 195, "coarse_fitness": 0.9902732746641963, "coarse_rmse": 0.022829419445173946, "coarse_correspondences": 10690, "icp_fitness": 0.9890690134321445, "icp_rmse": 0.01121819899197192, "icp_correspondences": 10677}
+{"kind": "frame", "stem": 197, "raw_point_count": 262144, "point_yield": 9956}
+{"kind": "pair", "prev_stem": 195, "stem": 197, "coarse_fitness": 0.9997991161108879, "coarse_rmse": 0.031253432375292114, "coarse_correspondences": 9954, "icp_fitness": 0.9997991161108879, "icp_rmse": 0.018824627557539015, "icp_correspondences": 9954}
+{"kind": "frame", "stem": 199, "raw_point_count": 262144, "point_yield": 9679}
+{"kind": "pair", "prev_stem": 197, "stem": 199, "coarse_fitness": 0.9933877466680442, "coarse_rmse": 0.026930694599444024, "coarse_correspondences": 9615, "icp_fitness": 0.9901849364603781, "icp_rmse": 0.017300380018936218, "icp_correspondences": 9584}
+{"kind": "frame", "stem": 201, "raw_point_count": 262144, "point_yield": 9094}
+{"kind": "pair", "prev_stem": 199, "stem": 201, "coarse_fitness": 0.9995601495491533, "coarse_rmse": 0.02576120630779411, "coarse_correspondences": 9090, "icp_fitness": 1.0, "icp_rmse": 0.01665202145742298, "icp_correspondences": 9094}
+{"kind": "frame", "stem": 203, "raw_point_count": 262144, "point_yield": 7129}
+{"kind": "pair", "prev_stem": 201, "stem": 203, "coarse_fitness": 0.9991583672324309, "coarse_rmse": 0.024400548062929052, "coarse_correspondences": 7123, "icp_fitness": 0.9988778229765746, "icp_rmse": 0.012431206325744884, "icp_correspondences": 7121}
+{"kind": "frame", "stem": 205, "raw_point_count": 262144, "point_yield": 7632}
+{"kind": "pair", "prev_stem": 203, "stem": 205, "coarse_fitness": 0.8776205450733753, "coarse_rmse": 0.03185571326107979, "coarse_correspondences": 6698, "icp_fitness": 0.8712002096436059, "icp_rmse": 0.01632660537063246, "icp_correspondences": 6649}
+{"kind": "frame", "stem": 207, "raw_point_count": 262144, "point_yield": 8022}
+{"kind": "pair", "prev_stem": 205, "stem": 207, "coarse_fitness": 0.9040139616055847, "coarse_rmse": 0.03577849522602932, "coarse_correspondences": 7252, "icp_fitness": 0.8884318125155821, "icp_rmse": 0.017573558818719595, "icp_correspondences": 7127}
+{"kind": "frame", "stem": 209, "raw_point_count": 262144, "point_yield": 8158}
+{"kind": "pair", "prev_stem": 207, "stem": 209, "coarse_fitness": 0.8983819563618534, "coarse_rmse": 0.029230162678991745, "coarse_correspondences": 7329, "icp_fitness": 0.8934787938220152, "icp_rmse": 0.017931524324200886, "icp_correspondences": 7289}
+{"kind": "frame", "stem": 211, "raw_point_count": 262144, "point_yield": 8464}
+{"kind": "pair", "prev_stem": 209, "stem": 211, "coarse_fitness": 0.8595226843100189, "coarse_rmse": 0.030703538973471986, "coarse_correspondences": 7275, "icp_fitness": 0.8559782608695652, "icp_rmse": 0.017766163931663286, "icp_correspondences": 7245}
+{"kind": "frame", "stem": 213, "raw_point_count": 262144, "point_yield": 8897}
+{"kind": "pair", "prev_stem": 211, "stem": 213, "coarse_fitness": 0.7958862537934135, "coarse_rmse": 0.022748141854740632, "coarse_correspondences": 7081, "icp_fitness": 0.7937507024839834, "icp_rmse": 0.019392115459057307, "icp_correspondences": 7062}
+{"kind": "frame", "stem": 215, "raw_point_count": 262144, "point_yield": 9671}
+{"kind": "pair", "prev_stem": 213, "stem": 215, "coarse_fitness": 0.8222520938889464, "coarse_rmse": 0.02646507895217297, "coarse_correspondences": 7952, "icp_fitness": 0.8194602419605005, "icp_rmse": 0.01910926724489155, "icp_correspondences": 7925}
+{"kind": "frame", "stem": 217, "raw_point_count": 262144, "point_yield": 10260}
+{"kind": "pair", "prev_stem": 215, "stem": 217, "coarse_fitness": 0.8640350877192983, "coarse_rmse": 0.02814582392476965, "coarse_correspondences": 8865, "icp_fitness": 0.8587719298245614, "icp_rmse": 0.018053569584633247, "icp_correspondences": 8811}
+{"kind": "frame", "stem": 219, "raw_point_count": 262144, "point_yield": 10668}
+{"kind": "pair", "prev_stem": 217, "stem": 219, "coarse_fitness": 0.8712035995500562, "coarse_rmse": 0.030757958421657617, "coarse_correspondences": 9294, "icp_fitness": 0.8731721034870641, "icp_rmse": 0.017756848167277087, "icp_correspondences": 9315}
+{"kind": "frame", "stem": 221, "raw_point_count": 262144, "point_yield": 11415}
+{"kind": "pair", "prev_stem": 219, "stem": 221, "coarse_fitness": 0.8682435392028033, "coarse_rmse": 0.03237951168466194, "coarse_correspondences": 9911, "icp_fitness": 0.8641261498028909, "icp_rmse": 0.017669319829678287, "icp_correspondences": 9864}
+{"kind": "frame", "stem": 223, "raw_point_count": 262144, "point_yield": 11891}
+{"kind": "pair", "prev_stem": 221, "stem": 223, "coarse_fitness": 0.879740980573543, "coarse_rmse": 0.027785862095837815, "coarse_correspondences": 10461, "icp_fitness": 0.8812547304684215, "icp_rmse": 0.01802690894310717, "icp_correspondences": 10479}
+{"kind": "frame", "stem": 224, "raw_point_count": 262144, "point_yield": 12494}
+{"kind": "pair", "prev_stem": 223, "stem": 224, "coarse_fitness": 0.9056347046582359, "coarse_rmse": 0.025720197479181226, "coarse_correspondences": 11315, "icp_fitness": 0.9049943973107092, "icp_rmse": 0.018883236794569082, "icp_correspondences": 11307}
+{"kind": "frame", "stem": 225, "raw_point_count": 262144, "point_yield": 14474}
+{"kind": "pair", "prev_stem": 224, "stem": 225, "coarse_fitness": 0.8296255354428631, "coarse_rmse": 0.025894212690460956, "coarse_correspondences": 12008, "icp_fitness": 0.8244438303164294, "icp_rmse": 0.01906337609115607, "icp_correspondences": 11933}
+{"kind": "frame", "stem": 227, "raw_point_count": 262144, "point_yield": 13812}
+{"kind": "pair", "prev_stem": 225, "stem": 227, "coarse_fitness": 0.932812047494932, "coarse_rmse": 0.022139672111308333, "coarse_correspondences": 12884, "icp_fitness": 0.9325224442513756, "icp_rmse": 0.017620732782941302, "icp_correspondences": 12880}
+{"kind": "frame", "stem": 229, "raw_point_count": 262144, "point_yield": 12343}
+{"kind": "pair", "prev_stem": 227, "stem": 229, "coarse_fitness": 0.9815279915741716, "coarse_rmse": 0.02420588264239346, "coarse_correspondences": 12115, "icp_fitness": 0.9828242728672122, "icp_rmse": 0.01903073109768578, "icp_correspondences": 12131}
+{"kind": "frame", "stem": 230, "raw_point_count": 262144, "point_yield": 11493}
+{"kind": "pair", "prev_stem": 229, "stem": 230, "coarse_fitness": 0.993474288697468, "coarse_rmse": 0.024620206446720767, "coarse_correspondences": 11418, "icp_fitness": 0.995301487862177, "icp_rmse": 0.017151634133107482, "icp_correspondences": 11439}
+{"kind": "frame", "stem": 231, "raw_point_count": 262144, "point_yield": 10687}
+{"kind": "pair", "prev_stem": 230, "stem": 231, "coarse_fitness": 0.9950407036586507, "coarse_rmse": 0.03514940843293016, "coarse_correspondences": 10634, "icp_fitness": 0.9974735660147843, "icp_rmse": 0.019523288977363336, "icp_correspondences": 10660}
+{"kind": "frame", "stem": 233, "raw_point_count": 262144, "point_yield": 10328}
+{"kind": "pair", "prev_stem": 231, "stem": 233, "coarse_fitness": 0.8501161890007746, "coarse_rmse": 0.02362263481641622, "coarse_correspondences": 8780, "icp_fitness": 0.8495352439969016, "icp_rmse": 0.016477366803821343, "icp_correspondences": 8774}
+{"kind": "frame", "stem": 235, "raw_point_count": 262144, "point_yield": 9441}
+{"kind": "pair", "prev_stem": 233, "stem": 235, "coarse_fitness": 0.8661158775553437, "coarse_rmse": 0.0340323636484755, "coarse_correspondences": 8177, "icp_fitness": 0.8450376019489461, "icp_rmse": 0.017618147339511097, "icp_correspondences": 7978}
+{"kind": "frame", "stem": 237, "raw_point_count": 262144, "point_yield": 8821}
+{"kind": "pair", "prev_stem": 235, "stem": 237, "coarse_fitness": 0.9463779616823489, "coarse_rmse": 0.027843617436119752, "coarse_correspondences": 8348, "icp_fitness": 0.9376487926538941, "icp_rmse": 0.018797513898887806, "icp_correspondences": 8271}
+{"kind": "frame", "stem": 239, "raw_point_count": 262144, "point_yield": 8096}
+{"kind": "pair", "prev_stem": 237, "stem": 239, "coarse_fitness": 0.9407114624505929, "coarse_rmse": 0.031416401736758776, "coarse_correspondences": 7616, "icp_fitness": 0.9262598814229249, "icp_rmse": 0.019074581913520457, "icp_correspondences": 7499}
+{"kind": "frame", "stem": 240, "raw_point_count": 262144, "point_yield": 10036}
+{"kind": "pair", "prev_stem": 239, "stem": 240, "coarse_fitness": 0.810083698684735, "coarse_rmse": 0.02557004140829624, "coarse_correspondences": 8130, "icp_fitness": 0.8051016341171782, "icp_rmse": 0.018524830708519572, "icp_correspondences": 8080}
+{"kind": "frame", "stem": 241, "raw_point_count": 262144, "point_yield": 10670}
+{"kind": "pair", "prev_stem": 240, "stem": 241, "coarse_fitness": 0.9253045923149016, "coarse_rmse": 0.030500277930408482, "coarse_correspondences": 9873, "icp_fitness": 0.9221180880974695, "icp_rmse": 0.018040819210896883, "icp_correspondences": 9839}
+{"kind": "frame", "stem": 243, "raw_point_count": 262144, "point_yield": 13101}
+{"kind": "pair", "prev_stem": 241, "stem": 243, "coarse_fitness": 0.766964353866117, "coarse_rmse": 0.03326157361182717, "coarse_correspondences": 10048, "icp_fitness": 0.7581100679337455, "icp_rmse": 0.019245223186314213, "icp_correspondences": 9932}
+{"kind": "frame", "stem": 245, "raw_point_count": 262144, "point_yield": 14125}
+{"kind": "pair", "prev_stem": 243, "stem": 245, "coarse_fitness": 0.9091681415929204, "coarse_rmse": 0.032619806465888725, "coarse_correspondences": 12842, "icp_fitness": 0.9053451327433628, "icp_rmse": 0.021192675749289097, "icp_correspondences": 12788}
+{"kind": "frame", "stem": 246, "raw_point_count": 262144, "point_yield": 13135}
+{"kind": "pair", "prev_stem": 245, "stem": 246, "coarse_fitness": 0.9824895317853064, "coarse_rmse": 0.02476906934382088, "coarse_correspondences": 12905, "icp_fitness": 0.9818043395508185, "icp_rmse": 0.015371176664361523, "icp_correspondences": 12896}
+{"kind": "frame", "stem": 247, "raw_point_count": 262144, "point_yield": 16260}
+{"kind": "pair", "prev_stem": 246, "stem": 247, "coarse_fitness": 0.8071340713407134, "coarse_rmse": 0.026802911726214716, "coarse_correspondences": 13124, "icp_fitness": 0.8030135301353013, "icp_rmse": 0.0182013156790038, "icp_correspondences": 13057}
+{"kind": "frame", "stem": 249, "raw_point_count": 262144, "point_yield": 15182}
+{"kind": "pair", "prev_stem": 247, "stem": 249, "coarse_fitness": 0.8712949545514425, "coarse_rmse": 0.025589616127312007, "coarse_correspondences": 13228, "icp_fitness": 0.8707021472796733, "icp_rmse": 0.018179130024907095, "icp_correspondences": 13219}
+{"kind": "frame", "stem": 250, "raw_point_count": 262144, "point_yield": 16343}
+{"kind": "pair", "prev_stem": 249, "stem": 250, "coarse_fitness": 0.8638560851740806, "coarse_rmse": 0.034398936103851065, "coarse_correspondences": 14118, "icp_fitness": 0.8617144955026617, "icp_rmse": 0.019619124821792264, "icp_correspondences": 14083}
+{"kind": "frame", "stem": 251, "raw_point_count": 215514, "point_yield": 23753}
+{"kind": "pair", "prev_stem": 250, "stem": 251, "coarse_fitness": 0.8423778049088536, "coarse_rmse": 0.029849307291404246, "coarse_correspondences": 20009, "icp_fitness": 0.8382099103271166, "icp_rmse": 0.025401724925452555, "icp_correspondences": 19910}
+{"kind": "frame", "stem": 252, "raw_point_count": 254357, "point_yield": 17128}
+{"kind": "pair", "prev_stem": 251, "stem": 252, "coarse_fitness": 0.9930523120037366, "coarse_rmse": 0.0255416784008628, "coarse_correspondences": 17009, "icp_fitness": 0.9878561419897244, "icp_rmse": 0.019569083506192894, "icp_correspondences": 16920}
+{"kind": "frame", "stem": 253, "raw_point_count": 214931, "point_yield": 17198}
+{"kind": "pair", "prev_stem": 252, "stem": 253, "coarse_fitness": 0.9487149668566113, "coarse_rmse": 0.032052908710449225, "coarse_correspondences": 16316, "icp_fitness": 0.9600534945923944, "icp_rmse": 0.023604854141331608, "icp_correspondences": 16511}
+{"kind": "frame", "stem": 254, "raw_point_count": 239313, "point_yield": 15147}
+{"kind": "pair", "prev_stem": 253, "stem": 254, "coarse_fitness": 0.8951607579058559, "coarse_rmse": 0.022359271760539486, "coarse_correspondences": 13559, "icp_fitness": 0.8955568759490328, "icp_rmse": 0.020037054566102667, "icp_correspondences": 13565}
+{"kind": "frame", "stem": 255, "raw_point_count": 215593, "point_yield": 15864}
+{"kind": "pair", "prev_stem": 254, "stem": 255, "coarse_fitness": 0.9943267776096822, "coarse_rmse": 0.02901567859713468, "coarse_correspondences": 15774, "icp_fitness": 0.9960917801311144, "icp_rmse": 0.02542579231364207, "icp_correspondences": 15802}
+{"kind": "frame", "stem": 257, "raw_point_count": 247986, "point_yield": 9654}
+{"kind": "pair", "prev_stem": 255, "stem": 257, "coarse_fitness": 0.7872384503832608, "coarse_rmse": 0.04247846952139708, "coarse_correspondences": 7600, "icp_fitness": 0.9981354878806712, "icp_rmse": 0.019709825748019664, "icp_correspondences": 9636}
+{"kind": "frame", "stem": 258, "raw_point_count": 215429, "point_yield": 11193}
+{"kind": "pair", "prev_stem": 257, "stem": 258, "coarse_fitness": 0.7477887965692843, "coarse_rmse": 0.044040254715935624, "coarse_correspondences": 8370, "icp_fitness": 0.9993746091307066, "icp_rmse": 0.025184383775995096, "icp_correspondences": 11186}
+{"kind": "frame", "stem": 259, "raw_point_count": 220336, "point_yield": 11653}
+{"kind": "pair", "prev_stem": 258, "stem": 259, "coarse_fitness": 0.9060327812580451, "coarse_rmse": 0.02842032551175306, "coarse_correspondences": 10558, "icp_fitness": 0.9032867072856775, "icp_rmse": 0.02439906388131827, "icp_correspondences": 10526}
+{"kind": "frame", "stem": 260, "raw_point_count": 225225, "point_yield": 11979}
+{"kind": "pair", "prev_stem": 259, "stem": 260, "coarse_fitness": 0.91852408381334, "coarse_rmse": 0.030735019443206547, "coarse_correspondences": 11003, "icp_fitness": 0.9100926621587778, "icp_rmse": 0.024200499885233907, "icp_correspondences": 10902}
+{"kind": "frame", "stem": 261, "raw_point_count": 216130, "point_yield": 13560}
+{"kind": "pair", "prev_stem": 260, "stem": 261, "coarse_fitness": 0.9260324483775811, "coarse_rmse": 0.03295670437908489, "coarse_correspondences": 12557, "icp_fitness": 0.9185103244837758, "icp_rmse": 0.02322308219227694, "icp_correspondences": 12455}
+{"kind": "frame", "stem": 263, "raw_point_count": 233833, "point_yield": 12630}
+{"kind": "pair", "prev_stem": 261, "stem": 263, "coarse_fitness": 0.9351543942992874, "coarse_rmse": 0.026679198079001612, "coarse_correspondences": 11811, "icp_fitness": 0.9292161520190024, "icp_rmse": 0.020606698273603095, "icp_correspondences": 11736}
+{"kind": "frame", "stem": 265, "raw_point_count": 251460, "point_yield": 8831}
+{"kind": "pair", "prev_stem": 263, "stem": 265, "coarse_fitness": 0.9988676254104858, "coarse_rmse": 0.023751009265923075, "coarse_correspondences": 8821, "icp_fitness": 0.9977352508209716, "icp_rmse": 0.01529790199446595, "icp_correspondences": 8811}
+{"kind": "frame", "stem": 267, "raw_point_count": 223134, "point_yield": 12518}
+{"kind": "pair", "prev_stem": 265, "stem": 267, "coarse_fitness": 0.8381530595941844, "coarse_rmse": 0.03686812820125028, "coarse_correspondences": 10492, "icp_fitness": 0.8362358204185972, "icp_rmse": 0.024458628110548757, "icp_correspondences": 10468}
+{"kind": "frame", "stem": 269, "raw_point_count": 222749, "point_yield": 10094}
+{"kind": "pair", "prev_stem": 267, "stem": 269, "coarse_fitness": 0.9999009312462849, "coarse_rmse": 0.018184951956101886, "coarse_correspondences": 10093, "icp_fitness": 0.9999009312462849, "icp_rmse": 0.016586722613408968, "icp_correspondences": 10093}
+{"kind": "frame", "stem": 271, "raw_point_count": 259405, "point_yield": 5538}
+{"kind": "pair", "prev_stem": 269, "stem": 271, "coarse_fitness": 1.0, "coarse_rmse": 0.021257465955650253, "coarse_correspondences": 5538, "icp_fitness": 0.9989165763813651, "icp_rmse": 0.01607126527556955, "icp_correspondences": 5532}
+{"kind": "frame", "stem": 272, "raw_point_count": 227418, "point_yield": 7997}
+{"kind": "pair", "prev_stem": 271, "stem": 272, "coarse_fitness": 0.9330999124671752, "coarse_rmse": 0.03130774543776748, "coarse_correspondences": 7462, "icp_fitness": 0.9200950356383644, "icp_rmse": 0.025018151282859943, "icp_correspondences": 7358}
+{"kind": "frame", "stem": 273, "raw_point_count": 252878, "point_yield": 6580}
+{"kind": "pair", "prev_stem": 272, "stem": 273, "coarse_fitness": 0.9369300911854104, "coarse_rmse": 0.03240445294906326, "coarse_correspondences": 6165, "icp_fitness": 0.9296352583586626, "icp_rmse": 0.02031511261883353, "icp_correspondences": 6117}
+{"kind": "frame", "stem": 274, "raw_point_count": 247270, "point_yield": 7541}
+{"kind": "pair", "prev_stem": 273, "stem": 274, "coarse_fitness": 0.9169871369844849, "coarse_rmse": 0.029727386739068346, "coarse_correspondences": 6915, "icp_fitness": 0.9201697387614375, "icp_rmse": 0.020667355936054302, "icp_correspondences": 6939}
+{"kind": "frame", "stem": 275, "raw_point_count": 224004, "point_yield": 9705}
+{"kind": "pair", "prev_stem": 274, "stem": 275, "coarse_fitness": 0.9001545595054096, "coarse_rmse": 0.02677833854935429, "coarse_correspondences": 8736, "icp_fitness": 0.899021123132406, "icp_rmse": 0.023835729411805406, "icp_correspondences": 8725}
+{"kind": "frame", "stem": 277, "raw_point_count": 214636, "point_yield": 11959}
+{"kind": "pair", "prev_stem": 275, "stem": 277, "coarse_fitness": 0.7529057613512835, "coarse_rmse": 0.0282886639676725, "coarse_correspondences": 9004, "icp_fitness": 0.7631072832176603, "icp_rmse": 0.023315748262075497, "icp_correspondences": 9126}
+{"kind": "frame", "stem": 279, "raw_point_count": 217158, "point_yield": 12868}
+{"kind": "pair", "prev_stem": 277, "stem": 279, "coarse_fitness": 0.8067298725520672, "coarse_rmse": 0.037164440561897646, "coarse_correspondences": 10381, "icp_fitness": 0.8102269194902083, "icp_rmse": 0.022388345988043484, "icp_correspondences": 10426}
+{"kind": "frame", "stem": 281, "raw_point_count": 237093, "point_yield": 11764}
+{"kind": "pair", "prev_stem": 279, "stem": 281, "coarse_fitness": 0.838150289017341, "coarse_rmse": 0.025612089788746392, "coarse_correspondences": 9860, "icp_fitness": 0.8362801768106086, "icp_rmse": 0.020183314470304966, "icp_correspondences": 9838}
+{"kind": "frame", "stem": 282, "raw_point_count": 248549, "point_yield": 11054}
+{"kind": "pair", "prev_stem": 281, "stem": 282, "coarse_fitness": 0.9141487244436403, "coarse_rmse": 0.031622030376895656, "coarse_correspondences": 10105, "icp_fitness": 0.9338700922742899, "icp_rmse": 0.018478450595689512, "icp_correspondences": 10323}
+{"kind": "frame", "stem": 283, "raw_point_count": 215467, "point_yield": 14862}
+{"kind": "pair", "prev_stem": 282, "stem": 283, "coarse_fitness": 0.9285425918449738, "coarse_rmse": 0.028308742897197824, "coarse_correspondences": 13800, "icp_fitness": 0.927129592248688, "icp_rmse": 0.02499652340301072, "icp_correspondences": 13779}
+{"kind": "frame", "stem": 285, "raw_point_count": 235437, "point_yield": 13838}
+{"kind": "pair", "prev_stem": 283, "stem": 285, "coarse_fitness": 0.8612516259575083, "coarse_rmse": 0.02928606594349789, "coarse_correspondences": 11918, "icp_fitness": 0.8541696776990895, "icp_rmse": 0.0209117353428908, "icp_correspondences": 11820}
+{"kind": "frame", "stem": 286, "raw_point_count": 241812, "point_yield": 13414}
+{"kind": "pair", "prev_stem": 285, "stem": 286, "coarse_fitness": 0.9294021171909945, "coarse_rmse": 0.03794177494124905, "coarse_correspondences": 12467, "icp_fitness": 0.9311167437006113, "icp_rmse": 0.020265723489784185, "icp_correspondences": 12490}
+{"kind": "frame", "stem": 287, "raw_point_count": 246251, "point_yield": 13547}
+{"kind": "pair", "prev_stem": 286, "stem": 287, "coarse_fitness": 0.9211633572008563, "coarse_rmse": 0.026416505806903214, "coarse_correspondences": 12479, "icp_fitness": 0.9162176127555917, "icp_rmse": 0.01968132468328197, "icp_correspondences": 12412}
+{"kind": "frame", "stem": 288, "raw_point_count": 230445, "point_yield": 15864}
+{"kind": "pair", "prev_stem": 287, "stem": 288, "coarse_fitness": 0.9421331316187594, "coarse_rmse": 0.03458664896562615, "coarse_correspondences": 14946, "icp_fitness": 0.9415658093797277, "icp_rmse": 0.021686613335908902, "icp_correspondences": 14937}
+{"kind": "frame", "stem": 289, "raw_point_count": 234332, "point_yield": 15368}
+{"kind": "pair", "prev_stem": 288, "stem": 289, "coarse_fitness": 0.9596564289432588, "coarse_rmse": 0.027937117290152122, "coarse_correspondences": 14748, "icp_fitness": 0.9536699635606455, "icp_rmse": 0.01959302688296034, "icp_correspondences": 14656}
+{"kind": "frame", "stem": 291, "raw_point_count": 250061, "point_yield": 16108}
+{"kind": "pair", "prev_stem": 289, "stem": 291, "coarse_fitness": 0.7318102806059101, "coarse_rmse": 0.02770082832409002, "coarse_correspondences": 11788, "icp_fitness": 0.7267196424137075, "icp_rmse": 0.019824358163000023, "icp_correspondences": 11706}
+{"kind": "frame", "stem": 293, "raw_point_count": 229876, "point_yield": 18906}
+{"kind": "pair", "prev_stem": 291, "stem": 293, "coarse_fitness": 0.8516344017772136, "coarse_rmse": 0.028666570688779543, "coarse_correspondences": 16101, "icp_fitness": 0.8517401883000105, "icp_rmse": 0.022275551269176283, "icp_correspondences": 16103}
+{"kind": "frame", "stem": 295, "raw_point_count": 235815, "point_yield": 17038}
+{"kind": "pair", "prev_stem": 293, "stem": 295, "coarse_fitness": 0.9451813593144736, "coarse_rmse": 0.02756406274276649, "coarse_correspondences": 16104, "icp_fitness": 0.9423054349102007, "icp_rmse": 0.02094176303781863, "icp_correspondences": 16055}
+{"kind": "frame", "stem": 296, "raw_point_count": 214784, "point_yield": 18241}
+{"kind": "pair", "prev_stem": 295, "stem": 296, "coarse_fitness": 0.9743435118688668, "coarse_rmse": 0.02773909762205832, "coarse_correspondences": 17773, "icp_fitness": 0.9723699358587796, "icp_rmse": 0.02498379657272515, "icp_correspondences": 17737}
+{"kind": "frame", "stem": 297, "raw_point_count": 237535, "point_yield": 15839}
+{"kind": "pair", "prev_stem": 296, "stem": 297, "coarse_fitness": 0.9606035734579204, "coarse_rmse": 0.027623308616525056, "coarse_correspondences": 15215, "icp_fitness": 0.9618662794368331, "icp_rmse": 0.02273130318156665, "icp_correspondences": 15235}
+{"kind": "frame", "stem": 299, "raw_point_count": 218534, "point_yield": 17693}
+{"kind": "pair", "prev_stem": 297, "stem": 299, "coarse_fitness": 0.8879217769739445, "coarse_rmse": 0.031499155482379144, "coarse_correspondences": 15710, "icp_fitness": 0.8921607415362007, "icp_rmse": 0.025541072433932586, "icp_correspondences": 15785}
+{"kind": "frame", "stem": 300, "raw_point_count": 214978, "point_yield": 17098}
+{"kind": "pair", "prev_stem": 299, "stem": 300, "coarse_fitness": 0.9856708386945842, "coarse_rmse": 0.030553812691575498, "coarse_correspondences": 16853, "icp_fitness": 0.9839162475143292, "icp_rmse": 0.02263401207265511, "icp_correspondences": 16823}
+{"kind": "frame", "stem": 301, "raw_point_count": 249666, "point_yield": 16363}
+{"kind": "pair", "prev_stem": 300, "stem": 301, "coarse_fitness": 0.7776691315773391, "coarse_rmse": 0.02735738065552037, "coarse_correspondences": 12725, "icp_fitness": 0.7774857911140989, "icp_rmse": 0.019377414873462038, "icp_correspondences": 12722}
+{"kind": "frame", "stem": 303, "raw_point_count": 247878, "point_yield": 18239}
+{"kind": "pair", "prev_stem": 301, "stem": 303, "coarse_fitness": 0.8283897143483744, "coarse_rmse": 0.025645555305086457, "coarse_correspondences": 15109, "icp_fitness": 0.8305828170404079, "icp_rmse": 0.02150238936827762, "icp_correspondences": 15149}
+{"kind": "frame", "stem": 304, "raw_point_count": 212898, "point_yield": 17955}
+{"kind": "pair", "prev_stem": 303, "stem": 304, "coarse_fitness": 0.9795600111389585, "coarse_rmse": 0.03014028333008688, "coarse_correspondences": 17588, "icp_fitness": 0.988526872737399, "icp_rmse": 0.023508835571120316, "icp_correspondences": 17749}
+{"kind": "frame", "stem": 305, "raw_point_count": 224022, "point_yield": 20616}
+{"kind": "pair", "prev_stem": 304, "stem": 305, "coarse_fitness": 0.8181024447031432, "coarse_rmse": 0.029161101394803556, "coarse_correspondences": 16866, "icp_fitness": 0.8186360108653473, "icp_rmse": 0.023522730051760362, "icp_correspondences": 16877}
+{"kind": "frame", "stem": 307, "raw_point_count": 212865, "point_yield": 22552}
+{"kind": "pair", "prev_stem": 305, "stem": 307, "coarse_fitness": 0.8170893934019156, "coarse_rmse": 0.02727616516198176, "coarse_correspondences": 18427, "icp_fitness": 0.819971621142249, "icp_rmse": 0.02480754314411402, "icp_correspondences": 18492}
+{"kind": "frame", "stem": 308, "raw_point_count": 245425, "point_yield": 23813}
+{"kind": "pair", "prev_stem": 307, "stem": 308, "coarse_fitness": 0.837441733506908, "coarse_rmse": 0.030993462877719632, "coarse_correspondences": 19942, "icp_fitness": 0.8373577457691177, "icp_rmse": 0.02350799689402901, "icp_correspondences": 19940}
+{"kind": "frame", "stem": 309, "raw_point_count": 221208, "point_yield": 25134}
+{"kind": "pair", "prev_stem": 308, "stem": 309, "coarse_fitness": 0.9721890666030079, "coarse_rmse": 0.025335490152423288, "coarse_correspondences": 24435, "icp_fitness": 0.971830985915493, "icp_rmse": 0.022594444726081908, "icp_correspondences": 24426}
+{"kind": "frame", "stem": 311, "raw_point_count": 238165, "point_yield": 21331}
+{"kind": "pair", "prev_stem": 309, "stem": 311, "coarse_fitness": 0.8947541137311893, "coarse_rmse": 0.02572267062177114, "coarse_correspondences": 19086, "icp_fitness": 0.8946603534761615, "icp_rmse": 0.021459797296911522, "icp_correspondences": 19084}
+{"kind": "frame", "stem": 312, "raw_point_count": 260424, "point_yield": 17275}
+{"kind": "pair", "prev_stem": 311, "stem": 312, "coarse_fitness": 0.9817076700434153, "coarse_rmse": 0.02421031155382797, "coarse_correspondences": 16959, "icp_fitness": 0.9839652677279306, "icp_rmse": 0.020479881284932104, "icp_correspondences": 16998}
+{"kind": "frame", "stem": 313, "raw_point_count": 227435, "point_yield": 17281}
+{"kind": "pair", "prev_stem": 312, "stem": 313, "coarse_fitness": 0.9736705051790985, "coarse_rmse": 0.032950838451488954, "coarse_correspondences": 16826, "icp_fitness": 0.9761009200856432, "icp_rmse": 0.023748582692741674, "icp_correspondences": 16868}
+{"kind": "frame", "stem": 314, "raw_point_count": 232951, "point_yield": 17360}
+{"kind": "pair", "prev_stem": 313, "stem": 314, "coarse_fitness": 0.9098502304147466, "coarse_rmse": 0.02488003255946959, "coarse_correspondences": 15795, "icp_fitness": 0.9097350230414747, "icp_rmse": 0.023191644742146553, "icp_correspondences": 15793}
+{"kind": "frame", "stem": 315, "raw_point_count": 255092, "point_yield": 15451}
+{"kind": "pair", "prev_stem": 314, "stem": 315, "coarse_fitness": 0.9509416866222251, "coarse_rmse": 0.025624361545922476, "coarse_correspondences": 14693, "icp_fitness": 0.9527538670636205, "icp_rmse": 0.02115067243695271, "icp_correspondences": 14721}
+{"kind": "frame", "stem": 317, "raw_point_count": 262144, "point_yield": 13352}
+{"kind": "pair", "prev_stem": 315, "stem": 317, "coarse_fitness": 0.945026962252846, "coarse_rmse": 0.030354333047465636, "coarse_correspondences": 12618, "icp_fitness": 0.9468993409227082, "icp_rmse": 0.022031325548740648, "icp_correspondences": 12643}
+{"kind": "frame", "stem": 319, "raw_point_count": 262144, "point_yield": 12418}
+{"kind": "pair", "prev_stem": 317, "stem": 319, "coarse_fitness": 0.9321146722499597, "coarse_rmse": 0.02985144737133286, "coarse_correspondences": 11575, "icp_fitness": 0.9332420679658561, "icp_rmse": 0.019998293635154676, "icp_correspondences": 11589}
+{"kind": "frame", "stem": 320, "raw_point_count": 262144, "point_yield": 12576}
+{"kind": "pair", "prev_stem": 319, "stem": 320, "coarse_fitness": 0.9705788804071247, "coarse_rmse": 0.025474497335831563, "coarse_correspondences": 12206, "icp_fitness": 0.9697837150127226, "icp_rmse": 0.019760721214573753, "icp_correspondences": 12196}

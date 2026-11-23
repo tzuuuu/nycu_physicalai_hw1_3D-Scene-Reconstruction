@@ -1,0 +1,14 @@
+{
+  "mean_l2_m": 3.174055104788137,
+  "historical_mean_l2_m": 3.174055104788137,
+  "difference_m": 0.0,
+  "factors": {
+    "official_count": 1522,
+    "diagnostic_count": 1522,
+    "mismatch_count": 0,
+    "differences": []
+  },
+  "diagnostic_pose_max_abs_difference": 0.0,
+  "matched": true,
+  "historical_pose_source": "M3.0 matched diagnostic, not original formal M2 poses"
+}

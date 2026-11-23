@@ -1,0 +1,265 @@
+diff --git a/README.md b/README.md
+index 655933d..40767b8 100644
+--- a/README.md
++++ b/README.md
+@@ -70,6 +70,62 @@ pipeline factors and records a baseline, and `explore` displays the results and
+ writes interactive plots. For the full workflow, SPARQL frame selection, and
+ query examples, see [`docs/e2e-workflow.md`](docs/e2e-workflow.md).
+ 
++## Optional Bonus: custom ICP
++
++`utils.my_local_icp_algorithm` implements Point-to-Point ICP with SciPy
++`cKDTree` nearest-neighbor queries and a NumPy Kabsch SVD rigid update,
++including reflection correction. It does not call Open3D ICP. The original
++`local_icp_algorithm` remains unchanged and is still the default backend.
++
++For a **new, unsealed** experiment, explicitly declare the backend by appending
++this Turtle statement to its declaration (replace `<name>`):
++
++```turtle
++exp:<name> hw1:hasFactorSetting [
++    a hw1:FactorSetting ;
++    hw1:settingParameter hw1:icpBackend ;
++    hw1:settingRole hw1:ReconstructionSetting ;
++    hw1:settingForFactor hw1:ReconstructionRun ;
++    hw1:settingValue "my_icp"^^xsd:string
++] .
++```
++
++Then run the existing CLI with `--version my_icp`, preserving the intended
++voxel, seed, map voxel, and frame-selection settings. Never edit a sealed
++Open3D experiment to switch its backend.
++
++The custom settings are a `1.5 * voxel_size` distance gate, at least 10
++correspondences, at most 60 updates, and a `1e-6` metre change in mean inlier
++distance for convergence. Collinear support and insufficient correspondences
++produce an explicit failure. Final fitness, Euclidean RMSE, and correspondences
++are recomputed from the returned transform. GT is used only after reconstruction.
++
++The four-condition study uses Floor 1 baseline (seed 0), Floor 1 C1 (seed 1),
++Floor 2 baseline (320 frames), and the frozen Floor 2 sparse-v1 selection
++(204 frames). All use registration and map voxels of 0.05 m. Study tooling:
++
++```bash
++pixi run -e habitat python scripts/m5_bonus.py prepare
++pixi run -e habitat python scripts/m5_bonus.py run
++pixi run -e habitat python -m scripts.m5_analysis
++pixi run -e habitat python -m scripts.m5_report_assets
++```
++
++These commands reserve new fixed output directories and refuse retries or
++overwrites. The runner requires native process-table access for its 3 GiB
++sampled process-tree RSS guard. Data and historical results must already exist
++at the paths recorded in the script. Bonus results go to
++`research_outputs/m5_bonus_01/`; three new Bonus experiments contain the four
++runs, with the two Floor 2 runs sharing their new custom experiment.
++
++Point-to-Point and the original Point-to-Plane minimize different objectives
++and have different stopping rules. Historical runtime boundaries also differ;
++recorded times are descriptive and do not establish pure ICP speedup.
++The accepted results and limitations are recorded in
++[`M5_Bonus_Acceptance.md`](docs/implementation/M5_Bonus_Acceptance.md).
++Use `research_outputs/m5_bonus_01/report_assets/` for the reviewed report
++figures and English captions; the original analysis drafts are retained.
++
+ ## More documentation
+ 
+ - [`docs/pixi.md`](docs/pixi.md): environment details and Pixi commands
+diff --git a/tests/test_reconstruction.py b/tests/test_reconstruction.py
+index 890eb9a..8d934f3 100644
+--- a/tests/test_reconstruction.py
++++ b/tests/test_reconstruction.py
+@@ -104,11 +104,75 @@ def test_selected_must_keep_capture_reference(rgbd_capture, frames):
+         utils.reconstruct(rgbd_capture, frames=frames, verbose=False)
+ 
+ 
+-def test_nonconsecutive_selection_and_bonus_guard(rgbd_capture):
++def test_nonconsecutive_selection_and_bonus_backend(rgbd_capture):
+     _, positions = utils.reconstruct(rgbd_capture, frames=[3, 101], voxel_size=0.08, verbose=False, build_cloud=False)
+     assert positions.shape == (2, 3)
+-    with pytest.raises(ValueError, match='Bonus'):
+-        utils.reconstruct(rgbd_capture, version='my_icp')
++    _, custom = utils.reconstruct(rgbd_capture, version='my_icp',
++                                  voxel_size=0.08, build_cloud=False, verbose=False)
++    np.testing.assert_allclose(custom, np.zeros((3, 3)), atol=1e-8)
++    with pytest.raises(ValueError, match='Unknown ICP backend'):
++        utils.reconstruct(rgbd_capture, version='invalid')
++
++
++def test_custom_official_cli_and_return_observer(rgbd_capture, tmp_path):
++    import subprocess
++    import sys
++    import runpy
++    from scripts.m5_bonus import Observer
++    from scripts.m32_experiments import validate_evidence
++    gt = np.zeros((3, 7))
++    gt[:, 3] = 1.
++    np.save(rgbd_capture/'GT_pose.npy', gt)
++    exp = tmp_path/'bonus_synthetic'
++    exp.mkdir()
++    ttl = exp/'bonus_synthetic.ttl'
++    subprocess.run([sys.executable, 'api.py', 'declare', '--name', exp.name,
++                    '--data-dir', str(rgbd_capture), '--floor', '1', '--out', str(ttl)],
++                   check=True, capture_output=True, text=True)
++    text = ttl.read_text() + '''\nexp:bonus_synthetic hw1:hasFactorSetting [
++        a hw1:FactorSetting; hw1:settingParameter hw1:icpBackend;
++        hw1:settingRole hw1:ReconstructionSetting; hw1:settingForFactor hw1:ReconstructionRun;
++        hw1:settingValue "my_icp"^^xsd:string ] .\n'''
++    ttl.write_text(text)
++    (tmp_path/'declaration.before.ttl').write_text(text)
++    obsdir = tmp_path/'observation'
++    obsdir.mkdir()
++    observer = Observer(obsdir)
++    prior = sys.argv
++    try:
++        sys.argv = ['reconstruct.py', '--experiment', str(ttl), '--version', 'my_icp',
++                    '--voxel-size', '.08', '--down-voxel', '.05', '--no-vis']
++        sys.setprofile(observer)
++        runpy.run_path('reconstruct.py', run_name='__main__')
++    finally:
++        sys.setprofile(None)
++        sys.argv = prior
++    exp, _, mean = validate_evidence(ttl, obsdir, [3, 20, 101])
++    assert exp['settings']['icpBackend'] == 'my_icp'
++    assert mean < 1e-8 and len(observer.icp_times) == 2
++    assert all(r['success'] and r['seconds'] > 0 for r in observer.icp_times)
++    query = tmp_path/'sparse.rq'
++    query.write_text('''PREFIX hw1: <http://taica.course/hw1/ontology#>
++        SELECT ?frameIndex WHERE { ?f hw1:frameIndex ?frameIndex .
++        VALUES ?frameIndex { 3 101 } }''')
++    selected_dir = tmp_path/'selected_observation'
++    selected_dir.mkdir()
++    observer = Observer(selected_dir)
++    try:
++        sys.argv = ['reconstruct.py', '--experiment', str(ttl), '--version', 'my_icp',
++                    '--voxel-size', '.08', '--down-voxel', '.05', '--no-vis',
++                    '--selection-query', str(query), '--write']
++        sys.setprofile(observer)
++        runpy.run_path('reconstruct.py', run_name='__main__')
++    finally:
++        sys.setprofile(None)
++        sys.argv = prior
++    after = api.read_experiment(str(ttl))
++    assert after['factor_counts'] == exp['factor_counts']
++    run = api.data_run_iri(after['exp_name'], 'selected')
++    used = sorted(int(after['graph'].value(f, api.HW1.frameIndex))
++                  for f in after['graph'].objects(run, api.HW1.usedFrame))
++    assert used == [3, 101] and len(observer.icp_times) == 1
+ 
+ 
+ def test_unreadable_frame_cannot_yield_complete_factors(rgbd_capture):
+diff --git a/utils.py b/utils.py
+index 82eac68..6c7bdf9 100644
+--- a/utils.py
++++ b/utils.py
+@@ -228,7 +228,78 @@ def my_local_icp_algorithm(source_down, target_down, trans_init, voxel_size):
+     # TODO: Stop on convergence or a bounded iteration count.
+     # TODO: Return a result-like object exposing the final transform as
+     # `.transformation`.
+-    raise NotImplementedError("TODO: implement my_local_icp_algorithm")
++    # Bonus §3.5 未限定誤差形式；沿用已核准的 Point-to-Point + Kabsch
++    # 規劃。保留上方教師 Point-to-Plane TODO 原文，不呼叫 Open3D ICP。
++    from types import SimpleNamespace
++
++    if (not np.isscalar(voxel_size)
++            or np.asarray(voxel_size).dtype.kind not in "uif"
++            or not np.isfinite(voxel_size * 1.5) or voxel_size <= 0):
++        raise ValueError("ICP voxel_size must be finite and positive")
++    source = np.asarray(source_down.points)
++    target = np.asarray(target_down.points)
++    for points in (source, target):
++        if len(points) < 3 or not np.isfinite(points).all():
++            raise ValueError("ICP requires at least 3 finite points in each cloud")
++    transform = np.array(trans_init, dtype=np.float64, copy=True)
++    if transform.shape != (4, 4) or not np.isfinite(transform).all():
++        raise ValueError("ICP initialization must be a finite 4x4 transform")
++    if (not np.allclose(transform[3], [0, 0, 0, 1], rtol=0, atol=1e-8)
++            or not np.allclose(transform[:3, :3].T @ transform[:3, :3],
++                               np.eye(3), rtol=0, atol=1e-6)
++            or not np.isclose(np.linalg.det(transform[:3, :3]), 1., rtol=0, atol=1e-6)):
++        raise ValueError("ICP initialization must be a rigid SE(3) transform")
++
++    threshold = float(voxel_size) * 1.5
++    # 目標在單次 ICP 中固定，只建立一次索引；不形成 N×M 距離矩陣。
++    tree = cKDTree(target)
++
++    def correspondences():
++        moved = source @ transform[:3, :3].T + transform[:3, 3]
++        distances, indices = tree.query(moved, k=1, workers=1)
++        keep = distances < threshold
++        return moved, distances, indices, keep
++
++    previous_error = None
++    iterations = 0
++    reason = "max_iterations"
++    for _ in range(60):
++        moved, distances, indices, keep = correspondences()
++        if np.count_nonzero(keep) < 10:
++            reason = "insufficient_correspondences"
++            break
++        x, y = moved[keep], target[indices[keep]]
++        x_mean, y_mean = x.mean(axis=0), y.mean(axis=0)
++        u, singular, vt = np.linalg.svd((x - x_mean).T @ (y - y_mean))
++        # 共線或集中在單點的支撐無法唯一決定旋轉；平面支撐仍可用。
++        if singular[0] <= 0 or singular[1] <= singular[0] * 1e-12:
++            reason = "degenerate_correspondences"
++            break
++        correction = np.eye(3)
++        correction[2, 2] = -1. if np.linalg.det(vt.T @ u.T) < 0 else 1.
++        rotation = vt.T @ correction @ u.T
++        delta = np.eye(4)
++        delta[:3, :3] = rotation
++        delta[:3, 3] = y_mean - rotation @ x_mean
++        transform = delta @ transform
++        iterations += 1
++        error = float(distances[keep].mean())
++        if previous_error is not None and abs(previous_error - error) < 1e-6:
++            reason = "converged"
++            break
++        previous_error = error
++
++    # 必須重新查詢最終姿態，不把更新前的對應或殘差當成最終結果。
++    _, distances, indices, keep = correspondences()
++    pairs = np.column_stack((np.flatnonzero(keep), indices[keep])).astype(np.int32)
++    count = len(pairs)
++    success = count >= 10 and reason not in (
++        "insufficient_correspondences", "degenerate_correspondences")
++    return SimpleNamespace(
++        transformation=transform, correspondence_set=pairs,
++        fitness=float(count / len(source)),
++        inlier_rmse=float(np.sqrt(np.mean(distances[keep] ** 2))) if count else 0.,
++        iterations=iterations, termination_reason=reason, success=success)
+ 
+ 
+ def remove_ceiling_points(point_cloud, margin=1.0):
+@@ -327,8 +398,8 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
+     # 只讀取本批 RGB-D 與內參；缺 scale 時依既有擷取器的毫米編碼相容處理。
+     intrinsics, pairs, depth_scale = _capture_inputs(data_root, frames)
+     width, height, hfov = (intrinsics[key] for key in ("width", "height", "hfov"))
+-    if version != "open3d":
+-        raise ValueError("M1 reconstruction requires the open3d backend; Bonus is unavailable")
++    if version not in ("open3d", "my_icp"):
++        raise ValueError("Unknown ICP backend: expected open3d or my_icp")
+     if pairs and frames is not None:
+         _, complete_pairs, _ = _capture_inputs(data_root, None)
+         if pairs[0] != complete_pairs[0]:
+@@ -388,13 +459,18 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
+             # TODO Stage 7: Run the selected local backend: Open3D
+             # Point-to-Plane ICP for `version == "open3d"`, otherwise the
+             # custom ICP backend.
+-            # Stage 1 已限制正式後端為 Open3D；保留教師原有後端分支。
++            # 正式成果沿用 Open3D；Bonus 只在明確選擇 my_icp 時使用。
+             if version == 'open3d':
+                 result_icp = local_icp_algorithm(
+                     cur_down, prev_down, trans_init, icp_thr)
+             else:   # my_icp
+                 result_icp = my_local_icp_algorithm(
+                     cur_down, prev_down, trans_init, voxel_size)
++                if not result_icp.success:
++                    raise RuntimeError(
++                        f"Custom ICP failed for {prev_stem}->{stem}: "
++                        f"{result_icp.termination_reason}, "
++                        f"correspondences={len(result_icp.correspondence_set)}")
+             # TODO Stage 8: Accumulate the returned transform into the
+             # frame-0 coordinate system (`T_global` maps each processed
+             # frame into the frame-0 camera coordinate system;

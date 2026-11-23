@@ -1,0 +1,49 @@
+{
+  "baseline_to_selected": {
+    "source_points": 2054529,
+    "target_points": 1277572,
+    "threshold_m": 0.2,
+    "fraction_within_threshold": 0.9999751767923452,
+    "median_distance_m": 0.014976429550525246,
+    "p95_distance_m": 0.06684058410856566
+  },
+  "selected_to_baseline": {
+    "source_points": 1277572,
+    "target_points": 2054529,
+    "threshold_m": 0.2,
+    "fraction_within_threshold": 0.9999898244482502,
+    "median_distance_m": 0.013606842741859883,
+    "p95_distance_m": 0.062359546980388716
+  },
+  "occupancy": {
+    "voxel_m": 0.2,
+    "baseline_cells": 6433,
+    "selected_cells": 6158,
+    "intersection": 5615,
+    "union": 6976,
+    "intersection_over_union": 0.8049025229357798
+  },
+  "regions": [
+    {
+      "region": "Low X / Low Z",
+      "baseline_points": 657729,
+      "fraction_within_0_20m": 0.9999984796169851
+    },
+    {
+      "region": "Low X / High Z",
+      "baseline_points": 342939,
+      "fraction_within_0_20m": 0.9998746132694153
+    },
+    {
+      "region": "High X / Low Z",
+      "baseline_points": 632863,
+      "fraction_within_0_20m": 1.0
+    },
+    {
+      "region": "High X / High Z",
+      "baseline_points": 420998,
+      "fraction_within_0_20m": 0.9999833728426263
+    }
+  ],
+  "limitation": "Relative observed-map agreement in fixed reference; combines changed viewpoints, density and pose error. No absolute room/surface completeness GT."
+}

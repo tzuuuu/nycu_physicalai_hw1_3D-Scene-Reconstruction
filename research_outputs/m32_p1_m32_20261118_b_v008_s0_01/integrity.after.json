@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "complete": {
+    "complete": true,
+    "expected": 1522,
+    "measured": 1522,
+    "pending": 0,
+    "errors": []
+  },
+  "frames": 191,
+  "pairs": 190,
+  "factor_count": 1522,
+  "same_run_factor_match": true,
+  "seal_valid": true,
+  "baseline_only": true,
+  "retained_fraction": 1.0,
+  "mean_l2_m": 0.2749594665933294,
+  "protected_files_unchanged": 676,
+  "plots": [
+    "plots/dashboard.html",
+    "plots/distributions.html",
+    "plots/timelines.html",
+    "plots/tradeoff.html"
+  ],
+  "ttl_sha256": "cf87f42267315f89fe190de4cb860f5690888eef4be628afc4beb19c8f871944",
+  "capture_sha256": "22270c4923745ffdf9b3a1fbe98bf311ac05721a54e37eec6ff3c16a59e227c2",
+  "git_commit": "dc0cc16bcb005421130c3b568b62bd13edead1c3"
+}

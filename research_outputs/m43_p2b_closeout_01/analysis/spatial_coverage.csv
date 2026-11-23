@@ -1,0 +1,5 @@
+region,baseline_points,fraction_within_0_20m
+Low X / Low Z,657729,0.9999984796169851
+Low X / High Z,342939,0.9998746132694153
+High X / Low Z,632863,1.0
+High X / High Z,420998,0.9999833728426263

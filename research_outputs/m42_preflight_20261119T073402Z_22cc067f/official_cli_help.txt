@@ -1,0 +1,35 @@
+usage: reconstruct.py [-h] [-v VERSION] [--voxel-size VOXEL_SIZE]
+                      [--down-voxel DOWN_VOXEL] [--seed SEED] [--no-vis]
+                      --experiment EXPERIMENT [--selection-query QUERY.rq]
+                      [--override-experiment] [--no-write]
+
+Reconstruct a capture (fullbatch or SPARQL-selected frames), print Mean L2,
+show the cloud + trajectories.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v VERSION, --version VERSION
+                        open3d or my_icp (default: the experiment's icpBackend
+                        setting, else open3d). Passing this AND an experiment
+                        that records a different backend is an error.
+  --voxel-size VOXEL_SIZE
+                        registration voxel size in metres (default: 0.05)
+  --down-voxel DOWN_VOXEL
+                        optional map-only voxel size in metres (default: no
+                        map downsampling)
+  --seed SEED           Open3D RANSAC seed (default: 0)
+  --no-vis              skip the Open3D window (print metrics only)
+  --experiment EXPERIMENT
+                        experiment Turtle (or its workspace directory); an
+                        UNSEALED declaration triggers the measuring first
+                        pass, which consumes the declared hw1:batchFile. The
+                        run value is written back below the machine marker.
+  --selection-query QUERY.rq
+                        SPARQL SELECT over --experiment binding ?frame (frame
+                        IRI) or ?frameIndex (integer). The bindings become the
+                        frame list; results are cut into contiguous segments.
+  --override-experiment, --write
+                        write run results to the experiment file (default: no-
+                        write / dry run)
+  --no-write            explicit dry run (default behavior): print the results
+                        but write nothing into the experiment file

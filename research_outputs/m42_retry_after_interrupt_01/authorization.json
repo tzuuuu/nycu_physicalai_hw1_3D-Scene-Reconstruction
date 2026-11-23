@@ -1,0 +1,23 @@
+{
+  "user_instruction": "\u6211\u4e0d\u77e5\u9053\u4ed6\u9084\u5728\u8dd1\u5c31\u6309\u9375\u76e4\u505c\u6b62\uff0c\u4f60\u5e6b\u6211\u522a\u9664\u88ab\u4e2d\u6b62\u7684\u6240\u6709\u6587\u4ef6\uff0c\u6211\u53ef\u4ee5\u91cd\u65b0\u57f7\u884c\u4e00\u6b21",
+  "authorization": "One fresh official execution after accidental manual interruption; no automatic retries beyond this authorization",
+  "additional_official_attempts_authorized": 1,
+  "previous_attempt_outcome": "interrupted_by_KeyboardInterrupt",
+  "interrupted_attempt_archive": "research_outputs/m42_interrupted_attempt_01",
+  "archive_manifest_sha256": "166b4cade2c975b859e8662efcf4580978dd261ac70d10c04d1f7419666b60b6",
+  "active_interrupted_paths_removed": [
+    "research_outputs/m42_p2_a01_baseline_01",
+    "experiments/p2_114753116_a01_baseline_01"
+  ],
+  "experiment": "p2_114753116_a01_baseline_01",
+  "capture": "eval/_data/second_floor/114753116/P2_A_01",
+  "registration_voxel_m": 0.05,
+  "seed": 0,
+  "map_only_down_voxel_m": 0.05,
+  "OMP_NUM_THREADS": "1",
+  "rss_limit_bytes": 3221225472,
+  "original_authorization_sha256": "2463d2a7ed8e3d3846f0dbc77344a2c8b78575e6ccc904eab55c7c1e62ec10fa",
+  "prepared_readiness_sha256": "224f75f1f225611eae25769213eff524374d358f1e4e863bbc8593ea3ddf2a13",
+  "preflight_still_mandatory": true,
+  "note": "This user authorization extends the original single attempt once; new Preflight preserves this authorization in protected.before.json. Frozen inputs and scientific restrictions remain unchanged."
+}

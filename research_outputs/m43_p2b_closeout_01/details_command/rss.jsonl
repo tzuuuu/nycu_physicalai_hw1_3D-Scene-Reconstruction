@@ -1,0 +1,16 @@
+{"elapsed_s": 0.023079124999999992, "unix": 1795076249.5977888, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 4718592, "state": "Rs"}], "tree_rss_bytes": 4718592, "peak_tree_rss_bytes": 4718592}
+{"elapsed_s": 0.525340833, "unix": 1795076250.1000562, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 103727104, "state": "Rs"}], "tree_rss_bytes": 103727104, "peak_tree_rss_bytes": 103727104}
+{"elapsed_s": 1.030099208, "unix": 1795076250.604819, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 177602560, "state": "Rs"}], "tree_rss_bytes": 177602560, "peak_tree_rss_bytes": 177602560}
+{"elapsed_s": 1.535403916, "unix": 1795076251.1101282, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 291438592, "state": "Rs"}], "tree_rss_bytes": 291438592, "peak_tree_rss_bytes": 291438592}
+{"elapsed_s": 2.040668375, "unix": 1795076251.6153972, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 459964416, "state": "Rs"}], "tree_rss_bytes": 459964416, "peak_tree_rss_bytes": 459964416}
+{"elapsed_s": 2.545080791, "unix": 1795076252.1198149, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 550207488, "state": "Rs"}], "tree_rss_bytes": 550207488, "peak_tree_rss_bytes": 550207488}
+{"elapsed_s": 3.050485833, "unix": 1795076252.6252239, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 568557568, "state": "Rs"}], "tree_rss_bytes": 568557568, "peak_tree_rss_bytes": 568557568}
+{"elapsed_s": 3.555749666, "unix": 1795076253.130493, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 715751424, "state": "Rs"}], "tree_rss_bytes": 715751424, "peak_tree_rss_bytes": 715751424}
+{"elapsed_s": 4.060212333, "unix": 1795076253.63496, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 715751424, "state": "Rs"}], "tree_rss_bytes": 715751424, "peak_tree_rss_bytes": 715751424}
+{"elapsed_s": 4.5653063330000005, "unix": 1795076254.140059, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 715800576, "state": "Rs"}], "tree_rss_bytes": 715800576, "peak_tree_rss_bytes": 715800576}
+{"elapsed_s": 5.070254416, "unix": 1795076254.645012, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 715800576, "state": "Rs"}], "tree_rss_bytes": 715800576, "peak_tree_rss_bytes": 715800576}
+{"elapsed_s": 5.575383208, "unix": 1795076255.150145, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 715833344, "state": "Rs"}], "tree_rss_bytes": 715833344, "peak_tree_rss_bytes": 715833344}
+{"elapsed_s": 6.080166416, "unix": 1795076255.654933, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 715866112, "state": "Rs"}], "tree_rss_bytes": 715866112, "peak_tree_rss_bytes": 715866112}
+{"elapsed_s": 6.599795166, "unix": 1795076256.174568, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 739508224, "state": "Rs"}], "tree_rss_bytes": 739508224, "peak_tree_rss_bytes": 739508224}
+{"elapsed_s": 7.091421875, "unix": 1795076256.666198, "pids": [{"pid": 42449, "ppid": 42446, "pgid": 42449, "rss_bytes": 779075584, "state": "Rs"}], "tree_rss_bytes": 779075584, "peak_tree_rss_bytes": 779075584}
+{"elapsed_s": 7.618004166, "unix": 1795076257.192787, "pids": [], "tree_rss_bytes": 0, "peak_tree_rss_bytes": 779075584}

@@ -1,0 +1,25 @@
+{
+  "policy": "m42-layered-v1",
+  "scientific": {
+    "research_outputs/m42_monitor_cleanup_fix_01/completion.json": "4e46868d31648f82fdd2b3f9356ec7d17805f2da0c34a5673c327c6dcbfec000",
+    "research_outputs/m42_monitor_cleanup_fix_01/diagnosis.json": "7b98b4a9966011ccf8f5dea50efd8e9d9530e3cb561316ac7ddb72bb1c0c8b9a",
+    "research_outputs/m42_monitor_cleanup_fix_01/green.log": "d12030c1f1aa0c159226677f8ad9f184df01462e00b5a0b8db9e18fc599fad35",
+    "research_outputs/m42_monitor_cleanup_fix_01/monitor_final.log": "3694f708675242cc5bf434955353b94dce666f146fdef3046d2e4254fc8d6c6a",
+    "research_outputs/m42_monitor_cleanup_fix_01/native_evidence_extracted.json": "650c3e89f8c6ec8bd430884e8b2d9f65e444a8e9428f1843993611fa9a3519b2",
+    "research_outputs/m42_monitor_cleanup_fix_01/original_engineering_sha256.json": "4a1761f15823fbbba59a6874a360c116ffe5d357e907616ccbe0f4e58213cac9",
+    "research_outputs/m42_monitor_cleanup_fix_01/original_preflight_sha256.json": "d02745bc17023f0f15a14f253c3a68d746f7f3bdae3ad2c533c12831188430ff",
+    "research_outputs/m42_monitor_cleanup_fix_01/original_terminal_tests.log": "7090f135a5f9dcafa316e58cc02003d409d3fcaccd74d897b7f14259f4a85f80",
+    "research_outputs/m42_monitor_cleanup_fix_01/prior_M4_Phase2_P2A_Baseline_Acceptance.md": "277450050c422dc98e32ae3aaea4e3a5048028ef27aeb630fdb689a752474550",
+    "research_outputs/m42_monitor_cleanup_fix_01/prior_m42_baseline.py": "e5e1ecdadc13914819fd7367780d249eabb26ee25a1f32decc504f387a5557d4",
+    "research_outputs/m42_monitor_cleanup_fix_01/prior_m42_monitor.py": "88e652c2f4cdc70205c8067ffb06cd6028fda60034e319dd33dff4922892c1a0",
+    "research_outputs/m42_monitor_cleanup_fix_01/prior_test_m42_monitor.py": "0282d334599476ca3db4a5225a8c1125648009584e52342b997ec2453396fcda",
+    "research_outputs/m42_monitor_cleanup_fix_01/readiness.json": "224f75f1f225611eae25769213eff524374d358f1e4e863bbc8593ea3ddf2a13",
+    "research_outputs/m42_monitor_cleanup_fix_01/red.log": "f0eedcfa1b96121c54561c3ac8c0a26b9f750ed601ca1c64e4e7cf2eb593b3c1",
+    "research_outputs/m42_monitor_cleanup_fix_01/regression.log": "efd71c252a242d4f3c075b928dda72042627addc139fd83a1d25777a37fd0636",
+    "research_outputs/m42_monitor_cleanup_fix_01/regression.xml": "2aaaf95b3c63f2d68cceb020dbd31f7329a84986aed27195a27715d87dc3e647",
+    "research_outputs/m42_monitor_cleanup_fix_01/regression_verified.log": "01e5a8b2911c7a1c48fb6612f48a68d353825acd310b806f8f71200124e08098",
+    "research_outputs/m42_monitor_cleanup_fix_01/regression_verified.xml": "28c7bf336231925e95f2b1026d8d607b0f5ea92615d4c6e575d6f4df9ebd16df",
+    "research_outputs/m42_monitor_cleanup_fix_01/source_transition.json": "1bbbee2d049230a7df4be9a2046b432e99264c4c79a0bde7117e31ffbf6e2081"
+  },
+  "os_metadata": {}
+}

@@ -1,0 +1,98 @@
+....FF.F...................                                              [100%]
+=================================== FAILURES ===================================
+______________ test_native_limit_kills_whole_group_not_unrelated _______________
+
+native = None
+tmp_path = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-31/test_native_limit_kills_whole_0')
+
+    def test_native_limit_kills_whole_group_not_unrelated(native,tmp_path):
+        unrelated=subprocess.Popen([sys.executable,'-c','import time; time.sleep(30)'],start_new_session=True)
+        try:
+>           r=m.run([sys.executable,'-c',workload_code()],tmp_path/'limit',limit_bytes=48*2**20)
+
+tests/test_m42_monitor.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/m42_monitor.py:192: in run
+    kill_group(worker.pid)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pgid = 35853
+
+    def kill_group(pgid):
+        if pgid <= 1 or pgid == os.getpgrp():
+            raise RuntimeError('Refuse unsafe process group')
+        # SIGKILL prevents a TERM handler from spawning children or ignoring the stop.
+        try:
+>           os.killpg(pgid, signal.SIGKILL)
+E           PermissionError: [Errno 1] Operation not permitted
+
+scripts/m42_monitor.py:84: PermissionError
+_________________ test_native_monitor_read_failure_after_start _________________
+
+native = None
+tmp_path = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-31/test_native_monitor_read_failu0')
+
+    def test_native_monitor_read_failure_after_start(native,tmp_path):
+        calls=[0]
+        def broken():
+            calls[0]+=1
+            if calls[0]>=4: raise PermissionError('injected live ps denial')
+            return m.process_table()
+>       r=m.run([sys.executable,'-c',workload_code()],tmp_path/'broken',sampler=broken)
+
+tests/test_m42_monitor.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/m42_monitor.py:192: in run
+    kill_group(worker.pid)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pgid = 35860
+
+    def kill_group(pgid):
+        if pgid <= 1 or pgid == os.getpgrp():
+            raise RuntimeError('Refuse unsafe process group')
+        # SIGKILL prevents a TERM handler from spawning children or ignoring the stop.
+        try:
+>           os.killpg(pgid, signal.SIGKILL)
+E           PermissionError: [Errno 1] Operation not permitted
+
+scripts/m42_monitor.py:84: PermissionError
+___________ test_native_watchdog_unexpected_exit_terminates_workload ___________
+
+native = None
+tmp_path = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-31/test_native_watchdog_unexpecte0')
+
+    def test_native_watchdog_unexpected_exit_terminates_workload(native,tmp_path):
+        out=tmp_path/'dead_watchdog'
+        killed=[False]
+        def sampler():
+            path=out/'started.json'
+            if path.exists() and not killed[0]:
+                os.kill(json.loads(path.read_text())['watchdog_pid'],signal.SIGKILL)
+                killed[0]=True
+            return m.process_table()
+>       r=m.run([sys.executable,'-c','import time; time.sleep(30)'],out,sampler=sampler)
+
+tests/test_m42_monitor.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/m42_monitor.py:192: in run
+    kill_group(worker.pid)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pgid = 35879
+
+    def kill_group(pgid):
+        if pgid <= 1 or pgid == os.getpgrp():
+            raise RuntimeError('Refuse unsafe process group')
+        # SIGKILL prevents a TERM handler from spawning children or ignoring the stop.
+        try:
+>           os.killpg(pgid, signal.SIGKILL)
+E           PermissionError: [Errno 1] Operation not permitted
+
+scripts/m42_monitor.py:84: PermissionError
+- generated xml file: /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m42_preflight_20261119T072234Z_3bc540ab/selftests.xml -
+=========================== short test summary info ============================
+FAILED tests/test_m42_monitor.py::test_native_limit_kills_whole_group_not_unrelated
+FAILED tests/test_m42_monitor.py::test_native_monitor_read_failure_after_start
+FAILED tests/test_m42_monitor.py::test_native_watchdog_unexpected_exit_terminates_workload
+3 failed, 24 passed in 15.20s

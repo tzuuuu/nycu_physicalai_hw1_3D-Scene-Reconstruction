@@ -1,0 +1,17 @@
+{
+  "baseline": {
+    "closeout_manifest_files": 77,
+    "baseline_artifacts": 61,
+    "capture_files": 642,
+    "factors": 2554,
+    "seal_valid": true
+  },
+  "selected_count": 204,
+  "selected_factors": 1626,
+  "non_gt_high_overlap_small_motion_pairs": 258,
+  "total_pairs": 319,
+  "selection_rule_sha256": "2117058e33c89b84f44c63a8ae3e1f48592e86e1d15d5db47889924605d8dabe",
+  "sparql_sha256": "0252c1cd23cceeb3ac1b1953d67a672f116d3a7f51ef050501a3039f7abf834d",
+  "gt_not_read_by_selection": true,
+  "formal_selected_started": false
+}

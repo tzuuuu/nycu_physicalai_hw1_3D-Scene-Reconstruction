@@ -1,0 +1,26 @@
+{
+  "planned_conditions": [
+    "B0",
+    "B1",
+    "B2"
+  ],
+  "successes": [
+    "B0",
+    "B2"
+  ],
+  "not_executed": [],
+  "failed_registration": [
+    "B1"
+  ],
+  "mean_l2_success_only": {
+    "count": 2,
+    "mean_m": 1.724507285690733,
+    "sample_std_m": 2.0499701850758902,
+    "median_m": 1.724507285690733,
+    "min_m": 0.2749594665933294,
+    "max_m": 3.174055104788137,
+    "range_m": 2.8990956381948076
+  },
+  "C2_integrity_caveat": false,
+  "not_a_full_five_seed_result": false
+}

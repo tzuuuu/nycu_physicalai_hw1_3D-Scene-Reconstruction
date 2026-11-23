@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "frames": 320,
+  "pairs": 319,
+  "factor_observations": 2554,
+  "seal_valid": true,
+  "mean_l2_m": 0.6079716062812427
+}

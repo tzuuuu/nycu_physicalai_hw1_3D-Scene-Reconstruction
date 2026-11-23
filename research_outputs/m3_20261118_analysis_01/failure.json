@@ -1,0 +1,8 @@
+{
+  "stage": "offline_evaluation_before_numeric_outputs",
+  "error": "mean error consistency assertion",
+  "absolute_difference_m": 4.99827735e-10,
+  "cause": "GT float32 subtraction before conversion; official converts to float64 first",
+  "resolution": "convert GT to float64 before all arithmetic; added regression test; analyze again in fresh analysis_02",
+  "registration_rerun": false
+}

@@ -1,0 +1,10 @@
+{
+  "scientific_integrity_verified": true,
+  "protected_existing_files": 899,
+  "original_stops_preserved": true,
+  "metadata_exclusion": [
+    "experiments/.DS_Store",
+    "research_outputs/.DS_Store"
+  ],
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a"
+}

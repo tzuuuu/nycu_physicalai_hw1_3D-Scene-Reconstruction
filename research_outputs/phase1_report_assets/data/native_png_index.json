@@ -1,0 +1,75 @@
+[
+  {
+    "run": "M2 Baseline",
+    "path": "experiments/p1_baseline_20261118_map005_s0_01/reconstruction_baseline.png",
+    "sha256": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6"
+  },
+  {
+    "run": "B0",
+    "path": "experiments/p1_m32_20261118_b_v005_s0_01/reconstruction_baseline.png",
+    "sha256": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6",
+    "size_px": [
+      963,
+      985
+    ]
+  },
+  {
+    "run": "B2",
+    "path": "experiments/p1_m32_20261118_b_v008_s0_01/reconstruction_baseline.png",
+    "sha256": "ae3155d3cb426c6a70a785b65edb9ac24d549ba19aa1ba8456331dedd1d80756",
+    "size_px": [
+      963,
+      985
+    ]
+  },
+  {
+    "run": "C1",
+    "path": "experiments/p1_m32_20261118_c_v005_s1_01/reconstruction_baseline.png",
+    "sha256": "a79359f575ba125c3d3e3cc0358f00c0b00c21fa05a79b57dc100baa61d9a883",
+    "size_px": [
+      963,
+      985
+    ]
+  },
+  {
+    "run": "C2",
+    "path": "experiments/p1_m32_20261118_c_v005_s2_01/reconstruction_baseline.png",
+    "sha256": "f20c7a39f31221b6577ea62b00934ab604612b03a6afe54520601dc20c99ab53",
+    "size_px": [
+      963,
+      985
+    ]
+  },
+  {
+    "run": "C3",
+    "path": "experiments/p1_m32_20261118_c_v005_s3_01/reconstruction_baseline.png",
+    "sha256": "eda53d878b45dd0cba485837ca0061e12a428ce6ef481feb505e1c7bec432c99",
+    "size_px": [
+      963,
+      985
+    ]
+  },
+  {
+    "run": "C4",
+    "path": "experiments/p1_m32_20261118_c_v005_s4_01/reconstruction_baseline.png",
+    "sha256": "519c11a413ee3017900c124b19aa87e710a7f8344f7d7594e477edc21d959ed6",
+    "size_px": [
+      963,
+      985
+    ]
+  },
+  {
+    "run": "Selected",
+    "path": "experiments/p1_baseline_20261118_map005_s0_01/reconstruction_selected.png",
+    "sha256": "9d13b9cc27fc892aa0d9b6645a5e1da4af3ed6d92a139e032f3367297978567e",
+    "size_px": [
+      961,
+      985
+    ]
+  },
+  {
+    "run": "B1",
+    "path": null,
+    "status": "Failed Registration; no complete map"
+  }
+]

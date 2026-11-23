@@ -1,0 +1,30 @@
+  frame    0/190
+  frame   25/190
+  frame   50/190
+  frame   75/190
+  frame  100/190
+[1;33m[Open3D WARNING] Too few correspondences (762) after mutual filter, fall back to original correspondences.[0;m
+[1;33m[Open3D WARNING] Too few correspondences (930) after mutual filter, fall back to original correspondences.[0;m
+  frame  125/190
+  frame  150/190
+  frame  175/190
+  frame  190/190
+Mean L2 distance: 3.174055 meters  (over 191 frames, 191 reconstructed)
+{
+  "reconstructed_frames": 191,
+  "pairs": 190,
+  "mean_l2_m": 3.174055104788137,
+  "official_mean_l2_m": 3.174055104788137,
+  "l2_difference_m": 0.0,
+  "factor_comparison": {
+    "official_count": 1522,
+    "diagnostic_count": 1522,
+    "mismatch_count": 0,
+    "differences": []
+  },
+  "protected_files_unchanged": true,
+  "protected_files_count": 470,
+  "reconstruction_s": 282.84604120899996,
+  "baseline_equivalent": true,
+  "status": "matched_ready_for_analysis"
+}

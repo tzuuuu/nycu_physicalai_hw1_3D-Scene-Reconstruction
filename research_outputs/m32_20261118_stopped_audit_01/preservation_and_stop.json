@@ -1,0 +1,44 @@
+{
+  "stopped": true,
+  "reason": "finalize historical comparison numpy.bool_ JSON serialization failure",
+  "formal_reconstruction_count": 1,
+  "remaining_conditions_not_started": [
+    "B1",
+    "B2",
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "no_B0_reconstruction_retry": true,
+  "protected_files_unchanged": 566,
+  "original_experiment": {
+    "turtle_sha256": "bba92ffc4a031772a8b1b6bc80dc3056b0c103a1b0382784c3c82d4edc3eb4b6",
+    "declaration_sha256": "3306cd6f0729b45b9583edcf31772df314b18347487621dc1b2eec84c8e09ab5",
+    "seal": "3306cd6f0729b45b9583edcf31772df314b18347487621dc1b2eec84c8e09ab5",
+    "seal_valid": true,
+    "complete": true,
+    "measured_factors": 1522,
+    "baseline_run_sha256": "ebf1bc5d48ad83ac86d8def01dd96993454295558638b1cf6de9fa627af1805b",
+    "baseline_mean_l2_stored_m": 3.174055,
+    "baseline_frame_count": 191,
+    "preserved_graph_sha256": "ea7828f4427bf18873e69a449181b2dd1906f136b3b768916ff3b7097c3ad8af",
+    "run_nodes": [
+      "http://taica.course/hw1/experiment/p1_baseline_20261118_map005_s0_01/run/baseline",
+      "http://taica.course/hw1/experiment/p1_baseline_20261118_map005_s0_01/run/selected"
+    ]
+  },
+  "B0_seal_valid": true,
+  "B0_completion": {
+    "complete": true,
+    "expected": 1522,
+    "measured": 1522,
+    "pending": 0,
+    "errors": []
+  },
+  "official_query_191_verified": true,
+  "B0_explore_not_run": true,
+  "failed_partial_json_preserved_sha256": "b05d53d665abb5112a3001d5c4afe66b639150a59d8b82c7f74918bb110ce23e",
+  "original_runtime_tool_commit": "860e84279c5aaedbd8f81767a93806f732ccfe97",
+  "audit_tool_sha256": "ea65734062d937bcded17b0bd2fa1de23c78127f1c5b1c8dd1632a1f79d5cc08"
+}

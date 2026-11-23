@@ -1,0 +1,50 @@
+# M4.2 preregistration_sha256: fac8c57c8a9b9c27bb509182d7fcd9487bfc27b5bf4873a0058329899a1ff746
+# =============================================================================
+# EXPERIMENT DECLARATION — p2_114753116_a01_baseline_01   (scaffolded by `api.py declare`)
+#
+# This file is YOURS until `reconstruct.py` seals it: edit the label, trim
+# add setting overrides. After assessment the student section is
+# digest-sealed — a new idea is a NEW file under a NEW name (§3.1).
+#
+# PREDICTION (write BEFORE assessing — the seal makes it non-retractable):
+#   pipeline: Unknown raw factor patterns; no qualification thresholds. Context: — which automatically measured pipeline factors you
+#             expect to fail, and why
+#   baseline: Unknown Mean L2; no improvement is guaranteed. Context: — expected mapMeanL2 band and verdict for the full-batch run
+# =============================================================================
+
+@prefix hw1:  <http://taica.course/hw1/ontology#> .
+@prefix batch: <http://taica.course/hw1/data/batch/> .
+@prefix data:  <http://taica.course/hw1/data/> .
+@prefix exp:   <http://taica.course/hw1/experiment/> .
+@prefix factor: <http://taica.course/hw1/experiment/p2_114753116_a01_baseline_01/factor/> .
+@prefix run: <http://taica.course/hw1/experiment/p2_114753116_a01_baseline_01/run/> .
+@prefix setting: <http://taica.course/hw1/experiment/p2_114753116_a01_baseline_01/setting/> .
+@prefix frame: <http://taica.course/hw1/data/batch/floor2_P2_A_01/frame/> .
+@prefix rgb: <http://taica.course/hw1/data/batch/floor2_P2_A_01/rgb/> .
+@prefix depth: <http://taica.course/hw1/data/batch/floor2_P2_A_01/depth/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+exp:p2_114753116_a01_baseline_01
+    a hw1:Experiment ;
+    hw1:schemaVersion "7.0.0" ;
+    rdfs:label "P2-A full-capture first-pass baseline; 320 frames; fixed voxel 0.05 and seed 0"@en ;
+    hw1:batchFile "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/114753116/P2_A_01" ;
+    hw1:onBatch batch:floor2_P2_A_01 .   # floor2_P2_A_01
+
+# All pipeline-derived factors are recorded automatically during reconstruction.
+#
+# OVERRIDES — every setting you do not declare is filled from its TBox default
+# at assessment time (preview with `explore` before committing). To override
+# one, replace the final "." above with ";" and append a blank node, e.g.:
+#
+#     hw1:hasFactorSetting [
+#         a hw1:FactorSetting ;
+#         hw1:settingParameter hw1:icpBackend ;
+#         hw1:settingRole hw1:ReconstructionSetting ;
+#         hw1:settingForFactor hw1:ReconstructionRun ;
+#         hw1:settingValue "my_icp"^^xsd:string
+#     ] .
+#
+# hw1:settingRole must match the parameter's TBox hw1:paramRole.

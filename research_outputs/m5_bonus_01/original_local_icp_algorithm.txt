@@ -1,0 +1,44 @@
+def local_icp_algorithm(source_down, target_down, trans_init, threshold):
+    """Refine an initial alignment with point-to-plane ICP.
+
+    Estimates normals on either cloud if missing (radius `threshold * 2`,
+    up to 30 neighbours), then runs up to 100 ICP iterations at the single
+    correspondence `threshold`. Returns the RegistrationResult; its
+    `.transformation` is the refined 4x4.
+    """
+    # TODO: Ensure both source and target clouds have normals, estimating
+    # them if necessary.
+    # 先確認有效距離與點雲；只替缺少法向量的點雲估計指定鄰域。
+    if not np.isscalar(threshold) or np.asarray(threshold).dtype.kind not in "uif":
+        raise ValueError("ICP threshold must be finite and positive")
+    threshold = float(threshold)
+    if not np.isfinite(threshold * 2) or threshold <= 0:
+        raise ValueError("ICP threshold must be finite and positive")
+    for cloud in (source_down, target_down):
+        if len(cloud.points) < 3 or not np.isfinite(np.asarray(cloud.points)).all():
+            raise ValueError("ICP requires at least 3 finite points in each cloud")
+        if not cloud.has_normals():
+            cloud.estimate_normals(o3d.geometry.KDTreeSearchParamHybrid(
+                radius=threshold * 2, max_nn=30))
+
+    # TODO: Call `o3d.pipelines.registration.registration_icp` with
+    # `source_down`, `target_down`, `threshold`, and `trans_init`.
+    # 初始化沿用粗配準的 source→target 轉換，不讀取 GT 或重設為單位矩陣。
+    trans_init = np.asarray(trans_init, dtype=np.float64)
+    if trans_init.shape != (4, 4) or not np.isfinite(trans_init).all():
+        raise ValueError("ICP initialization must be a finite 4x4 transform")
+
+    # TODO: Use `TransformationEstimationPointToPlane()` and an explicit
+    # convergence criterion.
+    # 正式後端固定 Point-to-Plane，明確限制 100 次疊代與相對收斂容差。
+    result = o3d.pipelines.registration.registration_icp(
+        source_down, target_down, threshold, trans_init,
+        o3d.pipelines.registration.TransformationEstimationPointToPlane(),
+        o3d.pipelines.registration.ICPConvergenceCriteria(
+            relative_fitness=1e-6, relative_rmse=1e-6, max_iteration=100))
+
+    # TODO: Return the registration result unchanged so its transformation
+    # and metrics remain available to `reconstruct` and diagnostics
+    # callbacks.
+    # 原樣回傳配準結果，保留真實對應點、內點比例與誤差。
+    return result

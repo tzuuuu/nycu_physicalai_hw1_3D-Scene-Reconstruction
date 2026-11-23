@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_monitor.py", line 216, in run
+    time.sleep(max(0,INTERVAL-(time.monotonic()-tick)))
+KeyboardInterrupt

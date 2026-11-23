@@ -1,0 +1,16 @@
+{
+  "protected_files_count": 470,
+  "changed_files": [],
+  "capture_unchanged": true,
+  "seal_valid": true,
+  "complete": true,
+  "measured_factors": 1522,
+  "run_count": 1,
+  "selected_exists": false,
+  "plots_count": 11,
+  "source_commit": "31d2745039c33f35be26362e467e077682cddb08",
+  "source_sha256": {
+    "scripts/m3_diagnose.py": "1d27756a573ef067781ac372d00a8140477f03389ee6f96a96087856f3f58e7c",
+    "scripts/m3_diagnostic_details.py": "4075a2ff198fcfa85e359872e1f6838c83d4f22c1ca27574c3cf718612eeaed0"
+  }
+}

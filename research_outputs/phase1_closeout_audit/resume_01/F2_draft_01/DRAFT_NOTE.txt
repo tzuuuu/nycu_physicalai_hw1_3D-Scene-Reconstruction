@@ -1,0 +1,1 @@
+Initial F2 draft retained for QA history. The draft manifest records its original working paths. The accepted assets are rendered afresh at research_outputs/phase1_report_assets after label/contrast revisions; no scientific source is changed.

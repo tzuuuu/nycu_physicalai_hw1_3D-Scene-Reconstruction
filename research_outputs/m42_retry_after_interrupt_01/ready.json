@@ -1,0 +1,16 @@
+{
+  "source": {
+    "commit": "37f3bef6d4596f69c4685e4a647afd386f1ed2bd",
+    "branch": "main",
+    "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+    "clean": true
+  },
+  "frozen_capture_sha_matches": 642,
+  "formal_output_absent": true,
+  "experiment_absent": true,
+  "acceptance_document_restored_to_prepared_commit": true,
+  "next_attempt_started": false,
+  "authorization_sha256": "ada5dbe1299af9640c8167dccf374b326455af75456181f89d0301ffc156bf64",
+  "terminal_command": "cd /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1 && OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 pixi run --locked -e habitat python scripts/m42_baseline.py run",
+  "completion_guidance": "Preflight passed JSON is not completion. Wait for final M4.2 status, Evidence path and shell prompt. Do not press Ctrl-C while running."
+}

@@ -1,0 +1,19 @@
+{
+  "research_outputs/m32_20261118_system_stop_audit_01/B_errors.png": "a72babd690d52d8ea915564b20943c64ee42bb3ecbf6e9959a165e9037272d22",
+  "research_outputs/m32_20261118_system_stop_audit_01/B_maps.png": "5bd73f8977a4374d89fb080208e22e2d5217c58d610505dd12efaac610d40cf2",
+  "research_outputs/m32_20261118_system_stop_audit_01/B_statistics.json": "33ce4d1377bc274adb564621a0d1cfa76fc427174e7471babe0bf3965887a3cc",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/frame_and_pair_errors.png": "903796f7035846db05d60a5f21f444a661c981b09fa257ade9841ccbab5bb378",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/frames.csv": "63a85a81b0984f0a5352b90bb8c8c3b7f923f0a43e14a940b33a2f2ca9df5670",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/manifest.json": "f39178cbb4de382c923a54d552a17cb2007b1a5c376be5bc69f5195c957b6a5c",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/pairs.csv": "a940c016bfe1c12611c470ae1cc5fce16d64c309e104687361a99062c5617e89",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/poses_offline.npz": "f90d2b3e1088ccb687fbe002581bfc2535ab37965cc79f8125942ad693d9e13f",
+  "research_outputs/m32_20261118_system_stop_audit_01/C2_analysis/summary.json": "0cf46b5a799e81f6425720ec1a172d00c2b92ea40e18a9d72a287fb9fe98af6b",
+  "research_outputs/m32_20261118_system_stop_audit_01/C_errors.png": "b89f0a23b3b85e7eece03c3333c46f7c725e652fcdb2612a0092de2355763fd4",
+  "research_outputs/m32_20261118_system_stop_audit_01/C_maps.png": "31ef145ffe9bb5b2cb650ee8d56814ea69b615236c05f9ed1e2d75e6cdf6fec8",
+  "research_outputs/m32_20261118_system_stop_audit_01/C_statistics.json": "d8a39915e2dbb27b3746dfb0ed5442dfa81dbb8319a6ef1ae6ad5ebb0b9d70f6",
+  "research_outputs/m32_20261118_system_stop_audit_01/all_conditions.csv": "dbe04be220be58b40705b4d2eb00c9b58414cf99280b8a756b09942034eb362f",
+  "research_outputs/m32_20261118_system_stop_audit_01/changed_experiments_DS_Store.bin": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad",
+  "research_outputs/m32_20261118_system_stop_audit_01/offline_startup_note.txt": "483a4f95545d454997ba124e32bdf273f4f06560f79bdf45203b016814c00720",
+  "research_outputs/m32_20261118_system_stop_audit_01/preservation_differences.json": "8328fedbdee47121b9660f59b3aae669af580bd544c7dbaef928526adf7e54dd",
+  "research_outputs/m32_20261118_system_stop_audit_01/summary.json": "68123039b950ec803342cdf09ce1a197a20d16ad9fa2eb2d7b5e151d3e4410a2"
+}

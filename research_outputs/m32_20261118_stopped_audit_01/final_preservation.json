@@ -1,0 +1,12 @@
+{
+  "protected_count": 566,
+  "all_unchanged": true,
+  "source_capture_unchanged": true,
+  "original_M2_M31_unchanged": true,
+  "formal_reconstructions": 1,
+  "no_other_condition_started": true,
+  "failed_json_untouched": "b05d53d665abb5112a3001d5c4afe66b639150a59d8b82c7f74918bb110ce23e",
+  "git_commit": "57ca8b691b25856175155974af4dd54b5e3704b4",
+  "test_result_observed": "183 passed in 5.33s",
+  "resume_requires_user_acceptance": true
+}

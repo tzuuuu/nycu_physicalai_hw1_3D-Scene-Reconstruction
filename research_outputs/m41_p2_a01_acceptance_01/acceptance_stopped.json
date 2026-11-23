@@ -1,0 +1,101 @@
+{
+  "status": "stopped_on_sha_anomalies",
+  "m41_accepted": false,
+  "capture_freeze_accepted": false,
+  "eligible_for_first_pass_after_acceptance": false,
+  "m42_execution_authorized": false,
+  "capture": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/114753116/P2_A_01",
+  "N": 320,
+  "checked_at_taipei": "2026-11-19T14:40:20.964864+08:00",
+  "git_commit": "f55b64f7dac44cfc460401e2cbdad01c2d782f1b",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "findings": {
+    "finish_summary": {
+      "ended_at_utc": "2026-11-19T06:30:45.731192+00:00",
+      "returncode": 0,
+      "protected_changes": [
+        "eval/_data/second_floor/.DS_Store"
+      ],
+      "source_changes": [],
+      "verification": "pending"
+    },
+    "verification_summary": {
+      "frame_count": 320,
+      "warnings": [],
+      "structural_integrity": "passed",
+      "human_coverage_review": "pending",
+      "intrinsics": {
+        "width": 512,
+        "height": 512,
+        "hfov": 90.0
+      },
+      "checked_at_utc": "2026-11-19T06:32:00.298635+00:00",
+      "git_commit": "f55b64f7dac44cfc460401e2cbdad01c2d782f1b",
+      "checker_sha256": "b42ed76ab468fa2fee33210be6070f4a27a8fe4c3d0716cd47fb3b4c3526ca09"
+    },
+    "finish_to_current": {
+      "expected_count": 643,
+      "actual_count": 643,
+      "missing": [],
+      "added": [],
+      "changed": [
+        {
+          "path": ".DS_Store",
+          "expected": "8961dff668c4e95fcb71c6200f79d017532bb7cfd0d45679e46ae31346335bee",
+          "current": "382cc84dd10e9e27e63c215ad17a6d9bf0309572ddd0c1f64a39fd2de05eac0a"
+        }
+      ]
+    },
+    "verify_to_current": {
+      "expected_count": 643,
+      "actual_count": 643,
+      "missing": [],
+      "added": [],
+      "changed": []
+    },
+    "protected_to_current": {
+      "expected_count": 1215,
+      "actual_count": 1215,
+      "missing": [],
+      "added": [],
+      "changed": [
+        {
+          "path": "eval/_data/second_floor/.DS_Store",
+          "expected": "fcb90c14cc60580b59df6ebebc6e9bbf378c392725f5a7d15e68a6f611686f31",
+          "current": "4809a73fa9c2fe9f60e7deb62dba2884135ad96a41aa653f962d922415c0141c"
+        }
+      ]
+    },
+    "sources_to_current": {
+      "expected_count": 19,
+      "actual_count": 19,
+      "missing": [],
+      "added": [],
+      "changed": []
+    },
+    "safe_config_sha": {
+      "expected": "5f60aa0ba6c3c6f67b06fe8687d9bf48d1dd00b0a387502a09d0ae613855db19",
+      "current": "5f60aa0ba6c3c6f67b06fe8687d9bf48d1dd00b0a387502a09d0ae613855db19"
+    },
+    "route_notes": []
+  },
+  "source_records_sha256": {
+    "research_outputs/m4_capture_P2_A_01/start.json": "3104ca4e687ef5a80dddafa05cc461d71dd6a23f1669487197e150ce336eea61",
+    "research_outputs/m4_capture_P2_A_01/finish.json": "6f51de493c680bb30dff9058cba2be7e7477ffc5aac115763503a2234a752a65",
+    "research_outputs/m41_verify_P2_A_01/verification.json": "ea8be138234c1d3297a3231e05869b150cf38c2af590e6354c8a26486e94e30c",
+    "research_outputs/m4_capture_P2_A_01/protected.before.json": "259ece854011f3bf9bc5eaeecba21d040f5559330c70f87acda0b77ead769997",
+    "research_outputs/m4_capture_P2_A_01/capture.safe.yaml": "5f60aa0ba6c3c6f67b06fe8687d9bf48d1dd00b0a387502a09d0ae613855db19"
+  },
+  "human_coverage_confirmation": {
+    "source": "使用者本次訊息",
+    "statement": "已涵蓋二樓所有可到達的主要房間及通道。",
+    "additional_user_description": "包含房間之間的連通區域。",
+    "scope": "人工採集涵蓋確認；不是重建地圖完整性或定量涵蓋率",
+    "detailed_route_notes": "未找到；尚缺逐段房間／影格區間紀錄"
+  },
+  "limits": [
+    "依使用者 SHA 異常即停止規則，未重新解碼全部影像／GT；格式檢查引用未改變的既有 verification 與其相符 Capture SHA。",
+    "未排除或修改任何 .DS_Store，未更新歷史預期 SHA。",
+    "未進行配準、Declare、Seal、Baseline 或 Selection。"
+  ]
+}

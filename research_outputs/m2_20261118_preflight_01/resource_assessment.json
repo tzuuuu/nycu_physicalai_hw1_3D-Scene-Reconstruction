@@ -1,0 +1,51 @@
+{
+  "observed_full_data_raw_points": 47662199,
+  "fixed_map_position_color_GiB": 2.1306663304567337,
+  "physical_memory_GiB": 16,
+  "peak_extrapolations": [
+    {
+      "preflight_frames": 5,
+      "variable_peak_bytes_per_raw_point": 220.71300517197838,
+      "extrapolated_full_peak_bytes": 10731905510.394863,
+      "extrapolated_reconstruction_seconds": 158.1709884162
+    },
+    {
+      "preflight_frames": 10,
+      "variable_peak_bytes_per_raw_point": 233.57526730568006,
+      "extrapolated_full_peak_bytes": 11345440727.801517,
+      "extrapolated_reconstruction_seconds": 158.08856796249998
+    },
+    {
+      "preflight_frames": 20,
+      "variable_peak_bytes_per_raw_point": 149.62508561616073,
+      "extrapolated_full_peak_bytes": 7342142462.02949,
+      "extrapolated_reconstruction_seconds": 144.1581863011
+    }
+  ],
+  "first20_gt_displacement_max_m": 2.4999999485230116,
+  "first20_estimated_displacement_max_m": 2.4926747527577438,
+  "per_frame_l2_m": [
+    0.0,
+    0.002302069183024668,
+    0.0033770033589416637,
+    0.0046277845062380005,
+    0.005521640549958814,
+    0.006575387043116863,
+    0.007492802511517294,
+    0.00728120269060714,
+    0.007040013500043035,
+    0.007144701349200804,
+    0.007179746637126326,
+    0.008272284626938641,
+    0.008134029943530994,
+    0.00884805113995824,
+    0.009446452044080619,
+    0.00842035138306117,
+    0.008977257425309084,
+    0.009403402295591647,
+    0.009650571960394885,
+    0.010043120320728384
+  ],
+  "status": "STOP_before_formal_baseline_resource_safety_unverified",
+  "method_limitations": "Peak estimates extrapolate allocation high-water increments per raw point; allocators, map overlap, filtering, errors and plotting can change scaling. Not a measured full-run memory or time."
+}

@@ -1,0 +1,187 @@
+{
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/load.py",
+    "--config",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m4_capture_P2_A_01/capture.safe.yaml",
+    "--output-root",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/114753116/P2_A_01",
+    "--fps",
+    "30"
+  ],
+  "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+  "condition": "P2_A_01",
+  "started_at_utc": "2026-11-19T06:21:40.157174+00:00",
+  "git_commit": "f55b64f7dac44cfc460401e2cbdad01c2d782f1b",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "source_sha256": {
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "configs/second_floor.yaml": "75242c19ac58570407b8282cf8073b10b97104d25a00551092cdac17e77dc3d5",
+    "load.py": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+    "ontology/hw1.ttl": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+    "packages/simulator/simulator/__init__.py": "88ff3a74fa44c2a4fd2cb6be2e509d709080dc222b0af89a9f22edff992a3451",
+    "packages/simulator/simulator/config.py": "32acfdd8b9080197c1931c815cb3c15225f061aae03ec43eb08774d5cf1e928c",
+    "packages/simulator/simulator/effects.py": "5aafd81160af57e8ed105f83061b62623bf1adf033ac81016ed5a2f75f549ea2",
+    "packages/simulator/simulator/engine.py": "b70d949d08fba1332b2a493b16e8f28947f1a668fc397af3cdde57f199bee56e",
+    "packages/simulator/simulator/replay.py": "b3be437b670639c7b9cb2dbbab7908089cb2e2451d4867121de5a76d01dc0196",
+    "packages/simulator/simulator/viewer.py": "79b9cde21ed370961c92e74ad3ce40873d066b76c14dd9b02e5c9384a6859d18",
+    "packages/simulator/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "packages/simulator/tests/test_e2e.py": "5b3dc953ef0364bc7635b856302cf76398eca7c5d339c99db94da72a85467847",
+    "packages/simulator/tests/test_effects.py": "d70ee0ad0c13e9c0654b7434ff8879f00bb7932314f2d16e7b0242a8208e0fc6",
+    "packages/simulator/tests/test_import_surface.py": "40eb9c6cd1ba94d70cc5ea10235344a1654e55de092fa0a49f547f2aa729d400",
+    "pixi.lock": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794",
+    "pixi.toml": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "scripts/m4_capture_check.py": "b42ed76ab468fa2fee33210be6070f4a27a8fe4c3d0716cd47fb3b4c3526ca09",
+    "utils.py": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41"
+  },
+  "safe_config_sha256": "5f60aa0ba6c3c6f67b06fe8687d9bf48d1dd00b0a387502a09d0ae613855db19",
+  "effective_file_config": {
+    "scene": {
+      "path": "replica_v1/apartment_0/habitat/mesh_semantic.ply"
+    },
+    "agent": {
+      "start_position": [
+        0.0,
+        1.0,
+        -1.0
+      ],
+      "move_forward": 0.2,
+      "move_backward": 0.2,
+      "turn_left": 6.0,
+      "turn_right": 6.0
+    },
+    "camera": {
+      "width": 512,
+      "height": 512,
+      "hfov": 90.0,
+      "position": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "birdseye": {
+      "width": 512,
+      "height": 512,
+      "hfov": 90.0,
+      "position": [
+        0.0,
+        2.5,
+        0.0
+      ],
+      "orientation": [
+        -1.5708,
+        0.0,
+        0.0
+      ]
+    },
+    "marker": {
+      "enabled": false,
+      "size": [
+        0.4,
+        0.05,
+        0.4
+      ],
+      "height_offset": 0.03,
+      "forward_offset": 1.0
+    },
+    "lighting": {
+      "brightness": 1.0,
+      "contrast": 1.0,
+      "gamma": 1.0,
+      "ambient_rgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "depth": {
+      "enabled": true,
+      "stuck": false,
+      "noise_std": 0.005,
+      "dropout_prob": 0.0,
+      "min_range": 0.0,
+      "max_range": 10.0,
+      "quantization": 0.0,
+      "redwood": false,
+      "redwood_multiplier": 1.0,
+      "light_nominal": 1.0,
+      "light_noise_gain": 4.0,
+      "light_dropout_gain": 0.3,
+      "light_range_gain": 0.4
+    },
+    "uncertainties": {
+      "enabled": true,
+      "mode": "spatial",
+      "seed": 20,
+      "zones": [
+        {
+          "name": "benign",
+          "center": [
+            3.77,
+            3.1
+          ],
+          "radius": 1.5,
+          "flicker": {
+            "amplitude": 0.3,
+            "frequency": 0.73
+          }
+        },
+        {
+          "name": "moderate",
+          "center": [
+            2.22,
+            6.22
+          ],
+          "radius": 1.5,
+          "flicker": {
+            "amplitude": 0.6,
+            "frequency": 1.17
+          }
+        },
+        {
+          "name": "severe",
+          "center": [
+            3.05,
+            8.01
+          ],
+          "radius": 1.5,
+          "flicker": {
+            "amplitude": 0.95,
+            "frequency": 1.91
+          }
+        }
+      ]
+    },
+    "display": {
+      "scale": 1.0,
+      "show_rgb": true,
+      "show_depth": true,
+      "show_birdseye": true
+    },
+    "output": {
+      "root": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/114753116/P2_A_01",
+      "save_rgb": true,
+      "save_depth": true,
+      "save_semantic": false,
+      "clear_existing": false
+    }
+  },
+  "depth_scale_source": "replay.save_frame uint16 millimetres; divide 1000",
+  "platform": "macOS-26.7.1-arm64-arm-64bit",
+  "python": "3.9.23 | packaged by conda-forge | (main, Jun  4 2025, 18:02:02) \n[Clang 18.1.8 ]",
+  "versions": {
+    "numpy": "1.26.4",
+    "pygame": "2.6.1",
+    "opencv-python": "4.8.0.76",
+    "PyYAML": "6.0.2",
+    "open3d": "0.18.0",
+    "rdflib": "7.1.4"
+  }
+}

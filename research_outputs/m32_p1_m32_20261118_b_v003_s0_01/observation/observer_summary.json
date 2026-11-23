@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "reconstruct_calls": 1,
+  "frame_events": 71,
+  "pair_events": 70,
+  "reconstruction_s_with_observation": null,
+  "return_observer_overhead_s": 0.14799409099990668,
+  "cpu_user_s": 275.25448600000004,
+  "cpu_system_s": 3.035104,
+  "process_peak_rss_bytes": 520257536
+}

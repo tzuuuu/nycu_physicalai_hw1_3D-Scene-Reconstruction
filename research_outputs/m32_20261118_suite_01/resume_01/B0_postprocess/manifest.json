@@ -1,0 +1,18 @@
+{
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/explore.json": "c0b31f6ad193150328b3044771f74ddef1aae0087b1e3b58b976285615365bbc",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/explore.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/explore.stdout.log": "66e6540a261c647b5ddba10f39a39601d2f69d7a412966a1d5e0618a979bcbee",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/historical_comparison.json": "16d39a8b42b7c653d78f969b4559bf0200370b062d3f8532dc9f648deac6812f",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/integrity.after.json": "5fe61b22365c465df04d04c2ddd11997c769e135ebd43e8862f2121b3c484c87",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/p1_m32_20261118_b_v005_s0_01.ttl": "def5c42211c0e38be6d59335200c1fe6337e786c6148ecc9e04d10f2f0ae1629",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/plots/dashboard.html": "bc3846de803d572c5f7592641fbe669a17d2d24ca4f9c0bddd512ed1e5a8dd2d",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/plots/distributions.html": "58ab724ac4016fd4257673b25826e5998178d2fa552554e3a8adef1e09572293",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/plots/timelines.html": "99ff4621f88445d114a24d5b0e1e8d5e8581f336f7e68e1821795030f03ce072",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/plots/tradeoff.html": "8006d13cfa0ff358e1f15aaeb2fa96c9236aad07bbdd4113983ced819ccaf4b5",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/queries/audit.rq": "aafc09462902bee737427b9861bcb1754d160b1f0355c5cf9733d8b41432ca58",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/reconstruction.png": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/official_after/reconstruction_baseline.png": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/query.json": "16e8a090d0ce9d140fc5878c54e67c8cf3047d3bb9b688d8bf9fec8caf838c2b",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/query.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess/query.stdout.log": "c93e19e0b5cf8eeee7f13247d7b95decfa0a702ba7cdd9e9c06ac31f99ae27e0"
+}

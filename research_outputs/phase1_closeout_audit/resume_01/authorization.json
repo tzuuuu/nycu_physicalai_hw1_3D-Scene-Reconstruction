@@ -1,0 +1,25 @@
+{
+  "user_instruction": "Phase 1 Final Closeout F1恢復授權：三個精確OS中繼檔路徑；完成F1後依條件進行F2與F3，禁止新正式重建與核心修改",
+  "metadata_paths": [
+    "experiments/.DS_Store",
+    "research_outputs/.DS_Store",
+    "research_outputs/m32_20261118_suite_01/.DS_Store"
+  ],
+  "historical_links": {
+    "research_outputs/phase1_closeout_audit/F1_failure.traceback.txt": "ccd6dc0ccbeef34bd5a0b4cc9960381c29a73feac240c06f320055e7e56d8f65",
+    "research_outputs/phase1_closeout_audit/F1_stopped.json": "1007469b25d0b6fd2892c6b20cec0e60b275ef3ab26f08cc0a4e6caf847b0cc9",
+    "research_outputs/phase1_closeout_audit/manifest.json": "12f5c3d158498e55b5a270a515c95d371c10da5816798b0821e41c37d41c9829",
+    "research_outputs/phase1_closeout_audit/provenance.json": "2924aa2c1f8548cbf0f688f347e71e11066e422d20eade0457316e30e97a555a",
+    "research_outputs/phase1_closeout_audit/unapproved_suite_DS_Store_current.bin": "3dc8cb90f936202424e02d95fe4db736e45d7fe2b05ae4b4675c91b6aa0268db"
+  },
+  "prior_partial_document_sha256": "9635fdce45c2d39054c2c67de391c46d1b6d76bd232bf438c462b2958720dd96",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "git_commit": "3b9d68711e40e79bddf2b3924d59d43a71ba1c1f",
+  "core_changes_authorized": false,
+  "formal_reconstruction_authorized": false,
+  "allowed_after_F1": [
+    "new report images from frozen sources",
+    "F3 handoff document"
+  ],
+  "submission_risks_must_remain_open": true
+}

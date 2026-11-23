@@ -1,0 +1,14 @@
+{
+  "policy": "m42-layered-v1",
+  "scientific": {
+    "research_outputs/m43_p2b_closeout_01/report_details/diagnostics_summary.json": "6dafcdc6f855f697097e02b337d2122ca21e13998c763d0ba0e009493f729b18",
+    "research_outputs/m43_p2b_closeout_01/report_details/eight_factor_series_comparison.png": "acfc742d24caae799f1949b61b0e1413e1bcf175fa3f62bcc9eacf1af2eed973",
+    "research_outputs/m43_p2b_closeout_01/report_details/figure_provenance.json": "b4bf1a97242398a8f60f29ab8e92342cbba7dd11024aaecca3482afadab73115",
+    "research_outputs/m43_p2b_closeout_01/report_details/reconstruction_3d_baseline_report.png": "06bbd35c68925cd37eea14888c877bf1047b54cc328daa93276661f4469b48ee",
+    "research_outputs/m43_p2b_closeout_01/report_details/reconstruction_3d_selected_report.png": "b211d46f6d9af6056e76818fd7605310d7776ba5b6e5d039e0d5bc51e9b85e69",
+    "research_outputs/m43_p2b_closeout_01/report_details/relative_map_disagreement.png": "2e4dc7c95d99a246fb9c56b9897ced3cd066001cacbb5cfce73860f393829d1a",
+    "research_outputs/m43_p2b_closeout_01/report_details/selected_pair_diagnostics.csv": "28a53c81ff195194f4ae2ba615c7885840c3b1aeef5e337ae6fde0bddd48868c",
+    "research_outputs/m43_p2b_closeout_01/report_details/spatial_regions_comparison.png": "a21923fa42179e1340825516704331931f9202e1ac1a96eeb110cdba59751799"
+  },
+  "os_metadata": {}
+}

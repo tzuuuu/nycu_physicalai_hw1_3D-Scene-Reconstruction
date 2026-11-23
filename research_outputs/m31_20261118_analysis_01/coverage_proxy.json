@@ -1,0 +1,11 @@
+{
+  "kind": "GT_reference_observed_coverage_proxy_not_reconstructed_map_accuracy",
+  "per_frame_map_voxel_m": 0.05,
+  "evaluation_grid_m": 0.1,
+  "common_ceiling_y_threshold_m": -0.5040351562499996,
+  "full_191_observed_cells": 34637,
+  "retained_190_observed_cells": 34615,
+  "cells_only_supported_by_frame104": 22,
+  "retained_observed_cell_fraction": 0.9993648410659122,
+  "limitation": "Fixed-pose observed support only; no complete scene surface GT, no absolute floor coverage percentage."
+}

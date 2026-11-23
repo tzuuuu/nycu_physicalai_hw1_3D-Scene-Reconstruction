@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "results": {
+    "shell_ps": {
+      "passed": true,
+      "rss_kib": 1312,
+      "exit_code": 0
+    },
+    "python_subprocess_ps": {
+      "passed": true,
+      "rss_kib": 12704,
+      "exit_code": 0
+    },
+    "recorder_self_rss": {
+      "passed": true,
+      "rss_bytes": 13025280
+    },
+    "continuous_child_rss": {
+      "passed": true,
+      "samples": 4,
+      "execution": {
+        "command": [
+          "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+          "-c",
+          "import os,time; x=bytearray(32*2**20); print('probe child',os.getpid(),flush=True); time.sleep(2.2)"
+        ],
+        "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+        "started_utc": "2026-11-18T15:39:22.247298+00:00",
+        "total_process_s": 2.2333815,
+        "exit_code": 0,
+        "child_peak_rss_bytes": 43220992,
+        "timing_boundary": "child startup through official command exit, including all command outputs",
+        "rss_limit_gib": 3,
+        "resource_guard": {
+          "reason": null,
+          "sampled_peak_rss_bytes": 43122688
+        },
+        "status": "process_completed_requires_artifact_validation"
+      }
+    },
+    "guard_termination": {
+      "passed": true,
+      "execution": {
+        "command": [
+          "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+          "-c",
+          "import os,time; x=bytearray(32*2**20); print('probe child',os.getpid(),flush=True); time.sleep(2.2)"
+        ],
+        "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+        "started_utc": "2026-11-18T15:39:24.482263+00:00",
+        "total_process_s": 0.5175309170000002,
+        "exit_code": -15,
+        "child_peak_rss_bytes": 43253760,
+        "timing_boundary": "child startup through official command exit, including all command outputs",
+        "rss_limit_gib": 0.001,
+        "resource_guard": {
+          "reason": "Child RSS exceeds 0.001 GiB guard",
+          "sampled_peak_rss_bytes": 43253760
+        },
+        "status": "failed"
+      }
+    },
+    "monitor_failure_termination": {
+      "passed": true,
+      "execution": {
+        "command": [
+          "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+          "-c",
+          "import os,time; x=bytearray(32*2**20); print('probe child',os.getpid(),flush=True); time.sleep(2.2)"
+        ],
+        "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+        "started_utc": "2026-11-18T15:39:25.000844+00:00",
+        "total_process_s": 0.5116650419999997,
+        "exit_code": -15,
+        "child_peak_rss_bytes": 43253760,
+        "timing_boundary": "child startup through official command exit, including all command outputs",
+        "rss_limit_gib": 3,
+        "resource_guard": {
+          "reason": "Synthetic monitor unavailable; deliberate preflight fault injection",
+          "sampled_peak_rss_bytes": 0
+        },
+        "status": "failed"
+      }
+    }
+  },
+  "reconstruction_started": false,
+  "capture_read": false,
+  "recorder_path": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/record_command.py"
+}

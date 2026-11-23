@@ -1,0 +1,27 @@
+{
+  "figures": {
+    "reconstruction_top_down.png": "b3c39529b1bccf0579882754f77d33d2d2ffc3d6bec0ca4bafd05dec4c3e942f",
+    "reconstruction_3d.png": "77960c98665fc8207d9b6f4a8ba7f7d8e0eafa047555d8a7c48419cbc65e409f",
+    "trajectories.png": "c54ed655c64534d698ea9f8b67533692c0270b35c25fca760cbf479789241735",
+    "same_frame_l2.png": "d46924edcbb046b392b93f42de99446b1ceabffc2a03efdd9d0c5df9529dab6f",
+    "eight_factor_distributions.png": "8798738621d9846ab20373807b842f421cdb895ff4fc9f689831e33652470de6",
+    "comparison_metrics.png": "5c89c86e95aa4359f1ef6d791a70b8b50677ce722de06044e0c7e1fc73d5fab1"
+  },
+  "plot_strides": [
+    14,
+    9
+  ],
+  "plot_point_counts": [
+    146753,
+    141953
+  ],
+  "full_maps_saved_separately": true,
+  "sources": {
+    "baseline_map": "6df80b8c8ed4f548f6cac5273fda69825eac023d4c71c5e9740d9b93cf5056e8",
+    "selected_map": "9567cd97ff77babefe025a20452d8cc1b69d36044cf5fbafdc64683302224726",
+    "baseline_poses": "de589ca90c78ac28184594f71be848c53bab4c0d0c31c2b730b4788debcf07ac",
+    "selected_poses": "788d78560711ba9e7c325f7144030937d8c5a09570da80eb356c976a91d80a68",
+    "gt": "0046f4a722f4671cf0569be3db25f8a730619bf58173aca8957eb736ea656fbd"
+  },
+  "caption": "Shared metric bounds, deterministic stride displays; full map/coverage not sampled. Red estimated, black GT; no fitted alignment."
+}

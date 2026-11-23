@@ -1,0 +1,26 @@
+{
+  "finished_at_utc": "2026-11-19T06:53:49.677760+00:00",
+  "status": "M4.1 — P2-A Capture Accepted / Scientific Data Frozen / Ready for M4.2 Authorization",
+  "git_commit": "0fceadc7f9bc054854322c39e40f09f51ff10fcf",
+  "tool_commit": "15a3027",
+  "documentation_commit": "0fceadc",
+  "git_branch": "main",
+  "git_working_tree": "",
+  "git_remote": "",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "source_sha256": {
+    "scripts/m41_metadata_policy.py": "10d4830edf4a0a2c16d1538ab04dff1b3eecee609f809b1ecf717003f7576fa4",
+    "tests/test_m41_metadata_policy.py": "46bd33fb88ccec982e907bd5b6bb3447102c847222b2cb44af1eb49159102f21",
+    "scripts/m4_capture_check.py": "b42ed76ab468fa2fee33210be6070f4a27a8fe4c3d0716cd47fb3b4c3526ca09",
+    "docs/implementation/M4_Phase2_P2A_Capture_Acceptance_Resume.md": "b00c4bc3e65f400a4838befa8034d9e18374d711ba7c83b48dc5781c48276cf4",
+    "docs/implementation/M4_Phase2_P2A_Capture_Acceptance.md": "90db6bf916a1e16f2a3ed87ce5fe1c8e15ab9d0718533f278d5ad3c3f285f1ba"
+  },
+  "authorization_sha256": "9cfdd46f3543d67690a061bf581e540517c61b4f744b1c8f5463d2dc67729619",
+  "scientific_manifest_sha256": "a626655acee213f67d7b759159fe7b5d658f90d89bb8edfd90a3c50c75634d60",
+  "acceptance_sha256": "bb5c827dc672380736c0cff479dc96d72f8945f23ec120ac74de65c1fc41984c",
+  "original_2699_files_strictly_unchanged": true,
+  "original_capture_outer_preservation_succeeded": false,
+  "ps_probe_stop_preserved": true,
+  "m42_executed": false,
+  "tests": "31 passed in 0.29s; no simulator or registration calls"
+}

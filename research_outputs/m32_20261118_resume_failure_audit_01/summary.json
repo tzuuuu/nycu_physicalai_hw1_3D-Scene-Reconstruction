@@ -1,0 +1,175 @@
+{
+  "states": [
+    {
+      "condition": "B0",
+      "voxel_m": 0.05,
+      "seed": 0,
+      "status": "complete",
+      "reconstruction_started": true
+    },
+    {
+      "condition": "B1",
+      "voxel_m": 0.03,
+      "seed": 0,
+      "status": "registration_failed",
+      "reconstruction_started": true
+    },
+    {
+      "condition": "B2",
+      "voxel_m": 0.08,
+      "seed": 0,
+      "status": "not_started",
+      "reconstruction_started": false
+    },
+    {
+      "condition": "C1",
+      "voxel_m": 0.05,
+      "seed": 1,
+      "status": "not_started",
+      "reconstruction_started": false
+    },
+    {
+      "condition": "C2",
+      "voxel_m": 0.05,
+      "seed": 2,
+      "status": "not_started",
+      "reconstruction_started": false
+    },
+    {
+      "condition": "C3",
+      "voxel_m": 0.05,
+      "seed": 3,
+      "status": "not_started",
+      "reconstruction_started": false
+    },
+    {
+      "condition": "C4",
+      "voxel_m": 0.05,
+      "seed": 4,
+      "status": "not_started",
+      "reconstruction_started": false
+    }
+  ],
+  "formal_reconstruction_attempts_total": 2,
+  "successful_full191_reconstructions": 1,
+  "B0_postprocess_passed": true,
+  "B1_input_frames": 191,
+  "B1_preprocessed_frames": 71,
+  "B1_observed_pairs": 70,
+  "B1_accepted_pairs_before_failure": 69,
+  "B1_accepted_prefix_frames": 70,
+  "partial_factor_values": 562,
+  "B1_full191_mean_l2_m": null,
+  "B1_official_map_available": false,
+  "B1_sealed": false,
+  "B1_baseline_run_exists": false,
+  "failure_pair": {
+    "previous": 70,
+    "current": 71
+  },
+  "failed_pair": {
+    "kind": "pair",
+    "prev_stem": 70,
+    "stem": 71,
+    "coarse_fitness": 0.0,
+    "coarse_rmse": 0.0,
+    "coarse_correspondences": 0,
+    "icp_fitness": 0.9815637245754805,
+    "icp_rmse": 0.019779246368293348,
+    "icp_correspondences": 78903,
+    "trans_init": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "icp_transformation": [
+      [
+        0.9999999802858958,
+        -5.126543493852165e-05,
+        -0.00019183342380991753,
+        4.7542360859586644e-05
+      ],
+      [
+        5.1223308430554806e-05,
+        0.9999999745764702,
+        -0.00021959788655730595,
+        0.00015220569718517083
+      ],
+      [
+        0.00019184467671400223,
+        0.00021958805588549512,
+        0.9999999574883524,
+        0.24981840333543254
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "execution": {
+    "command": [
+      "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+      "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_experiments.py",
+      "observe",
+      "--output",
+      "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_b_v003_s0_01"
+    ],
+    "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+    "started_utc": "2026-11-18T13:00:28.337524+00:00",
+    "total_process_s": 290.755402875,
+    "exit_code": 1,
+    "child_peak_rss_bytes": 520257536,
+    "timing_boundary": "child startup through official command exit, including all command outputs",
+    "rss_limit_gib": 3,
+    "resource_guard": {
+      "reason": null,
+      "sampled_peak_rss_bytes": 513277952
+    },
+    "status": "failed"
+  },
+  "observer": {
+    "status": "failed",
+    "reconstruct_calls": 1,
+    "frame_events": 71,
+    "pair_events": 70,
+    "reconstruction_s_with_observation": null,
+    "return_observer_overhead_s": 0.14799409099990668,
+    "cpu_user_s": 275.25448600000004,
+    "cpu_system_s": 3.035104,
+    "process_peak_rss_bytes": 520257536
+  },
+  "protected_counts": {
+    "initial_suite": 553,
+    "B1": 642,
+    "resume": 613
+  },
+  "all_preexisting_evidence_unchanged": true,
+  "capture_sha256": "22270c4923745ffdf9b3a1fbe98bf311ac05721a54e37eec6ff3c16a59e227c2",
+  "mean_registration_yield_ratio_on_observed71_frames": 2.469027641835652,
+  "failed_pair_is_not_a_valid_pose": "ICP ran from returned RANSAC identity before core rejected coarse result; never accepted or accumulated.",
+  "source_sha256": "0f2beb07d5505355749b5803f35fc63e8c5b8c7b3b5d80fb06fdb5f40473c2d1"
+}

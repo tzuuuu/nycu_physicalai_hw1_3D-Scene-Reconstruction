@@ -1,0 +1,30 @@
+{
+  "status": "Phase 1 — Experiment Accepted / Submission Readiness Audited / Report Assets Prepared / Handoff Complete",
+  "F1_complete": true,
+  "F2_images_prepared": 21,
+  "F3_handoff_complete": true,
+  "submission_ZIP_ready": false,
+  "final_English_report_written": false,
+  "new_formal_reconstruction": false,
+  "Phase2_capture_started": false,
+  "scientific_integrity_verified": true,
+  "historical_stops_preserved": true,
+  "tests": {
+    "targeted_policy": 46,
+    "F1_full": "247 passed in 16.18s",
+    "final_full": "250 passed in 6.83s"
+  },
+  "open_risks": [
+    "plot.py dependency",
+    "simulator/configs and local editable paths",
+    "SPARQL inclusion/layout clarification",
+    "final README",
+    "obsolete Pixi test task paths",
+    "TA ontology/workspace interpretation",
+    "fresh Linux install not validated",
+    "report.pdf and final ZIP pending"
+  ],
+  "exact_original_M2_new_topdown_available": false,
+  "M2_native_PNG_preserved_and_B0_reference_explicit": true,
+  "stop_for_human_acceptance": true
+}

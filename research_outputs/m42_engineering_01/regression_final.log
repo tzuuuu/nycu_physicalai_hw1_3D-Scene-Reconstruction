@@ -1,0 +1,4 @@
+ WARN Could not read the virtual package detector registrations of the channels, using pixi's built-in detection only: failed to open '/Users/alyssa/Library/Caches/rattler/cache/repodata/fa96033f.shards-cache-v1'
+..ssssss........................................................         [100%]
+- generated xml file: /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m42_engineering_01/regression_final.xml -
+58 passed, 6 skipped in 17.91s

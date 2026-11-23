@@ -1,0 +1,29 @@
+{
+  "dashboard_factor_series_matched_to_official_csv": [
+    "RawPointCount",
+    "VoxelizedPointYield",
+    "CoarseRANSACFitness",
+    "CoarseRANSACRMSE",
+    "CoarseRANSACCorrespondences",
+    "ICPInlierFitness",
+    "ICPInlierRMSE",
+    "ICPInlierCorrespondences"
+  ],
+  "all_eight_matched": true,
+  "runs": [
+    {
+      "fraction": [
+        1.0
+      ],
+      "frames": [
+        191
+      ],
+      "error": [
+        3.174055
+      ],
+      "mode": [
+        "FullBatch"
+      ]
+    }
+  ]
+}

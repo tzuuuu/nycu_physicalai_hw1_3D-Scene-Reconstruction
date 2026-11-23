@@ -1,0 +1,21 @@
+{
+  "formal_manifest_verified_items": 39,
+  "formal_manifest_sha256": "4291077ed32e525b3e9cfd9c8e60b6c9a5e0f1dbf14346c44fc7f200d316275b",
+  "native_preflight": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m43_preflight_20261119T080858Z_18fbf783",
+  "native_tests": {
+    "native": true,
+    "counts": {
+      "tests": 40,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "passed": true
+  },
+  "reconstruction_success": true,
+  "reconstruction_calls": 1,
+  "reconstruction_retry": false,
+  "postprocessing_failure": "GT float32 not promoted before first-camera subtraction; strict 1e-12 equality stopped reporting",
+  "scope": "Offline validation and reporting only; original terminal artifacts/logs/manifest/status remain unchanged",
+  "document_snapshot_sha256": "e94a90be5016d3999dc53303cfbdd55ea19646a58f6c77f0f1d301bef6f5056e"
+}

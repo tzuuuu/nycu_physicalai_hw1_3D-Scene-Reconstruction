@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_final_recovery.py", line 219, in <module>
+    elif args.mode == 'run': run(args.condition)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_final_recovery.py", line 179, in run
+    record_command._rss_bytes(os.getpid())
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/record_command.py", line 15, in _rss_bytes
+    measured = subprocess.run(['ps', '-o', 'rss=', '-p', str(pid)],
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/subprocess.py", line 1837, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 1] Operation not permitted: 'ps'

@@ -1,0 +1,23 @@
+{
+  "figures": {
+    "reconstruction_3d_baseline_report.png": "06bbd35c68925cd37eea14888c877bf1047b54cc328daa93276661f4469b48ee",
+    "reconstruction_3d_selected_report.png": "b211d46f6d9af6056e76818fd7605310d7776ba5b6e5d039e0d5bc51e9b85e69",
+    "spatial_regions_comparison.png": "a21923fa42179e1340825516704331931f9202e1ac1a96eeb110cdba59751799",
+    "relative_map_disagreement.png": "2e4dc7c95d99a246fb9c56b9897ced3cd066001cacbb5cfce73860f393829d1a",
+    "eight_factor_series_comparison.png": "acfc742d24caae799f1949b61b0e1413e1bcf175fa3f62bcc9eacf1af2eed973"
+  },
+  "strides": [
+    14,
+    9
+  ],
+  "sources": {
+    "baseline_map": "6df80b8c8ed4f548f6cac5273fda69825eac023d4c71c5e9740d9b93cf5056e8",
+    "selected_map": "9567cd97ff77babefe025a20452d8cc1b69d36044cf5fbafdc64683302224726",
+    "baseline_poses": "de589ca90c78ac28184594f71be848c53bab4c0d0c31c2b730b4788debcf07ac",
+    "selected_poses": "788d78560711ba9e7c325f7144030937d8c5a09570da80eb356c976a91d80a68",
+    "gt": "0046f4a722f4671cf0569be3db25f8a730619bf58173aca8957eb736ea656fbd"
+  },
+  "relative_disagreement_point_count": 51,
+  "raw_to_display": "[X,Y,Z] -> [X,-Y,-Z]; spatial region labels use raw camera X/Z, display vertical axis is -raw Z",
+  "notes": "Full maps unchanged. Plot samples only; both 3D views share metric bounds/view/aspect. Original combined 3D figure retained; report variants provide label margin."
+}

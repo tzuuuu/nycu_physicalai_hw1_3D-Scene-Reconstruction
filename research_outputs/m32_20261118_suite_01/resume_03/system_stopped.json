@@ -1,0 +1,7 @@
+{
+  "mode": "run",
+  "condition": "C3",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_final_recovery.py\", line 219, in <module>\n    elif args.mode == 'run': run(args.condition)\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_final_recovery.py\", line 179, in run\n    record_command._rss_bytes(os.getpid())\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/record_command.py\", line 15, in _rss_bytes\n    measured = subprocess.run(['ps', '-o', 'rss=', '-p', str(pid)],\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/subprocess.py\", line 505, in run\n    with Popen(*popenargs, **kwargs) as process:\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/subprocess.py\", line 951, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/subprocess.py\", line 1837, in _execute_child\n    raise child_exception_type(errno_num, err_msg, err_filename)\nPermissionError: [Errno 1] Operation not permitted: 'ps'\n",
+  "unix": 1795015679.198188,
+  "action": "STOP; no automatic retry"
+}

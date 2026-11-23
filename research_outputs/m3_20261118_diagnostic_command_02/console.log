@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m3_diagnose.py", line 342, in <module>
+    capture(args.output)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m3_diagnose.py", line 120, in capture
+    experiment = api.read_experiment(str(EXP))
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/api.py", line 586, in read_experiment
+    text = _read_text(path)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/api.py", line 336, in _read_text
+    with open(path, "r", encoding="utf-8") as fh:
+IsADirectoryError: [Errno 21] Is a directory: '/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_baseline_20261118_map005_s0_01'

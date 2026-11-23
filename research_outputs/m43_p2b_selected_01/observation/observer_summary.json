@@ -1,0 +1,11 @@
+{
+  "status": "official_cli_returned",
+  "reconstruct_calls": 1,
+  "frame_events": 204,
+  "pair_events": 203,
+  "valid_transform_pose_prefix_frames": 204,
+  "full_processed_frames": 204,
+  "reconstruction_s_with_observation": 145.343667667,
+  "return_observer_overhead_s": 0.89128881200077,
+  "timing": "Same M4.2 function timer; return export occurs after timer stops; total observer overhead includes export"
+}

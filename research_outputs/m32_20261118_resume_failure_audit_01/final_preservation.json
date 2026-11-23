@@ -1,0 +1,23 @@
+{
+  "protected_counts": {
+    "suite": 553,
+    "resume": 613,
+    "B1": 642
+  },
+  "all_unchanged": true,
+  "formal_reconstruction_attempts": 2,
+  "complete_full191": 1,
+  "B0_repeated": false,
+  "unstarted": [
+    "B2",
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "resume_stopped": true,
+  "original_stopped_json_sha256": "233919e3e5382f7316213adef8405c3c664c7b7701235d7ee533dd10b26ffdbb",
+  "original_failed_B0_json_sha256": "b05d53d665abb5112a3001d5c4afe66b639150a59d8b82c7f74918bb110ce23e",
+  "test_result": "187 passed in 5.04s",
+  "audit_commit": "9176a57"
+}

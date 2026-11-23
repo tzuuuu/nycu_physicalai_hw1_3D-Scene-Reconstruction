@@ -1,0 +1,7 @@
+{
+  "research_outputs/m32_20261118_stopped_audit_01/analysis/pairs.csv": "6e668cdf1362202111d8d2e763cba35ec9606db0929e0b67e67b9ba9e745750f",
+  "research_outputs/m32_20261118_stopped_audit_01/analysis/summary.json": "c0b8cf593c14d622074b6287ec0ada25bc7627d04e263682510ef8020d014ef5",
+  "research_outputs/m32_20261118_stopped_audit_01/analysis/poses_offline.npz": "c9a3ddc4fb537c2ec4351ae5034e243f3a08798b75ca0ac5c1c0bc23cf08afcb",
+  "research_outputs/m32_20261118_stopped_audit_01/analysis/frames.csv": "92ebb48653de70c5c565057628676b9fb7adc9077e5490cd1de7ee5797338c44",
+  "research_outputs/m32_20261118_stopped_audit_01/analysis/frame_and_pair_errors.png": "0241a256d582ed3e8c82cd892e13f5207c7f54a9048a6e7e125374e4750a8127"
+}

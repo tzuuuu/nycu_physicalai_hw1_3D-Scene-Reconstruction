@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m43_selected.py", line 225, in run
+    if not post['passed']:raise RuntimeError('Selected returned; validation/postprocess failed; no reconstruction retry')
+RuntimeError: Selected returned; validation/postprocess failed; no reconstruction retry

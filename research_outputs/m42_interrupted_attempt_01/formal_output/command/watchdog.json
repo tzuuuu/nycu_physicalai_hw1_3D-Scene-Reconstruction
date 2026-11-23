@@ -1,0 +1,10 @@
+{
+  "status": "terminated_workload",
+  "reason": "supervisor pipe closed unexpectedly",
+  "termination": {
+    "status": "group_absent",
+    "pgid": 36949
+  },
+  "pgid": 36949,
+  "unix": 1795073625.0608482
+}

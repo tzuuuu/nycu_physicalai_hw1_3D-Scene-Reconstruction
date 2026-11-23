@@ -1,0 +1,33 @@
+{
+  "status": "F1 STOPPED: third protected metadata path changed; no policy expansion",
+  "source_request_path": "/Users/alyssa/.codex/attachments/98dcefdb-6bee-4537-98dd-ded9dabf0a37/貼上的文字.txt",
+  "starting_commit": "27e5c614533385c4d1deee3c0d302e2c54b58a36",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "historical_protected_count": 899,
+  "historical_differences": [
+    {
+      "path": "research_outputs/m32_20261118_suite_01/.DS_Store",
+      "before_sha256": "801b6bba5acfd71c5a5d0fc36442c2258c75108455f431f021d66029c24e1fb9",
+      "after_sha256": "3dc8cb90f936202424e02d95fe4db736e45d7fe2b05ae4b4675c91b6aa0268db",
+      "exists": true,
+      "regular_file": true,
+      "approved_metadata_exception": false
+    }
+  ],
+  "prior_final_manifest_count": 79,
+  "prior_final_manifest_differences": [],
+  "initial_closeout_inventory_count": 1888,
+  "changes_during_readonly_audit": [],
+  "approved_exceptions": [
+    "experiments/.DS_Store",
+    "research_outputs/.DS_Store"
+  ],
+  "unauthorized_path": "research_outputs/m32_20261118_suite_01/.DS_Store",
+  "F1_complete": false,
+  "F2_started": false,
+  "F3_started": false,
+  "formal_reconstruction_executed": false,
+  "final_report_written": false,
+  "submission_zip_created": false,
+  "interpretation": "No additional scientific artifact mismatch found in these inventories; unapproved metadata difference still fails the unchanged exact policy. Initial closeout snapshot does not reset the historical accepted SHA."
+}

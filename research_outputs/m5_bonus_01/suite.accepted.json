@@ -1,0 +1,82 @@
+{
+  "results": {
+    "f1_baseline": {
+      "argv": [
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m5_bonus.py",
+        "worker",
+        "--condition",
+        "f1_baseline"
+      ],
+      "exit_code": 0,
+      "reason": null,
+      "passed": true,
+      "elapsed_s": 327.497500583,
+      "peak_tree_rss_bytes": 857014272,
+      "samples": 649,
+      "interval_s": 0.5,
+      "watchdog_timeout_s": 8.0,
+      "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+      "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s"
+    },
+    "f1_c1": {
+      "argv": [
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m5_bonus.py",
+        "worker",
+        "--condition",
+        "f1_c1"
+      ],
+      "exit_code": 0,
+      "reason": null,
+      "passed": true,
+      "elapsed_s": 334.586785875,
+      "peak_tree_rss_bytes": 1002586112,
+      "samples": 664,
+      "interval_s": 0.5,
+      "watchdog_timeout_s": 8.0,
+      "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+      "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s"
+    },
+    "f2_baseline": {
+      "argv": [
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m5_bonus.py",
+        "worker",
+        "--condition",
+        "f2_baseline"
+      ],
+      "exit_code": 0,
+      "reason": null,
+      "passed": true,
+      "elapsed_s": 264.26885104200005,
+      "peak_tree_rss_bytes": 1017151488,
+      "samples": 524,
+      "interval_s": 0.5,
+      "watchdog_timeout_s": 8.0,
+      "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+      "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s"
+    },
+    "f2_sparse": {
+      "argv": [
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+        "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m5_bonus.py",
+        "worker",
+        "--condition",
+        "f2_sparse"
+      ],
+      "exit_code": 0,
+      "reason": null,
+      "passed": true,
+      "elapsed_s": 190.33874104199992,
+      "peak_tree_rss_bytes": 906969088,
+      "samples": 378,
+      "interval_s": 0.5,
+      "watchdog_timeout_s": 8.0,
+      "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+      "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s"
+    }
+  },
+  "protected_unchanged": true,
+  "original_open3d_unchanged": true
+}

@@ -1,0 +1,29 @@
+{
+  "sha256": "d29676d2db2e52d92733fa408d85747f1b8ab6550bfaf07f2ffc55e3367e23d1",
+  "map_sources": {
+    "map_points": {
+      "shape": [
+        2054529,
+        3
+      ],
+      "dtype": "float64",
+      "sha256": "6df80b8c8ed4f548f6cac5273fda69825eac023d4c71c5e9740d9b93cf5056e8"
+    },
+    "map_colors": {
+      "shape": [
+        2054529,
+        3
+      ],
+      "dtype": "float64",
+      "sha256": "786538d79e22a60ea4b250254d35bda561c2ce5ef63ccf73472b9777a67b1bbb"
+    }
+  },
+  "positions_sha256": "2cb310fc5effa12ad2eec9266a2ae181335f1c6a00d8e06ec21c1a112b902ebd",
+  "gt_centers_sha256": "52709c2daa252b308be5faaea065c124808dcf71ce116aa9b5bc148b3db80f8c",
+  "visualization_stride": 14,
+  "displayed_points": 146753,
+  "view_elevation_deg": 55,
+  "view_azimuth_deg": -65,
+  "change": "Offline display only: proportional metric axis aspect, larger label margins, Y/Z display flips. No registration, new trajectory, map correction or GT fitting.",
+  "process_peak_rss_bytes": 485277696
+}

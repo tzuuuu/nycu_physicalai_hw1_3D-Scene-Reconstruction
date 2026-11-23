@@ -1,0 +1,19 @@
+{
+  "finished_at_utc": "2026-11-19T07:49:10.881524+00:00",
+  "status": "M4.2 Baseline Accepted / Complete / Stopped",
+  "git_commit": "af1caa397f545960d7763f5fee4011e35575fc75",
+  "execution_source_commit": "37f3bef6d4596f69c4685e4a647afd386f1ed2bd",
+  "branch": "main",
+  "working_tree_clean": true,
+  "independent_validation_sha256": "0f78f0632e100690cd61cb9e2f5797897ccde37077a27a9a1284cac05afb6689",
+  "official_result_artifacts_strictly_verified": 61,
+  "final_document_sha256": "12de9ed1669713a82b5372d646af5c297bc2d3e97f08108f4166ccb274dcecf0",
+  "frozen_capture_files_verified": 642,
+  "first_pass_success": true,
+  "visual_review_completed": true,
+  "P2_B_started": false,
+  "P2_C_started": false,
+  "no_further_reconstruction": true,
+  "final_english_report_written": false,
+  "submission_zip_created": false
+}

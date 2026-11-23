@@ -1,0 +1,61 @@
+ WARN Could not read the virtual package detector registrations of the channels, using pixi's built-in detection only: failed to open '/Users/alyssa/Library/Caches/rattler/cache/repodata/fa96033f.shards-cache-v1'
+..ssssss.....F.......                                                    [100%]
+=================================== FAILURES ===================================
+_____________ test_full_official_postprocess_figures_and_manifest ______________
+
+rgbd_capture = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0')
+tmp_path = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0')
+
+    def test_full_official_postprocess_figures_and_manifest(rgbd_capture,tmp_path):
+        from scripts.m42_results import results
+        np.save(rgbd_capture/'GT_pose.npy',np.tile([0,0,0,1,0,0,0],(3,1)))
+        ttl=tmp_path/'synthetic_results.ttl'
+        api.cmd_declare(argparse.Namespace(name='synthetic_results',out=str(ttl),data_dir=str(rgbd_capture),floor=2))
+        out=tmp_path/'results'; out.mkdir()
+        (out/'declaration.before.ttl').write_bytes(ttl.read_bytes())
+        o.execute_cli(ttl,out/'observation')
+        (out/'command').mkdir()
+        (out/'command/execution.json').write_text(json.dumps(dict(elapsed_s=1.,peak_tree_rss_bytes=123)))
+>       import shutil
+
+tests/test_m42_observer.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/m42_results.py:29: in results
+    exp,rows,mean=validate_evidence(ttl,obs,expected_frames)
+scripts/m32_experiments.py:388: in validate_evidence
+    exp = m.api.read_experiment(str(ttl))
+api.py:586: in read_experiment
+    text = _read_text(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results/synthetic_results.ttl'
+
+    def _read_text(path):
+        """The whole file as text. Turtle is UTF-8 by specification (and so is this)."""
+>       with open(path, "r", encoding="utf-8") as fh:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results/synthetic_results.ttl'
+
+api.py:336: FileNotFoundError
+----------------------------- Captured stdout call -----------------------------
+[declare] WARNING: 2 stem gap(s) in the paired sequence: 3->20, 20->101
+[declare] WARNING: every experiment over this batch will pair across those gaps, spanning more than one capture step. A stem missing from rgb/ or depth/ changes which pairs exist, and the pair observables will read as larger motion — correctly, but check it is the capture and not a lost file.
+[declare] wrote /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results.ttl
+[declare] experiment workspace: /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results
+[declare] all pipeline-derived factors are measured automatically
+[declare] 1 setting(s) WILL BE DEFAULTED at assessment; preview them with:  api.py explore /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results.ttl
+[declare] before assessing: replace the PREDICTION TODOs and the rdfs:label — the seal makes them non-retractable. Then:  reconstruct.py --experiment /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results.ttl
+[reconstruct] === baseline measuring run ===
+  frame    0/2
+  frame    2/2
+Mean L2 distance: 0.000000 meters  (over 3 frames, 3 reconstructed)
+[reconstruct] saved reconstruction image -> /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results/reconstruction.png
+[experiment] batch 'floor2_test_full_official_postprocess0': 3 frames -> 18 pipeline factor occurrence(s)
+[experiment] experiment IRI  http://taica.course/hw1/experiment/synthetic_results
+[experiment] declarationDigest 97195ab0c6b9e690ef09b896eafc8b728afac90a00da9f9de67ee3480a7f1557
+[experiment] appended 176 triples below the marker -> /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results.ttl
+[experiment] this file is now SEALED: edit it above the marker and every reader will refuse it. Next: `api.py explore /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results.ttl`, then `reconstruct.py --experiment /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results.ttl`.
+[reconstruct] wrote baseline run: Mean L2 Distance = 1.3922125900994124e-15 (stored as hw1:mapMeanL2 at file precision), runFrameCount = 3 -> /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-23/test_full_official_postprocess0/synthetic_results.ttl
+- generated xml file: /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m42_engineering_01/selftests_sandbox_final.xml -
+=========================== short test summary info ============================
+FAILED tests/test_m42_observer.py::test_full_official_postprocess_figures_and_manifest
+1 failed, 14 passed, 6 skipped in 14.85s

@@ -1,0 +1,11 @@
+{
+  "status": "official_cli_returned",
+  "reconstruct_calls": 1,
+  "frame_events": 191,
+  "pair_events": 190,
+  "reconstruction_s_with_observation": 287.3396015,
+  "return_observer_overhead_s": 1.291188630009884,
+  "cpu_user_s": 293.46340499999997,
+  "cpu_system_s": 3.825274,
+  "process_peak_rss_bytes": 1119600640
+}

@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m5_bonus.py",
+    "worker",
+    "--condition",
+    "f2_sparse"
+  ],
+  "pid": 47308,
+  "pgid": 47308,
+  "watchdog_pid": 47309,
+  "unix": 1795079872.4294798,
+  "limit_bytes": 3221225472
+}

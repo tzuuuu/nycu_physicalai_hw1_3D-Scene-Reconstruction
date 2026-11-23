@@ -1,0 +1,19 @@
+{
+  "started_unix": 1794979676.728889,
+  "argv": [
+    "--experiment",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_baseline_20261118_map005_s0_01",
+    "--selection-query",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_baseline_20261118_map005_s0_01/queries/exploratory_ablation_exclude_104.rq",
+    "--version",
+    "open3d",
+    "--voxel-size",
+    "0.05",
+    "--seed",
+    "0",
+    "--down-voxel",
+    "0.05",
+    "--no-vis",
+    "--write"
+  ]
+}

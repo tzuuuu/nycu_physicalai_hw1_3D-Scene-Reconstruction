@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/phase1_closeout_audit.py", line 137, in <module>
+    a=p.parse_args();run(a.output)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/phase1_closeout_audit.py", line 40, in run
+    result['prior_protected_files']=x.verify_hashes(x.read(final/'protected.before.json'))
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_experiments.py", line 46, in verify_hashes
+    raise RuntimeError('Protected files changed: ' + repr(changed))
+RuntimeError: Protected files changed: ['research_outputs/m32_20261118_suite_01/.DS_Store']

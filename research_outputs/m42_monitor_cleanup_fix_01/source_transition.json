@@ -1,0 +1,24 @@
+{
+  "from_commit": "dcb88fce82e01b14d766b57b295c7181781d95f1",
+  "to_commit": "37f3bef6d4596f69c4685e4a647afd386f1ed2bd",
+  "authorized_helper_changes": {
+    "docs/implementation/M4_Phase2_P2A_Baseline_Acceptance.md": {
+      "before": "277450050c422dc98e32ae3aaea4e3a5048028ef27aeb630fdb689a752474550",
+      "after": "1ae626367e9ee4ec5b23d325dc730f0ddcde8cc24597a70b58be8a5ac0ebb10a"
+    },
+    "scripts/m42_baseline.py": {
+      "before": "e5e1ecdadc13914819fd7367780d249eabb26ee25a1f32decc504f387a5557d4",
+      "after": "69fcdfb1c8f1d8bcc93c1b709cc07528404221022b0bfb651892b54d9d1a58c9"
+    },
+    "scripts/m42_monitor.py": {
+      "before": "88e652c2f4cdc70205c8067ffb06cd6028fda60034e319dd33dff4922892c1a0",
+      "after": "0a6dd63bc192494208f73ac582307cf6f003c32ff05f124b40ac7d7e7cd05fe0"
+    },
+    "tests/test_m42_monitor.py": {
+      "before": "0282d334599476ca3db4a5225a8c1125648009584e52342b997ec2453396fcda",
+      "after": "868da8d7e9b5550d2b258009f27bec560078de5427653d5dde93a98c4221d447"
+    }
+  },
+  "teacher_core_changed": false,
+  "original_readiness_sha256": "e19ee9a80a84a9307be25a83a5ec36863c238fa7700f66fd065cb5b9e872c90e"
+}

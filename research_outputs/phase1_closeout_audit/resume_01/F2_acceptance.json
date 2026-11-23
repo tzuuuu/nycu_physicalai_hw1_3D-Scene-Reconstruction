@@ -1,0 +1,14 @@
+{
+  "F2_complete": true,
+  "assets_prepared": 21,
+  "offline_redraws": 18,
+  "native_or_existing_copies": 3,
+  "exact_new_M2_topdown_not_available": true,
+  "limitations_explicit": true,
+  "source_sha_verified": true,
+  "visual_review_sha256": "2f57731d5ccf0cba3272e5382fbfabb487020b453e82e45fec6784670ce71665",
+  "manifest_sha256": "c6f799040a4fdf800849dde11b37166c3d00bca0c69c00f374317229a124b868",
+  "tests": "250 passed in 6.83s",
+  "new_formal_reconstruction": false,
+  "new_RANSAC_or_ICP_for_figures": false
+}

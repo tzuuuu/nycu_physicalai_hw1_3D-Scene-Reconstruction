@@ -1,0 +1,11 @@
+{
+  "status": "official_cli_returned",
+  "reconstruct_calls": 1,
+  "frame_events": 320,
+  "pair_events": 319,
+  "valid_transform_pose_prefix_frames": 320,
+  "full_processed_frames": 320,
+  "prefix_note": "Pose prefix from finite positive-support returned transforms; not a claim that all map integration steps completed",
+  "reconstruction_s_with_observation": 207.318515709,
+  "return_observer_overhead_s": 0.5259152819989332
+}

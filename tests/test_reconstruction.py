@@ -104,11 +104,75 @@ def test_selected_must_keep_capture_reference(rgbd_capture, frames):
         utils.reconstruct(rgbd_capture, frames=frames, verbose=False)
 
 
-def test_nonconsecutive_selection_and_bonus_guard(rgbd_capture):
+def test_nonconsecutive_selection_and_bonus_backend(rgbd_capture):
     _, positions = utils.reconstruct(rgbd_capture, frames=[3, 101], voxel_size=0.08, verbose=False, build_cloud=False)
     assert positions.shape == (2, 3)
-    with pytest.raises(ValueError, match='Bonus'):
-        utils.reconstruct(rgbd_capture, version='my_icp')
+    _, custom = utils.reconstruct(rgbd_capture, version='my_icp',
+                                  voxel_size=0.08, build_cloud=False, verbose=False)
+    np.testing.assert_allclose(custom, np.zeros((3, 3)), atol=1e-8)
+    with pytest.raises(ValueError, match='Unknown ICP backend'):
+        utils.reconstruct(rgbd_capture, version='invalid')
+
+
+def test_custom_official_cli_and_return_observer(rgbd_capture, tmp_path):
+    import subprocess
+    import sys
+    import runpy
+    from scripts.m5_bonus import Observer
+    from scripts.m32_experiments import validate_evidence
+    gt = np.zeros((3, 7))
+    gt[:, 3] = 1.
+    np.save(rgbd_capture/'GT_pose.npy', gt)
+    exp = tmp_path/'bonus_synthetic'
+    exp.mkdir()
+    ttl = exp/'bonus_synthetic.ttl'
+    subprocess.run([sys.executable, 'api.py', 'declare', '--name', exp.name,
+                    '--data-dir', str(rgbd_capture), '--floor', '1', '--out', str(ttl)],
+                   check=True, capture_output=True, text=True)
+    text = ttl.read_text() + '''\nexp:bonus_synthetic hw1:hasFactorSetting [
+        a hw1:FactorSetting; hw1:settingParameter hw1:icpBackend;
+        hw1:settingRole hw1:ReconstructionSetting; hw1:settingForFactor hw1:ReconstructionRun;
+        hw1:settingValue "my_icp"^^xsd:string ] .\n'''
+    ttl.write_text(text)
+    (tmp_path/'declaration.before.ttl').write_text(text)
+    obsdir = tmp_path/'observation'
+    obsdir.mkdir()
+    observer = Observer(obsdir)
+    prior = sys.argv
+    try:
+        sys.argv = ['reconstruct.py', '--experiment', str(ttl), '--version', 'my_icp',
+                    '--voxel-size', '.08', '--down-voxel', '.05', '--no-vis']
+        sys.setprofile(observer)
+        runpy.run_path('reconstruct.py', run_name='__main__')
+    finally:
+        sys.setprofile(None)
+        sys.argv = prior
+    exp, _, mean = validate_evidence(ttl, obsdir, [3, 20, 101])
+    assert exp['settings']['icpBackend'] == 'my_icp'
+    assert mean < 1e-8 and len(observer.icp_times) == 2
+    assert all(r['success'] and r['seconds'] > 0 for r in observer.icp_times)
+    query = tmp_path/'sparse.rq'
+    query.write_text('''PREFIX hw1: <http://taica.course/hw1/ontology#>
+        SELECT ?frameIndex WHERE { ?f hw1:frameIndex ?frameIndex .
+        VALUES ?frameIndex { 3 101 } }''')
+    selected_dir = tmp_path/'selected_observation'
+    selected_dir.mkdir()
+    observer = Observer(selected_dir)
+    try:
+        sys.argv = ['reconstruct.py', '--experiment', str(ttl), '--version', 'my_icp',
+                    '--voxel-size', '.08', '--down-voxel', '.05', '--no-vis',
+                    '--selection-query', str(query), '--write']
+        sys.setprofile(observer)
+        runpy.run_path('reconstruct.py', run_name='__main__')
+    finally:
+        sys.setprofile(None)
+        sys.argv = prior
+    after = api.read_experiment(str(ttl))
+    assert after['factor_counts'] == exp['factor_counts']
+    run = api.data_run_iri(after['exp_name'], 'selected')
+    used = sorted(int(after['graph'].value(f, api.HW1.frameIndex))
+                  for f in after['graph'].objects(run, api.HW1.usedFrame))
+    assert used == [3, 101] and len(observer.icp_times) == 1
 
 
 def test_unreadable_frame_cannot_yield_complete_factors(rgbd_capture):

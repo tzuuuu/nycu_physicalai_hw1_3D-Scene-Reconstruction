@@ -1,0 +1,112 @@
+ WARN Could not read the virtual package detector registrations of the channels, using pixi's built-in detection only: failed to open '/Users/alyssa/Library/Caches/rattler/cache/repodata/8720a3f8.shards-cache-v1'
+{"kind": "frame", "elapsed_s": 0.2747822499999999, "peak_rss_bytes": 272744448, "stem": 1, "raw_point_count": 262141, "point_yield": 11423}
+  frame    0/4
+{"kind": "frame", "elapsed_s": 0.6009299579999998, "peak_rss_bytes": 319799296, "stem": 2, "raw_point_count": 262144, "point_yield": 14428}
+{"kind": "pair", "elapsed_s": 1.0258071249999998, "peak_rss_bytes": 321699840, "prev_stem": 1, "stem": 2, "coarse_fitness": 0.740158026060438, "coarse_rmse": 0.028907755933573132, "coarse_correspondences": 10679, "icp_fitness": 0.7336429165511505, "icp_rmse": 0.019419840056345183, "icp_correspondences": 10585}
+{"kind": "frame", "elapsed_s": 1.371316291, "peak_rss_bytes": 369016832, "stem": 3, "raw_point_count": 262144, "point_yield": 15790}
+{"kind": "pair", "elapsed_s": 1.8420659579999998, "peak_rss_bytes": 377028608, "prev_stem": 2, "stem": 3, "coarse_fitness": 0.8461051298290057, "coarse_rmse": 0.023774471400173223, "coarse_correspondences": 13360, "icp_fitness": 0.8409119696010133, "icp_rmse": 0.021387481003679477, "icp_correspondences": 13278}
+{"kind": "frame", "elapsed_s": 2.2276200409999998, "peak_rss_bytes": 435994624, "stem": 4, "raw_point_count": 262144, "point_yield": 17229}
+{"kind": "pair", "elapsed_s": 2.7458442499999993, "peak_rss_bytes": 435994624, "prev_stem": 3, "stem": 4, "coarse_fitness": 0.8768936096117012, "coarse_rmse": 0.03286015824854163, "coarse_correspondences": 15108, "icp_fitness": 0.8716698589587324, "icp_rmse": 0.020031598266943593, "icp_correspondences": 15018}
+{"kind": "frame", "elapsed_s": 3.130705625, "peak_rss_bytes": 501530624, "stem": 5, "raw_point_count": 262144, "point_yield": 17287}
+{"kind": "pair", "elapsed_s": 4.049897457999999, "peak_rss_bytes": 501530624, "prev_stem": 4, "stem": 5, "coarse_fitness": 0.9434835425464222, "coarse_rmse": 0.02706857827275844, "coarse_correspondences": 16310, "icp_fitness": 0.9435413894834268, "icp_rmse": 0.019914494156000592, "icp_correspondences": 16311}
+/Users/alyssa/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/matplotlib-6137fl3_ because there was an issue with the default path (/Users/alyssa/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+  frame    4/4
+Mean L2 distance: 0.003166 meters  (over 5 frames, 5 reconstructed)
+{
+  "kind": "M2.0_preflight_not_formal_baseline",
+  "started_utc": "2026-11-17T19:06:32.257300+00:00",
+  "data_root": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/first_floor",
+  "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m2_20261118_preflight_01/frames_05",
+  "frames": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "git_commit": "0fb8942f45ca8d860f4e0cf7eb3bdb2d03bd2f9e",
+  "parameters": {
+    "version": "open3d",
+    "voxel_size": 0.05,
+    "registration_seed": 0,
+    "build_cloud": true,
+    "down_voxel": null
+  },
+  "python": "3.9.23",
+  "open3d": "0.18.0",
+  "numpy": "1.26.4",
+  "rss_at_start_bytes": 212238336,
+  "reconstruction_s": 4.140601791,
+  "status": "completed_requires_review",
+  "mean_l2_m": 0.0031656995196326296,
+  "reconstructed_frames": 5,
+  "evaluated_frames": 5,
+  "map_points": 666223,
+  "raw_points_total": 1310717,
+  "map_axis_min": [
+    -1.5848437499999994,
+    -0.04140135180749717,
+    0.003
+  ],
+  "map_axis_max": [
+    4.686570431365992,
+    1.668107707322455,
+    4.710578758044714
+  ],
+  "total_s": 15.189338790999999,
+  "peak_rss_bytes": 501530624,
+  "factor_summary": {
+    "CoarseRANSACCorrespondences": {
+      "count": 4,
+      "min": 10679.0,
+      "max": 16310.0,
+      "mean": 13864.25
+    },
+    "CoarseRANSACFitness": {
+      "count": 4,
+      "min": 0.740158026060438,
+      "max": 0.9434835425464222,
+      "mean": 0.8516600770118917
+    },
+    "CoarseRANSACRMSE": {
+      "count": 4,
+      "min": 0.023774471400173223,
+      "max": 0.03286015824854163,
+      "mean": 0.028152740963761608
+    },
+    "ICPInlierCorrespondences": {
+      "count": 4,
+      "min": 10585.0,
+      "max": 16311.0,
+      "mean": 13798.0
+    },
+    "ICPInlierFitness": {
+      "count": 4,
+      "min": 0.7336429165511505,
+      "max": 0.9435413894834268,
+      "mean": 0.8474415336485808
+    },
+    "ICPInlierRMSE": {
+      "count": 4,
+      "min": 0.019419840056345183,
+      "max": 0.021387481003679477,
+      "mean": 0.02018835337074221
+    },
+    "RawPointCount": {
+      "count": 5,
+      "min": 262141.0,
+      "max": 262144.0,
+      "mean": 262143.4
+    },
+    "VoxelizedPointYield": {
+      "count": 5,
+      "min": 11423.0,
+      "max": 17287.0,
+      "mean": 15231.4
+    }
+  },
+  "frame_factor_count": 10,
+  "pair_factor_count": 24
+}

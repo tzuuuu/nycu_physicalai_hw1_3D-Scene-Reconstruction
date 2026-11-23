@@ -1,0 +1,52 @@
+# M3.2 hypothesis: Scale alters geometric support and matching tolerances jointly; finer can preserve edges but amplify perturbations; coarser can supply context but erase distinguishing structure.
+# preregistration_sha256: 633ac603a0ea899ed88713919755bb57733c42193a3b4e83f90345ba9786035b
+# Effective algorithm: {"backend": "open3d", "build_cloud": true, "ceiling_margin_m": 1.0, "depth_scale_divisor": 1000.0, "fpfh_max_nn": 100, "fpfh_radius_m": 0.15, "gt_usage": "evaluation_only_no_best_fit", "icp_distance_m": 0.045, "icp_estimator": "PointToPlane", "icp_max_iteration": 100, "icp_relative_fitness": 1e-06, "icp_relative_rmse": 1e-06, "map_down_voxel_m": 0.05, "normal_max_nn": 30, "normal_radius_m": 0.06, "ransac_confidence": 0.999, "ransac_distance_m": 0.045, "ransac_edge_length_checker": 0.9, "ransac_max_iteration": 100000, "ransac_mutual_filter": true, "ransac_n": 3, "registration_voxel_m": 0.03, "seed": 0}
+# =============================================================================
+# EXPERIMENT DECLARATION — p1_m32_20261118_b_v003_s0_01   (scaffolded by `api.py declare`)
+#
+# This file is YOURS until `reconstruct.py` seals it: edit the label, trim
+# add setting overrides. After assessment the student section is
+# digest-sealed — a new idea is a NEW file under a NEW name (§3.1).
+#
+# PREDICTION (write BEFORE assessing — the seal makes it non-retractable):
+#   pipeline: Measured support may change; all outcomes retained. Guidance: — which automatically measured pipeline factors you
+#             expect to fail, and why
+#   baseline: Unknown Mean L2; no improvement guaranteed. Guidance: — expected mapMeanL2 band and verdict for the full-batch run
+# =============================================================================
+
+@prefix hw1:  <http://taica.course/hw1/ontology#> .
+@prefix batch: <http://taica.course/hw1/data/batch/> .
+@prefix data:  <http://taica.course/hw1/data/> .
+@prefix exp:   <http://taica.course/hw1/experiment/> .
+@prefix factor: <http://taica.course/hw1/experiment/p1_m32_20261118_b_v003_s0_01/factor/> .
+@prefix run: <http://taica.course/hw1/experiment/p1_m32_20261118_b_v003_s0_01/run/> .
+@prefix setting: <http://taica.course/hw1/experiment/p1_m32_20261118_b_v003_s0_01/setting/> .
+@prefix frame: <http://taica.course/hw1/data/batch/floor1_first_floor/frame/> .
+@prefix rgb: <http://taica.course/hw1/data/batch/floor1_first_floor/rgb/> .
+@prefix depth: <http://taica.course/hw1/data/batch/floor1_first_floor/depth/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+exp:p1_m32_20261118_b_v003_s0_01
+    a hw1:Experiment ;
+    hw1:schemaVersion "7.0.0" ;
+    rdfs:label "M3.2 B1 fixed full-batch parameter intervention"@en ;
+    hw1:batchFile "eval/_data/first_floor" ;
+    hw1:onBatch batch:floor1_first_floor .   # floor1_first_floor
+
+# All pipeline-derived factors are recorded automatically during reconstruction.
+#
+# OVERRIDES — every setting you do not declare is filled from its TBox default
+# at assessment time (preview with `explore` before committing). To override
+# one, replace the final "." above with ";" and append a blank node, e.g.:
+#
+#     hw1:hasFactorSetting [
+#         a hw1:FactorSetting ;
+#         hw1:settingParameter hw1:icpBackend ;
+#         hw1:settingRole hw1:ReconstructionSetting ;
+#         hw1:settingForFactor hw1:ReconstructionRun ;
+#         hw1:settingValue "my_icp"^^xsd:string
+#     ] .
+#
+# hw1:settingRole must match the parameter's TBox hw1:paramRole.

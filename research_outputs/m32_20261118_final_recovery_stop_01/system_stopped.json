@@ -1,0 +1,132 @@
+{
+  "status": "STOP: unauthorized protected file change outside exact OS metadata exclusion",
+  "stopped_mode": "initialize",
+  "exit_code": 1,
+  "unix": 1795014726.244617,
+  "command": "OMP_NUM_THREADS=1 MPLCONFIGDIR=/tmp/physicalai-m32-matplotlib .pixi/envs/habitat/bin/python scripts/m32_final_recovery.py initialize",
+  "authorized_exclusion": [
+    "experiments/.DS_Store"
+  ],
+  "unauthorized_changed_path": "research_outputs/.DS_Store",
+  "inventories": {
+    "initial": {
+      "total": 553,
+      "unchanged": 551,
+      "differences": [
+        {
+          "path": "experiments/.DS_Store",
+          "before_sha256": "c58b7c32125c5542846c1a020beff62119d939b6320db407c45f801705e3a6ad",
+          "after_sha256": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad"
+        },
+        {
+          "path": "research_outputs/.DS_Store",
+          "before_sha256": "538937e5925c6023d088ceac2ed85d40b6f99c2b2288893bd99628ffe8f954cb",
+          "after_sha256": "b081d97c635cd8261dbc837e2259761f6f6077df73b1ef6a0cd47851dcdb274d"
+        }
+      ],
+      "inventory_sha256": "9eb64b08dea1ed076cd96583f6b8ab595efa81ad400a61b2481d6e81cff81e53"
+    },
+    "resume02": {
+      "total": 669,
+      "unchanged": 667,
+      "differences": [
+        {
+          "path": "experiments/.DS_Store",
+          "before_sha256": "c58b7c32125c5542846c1a020beff62119d939b6320db407c45f801705e3a6ad",
+          "after_sha256": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad"
+        },
+        {
+          "path": "research_outputs/.DS_Store",
+          "before_sha256": "538937e5925c6023d088ceac2ed85d40b6f99c2b2288893bd99628ffe8f954cb",
+          "after_sha256": "b081d97c635cd8261dbc837e2259761f6f6077df73b1ef6a0cd47851dcdb274d"
+        }
+      ],
+      "inventory_sha256": "ecfaeb1bfe6cff1e62ea7f45a06df46a5e11ea7258bb0418e6da2e1d05499261"
+    },
+    "C2": {
+      "total": 792,
+      "unchanged": 790,
+      "differences": [
+        {
+          "path": "experiments/.DS_Store",
+          "before_sha256": "c58b7c32125c5542846c1a020beff62119d939b6320db407c45f801705e3a6ad",
+          "after_sha256": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad"
+        },
+        {
+          "path": "research_outputs/.DS_Store",
+          "before_sha256": "538937e5925c6023d088ceac2ed85d40b6f99c2b2288893bd99628ffe8f954cb",
+          "after_sha256": "b081d97c635cd8261dbc837e2259761f6f6077df73b1ef6a0cd47851dcdb274d"
+        }
+      ],
+      "inventory_sha256": "b18fda024d1474206dcbb7dbcfe3dfd073ce14b86923e46c69d2c21976053769"
+    }
+  },
+  "core": {
+    "api.py": {
+      "expected": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+      "actual": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+      "matched": true
+    },
+    "load.py": {
+      "expected": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+      "actual": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+      "matched": true
+    },
+    "ontology/hw1.ttl": {
+      "expected": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+      "actual": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+      "matched": true
+    },
+    "pixi.lock": {
+      "expected": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794",
+      "actual": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794",
+      "matched": true
+    },
+    "pixi.toml": {
+      "expected": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+      "actual": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+      "matched": true
+    },
+    "plot.py": {
+      "expected": "7a624b52bc8f9121fd9fc69d7045404d8c62566d018e776a4541460e4d6e6337",
+      "actual": "7a624b52bc8f9121fd9fc69d7045404d8c62566d018e776a4541460e4d6e6337",
+      "matched": true
+    },
+    "reconstruct.py": {
+      "expected": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+      "actual": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+      "matched": true
+    },
+    "utils.py": {
+      "expected": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41",
+      "actual": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41",
+      "matched": true
+    }
+  },
+  "historical_marker_sha256": {
+    "suite_stopped.json": "233919e3e5382f7316213adef8405c3c664c7b7701235d7ee533dd10b26ffdbb",
+    "resume_failed.json": "30c3dadd3a83afcaf4a6a0f8c3349fe56ee8da1d47ae867de357678ecc5815d1",
+    "resume_authorization.json": "955e25fe324aa8f839ec3f7f497cb8bbdd4420cdbfd9b144d6a90733c8f11f8e",
+    "resume_02/authorization.json": "27fa289bdf35199264bacb53d422331c047b972bd90fe4b01de062ebc6f60333",
+    "resume_02/system_stopped.json": "6816e5a7919e83e98c33112ba8786f937266787d5f25a3e21e0f2a6d00614e1f"
+  },
+  "C2_new_audit_executed": false,
+  "C2_reconstruction_repeated": false,
+  "C3_C4": {
+    "C3": {
+      "experiment_exists": false,
+      "research_output_exists": false
+    },
+    "C4": {
+      "experiment_exists": false,
+      "research_output_exists": false
+    }
+  },
+  "resume03_created": false,
+  "policy_commit": "d5e34c3",
+  "recovery_tool_commit": "8244add",
+  "tests": "218 passed in 15.69s",
+  "current_commit": "8244add5b57243a8dbe50a088d206110b5bfd6f3",
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "next_action": "STOP pending explicit human decision; no expansion of metadata exclusion"
+}

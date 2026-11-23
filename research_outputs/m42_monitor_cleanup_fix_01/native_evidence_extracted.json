@@ -1,0 +1,30 @@
+{
+  "source": "Actual agent tool reads of pytest-31 temporary files before pytest automatic retention cleanup",
+  "full_temporary_copies_available": false,
+  "persistent_original_evidence": "Original Terminal preflight selftests.stdout.log, selftests.xml and preflight.json remain untouched",
+  "records": [
+    {
+      "test": "limit",
+      "pgid": 35853,
+      "observed_tree_rss_bytes": 92471296,
+      "limit_bytes": 50331648,
+      "initial_error": "MemoryError: Process-tree RSS exceeds limit: 92471296 > 50331648",
+      "original_failure_traceback_written_after_first_kill": true,
+      "watchdog_reason": "supervisor heartbeat timeout"
+    },
+    {
+      "test": "broken_sampler",
+      "pgid": 35860,
+      "observed_tree_rss_bytes": 92356608,
+      "initial_error": "PermissionError: injected live ps denial",
+      "original_failure_traceback_written_after_first_kill": true,
+      "watchdog_reason": "supervisor pipe closed unexpectedly"
+    },
+    {
+      "test": "dead_watchdog",
+      "pgid": 35879,
+      "initial_error": "RuntimeError: Independent watchdog exited unexpectedly",
+      "original_failure_traceback_written_after_first_kill": true
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+[declare] wrote /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl
+[declare] experiment workspace: /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s4_01
+[declare] all pipeline-derived factors are measured automatically
+[declare] 1 setting(s) WILL BE DEFAULTED at assessment; preview them with:  api.py explore /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl
+[declare] before assessing: replace the PREDICTION TODOs and the rdfs:label — the seal makes them non-retractable. Then:  reconstruct.py --experiment /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s4_01/p1_m32_20261118_c_v005_s4_01.ttl

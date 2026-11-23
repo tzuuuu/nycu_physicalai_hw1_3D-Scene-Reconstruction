@@ -1,0 +1,13 @@
+{
+  "policy": "m42-layered-v1",
+  "scientific": {
+    "experiments/p2_114753116_a01_baseline_01/p2_114753116_a01_baseline_01.ttl": "6c9713be38d94ed534b070d175fcb6ba8d60f1717e0629633719cad5be0d8050",
+    "experiments/p2_114753116_a01_baseline_01/plots/dashboard.html": "f3a75e5a26788cecbe0a8f783f8802de57686ef82330135b562aad88d74bba97",
+    "experiments/p2_114753116_a01_baseline_01/plots/distributions.html": "7ea2967fe2a67e83d60a022e961d458f16238669ba2baebb72ad2d41a529531f",
+    "experiments/p2_114753116_a01_baseline_01/plots/timelines.html": "285340958daccebd595a84ca327035d830c2fe4ddd3b4af0e238233047a294ca",
+    "experiments/p2_114753116_a01_baseline_01/plots/tradeoff.html": "76211abc899c20612555c1e86fe6115724b67956891d0f3f13d9e2abeb307409",
+    "experiments/p2_114753116_a01_baseline_01/reconstruction.png": "21d26b369c526d7b219d92292a3a3159bbfa4fc1a79a77a003dc965edbdfafd0",
+    "experiments/p2_114753116_a01_baseline_01/reconstruction_baseline.png": "21d26b369c526d7b219d92292a3a3159bbfa4fc1a79a77a003dc965edbdfafd0"
+  },
+  "os_metadata": {}
+}

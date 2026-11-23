@@ -1,0 +1,52 @@
+# =============================================================================
+# EXPERIMENT DECLARATION — p1_baseline_20261118_map005_s0_01   (scaffolded by `api.py declare`)
+#
+# This file is YOURS until `reconstruct.py` seals it: edit the label, trim
+# add setting overrides. After assessment the student section is
+# digest-sealed — a new idea is a NEW file under a NEW name (§3.1).
+#
+# PREDICTION (write BEFORE assessing — the seal makes it non-retractable):
+#   pipeline: Record all eight actual pipeline measurements over all 191 frames.
+#             The provided quality variations may reduce geometric support or alignment; no Pass/Fail thresholds are declared.
+#   baseline: First-20 preflight Mean L2 was 0.00698689 m; longer trajectories may accumulate larger error.
+#             No full-batch numerical bound is claimed. Evaluate in the original first-camera frame without fitting.
+#   hypothesis: Map-only voxel 0.05 m lowers memory while preserving registration, poses and raw factor measurements.
+#   disclosed settings: registration voxel=0.05 m; map voxel=0.05 m; seed=0; Open3D point-to-plane ICP.
+# =============================================================================
+
+@prefix hw1:  <http://taica.course/hw1/ontology#> .
+@prefix batch: <http://taica.course/hw1/data/batch/> .
+@prefix data:  <http://taica.course/hw1/data/> .
+@prefix exp:   <http://taica.course/hw1/experiment/> .
+@prefix factor: <http://taica.course/hw1/experiment/p1_baseline_20261118_map005_s0_01/factor/> .
+@prefix run: <http://taica.course/hw1/experiment/p1_baseline_20261118_map005_s0_01/run/> .
+@prefix setting: <http://taica.course/hw1/experiment/p1_baseline_20261118_map005_s0_01/setting/> .
+@prefix frame: <http://taica.course/hw1/data/batch/floor1_first_floor/frame/> .
+@prefix rgb: <http://taica.course/hw1/data/batch/floor1_first_floor/rgb/> .
+@prefix depth: <http://taica.course/hw1/data/batch/floor1_first_floor/depth/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+exp:p1_baseline_20261118_map005_s0_01
+    a hw1:Experiment ;
+    hw1:schemaVersion "7.0.0" ;
+    rdfs:label "Phase 1 full first-floor baseline; map-only voxel 0.05 m; registration voxel 0.05 m; seed 0"@en ;
+    hw1:batchFile "eval/_data/first_floor" ;
+    hw1:onBatch batch:floor1_first_floor .   # floor1_first_floor
+
+# All pipeline-derived factors are recorded automatically during reconstruction.
+#
+# OVERRIDES — every setting you do not declare is filled from its TBox default
+# at assessment time (preview with `explore` before committing). To override
+# one, replace the final "." above with ";" and append a blank node, e.g.:
+#
+#     hw1:hasFactorSetting [
+#         a hw1:FactorSetting ;
+#         hw1:settingParameter hw1:icpBackend ;
+#         hw1:settingRole hw1:ReconstructionSetting ;
+#         hw1:settingForFactor hw1:ReconstructionRun ;
+#         hw1:settingValue "my_icp"^^xsd:string
+#     ] .
+#
+# hw1:settingRole must match the parameter's TBox hw1:paramRole.

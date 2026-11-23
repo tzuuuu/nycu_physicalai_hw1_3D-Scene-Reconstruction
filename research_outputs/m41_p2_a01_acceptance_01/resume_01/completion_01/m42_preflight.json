@@ -1,0 +1,26 @@
+{
+  "experiment": "p2_114753116_a01_baseline_01",
+  "floor": 2,
+  "input": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/second_floor/114753116/P2_A_01",
+  "frames": 320,
+  "pairs": 319,
+  "factor_occurrences": 2554,
+  "registration_voxel_m": 0.05,
+  "ransac_seed": 0,
+  "icp": "Open3D Point-to-Plane",
+  "map_only_down_voxel_m": 0.05,
+  "rss_limit_bytes": 3221225472,
+  "tree_rss_guard_implemented": false,
+  "ps_permission_verified": false,
+  "ps_probe_traceback_sha256": "71761a840d74b54ef4f1ae61fe4181ca9999ba8a0a6ecc2991aeb7f867e0d1b1",
+  "blockers": [
+    "M4.2尚未獲人工授權",
+    "目前沙箱拒絕/bin/ps；正式環境須先驗證監測與失效停止",
+    "現有record_command只監測直接PID，須新增驗證程序樹總RSS與整組停止",
+    "既有191張專用驗收／觀測須泛化至320張／319對",
+    "同次地圖來源保存規格須固定並驗證，現有map_sample為至多150000點抽樣，非完整未取樣地圖"
+  ],
+  "workspace_created": false,
+  "declaration_executed": false,
+  "reconstruction_executed": false
+}

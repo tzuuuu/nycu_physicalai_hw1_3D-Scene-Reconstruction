@@ -1,0 +1,53 @@
+{
+  "user_instruction": "M3.2 C3\uff0fC4\u57f7\u884c\u74b0\u5883\u6b0a\u9650\u4fee\u5fa9\u8207\u6062\u5fa9\uff1a\u6b63\u5f0f\u6b0a\u9650\u6a5f\u5236\u3001\u539fps\u76e3\u63a7\u82073GiB\u8b77\u6b04\u3001\u65e2\u6709C2\u5be9\u8a08\u4e0d\u91cd\u8dd1\u3001C3\u5f8cC4\u5404\u4e00\u6b21",
+  "remaining_conditions": [
+    "C3",
+    "C4"
+  ],
+  "rerun_B0_through_C2": false,
+  "metadata_exclusion": [
+    "experiments/.DS_Store",
+    "research_outputs/.DS_Store"
+  ],
+  "rss_limit_gib": 3,
+  "monitor": "unchanged record_command.py ps",
+  "registration_failure_policy": "preserve_verify_then_continue",
+  "historical_links": {
+    "suite_stopped.json": "233919e3e5382f7316213adef8405c3c664c7b7701235d7ee533dd10b26ffdbb",
+    "resume_failed.json": "30c3dadd3a83afcaf4a6a0f8c3349fe56ee8da1d47ae867de357678ecc5815d1",
+    "resume_authorization.json": "955e25fe324aa8f839ec3f7f497cb8bbdd4420cdbfd9b144d6a90733c8f11f8e",
+    "suite.json": "11e41dffa5a2bcbec5ebc4cf809da42d4f0b15621dd0e07524bb6ddbe950b535",
+    "resume_02/authorization.json": "27fa289bdf35199264bacb53d422331c047b972bd90fe4b01de062ebc6f60333",
+    "resume_02/system_stopped.json": "6816e5a7919e83e98c33112ba8786f937266787d5f25a3e21e0f2a6d00614e1f",
+    "resume_03/authorization.json": "51210c2a1cfe7699f7fb350d2af501e710d9c7308d6e8246da975aedd3885807",
+    "resume_03/system_stopped.json": "79fd06289cffeb83b033119be1918a4f5f0702db06821cc23e730d1fd5c435b5",
+    "resume_03/status/C2.json": "0f8cb11c48bc4a93c41c7323c2a65361955655a7693a5d2c6519373098f9ffa4",
+    "resume_03/final_manifest.json": "8e9f5ba39f98c0c46006a6ce71c63de8a2ef70a02ffc1b36e005b5d7d3eda58e",
+    "resume_03/final_provenance.json": "6604f4d02e2c87974696aa175dea1464755e9aec941a1cc308f65f2550b3f4c9",
+    "resume_03/stop_preservation/summary.json": "0f5fdc1d597fd0b035454206c010887453d2d14a467a585c2ee292a62b5a061b"
+  },
+  "prior_authorization_sha256": "51210c2a1cfe7699f7fb350d2af501e710d9c7308d6e8246da975aedd3885807",
+  "B0_postprocess_output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess",
+  "permission_probe_sha256": {
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/live_child/console.log": "45d81b4dc563476aad4f24221ddd7f33be6a9c861aa4e09702d2ae61e24486b2",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/live_child/execution.json": "fc82d4c72b15c678b21f5d6125fbbd628946fa665040617ea5d8a0f95e388a14",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/live_child/memory_samples.jsonl": "b8929e88e359bfd39642c15ad39ff95185a223f0a4d0ee1ae144e43b3718427c",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/probe.json": "748592048cb69a408dd97b646bdc08c4e2bd23c64ac14981b5706d66e476f504",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/synthetic_low_limit/console.log": "f4fa456058acfd6d07f7e051f6c3d013f23f87068cca24949effe2d48fc3c4a1",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/synthetic_low_limit/execution.json": "ea31e252d7f7aab3257305a6c049dc99f631399dfb7b71bebc6f712f9ee756fb",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/synthetic_low_limit/memory_samples.jsonl": "e3b771916abc93d071407506ec9293f8f8d5f75d69f75b134901b4f5e06910a6",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/synthetic_monitor_failure/console.log": "025bee5b1168d535905b64f36c3c78f9761bd4c994f108526ca30e4456782a5b",
+    "research_outputs/m32_20261118_suite_01/resume_04/authorized_monitor_probe/synthetic_monitor_failure/execution.json": "7584b01ce1f63376fd774b2d2ef929026528564e52761887d9423cf3911a4e21"
+  },
+  "tool_sha256": {
+    "scripts/m32_analysis.py": "3d1f00dbba348d079ac377e3f09b2bbdba2927bc48bd6178176a3a526e3f779d",
+    "scripts/m32_experiments.py": "d52e68157c7daed981ded149b3d5d6351735376f81127e0c4f81400f130a3263",
+    "scripts/m32_metadata_policy.py": "36c3efe299be78db3b7e553b5539f9d5efaf0a968f1214172e9d180a9dce971e",
+    "scripts/m32_monitor_preflight.py": "2a7847e6abdd7e029b9a9f747dd26ed531e0dd62e817b5a13703cb84d49d1210",
+    "scripts/m32_permission_recovery.py": "e2d10b23e9e8bf772f2219ddd03943fdde87ca205392f556222de37c91195448",
+    "scripts/m32_sensitivity.py": "24eb8b1a150b03d6678022934b35ff5b1149676e2d009675c9daa99f4241400e",
+    "scripts/record_command.py": "d54535881964e204482d7b46bb2bff5c0a210992a5ec60745ea7441e969565f3"
+  },
+  "git_commit": "146c9d5a5203d04f34510a5c27e4f5f7bf952ae0",
+  "created_unix": 1795016558.688522
+}

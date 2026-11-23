@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_baseline.py",
+    "_worker",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m42_p2_a01_baseline_01"
+  ],
+  "exit_code": 0,
+  "reason": null,
+  "passed": true,
+  "elapsed_s": 220.751497,
+  "peak_tree_rss_bytes": 1198620672,
+  "samples": 438,
+  "interval_s": 0.5,
+  "watchdog_timeout_s": 8.0,
+  "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+  "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s"
+}

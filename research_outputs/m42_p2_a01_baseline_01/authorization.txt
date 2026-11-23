@@ -1,0 +1,420 @@
+# Physical AI HW1 — M4.2 Phase 2 First-Pass Baseline：完整工程準備與一次性正式執行授權
+
+## 0. 正式授權與總原則
+
+M4.1 已正式通過：
+
+`P2-A Capture Accepted / Scientific Data Frozen / Ready for M4.2 Authorization`
+
+現在正式核准進入 **M4.2：Phase 2 P2-A First-Pass Baseline Reconstruction**。
+
+本次授權一次完成：
+
+1. 解決目前已知的監測器、權限、觀測器及地圖保存問題。
+2. 建立適用320張影格的正式執行工具。
+3. 執行完整合成測試與執行前驗證。
+4. 在全部必要條件通過後，執行**一次且僅一次**正式320張First-Pass Reconstruction。
+5. 驗證正式Turtle、Seal、八項Factors、Baseline Run及重建結果。
+6. 輸出可供英文報告使用的重建圖片與完整數據。
+7. 建立M4.2正式驗收文件，完成後停止。
+
+**不要再把可以在本次授權範圍內解決的普通工程問題，拆成多次人工核准。**
+
+但若出現科學資料損壞、必要執行權限仍不可取得、監測保護失效，或真正的配準失敗，必須保存證據並停止。不得為了達成一次完成而繞過科學或安全限制。
+
+## 一、正式來源與不可變條件
+
+先閱讀：
+
+- `HW1_3D Scene Reconstruction.pdf`
+- `Phase1_Final_Handoff.md`
+- `M4_Phase2_Capture_Plan.md`
+- `M4_Phase2_P2A_Capture_Acceptance.md`
+- `M4_Phase2_P2A_Capture_Acceptance_Resume.md`
+- M4.1正式Frozen Scientific Data Manifest
+- M4.1最終Provenance
+- Phase 1既有Observer、Resource Monitor及相關測試
+
+正式輸入：
+
+`eval/_data/second_floor/114753116/P2_A_01`
+
+已凍結科學資料：
+
+- RGB：320張。
+- Depth：320張。
+- GT_pose.npy：1份。
+- intrinsics.json：1份。
+- 合計642項科學檔案。
+
+保持全部原始資料及其SHA不變。
+
+正式設定固定：
+
+| 項目 | 設定 |
+|---|---|
+| Experiment | p2_114753116_a01_baseline_01 |
+| Floor | 2 |
+| Frame Count | 320 |
+| Adjacent Pairs | 319 |
+| Registration Voxel | 0.05 m |
+| RANSAC Seed | 0 |
+| ICP Backend | Open3D Point-to-Plane |
+| Map-only Down Voxel | 0.05 m |
+| Expected Factors | 2554 |
+| OMP_NUM_THREADS | 1 |
+| Process-tree RSS Guard | 3 GiB |
+
+此設定是正式Baseline，並非已證實的最佳參數。
+
+嚴禁修改老師核心RANSAC、ICP、反投影、評估方法、Ontology或原始Capture。
+
+---
+
+# 二、一次解決OS Metadata與SHA反覆停止問題
+
+此前多次因macOS Finder `.DS_Store` 變更導致SHA護欄停止。
+
+本次核准針對**新M4.2執行與產物**建立版本化的雙層完整性驗證制度：
+
+### A. Scientific / Source Integrity
+
+以下檔案必須嚴格逐檔SHA-256：
+
+- 原始RGB、Depth、GT、Intrinsics。
+- 教師核心程式與執行設定。
+- Ontology、Pixi Lock、實驗宣告。
+- 正式Experiment Turtle與Seal。
+- 正式Baseline Run。
+- 保存的位姿、Pairwise Transforms、點雲與量測成果。
+- 其他實際影響重建與科學結果的來源檔案。
+
+任何非預期差異都不得自動通過。
+
+### B. OS Metadata Tracking
+
+針對**新建立的M4.2保全清單**，將經確認的Finder `.DS_Store` 與正式科學資料分開管理。
+
+處理方式：
+
+- 必須驗證檔案名稱、類型與Finder中繼資料特徵。
+- 獨立記錄實際路徑、存在狀態、檔案類型、前後SHA。
+- 新執行的科學資料Manifest不將這類檔案當成不可變的科學輸入。
+- 單純Finder中繼資料變更只記錄，不作為正式重建失敗的原因。
+- 若檔案種類不符、存在符號連結異常或變更涉及科學來源，仍須停止。
+- 不得將未知檔案一律視為OS Metadata。
+
+這項授權只適用**新M4.2工具及新建立的來源紀錄**。
+
+不得回頭修改既有歷史SHA、舊Manifest、舊停止紀錄，也不得擴大全域歷史`verify_hashes`的例外範圍。
+
+Phase 1與M4.1原有精確例外、原始停止及採集外層保全失敗事實必須完整保存。
+
+另外，Manifest不得列入自身的SHA，避免先前發生的自我雜湊錯誤。
+
+---
+
+# 三、實作真正的Process-tree RSS監測器
+
+目前已知：
+
+`scripts/record_command.py`
+
+只能監測直接程序PID，不能正確保證整個程序樹總RSS。
+
+本次核准在獨立輔助工具中完成正式監測器，不修改教師核心。
+
+必須支援：
+
+1. 監測正式重建主程序及其全部存活後代程序。
+2. 每0.5秒記錄程序樹總RSS。
+3. 記錄每個PID的RSS、程序樹總和、最大值及時間。
+4. 遇到超過3 GiB時，終止本次啟動的整個重建程序群組。
+5. 監測程序失效或必要PID資訊不可讀時，採Fail-Closed處理。
+6. 終止時保存實際錯誤、最後影格／配準對、監測紀錄。
+7. 不終止其他無關程序。
+8. 不僅將直接PID的RSS冒充程序樹RSS。
+
+允許使用合適的macOS程序查詢方式、`ps`或現有環境可用的程序管理函式庫。
+
+RSS程序樹加總屬保守資源指標；監測間隔也不能保證瞬間峰值絕對不會超過3 GiB。請在報告中說明實際監測方法及限制。
+
+### 監測器必須先完成合成測試
+
+至少驗證：
+
+- 單一程序正常取樣。
+- 父程序加多個子程序的RSS加總。
+- 低門檻合成超限事件。
+- 整個受監測程序群組的終止。
+- 監測權限被拒絕。
+- 監測工具意外退出。
+- 程序正常結束及退出碼保存。
+- 不會誤殺無關程序。
+- 停止後仍能保存部分證據。
+
+**不得以單PID監測器取代這個要求。**
+
+---
+
+# 四、一次處理Codex沙箱的ps權限問題
+
+此前`/bin/ps`在Codex沙箱遭到：
+
+`PermissionError: Operation not permitted`
+
+這不必然代表我登入的Mac Terminal也無法使用`ps`。
+
+因此請採以下優先順序：
+
+### 方案A：Codex可使用正式監測權限
+
+若在實際執行環境中可以讀取程序樹並通過全部合成測試，直接使用受保護Runner完成後續工作。
+
+### 方案B：Codex沙箱無法監測，但Mac Terminal可以
+
+如果Codex沙箱拒絕`ps`：
+
+- 不要反覆執行相同失敗命令。
+- 不要反覆要求我核准相同的唯讀權限。
+- 不要降低監測要求。
+- 不要自行取消3 GiB護欄。
+
+改為產生**可由我在Mac Terminal直接執行的一次性Runner**。
+
+此Runner必須包含：
+
+- 所有必要Preflight。
+- 程序樹監測自我測試。
+- Frozen Capture SHA驗證。
+- 正式Experiment Declaration。
+- 一次正式First-Pass。
+- 完整觀測與結果保存。
+- 事後科學完整性驗證。
+
+請提供明確的單一啟動命令與使用方式，不要要求我手動拼接多個不同版本腳本。
+
+如果需要我親自在Mac Terminal啟動，工程準備仍應全部完成，只把實際受權限限制的正式執行交給我。
+
+只有在實際Mac Terminal也無法安全完成監測時，才視為真正阻擋並停止。
+
+---
+
+# 五、適配320張資料的完整Observer
+
+既有M3研究工具部分硬編碼191張／190對。
+
+請在不修改教師核心的前提下，建立可泛化的Phase 2 Observer。
+
+要求：
+
+- 根據輸入Capture自動確認N=320。
+- 自動推導319對相鄰配準。
+- 自動推導2554筆預期因素。
+- 所有檢查依實際N計算，不再依賴191張常數。
+- 記錄每張影格與每對配準的進度。
+- 保存真實RANSAC／ICP回傳結果與品質因素。
+- 發生錯誤時保留已完成的部分紀錄。
+- 不以錯誤補值、Identity Transform或GT資料冒充配準成功。
+- 不改變原始Pipeline的隨機數狀態、配準順序與計算結果。
+
+正式執行前，必須在合成RGB-D及小型配準案例驗證Observer不影響位姿、因素、Mean L2與回傳資料。
+
+若Observer造成結果差異，必須修正並重測，不得直接執行正式320張。
+
+---
+
+# 六、同次正式重建結果必須完整保存
+
+Phase 1的原M2曾因沒有保存同次完整點雲及位姿，導致最終報告圖片受到限制。
+
+這次請事先解決。
+
+正式First-Pass成功時，至少保存：
+
+### 1. Estimated Trajectory
+
+- 320個完整4×4 Estimated Camera Poses。
+- 320個Camera Centers。
+- 固定首相機參考座標系。
+- 真正的dtype、shape、座標系與來源。
+
+### 2. Pairwise Registration
+
+- 319個正式Pairwise Transforms。
+- current→previous方向。
+- RANSAC初始變換及ICP最終變換。
+- 對應的frame indices。
+- 必要的真實品質Factors。
+
+### 3. Reconstruction Map
+
+保存與同次正式Pipeline回傳一致、已使用map-only down_voxel=0.05m的地圖點雲及顏色。
+
+應優先保存完整的**正式回傳地圖**，例如NPZ、PLY或其他可驗證格式。
+
+注意：
+
+- 這裡的完整，是指已經過正式Pipeline地圖降採樣後的回傳地圖。
+- 不等同於原始全部深度像素形成的未降採樣點雲。
+- 不得把最多150000點的抽樣地圖聲稱為完整回傳地圖。
+- 可另存較小的可視化抽樣，但必須和正式保存來源分開。
+- 記錄點數、dtype、座標系、降採樣與裁切規則、SHA。
+
+正式執行前，須使用合成資料驗證地圖輸出方式的記憶體成本。
+
+可實作非侵入式的記憶體友善保存或分塊輸出，但不可修改正式重建演算法。
+
+如果無法在3 GiB護欄內安全保存完整回傳地圖，應在正式執行前停止並提出明確的替代保存方案；不能執行後才告知完整地圖遺失。
+
+---
+
+# 七、正式執行前一次完成所有Preflight
+
+請建立一份機器可讀、逐項顯示通過或失敗的Preflight結果。
+
+所有必要項目應在正式Declaration之前確認：
+
+| 檢查 | 必要條件 |
+|---|---|
+| Capture | 642項Frozen Scientific SHA全部相符 |
+| Git | main、工作目錄乾淨、Snapshot正確 |
+| 核心與環境 | 老師核心、Ontology、Pixi來源一致 |
+| 資源 | 磁碟空間、可用記憶體適當 |
+| Monitor | 程序樹RSS及終止測試通過 |
+| Permissions | 實際執行環境可取得必要監測資訊 |
+| Observer | 320／319／2554動態計數及合成測試通過 |
+| Map Export | 同次正式回傳地圖可以安全保存 |
+| Workspace | 正式Experiment名稱與輸出路徑均尚未存在 |
+| Preservation | 舊科學成果與來源清單完整 |
+| Runtime | 官方CLI、固定參數與原始首影格確認 |
+
+只允許在所有必要條件通過後建立正式Experiment。
+
+不要先建立正式Workspace，再發現監測器無法使用。
+
+正式執行前先完成必要的輔助工具Commit及測試，再以乾淨工作目錄執行。
+
+不要為了清乾淨工作目錄使用自動stash、reset或刪除研究資料。
+
+---
+
+# 八、正式M4.2 First-Pass執行
+
+所有Preflight通過後，**本次已授權執行一次正式First-Pass，不需要再單獨詢問我是否核准開始。**
+
+正式Experiment：
+
+`experiments/p2_114753116_a01_baseline_01`
+
+研究輸出使用新的獨立目錄，所有產物不得覆寫Phase 1、M4.1或其他歷史Workspace。
+
+正式順序：
+
+1. 完成Experiment Declaration，Floor=2、指向完整P2_A_01。
+2. 保存宣告、設定、來源與執行前SHA。
+3. 使用官方Reconstruction Pipeline。
+4. Registration voxel固定0.05m。
+5. Seed固定0。
+6. ICP使用Open3D Point-to-Plane。
+7. Map-only down voxel固定0.05m。
+8. 不先刪除或選取任何影格。
+9. 在程序樹3 GiB RSS護欄下完成一次正式FullBatch。
+10. 同次保存位姿、Pairwise Transforms、正式地圖及必要觀測。
+11. 完成後驗證正式Turtle、因素、Seal、Baseline Run。
+12. 執行官方Explore及結果視覺化。
+13. 重新驗證Frozen Capture、核心與歷史科學資料SHA。
+
+GT只能用於離線資料描述與正式評估，不能用來設定RANSAC初值、挑選影格或調整正式Baseline結果。
+
+**禁止自動更換Seed、Voxel Size、影格集合，或無限制重試直到成功。**
+
+若正式執行因真實配準錯誤而失敗，這是有效的實驗結果，必須保留，而不是工程腳本應該自動修補的錯誤。
+
+---
+
+# 九、正式結果與驗收內容
+
+如完整320張成功，驗證：
+
+- 320張正式處理。
+- 319對相鄰配準。
+- 2554筆八項因素。
+- 完整合法Turtle。
+- 有效Declaration、Seal及Baseline Run。
+- Mean L2 Distance。
+- 完整Runtime與資源記錄。
+- Estimated Poses及Pairwise Transforms數量。
+- 同次返回地圖與來源SHA。
+- 去天花板場景。
+- Estimated Trajectory紅色。
+- Ground Truth Trajectory黑色。
+- 各主要區域的重建結果及缺失。
+
+同時生成：
+
+- 二樓正式重建圖。
+- Top-down與適合的3D視角。
+- Per-frame L2 Error。
+- 八項品質因素圖。
+- 完整Baseline結果比較表。
+- 後續Data Intervention的候選研究問題。
+
+本階段只整理候選假說，不得開始P2-B Selected Reconstruction。
+
+若First-Pass失敗，只報告真實完成前綴、失敗位置、部分因素及停止原因；不可產生假的完整Mean L2、完整Seal或2554筆Factors。
+
+---
+
+# 十、文件、Git與停止條件
+
+建立：
+
+`docs/implementation/M4_Phase2_P2A_Baseline_Acceptance.md`
+
+另在獨立研究目錄保存：
+
+- Preflight與自我測試。
+- 執行授權與來源版本。
+- 正式命令與環境設定。
+- Observer原始紀錄。
+- Process-tree RSS時間序列。
+- 正式重建產物。
+- Turtle、Seal、因素及Run驗證。
+- 圖片及SHA。
+- 科學資料與OS Metadata分層保全紀錄。
+- 成功或失敗的真實執行證據。
+
+實驗產物、點雲、圖片、Capture及大型JSON不得加入Git；只提交必要輔助原始碼、測試與文件。
+
+在正式執行成功或有意義地失敗後，立即停止。
+
+不開始：
+
+- P2-B。
+- P2-C。
+- 新Seed或Voxel實驗。
+- Experiment D。
+- Bonus ICP。
+- 最終英文報告。
+- 正式Submission ZIP。
+
+## 最重要的執行要求
+
+**請將所有目前已知且可預防的工程問題，在一次正式重建前全部處理完成。**
+
+不得因同一個已知的沙箱`ps`限制、191張硬編碼、未設計的地圖匯出，或Finder中繼資料SHA變動，反覆要求相同核准。
+
+如果Codex環境不能完成必要的原生macOS監測，請提供整合所有檢查與正式執行的單一Mac Terminal命令，讓我親自執行，而非重新切分工作。
+
+不得聲稱已經修復、通過或完成任何尚未實際測試的功能。
+
+最終回報必須明確區分：
+
+- 工程準備已完成。
+- Preflight已通過。
+- 正式First-Pass已執行。
+- 正式First-Pass成功或失敗。
+- M4.2實驗驗收通過或待處理。
+
+**這份Prompt已一次核准上述工程準備與通過Preflight後的單次正式重建，不需再要求逐階段人工授權；但不得跳過真正必要的安全及科學完整性停止條件。**

@@ -1,0 +1,7 @@
+{
+  "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/pairs.csv": "faae75b3792c753eb5e584b85f6db266f8433d8e1fba40ce925f2628cfefcf14",
+  "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/summary.json": "c22e87b705001da05cae0b616dbdcd44516880aac0e3f968ec0a02f543c13e41",
+  "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/poses_offline.npz": "323e0c656e140d8b3af98614342becc2848412f0f19a20fa97d1de242783a5b8",
+  "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frames.csv": "01d2583155d6e9364b443595390b01ecbcd675fb3101592e27f1b838725b8f96",
+  "research_outputs/m32_p1_m32_20261118_c_v005_s3_01/analysis/frame_and_pair_errors.png": "a5eb70c57950a2299a8b8f908275d668ab41f50161de90a086534370d19bc72d"
+}

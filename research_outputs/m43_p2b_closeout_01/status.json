@@ -1,0 +1,10 @@
+{
+  "technical_acceptance_passed": true,
+  "scientific_results_preserved": true,
+  "visual_review_completed": true,
+  "human_final_acceptance": "pending user",
+  "phase2_result_handoff_complete": true,
+  "stopped": true,
+  "original_terminal_status_preserved": true,
+  "only_offline_postprocess_recovered": true
+}

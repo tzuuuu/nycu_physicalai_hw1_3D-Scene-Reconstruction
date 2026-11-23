@@ -1,0 +1,17 @@
+{
+  "policy": "m42-layered-v1",
+  "scientific": {
+    "research_outputs/m43_p2b_preparation_01/diagnostic_rgb_contact_sheet.png": "24b217cf0a4b7738b8a9aeb2d0d206dc9d42797526b666c57f04aa07212688b4",
+    "research_outputs/m43_p2b_preparation_01/eight_factor_distributions.png": "4c28d477a6449a7e6b1e403e9215d3c70b0cae3abe5ba32c664c48893f918994",
+    "research_outputs/m43_p2b_preparation_01/eight_factor_series.png": "f5ae287fc680ab31e366ffeb82f9841d92f7dedcb6313f851477575b7d9f2d24",
+    "research_outputs/m43_p2b_preparation_01/eight_factor_statistics.csv": "a59e414b93352bcc369acf88d41e00a229677a613fa5bd053d12c947f4608736",
+    "research_outputs/m43_p2b_preparation_01/eight_factors.csv": "2718f3fb4ed7c9474488ecb71ce536bfd30834bb7ba0d15bc955e82d6601eb52",
+    "research_outputs/m43_p2b_preparation_01/factor_statistics.json": "feeca0f9cae00acfce9a5afee5bb60791a94c2faf66aa286b9d5c3ddd6232daf",
+    "research_outputs/m43_p2b_preparation_01/non_gt_motion.csv": "3713da20e5d1ae6178b0ac0789fe438736757292fcd97b41478dfbe2db37dbff",
+    "research_outputs/m43_p2b_preparation_01/non_gt_motion_and_selection.png": "7d388881cf9d4fc6a041b5365279bca1736207d7f3232f3d76ced3f877910f44",
+    "research_outputs/m43_p2b_preparation_01/quality_tail_pairs.csv": "cbe8a859978be71f4b8f829fa48bfa41ec23ac9426cfe4a74ccc7f5741afeea9",
+    "research_outputs/m43_p2b_preparation_01/selected_indices.csv": "b1fa4a9a2984e83183eec0cb6bc06a8afad1fd306235817aaed6df46b1d3f071",
+    "research_outputs/m43_p2b_preparation_01/verification.json": "0ed86226f68ec87b78713c3f541dd2fc8a98af53f87386b25d478021c73e6a6b"
+  },
+  "os_metadata": {}
+}

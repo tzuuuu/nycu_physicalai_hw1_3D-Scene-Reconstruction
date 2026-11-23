@@ -1,0 +1,35 @@
+{
+  "scope": "M4.1 resume_01 only",
+  "authorized_paths": [
+    "eval/_data/second_floor/.DS_Store",
+    "eval/_data/second_floor/114753116/P2_A_01/.DS_Store"
+  ],
+  "m42_authorized": false,
+  "user_instruction": "使用者正式核准以下兩個精確路徑的OS中繼資料SHA例外：eval/_data/second_floor/.DS_Store；eval/_data/second_floor/114753116/P2_A_01/.DS_Store。本次只授權恢復M4.1最終驗收，不授權M4.2重建。",
+  "requirements": [
+    "只限既存一般Finder中繼資料檔案",
+    "不擴展Phase 1例外、不排除科學資料",
+    "不刪除／修改／復原中繼檔",
+    "不更新歷史SHA",
+    "保留原始外層保全失敗及所有停止紀錄",
+    "任何第三個差異立即停止"
+  ],
+  "human_coverage_confirmation": "P2-A的320張影格已涵蓋二樓所有可到達的主要房間及通道，以及房間之間的連通區域。",
+  "original_stop_references": {
+    "research_outputs/m41_p2_a01_acceptance_01/acceptance_stopped.json": "f00a3a85cff853ad961ddf793e35b6d05a6e6fcac02ed7e8dc1192d16407f507",
+    "research_outputs/m41_p2_a01_acceptance_01/capture_finish_reference_sha256.json": "33526a9e103cfd928ab29f56dc9c2179d1012a383c7dc78016b02cccf17a1a27",
+    "research_outputs/m41_p2_a01_acceptance_01/capture_metadata.current.bin": "382cc84dd10e9e27e63c215ad17a6d9bf0309572ddd0c1f64a39fd2de05eac0a",
+    "research_outputs/m41_p2_a01_acceptance_01/capture_verification_reference_sha256.json": "e67d9a4ab794174e3386ea7d5dc21a5ab07a12aa5552ae862d6e85485749c283",
+    "research_outputs/m41_p2_a01_acceptance_01/human_coverage_confirmation.json": "cfc54dc334e035c689f294d802504042ef971cad85c48c5186872acf4ed09a36",
+    "research_outputs/m41_p2_a01_acceptance_01/manifest.json": "2410c859e61f81d452e62b76d7ec20ebdbd17ad11b86b9b23c1881ed61594da0",
+    "research_outputs/m41_p2_a01_acceptance_01/parent_metadata.current.bin": "4809a73fa9c2fe9f60e7deb62dba2884135ad96a41aa653f962d922415c0141c",
+    "research_outputs/m41_p2_a01_acceptance_01/provenance.json": "ba3cca9020e67d4ccddc13d100ec87f42a91f6f6230607502daad8aca72bf172",
+    "research_outputs/m41_p2_a01_acceptance_01/source_capture.safe.yaml": "5f60aa0ba6c3c6f67b06fe8687d9bf48d1dd00b0a387502a09d0ae613855db19",
+    "research_outputs/m41_p2_a01_acceptance_01/source_finish.json": "6f51de493c680bb30dff9058cba2be7e7477ffc5aac115763503a2234a752a65",
+    "research_outputs/m41_p2_a01_acceptance_01/source_protected.before.json": "259ece854011f3bf9bc5eaeecba21d040f5559330c70f87acda0b77ead769997",
+    "research_outputs/m41_p2_a01_acceptance_01/source_start.json": "3104ca4e687ef5a80dddafa05cc461d71dd6a23f1669487197e150ce336eea61",
+    "research_outputs/m41_p2_a01_acceptance_01/source_verification.json": "ea8be138234c1d3297a3231e05869b150cf38c2af590e6354c8a26486e94e30c"
+  },
+  "created_at_utc": "2026-11-19T06:49:39.830544+00:00",
+  "git_commit": "15a3027c2b48a734e81e4142f1fa18e398cdea5f"
+}

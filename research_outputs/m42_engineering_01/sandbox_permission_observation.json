@@ -1,0 +1,7 @@
+{
+  "command": "/bin/ps -axo pid=,ppid=,pgid=,rss=",
+  "observed_error": "zsh: operation not permitted: /bin/ps",
+  "evidence_source": "Actual initial Codex exec tool output in this chat; command was not repeated for this receipt",
+  "native_terminal_permission": "not_tested",
+  "formal_workspace_created": false
+}

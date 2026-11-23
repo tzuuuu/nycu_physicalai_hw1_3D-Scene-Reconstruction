@@ -1,0 +1,28 @@
+ WARN Could not read the virtual package detector registrations of the channels, using pixi's built-in detection only: failed to open '/Users/alyssa/Library/Caches/rattler/cache/repodata/fa96033f.shards-cache-v1'
+..sssss....F                                                             [100%]
+=================================== FAILURES ===================================
+______________ test_failure_retains_real_prefix_and_not_fake_map _______________
+
+rgbd_capture = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-20/test_failure_retains_real_pref0')
+tmp_path = PosixPath('/private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-20/test_failure_retains_real_pref0')
+
+    def test_failure_retains_real_prefix_and_not_fake_map(rgbd_capture,tmp_path):
+        # Corrupt second input after frame one is prepared; core must throw.
+        (rgbd_capture/'depth/20.png').write_bytes(b'invalid')
+        out=tmp_path/'prefix'; out.mkdir(); observer=o.Observer(out)
+        try:
+            sys.setprofile(observer)
+            with pytest.raises(Exception):
+>               utils.reconstruct(str(rgbd_capture),frames=[3,20,101],verbose=False)
+E               Failed: DID NOT RAISE <class 'Exception'>
+
+tests/test_m42_observer.py:98: Failed
+=============================== warnings summary ===============================
+tests/test_m42_observer.py::test_failure_retains_real_prefix_and_not_fake_map
+  /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/utils.py:291: RuntimeWarning: Unreadable RGB-D frame: /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-20/test_failure_retains_real_pref0/rgb/20.png, /private/var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/pytest-of-alyssa/pytest-20/test_failure_retains_real_pref0/depth/20.png
+    warnings.warn(f"Unreadable RGB-D frame: {rgb_path}, {depth_path}", RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_m42_observer.py::test_failure_retains_real_prefix_and_not_fake_map
+1 failed, 6 passed, 5 skipped, 1 warning in 14.32s

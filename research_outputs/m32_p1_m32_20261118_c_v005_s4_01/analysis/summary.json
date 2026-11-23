@@ -1,0 +1,285 @@
+{
+  "condition": "C4",
+  "name": "p1_m32_20261118_c_v005_s4_01",
+  "voxel_m": 0.05,
+  "seed": 4,
+  "n": 191,
+  "factor_count": 1522,
+  "mean_l2_m": 3.3667092325902632,
+  "retained_fraction": 1.0,
+  "max_l2_m": 11.154213880795112,
+  "max_l2_frame": 160,
+  "final_l2_m": 6.262906994014161,
+  "final_orientation_error_deg": 179.71506439391277,
+  "pair103_104": {
+    "gt_translation_m": 2.220446049250313e-16,
+    "pred_translation_m": 0.9373767240865595,
+    "gt_rotation_deg": 9.999998835877212,
+    "pred_rotation_deg": 179.60731776852685,
+    "relative_translation_error_m": 0.9373767240865596,
+    "relative_rotation_error_deg": 179.54082233969885,
+    "coarse_translation_error_m": 0.7578250416764027,
+    "coarse_rotation_error_deg": 165.06104242619452,
+    "icp_correction_translation_m": 0.24176315618832556,
+    "icp_correction_rotation_deg": 14.696986337814042,
+    "previous": 103,
+    "current": 104,
+    "coarse_fitness": 0.726370424330723,
+    "coarse_rmse": 0.03553940310959014,
+    "coarse_correspondences": 7977,
+    "icp_fitness": 0.8390092879256966,
+    "icp_rmse": 0.03175021593966248,
+    "icp_correspondences": 9214
+  },
+  "pair104_105": {
+    "gt_translation_m": 0.0,
+    "pred_translation_m": 0.03314341694176898,
+    "gt_rotation_deg": 9.999999091188617,
+    "pred_rotation_deg": 9.741863573534918,
+    "relative_translation_error_m": 0.03314341694176898,
+    "relative_rotation_error_deg": 0.34156978338264327,
+    "coarse_translation_error_m": 0.13454219603181747,
+    "coarse_rotation_error_deg": 9.54645282806947,
+    "icp_correction_translation_m": 0.1485321075825898,
+    "icp_correction_rotation_deg": 9.608852505114081,
+    "previous": 104,
+    "current": 105,
+    "coarse_fitness": 0.7262205558725242,
+    "coarse_rmse": 0.03445842032927987,
+    "coarse_correspondences": 8910,
+    "icp_fitness": 0.8736653353981579,
+    "icp_rmse": 0.027569556824979823,
+    "icp_correspondences": 10719
+  },
+  "severe_coarse_gt150_current_frames": [
+    104
+  ],
+  "severe_icp_gt150_current_frames": [
+    104
+  ],
+  "coarse_gt90_current_frames": [
+    104
+  ],
+  "icp_gt90_current_frames": [
+    104
+  ],
+  "reconstruction_s": 294.157499792,
+  "total_process_s": 306.57731725,
+  "peak_rss_bytes": 874381312,
+  "sampled_peak_rss_bytes": 830308352,
+  "cpu_user_s": 298.17321300000003,
+  "cpu_system_s": 5.8802330000000005,
+  "map": {
+    "ceiling_cropped_points": 2724546,
+    "sample_stride": 19,
+    "axis_min": [
+      -3.026561290220863,
+      -0.4844348415122096,
+      -10.092406500232176
+    ],
+    "axis_max": [
+      10.809568915607692,
+      1.838012491934613,
+      4.710566785933406
+    ]
+  },
+  "factor_summary": {
+    "CoarseRANSACCorrespondences": {
+      "count": 190,
+      "min": 3534.0,
+      "max": 37486.0,
+      "mean": 18514.168421052633,
+      "median": 17164.5,
+      "min_frames": [
+        25
+      ],
+      "max_frames": [
+        132
+      ]
+    },
+    "CoarseRANSACFitness": {
+      "count": 190,
+      "min": 0.617785,
+      "max": 1.0,
+      "mean": 0.9227338389473684,
+      "median": 0.9583484,
+      "min_frames": [
+        151
+      ],
+      "max_frames": [
+        147,
+        148
+      ]
+    },
+    "CoarseRANSACRMSE": {
+      "count": 190,
+      "min": 0.01569501,
+      "max": 0.03879743,
+      "mean": 0.026612841736842103,
+      "median": 0.02623464,
+      "min_frames": [
+        147
+      ],
+      "max_frames": [
+        178
+      ]
+    },
+    "ICPInlierCorrespondences": {
+      "count": 190,
+      "min": 3539.0,
+      "max": 37643.0,
+      "mean": 18525.4,
+      "median": 17093.0,
+      "min_frames": [
+        25
+      ],
+      "max_frames": [
+        133
+      ]
+    },
+    "ICPInlierFitness": {
+      "count": 190,
+      "min": 0.6189574,
+      "max": 1.0,
+      "mean": 0.9236704768421053,
+      "median": 0.95812675,
+      "min_frames": [
+        151
+      ],
+      "max_frames": [
+        147,
+        148
+      ]
+    },
+    "ICPInlierRMSE": {
+      "count": 190,
+      "min": 0.01022315,
+      "max": 0.03175022,
+      "mean": 0.020883407,
+      "median": 0.020692895000000003,
+      "min_frames": [
+        144
+      ],
+      "max_frames": [
+        104
+      ]
+    },
+    "RawPointCount": {
+      "count": 191,
+      "min": 177608.0,
+      "max": 262144.0,
+      "mean": 249540.30890052355,
+      "median": 262141.0,
+      "min_frames": [
+        114
+      ],
+      "max_frames": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        47,
+        48,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        190,
+        191
+      ]
+    },
+    "VoxelizedPointYield": {
+      "count": 191,
+      "min": 4003.0,
+      "max": 39638.0,
+      "mean": 19943.71727748691,
+      "median": 18659.0,
+      "min_frames": [
+        148
+      ],
+      "max_frames": [
+        116
+      ]
+    }
+  },
+  "official_pipeline_evidence_validated": true,
+  "full_workflow_complete": true,
+  "source_git_commit": "146c9d5a5203d04f34510a5c27e4f5f7bf952ae0",
+  "analysis_script_sha256": "3d1f00dbba348d079ac377e3f09b2bbdba2927bc48bd6178176a3a526e3f779d",
+  "analysis_s": 0.34559116700000914,
+  "output_bytes_before_summary": 47863474
+}

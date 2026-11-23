@@ -1,0 +1,36 @@
+{
+  "engineering_implementation_complete": true,
+  "sandbox_regression": {
+    "passed": 61,
+    "skipped": 6
+  },
+  "supplemental_observer_tests_passed": 7,
+  "preflight": "research_outputs/m42_preflight_20261119T072037Z_8d96a029/preflight.json",
+  "preflight_sha256": "fe71551adb2ab11eed5424af4b1bfbf39a84a0cd6217de31c304c62b4fa84c81",
+  "preflight_passed": false,
+  "preflight_checks_passed": 11,
+  "preflight_checks_total": 13,
+  "pending": [
+    "actual_process_tree_permission",
+    "monitor_observer_map_selftests"
+  ],
+  "frozen_scientific_sha_matches": 642,
+  "historical_preservation": {
+    "scientific_files": 2681,
+    "scientific_all_match": true,
+    "metadata_differences": 1
+  },
+  "source": {
+    "commit": "dcb88fce82e01b14d766b57b295c7181781d95f1",
+    "branch": "main",
+    "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+    "clean": true
+  },
+  "formal_experiment_exists": false,
+  "formal_output_exists": false,
+  "official_first_pass_started": false,
+  "official_first_pass_outcome": null,
+  "m42_acceptance": "pending Terminal execution",
+  "figures": "synthetic validation only; not formal second-floor reconstruction",
+  "stop": "Plan B engineering delivery; no P2-B/P2-C/other reconstruction or report started"
+}

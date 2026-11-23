@@ -1,0 +1,24 @@
+[reconstruct] === baseline measuring run ===
+  frame    0/319
+  frame   25/319
+  frame   50/319
+  frame   75/319
+  frame  100/319
+  frame  125/319
+  frame  150/319
+  frame  175/319
+  frame  200/319
+  frame  225/319
+  frame  250/319
+[1;33m[Open3D WARNING] Too few correspondences (739) after mutual filter, fall back to original correspondences.[0;m
+  frame  275/319
+  frame  300/319
+  frame  319/319
+Mean L2 distance: 0.070258 meters  (over 320 frames, 320 reconstructed)
+[reconstruct] saved reconstruction image -> /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p2_114753116_a01_baseline_01/reconstruction.png
+[experiment] batch 'floor2_P2_A_01': 320 frames -> 2554 pipeline factor occurrence(s)
+[experiment] experiment IRI  http://taica.course/hw1/experiment/p2_114753116_a01_baseline_01
+[experiment] declarationDigest 6f077c653e35b9a54abc2a1ed93a5f36e3d3d91567a269005f2116b4fc9d20e3
+[experiment] appended 22683 triples below the marker -> /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p2_114753116_a01_baseline_01/p2_114753116_a01_baseline_01.ttl
+[experiment] this file is now SEALED: edit it above the marker and every reader will refuse it. Next: `api.py explore /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p2_114753116_a01_baseline_01/p2_114753116_a01_baseline_01.ttl`, then `reconstruct.py --experiment /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p2_114753116_a01_baseline_01/p2_114753116_a01_baseline_01.ttl`.
+[reconstruct] wrote baseline run: Mean L2 Distance = 0.07025845236530649 (stored as hw1:mapMeanL2 at file precision), runFrameCount = 320 -> /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p2_114753116_a01_baseline_01/p2_114753116_a01_baseline_01.ttl

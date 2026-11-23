@@ -1,0 +1,18 @@
+{
+  "argv": [
+    ".pixi/envs/habitat/bin/python",
+    "-m",
+    "scripts.m43_closeout",
+    "analyze"
+  ],
+  "exit_code": 0,
+  "reason": null,
+  "passed": true,
+  "elapsed_s": 20.751796916,
+  "peak_tree_rss_bytes": 741687296,
+  "samples": 42,
+  "interval_s": 0.5,
+  "watchdog_timeout_s": 8.0,
+  "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+  "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s"
+}

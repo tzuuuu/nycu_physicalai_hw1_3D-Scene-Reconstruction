@@ -1,0 +1,18 @@
+{
+  "reconstructed_frames": 191,
+  "pairs": 190,
+  "mean_l2_m": 3.174055104788137,
+  "official_mean_l2_m": 3.174055104788137,
+  "l2_difference_m": 0.0,
+  "factor_comparison": {
+    "official_count": 1522,
+    "diagnostic_count": 1522,
+    "mismatch_count": 0,
+    "differences": []
+  },
+  "protected_files_unchanged": true,
+  "protected_files_count": 470,
+  "reconstruction_s": 282.84604120899996,
+  "baseline_equivalent": true,
+  "status": "matched_ready_for_analysis"
+}

@@ -1,0 +1,45 @@
+{
+  "figures": {
+    "reconstruction_top_down.png": {
+      "caption": "Same-call complete returned map saved in map_points.npy/map_colors.npy; figure uses deterministic stride 14 (146753 displayed points), ceiling already removed by the official pipeline. Fixed first-camera reference, display flips Y/Z. Estimated red, GT black. No fitted alignment. Viewpoint coverage is not a measured whole-floor surface completeness percentage.",
+      "sha256": "a8cb021c8b3dea51d643731d7e6fcf7615dd147e1bf79efba8d1b898e9849a90"
+    },
+    "reconstruction_3d.png": {
+      "caption": "Same-call complete returned map saved in map_points.npy/map_colors.npy; figure uses deterministic stride 14 (146753 displayed points), ceiling already removed by the official pipeline. Fixed first-camera reference, display flips Y/Z. Estimated red, GT black. No fitted alignment. Viewpoint coverage is not a measured whole-floor surface completeness percentage.",
+      "sha256": "b9229603bfef11becd0fa8618b8a94f01fc9a0282b3e714e9041a81cf0a5d8d9"
+    },
+    "spatial_regions.png": {
+      "caption": "Same-call complete returned map saved in map_points.npy/map_colors.npy; figure uses deterministic stride 14 (146753 displayed points), ceiling already removed by the official pipeline. Fixed first-camera reference, display flips Y/Z. Estimated red, GT black. No fitted alignment. Viewpoint coverage is not a measured whole-floor surface completeness percentage. Four map-extent quadrants; these are not inferred room names or route coverage labels.",
+      "sha256": "383367ccb07760efdead304c9020923534f27f2c786b97ef07c0ec43136d3579"
+    },
+    "per_frame_l2.png": {
+      "caption": "All 320 same-run camera centers evaluated in fixed first-camera reference; no best-fit transform.",
+      "sha256": "35a8b5bcb7f549ffbc6094eb0034fe415966a8a11cd14f452ce9bfa9ec7dbe6c"
+    },
+    "eight_quality_factors.png": {
+      "caption": "Raw official pipeline factors; 320 observations per single-frame factor and 319 per pair factor; no qualification thresholds assigned.",
+      "sha256": "e35b73fac75165a1b34f383b5235507a1ae60715d1fb8a966bf960e264fc2bca"
+    }
+  },
+  "map_sources": {
+    "map_points": {
+      "shape": [
+        2054529,
+        3
+      ],
+      "dtype": "float64",
+      "sha256": "6df80b8c8ed4f548f6cac5273fda69825eac023d4c71c5e9740d9b93cf5056e8"
+    },
+    "map_colors": {
+      "shape": [
+        2054529,
+        3
+      ],
+      "dtype": "float64",
+      "sha256": "786538d79e22a60ea4b250254d35bda561c2ce5ef63ccf73472b9777a67b1bbb"
+    }
+  },
+  "trajectory_sha256": "de589ca90c78ac28184594f71be848c53bab4c0d0c31c2b730b4788debcf07ac",
+  "ttl_sha256": "6c9713be38d94ed534b070d175fcb6ba8d60f1717e0629633719cad5be0d8050",
+  "visualization_stride": 14
+}

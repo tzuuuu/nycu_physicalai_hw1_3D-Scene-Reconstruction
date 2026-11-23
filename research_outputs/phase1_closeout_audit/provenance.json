@@ -1,0 +1,17 @@
+{
+  "final_git_commit": "d0774fab7b68a2debb577b013d0695c7958ca467",
+  "branch": "main",
+  "working_tree_clean": true,
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "F1_complete": false,
+  "F2_started": false,
+  "F3_started": false,
+  "final_local_date": "2026-11-19",
+  "timezone": "Asia/Taipei",
+  "audit_document_sha256": "9635fdce45c2d39054c2c67de391c46d1b6d76bd232bf438c462b2958720dd96",
+  "stop_record_sha256": "1007469b25d0b6fd2892c6b20cec0e60b275ef3ab26f08cc0a4e6caf847b0cc9",
+  "no_core_or_metadata_policy_changes": true,
+  "new_tests_executed": false,
+  "formal_experiments_executed": false,
+  "final_status_not_claimed": true
+}

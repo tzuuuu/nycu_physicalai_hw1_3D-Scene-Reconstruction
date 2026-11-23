@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "counts": {
+    "frames": 320,
+    "pairs": 319,
+    "factors": 2554
+  },
+  "same_run_factor_match": true,
+  "seal_valid": true,
+  "baseline_only": true,
+  "mean_l2_m": 0.07025845236530649,
+  "full_returned_map": {
+    "arrays": {
+      "map_points": {
+        "shape": [
+          2054529,
+          3
+        ],
+        "dtype": "float64",
+        "sha256": "6df80b8c8ed4f548f6cac5273fda69825eac023d4c71c5e9740d9b93cf5056e8"
+      },
+      "map_colors": {
+        "shape": [
+          2054529,
+          3
+        ],
+        "dtype": "float64",
+        "sha256": "786538d79e22a60ea4b250254d35bda561c2ce5ef63ccf73472b9777a67b1bbb"
+      }
+    },
+    "point_count": 2054529,
+    "full_returned_map": true,
+    "sample_stride": 1,
+    "coordinate_system": "first captured camera; +X right +Y down +Z forward",
+    "map_only_down_voxel_m": 0.05,
+    "ceiling_crop": "teacher remove_ceiling_points: Y > min(Y)+1m",
+    "export_s": 0.062204000000008364,
+    "peak_rss_increase_bytes": 0,
+    "storage": "separate uncompressed NPY files, NumPy contiguous views, streamed file writes"
+  },
+  "execution": {
+    "argv": [
+      "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+      "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_baseline.py",
+      "_worker",
+      "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m42_p2_a01_baseline_01"
+    ],
+    "exit_code": 0,
+    "reason": null,
+    "passed": true,
+    "elapsed_s": 220.751497,
+    "peak_tree_rss_bytes": 1198620672,
+    "samples": 438,
+    "interval_s": 0.5,
+    "watchdog_timeout_s": 8.0,
+    "method": "ps pid/ppid/pgid/rss/stat; live descendants + retained process group; KiB*1024",
+    "limitations": "0.5 s sampled conservative sum; shared pages counted per PID; transient peaks may be missed; watchdog timeout up to 8 s"
+  },
+  "observer": {
+    "status": "official_cli_returned",
+    "reconstruct_calls": 1,
+    "frame_events": 320,
+    "pair_events": 319,
+    "valid_transform_pose_prefix_frames": 320,
+    "full_processed_frames": 320,
+    "prefix_note": "Pose prefix from finite positive-support returned transforms; not a claim that all map integration steps completed",
+    "reconstruction_s_with_observation": 207.318515709,
+    "return_observer_overhead_s": 0.5259152819989332
+  },
+  "baseline": {
+    "run": "P2-A baseline",
+    "status": "Success",
+    "floor": 2,
+    "frames": 320,
+    "pairs": 319,
+    "factors": 2554,
+    "mean_l2_m": 0.07025845236530649,
+    "registration_voxel_m": 0.05,
+    "seed": 0,
+    "map_voxel_m": 0.05,
+    "runtime_s": 220.751497,
+    "runtime_boundary": "guarded worker incl imports, observation, export, evaluation, plots, seal and baseline write",
+    "returned_map_points": 2054529,
+    "peak_tree_rss_bytes": 1198620672
+  },
+  "scope_limit": "Scientific evidence complete; room-by-room visual interpretation remains human review."
+}

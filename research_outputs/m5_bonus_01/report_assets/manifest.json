@@ -1,0 +1,173 @@
+{
+  "figures": {
+    "custom_f1_seed_comparison.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/custom_f1_seed_comparison.png",
+      "source_sha256": "a7f1ce8f3890ce399dcebe5167b51482da1a5c553db8a794dfa7e9955098ddd1",
+      "sha256": "a7f1ce8f3890ce399dcebe5167b51482da1a5c553db8a794dfa7e9955098ddd1"
+    },
+    "custom_f2_density_comparison.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/custom_f2_density_comparison.png",
+      "source_sha256": "e317b5143dbdcb787d54b80cb1bfb42b102fcf6acc5c09841be163a5d700356a",
+      "sha256": "e317b5143dbdcb787d54b80cb1bfb42b102fcf6acc5c09841be163a5d700356a"
+    },
+    "custom_iterations.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/custom_iterations.png",
+      "source_sha256": "e4f5fd37ae49153d48ab75a139e28a37be5f9ef20a3b063d199dfbf48fb270eb",
+      "sha256": "e4f5fd37ae49153d48ab75a139e28a37be5f9ef20a3b063d199dfbf48fb270eb"
+    },
+    "custom_overview.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/custom_overview.png",
+      "source_sha256": "b9a414c3d3cad0a1f0098b09927fe5944c4ddfbdb0b602be4492378c45e38161",
+      "sha256": "b9a414c3d3cad0a1f0098b09927fe5944c4ddfbdb0b602be4492378c45e38161"
+    },
+    "error_and_recorded_runtime.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/error_and_recorded_runtime.png",
+      "source_sha256": "2c23fa666ecea36bbe36f325e4d1c459f9bf86a3be01391675850101e731cd14",
+      "sha256": "2c23fa666ecea36bbe36f325e4d1c459f9bf86a3be01391675850101e731cd14"
+    },
+    "f1_baseline_factors.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f1_baseline_factors.png",
+      "source_sha256": "809dbd9cf49f778df0595cc32f94227ff841b3fbd61d0991233c7d125f23c632",
+      "sha256": "809dbd9cf49f778df0595cc32f94227ff841b3fbd61d0991233c7d125f23c632"
+    },
+    "f1_baseline_maps.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f1_baseline_maps.png",
+      "source_sha256": "147a1a4fad80adbe9d90f6cde1c379beb53599c3e0525c94a53adcfceb7d33b3",
+      "sha256": "147a1a4fad80adbe9d90f6cde1c379beb53599c3e0525c94a53adcfceb7d33b3"
+    },
+    "f1_baseline_native.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f1_baseline_native.png",
+      "source_sha256": "b98f0fae1f700f1ec1c592ce5a5e2727413e29e9a154cb4a75976fdbf8566cd1",
+      "sha256": "b98f0fae1f700f1ec1c592ce5a5e2727413e29e9a154cb4a75976fdbf8566cd1"
+    },
+    "f1_c1_factors.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f1_c1_factors.png",
+      "source_sha256": "b0fbeb8295cc3ab084860997c02442bbced18dccdab5c708629fa601aae1212d",
+      "sha256": "b0fbeb8295cc3ab084860997c02442bbced18dccdab5c708629fa601aae1212d"
+    },
+    "f1_c1_maps.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f1_c1_maps.png",
+      "source_sha256": "13d16d0b6cbe423a8346155943b230ab488ccc153b7def8550004d1aeee6cc3a",
+      "sha256": "13d16d0b6cbe423a8346155943b230ab488ccc153b7def8550004d1aeee6cc3a"
+    },
+    "f1_c1_native.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f1_c1_native.png",
+      "source_sha256": "a0cd123c43bb2400da585247c0cd4e0b36729d7c0c8f6db34a6920ce46fa6c51",
+      "sha256": "a0cd123c43bb2400da585247c0cd4e0b36729d7c0c8f6db34a6920ce46fa6c51"
+    },
+    "f2_baseline_factors.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f2_baseline_factors.png",
+      "source_sha256": "d3726f5f1d345b5bbfd4d7a32f4ecb22a332ca9fb0263b7ef65973bdcb12b4ff",
+      "sha256": "d3726f5f1d345b5bbfd4d7a32f4ecb22a332ca9fb0263b7ef65973bdcb12b4ff"
+    },
+    "f2_baseline_maps.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f2_baseline_maps.png",
+      "source_sha256": "7e8790ca980e464f09d7d3fcac4b10e02304553cd9c63647464ef44d15baba53",
+      "sha256": "7e8790ca980e464f09d7d3fcac4b10e02304553cd9c63647464ef44d15baba53"
+    },
+    "f2_baseline_native.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f2_baseline_native.png",
+      "source_sha256": "d06f2eea067106817bd750760bf7b3ef08a268ab7c5d6e79e4c603fb2b818b66",
+      "sha256": "d06f2eea067106817bd750760bf7b3ef08a268ab7c5d6e79e4c603fb2b818b66"
+    },
+    "f2_sparse_factors.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f2_sparse_factors.png",
+      "source_sha256": "38ef8ce4060a0ad2be405a37a0404e5c30f328cb3662dd6f8d17f39695260703",
+      "sha256": "38ef8ce4060a0ad2be405a37a0404e5c30f328cb3662dd6f8d17f39695260703"
+    },
+    "f2_sparse_maps.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f2_sparse_maps.png",
+      "source_sha256": "44ac7fd0cf491a8e6c809676e337e9718cf4b21d1bb5db941f5624dcc4a101be",
+      "sha256": "44ac7fd0cf491a8e6c809676e337e9718cf4b21d1bb5db941f5624dcc4a101be"
+    },
+    "f2_sparse_native.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/f2_sparse_native.png",
+      "source_sha256": "7313903350d5243ae17dc4d75e9ef5a1972fbee5f9d85a413865266664387210",
+      "sha256": "7313903350d5243ae17dc4d75e9ef5a1972fbee5f9d85a413865266664387210"
+    },
+    "per_frame_l2.png": {
+      "action": "byte-for-byte copy",
+      "source": "research_outputs/m5_bonus_01/analysis/figures/per_frame_l2.png",
+      "source_sha256": "24ebac5a43c69a824e703a3175905eda9d075b4e6b2f8a7cc8d62278428df570",
+      "sha256": "24ebac5a43c69a824e703a3175905eda9d075b4e6b2f8a7cc8d62278428df570"
+    },
+    "f1_baseline_custom_3d.png": {
+      "action": "render saved map; label-only display revision",
+      "sources": {
+        "research_outputs/m5_bonus_01/f1_baseline/observation/map_points.npy": "faac86aa8cc73b16f7d501011a5340a75c97eb87158b8fe586d52b705a29e578",
+        "research_outputs/m5_bonus_01/f1_baseline/observation/map_colors.npy": "7f161c9a39c834a0b3858bdf124332d7a12e669351b4e9d931a6b428b5e1da7b",
+        "research_outputs/m5_bonus_01/f1_baseline/observation/positions.npy": "630d7c8aa40266a4d1442810f02a75eca08ad7998499f426c62efba3f2beb360"
+      },
+      "sha256": "7d52177fe7835be6fa52a34db30581286d0030629289ef60ba3d7915b6dae58d",
+      "display_points": 90000,
+      "axes": "camera X, camera Z, negative camera Y (height)",
+      "view_elevation": 35,
+      "view_azimuth": -55,
+      "original_draft": "research_outputs/m5_bonus_01/analysis/figures/f1_baseline_custom_3d.png"
+    },
+    "f1_c1_custom_3d.png": {
+      "action": "render saved map; label-only display revision",
+      "sources": {
+        "research_outputs/m5_bonus_01/f1_c1/observation/map_points.npy": "142f3d157ace3c676887365ea7e1d70289dad9668e3ea49d2a79e17bccb49bdc",
+        "research_outputs/m5_bonus_01/f1_c1/observation/map_colors.npy": "907acb5d33e63addab2dc9e6a5196e3b3053a4e4bb9b0975504b6f4dfc974cc1",
+        "research_outputs/m5_bonus_01/f1_c1/observation/positions.npy": "2c39f479761c5e933544fae49d37d0b0e2789916d3d3330b6feb59a71b4642e4"
+      },
+      "sha256": "68d524577b8476ab31f9097469849525be635affd141572d1bf670845d7eee19",
+      "display_points": 90000,
+      "axes": "camera X, camera Z, negative camera Y (height)",
+      "view_elevation": 35,
+      "view_azimuth": -55,
+      "original_draft": "research_outputs/m5_bonus_01/analysis/figures/f1_c1_custom_3d.png"
+    },
+    "f2_baseline_custom_3d.png": {
+      "action": "render saved map; label-only display revision",
+      "sources": {
+        "research_outputs/m5_bonus_01/f2_baseline/observation/map_points.npy": "024b632b9a6487abd1a3e7a736b4e97ae646e14982b10a829918eef71c9d6050",
+        "research_outputs/m5_bonus_01/f2_baseline/observation/map_colors.npy": "ea0462e99fb527e1c752dc021dbb9dbb4bd75155ad47a83c5644be2f71e5dadf",
+        "research_outputs/m5_bonus_01/f2_baseline/observation/positions.npy": "4d489aaf94777330bbdbeb908a373375d103ab13e9f4248e5677e89e0799ee40"
+      },
+      "sha256": "2adcdc75f4be173446444f72fd075febbd4c3d178db8a91aa5c3478c2ab45529",
+      "display_points": 90000,
+      "axes": "camera X, camera Z, negative camera Y (height)",
+      "view_elevation": 35,
+      "view_azimuth": -55,
+      "original_draft": "research_outputs/m5_bonus_01/analysis/figures/f2_baseline_custom_3d.png"
+    },
+    "f2_sparse_custom_3d.png": {
+      "action": "render saved map; label-only display revision",
+      "sources": {
+        "research_outputs/m5_bonus_01/f2_sparse/observation/map_points.npy": "04ba8eae7872712dc0216583921eb4acd53e7ed5a1fb29a4e653c6daa38790ff",
+        "research_outputs/m5_bonus_01/f2_sparse/observation/map_colors.npy": "2dcca73589de2cece9ceec6b4cdb0bffd75b61f883aa4709dc4c596244982679",
+        "research_outputs/m5_bonus_01/f2_sparse/observation/positions.npy": "0d6ee54487a50404f2bd731e208314a12b8cfef278964a169213bfe7258bdc7d"
+      },
+      "sha256": "1296074e3b50a1b89053a990899a0b0e4404f9d6ee8333a2cabf969c35f98229",
+      "display_points": 90000,
+      "axes": "camera X, camera Z, negative camera Y (height)",
+      "view_elevation": 35,
+      "view_azimuth": -55,
+      "original_draft": "research_outputs/m5_bonus_01/analysis/figures/f2_sparse_custom_3d.png"
+    }
+  },
+  "captions_sha256": "3054a54d50b75c442fd8f69c28335240827132c3213878ec427455f9469344e9",
+  "source_script_sha256": "04bfdc28e1a6b1437fde3b9be97b2114dd388e4c4ecebd7ff4409f2711077bf7",
+  "reconstruction_repeated": false,
+  "source_map_or_pose_modified": false,
+  "draft_note": "Original analysis 3D drafts retained; use these four label-repaired report figures."
+}

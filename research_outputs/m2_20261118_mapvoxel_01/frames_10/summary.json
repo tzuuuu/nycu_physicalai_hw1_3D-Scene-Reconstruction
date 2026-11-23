@@ -1,0 +1,101 @@
+{
+  "kind": "M2.0_preflight_not_formal_baseline",
+  "started_utc": "2026-11-18T02:06:26.129058+00:00",
+  "data_root": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/eval/_data/first_floor",
+  "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m2_20261118_mapvoxel_01/frames_10",
+  "frames": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "git_commit": "7e08d9edb30d5d18b57b0bd3cb1179c689e6cc86",
+  "parameters": {
+    "version": "open3d",
+    "voxel_size": 0.05,
+    "registration_seed": 0,
+    "build_cloud": true,
+    "down_voxel": 0.05
+  },
+  "python": "3.9.23",
+  "open3d": "0.18.0",
+  "numpy": "1.26.4",
+  "rss_at_start_bytes": 210206720,
+  "reconstruction_s": 8.034833334,
+  "status": "completed_requires_review",
+  "mean_l2_m": 0.005136260469264828,
+  "reconstructed_frames": 10,
+  "evaluated_frames": 10,
+  "map_points": 86570,
+  "raw_points_total": 2621437,
+  "map_axis_min": [
+    -1.575553850446428,
+    -0.037692920818105456,
+    -0.42601861059784485
+  ],
+  "map_axis_max": [
+    4.683969680955735,
+    1.6658491563690458,
+    4.707402339744854
+  ],
+  "total_s": 8.357065042,
+  "peak_rss_bytes": 484261888,
+  "factor_summary": {
+    "CoarseRANSACCorrespondences": {
+      "count": 9,
+      "min": 10679.0,
+      "max": 16310.0,
+      "mean": 14737.333333333334
+    },
+    "CoarseRANSACFitness": {
+      "count": 9,
+      "min": 0.740158026060438,
+      "max": 0.9864660707541232,
+      "mean": 0.9159598567017735
+    },
+    "CoarseRANSACRMSE": {
+      "count": 9,
+      "min": 0.02123398032315123,
+      "max": 0.03286015824854163,
+      "mean": 0.027393737895838398
+    },
+    "ICPInlierCorrespondences": {
+      "count": 9,
+      "min": 10585.0,
+      "max": 16311.0,
+      "mean": 14703.0
+    },
+    "ICPInlierFitness": {
+      "count": 9,
+      "min": 0.7336429165511505,
+      "max": 0.9838851819211885,
+      "mean": 0.9137751886502016
+    },
+    "ICPInlierRMSE": {
+      "count": 9,
+      "min": 0.01786715771855403,
+      "max": 0.022997805845615275,
+      "mean": 0.020187862505700524
+    },
+    "RawPointCount": {
+      "count": 10,
+      "min": 262141.0,
+      "max": 262144.0,
+      "mean": 262143.7
+    },
+    "VoxelizedPointYield": {
+      "count": 10,
+      "min": 11423.0,
+      "max": 17287.0,
+      "mean": 15594.3
+    }
+  },
+  "frame_factor_count": 20,
+  "pair_factor_count": 54
+}

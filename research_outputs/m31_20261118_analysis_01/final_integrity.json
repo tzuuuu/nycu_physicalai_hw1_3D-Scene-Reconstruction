@@ -1,0 +1,19 @@
+{
+  "baseline_preserved": true,
+  "seal_valid": true,
+  "capture_unchanged": true,
+  "source_sha256": {
+    "scripts/m31_ablation.py": "0f6ab212e41735679488fae658207bd055a65109917457070e38450adafc451a",
+    "scripts/m31_analysis.py": "b9e3d867f1ba098b8ec6b2f2618162cb511b756ccef1454e77b6392e0305c1a7"
+  },
+  "existing_files_count": 505,
+  "expected_changed_files": [
+    "experiments/p1_baseline_20261118_map005_s0_01/p1_baseline_20261118_map005_s0_01.ttl",
+    "experiments/p1_baseline_20261118_map005_s0_01/reconstruction.png"
+  ],
+  "otherwise_unchanged": 503,
+  "selected_execution_count": 1,
+  "source_commit": "3736858f3f0f76fd76a5d5f01ce33fe31458f258",
+  "tests": "163 passed in 12.94s",
+  "plots_verified": 5
+}

@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "-m",
+    "scripts.m43_selected",
+    "_postprocess"
+  ],
+  "pid": 41588,
+  "pgid": 41588,
+  "watchdog_pid": 41589,
+  "unix": 1795075937.218432,
+  "limit_bytes": 3221225472
+}

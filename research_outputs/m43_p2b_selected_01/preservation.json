@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "protected_scientific_files": 2099,
+  "permitted_official_mutations": [
+    "experiments/p2_114753116_a01_baseline_01/p2_114753116_a01_baseline_01.ttl",
+    "experiments/p2_114753116_a01_baseline_01/reconstruction.png",
+    "experiments/p2_114753116_a01_baseline_01/reconstruction_selected.png"
+  ],
+  "all_other_experiment_files_unchanged": true
+}

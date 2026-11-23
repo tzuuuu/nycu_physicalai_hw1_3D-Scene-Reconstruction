@@ -1,0 +1,124 @@
+{
+  "description": "post-baseline descriptive observations; not Pass/Fail or selection rules",
+  "raw_empirical_median": 262141.0,
+  "raw_below_median_intervals": [
+    [
+      46,
+      46
+    ],
+    [
+      49,
+      55
+    ],
+    [
+      71,
+      133
+    ],
+    [
+      141,
+      142
+    ],
+    [
+      144,
+      144
+    ],
+    [
+      161,
+      162
+    ],
+    [
+      173,
+      173
+    ],
+    [
+      175,
+      175
+    ],
+    [
+      178,
+      189
+    ]
+  ],
+  "notable_frames": {
+    "104": {
+      "CoarseRANSACCorrespondences": 7207.0,
+      "CoarseRANSACFitness": 0.6562557,
+      "CoarseRANSACRMSE": 0.03371913,
+      "ICPInlierCorrespondences": 9180.0,
+      "ICPInlierFitness": 0.8359133,
+      "ICPInlierRMSE": 0.03109302,
+      "RawPointCount": 210403.0,
+      "VoxelizedPointYield": 10982.0
+    },
+    "105": {
+      "CoarseRANSACCorrespondences": 9003.0,
+      "CoarseRANSACFitness": 0.7338006,
+      "CoarseRANSACRMSE": 0.03834294,
+      "ICPInlierCorrespondences": 10791.0,
+      "ICPInlierFitness": 0.8795338,
+      "ICPInlierRMSE": 0.02681202,
+      "RawPointCount": 193602.0,
+      "VoxelizedPointYield": 12269.0
+    },
+    "114": {
+      "CoarseRANSACCorrespondences": 29186.0,
+      "CoarseRANSACFitness": 0.9374016,
+      "CoarseRANSACRMSE": 0.03118335,
+      "ICPInlierCorrespondences": 29323.0,
+      "ICPInlierFitness": 0.9418018,
+      "ICPInlierRMSE": 0.02589185,
+      "RawPointCount": 177608.0,
+      "VoxelizedPointYield": 31135.0
+    },
+    "116": {
+      "CoarseRANSACCorrespondences": 37134.0,
+      "CoarseRANSACFitness": 0.9368283,
+      "CoarseRANSACRMSE": 0.03009626,
+      "ICPInlierCorrespondences": 37124.0,
+      "ICPInlierFitness": 0.936576,
+      "ICPInlierRMSE": 0.02477055,
+      "RawPointCount": 213032.0,
+      "VoxelizedPointYield": 39638.0
+    },
+    "144": {
+      "CoarseRANSACCorrespondences": 10359.0,
+      "CoarseRANSACFitness": 0.9933832,
+      "CoarseRANSACRMSE": 0.01097072,
+      "ICPInlierCorrespondences": 10356.0,
+      "ICPInlierFitness": 0.9930955,
+      "ICPInlierRMSE": 0.01022277,
+      "RawPointCount": 262138.0,
+      "VoxelizedPointYield": 10428.0
+    },
+    "147": {
+      "CoarseRANSACCorrespondences": 5626.0,
+      "CoarseRANSACFitness": 1.0,
+      "CoarseRANSACRMSE": 0.009524659,
+      "ICPInlierCorrespondences": 5626.0,
+      "ICPInlierFitness": 1.0,
+      "ICPInlierRMSE": 0.01037227,
+      "RawPointCount": 262144.0,
+      "VoxelizedPointYield": 5626.0
+    },
+    "148": {
+      "CoarseRANSACCorrespondences": 4003.0,
+      "CoarseRANSACFitness": 1.0,
+      "CoarseRANSACRMSE": 0.01519062,
+      "ICPInlierCorrespondences": 4003.0,
+      "ICPInlierFitness": 1.0,
+      "ICPInlierRMSE": 0.01786469,
+      "RawPointCount": 262144.0,
+      "VoxelizedPointYield": 4003.0
+    },
+    "151": {
+      "CoarseRANSACCorrespondences": 6906.0,
+      "CoarseRANSACFitness": 0.6228355,
+      "CoarseRANSACRMSE": 0.02799541,
+      "ICPInlierCorrespondences": 6863.0,
+      "ICPInlierFitness": 0.6189574,
+      "ICPInlierRMSE": 0.01867937,
+      "RawPointCount": 262144.0,
+      "VoxelizedPointYield": 11088.0
+    }
+  }
+}

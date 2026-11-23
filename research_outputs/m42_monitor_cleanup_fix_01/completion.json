@@ -1,0 +1,33 @@
+{
+  "source": {
+    "commit": "37f3bef6d4596f69c4685e4a647afd386f1ed2bd",
+    "branch": "main",
+    "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+    "clean": true
+  },
+  "regression": {
+    "passed": 65,
+    "skipped": 6
+  },
+  "initial_terminal_selftests": {
+    "passed": 24,
+    "failed": 3,
+    "skipped": 0
+  },
+  "original_preflight_and_engineering_scientific_files_unchanged": true,
+  "frozen_scientific_files_match": 642,
+  "teacher_core_sha256": {
+    "utils.py": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "load.py": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+    "plot.py": "7a624b52bc8f9121fd9fc69d7045404d8c62566d018e776a4541460e4d6e6337",
+    "ontology/hw1.ttl": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+    "pixi.toml": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+    "pixi.lock": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794"
+  },
+  "full_preflight_passed": false,
+  "formal_first_pass_started": false,
+  "formal_outcome": null,
+  "m42_acceptance": "pending revised native Terminal selftests and single official first-pass"
+}

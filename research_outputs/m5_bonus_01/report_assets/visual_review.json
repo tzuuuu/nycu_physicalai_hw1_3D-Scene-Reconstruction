@@ -1,0 +1,14 @@
+{
+  "reviewed_figures": 22,
+  "status": "passed",
+  "reviewed": [
+    "22-figure contact sheet",
+    "full-size Floor 2 paired maps",
+    "full-size per-frame L2",
+    "full-size repaired Floor 2 3D",
+    "all four repaired 3D views in a contact sheet"
+  ],
+  "correction": "Original four analysis 3D drafts had clipped height labels; retained unchanged, replaced in report_assets using saved-map-only rendering.",
+  "conventions": "Estimated red, GT black; ceiling removed by pipeline; equal axes for paired maps; no GT fitting.",
+  "source_data_or_reconstruction_changed": false
+}

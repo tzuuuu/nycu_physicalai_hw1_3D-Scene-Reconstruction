@@ -1,0 +1,11 @@
+{
+  "self_entry": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "whole_original_manifest_sha256": "2410c859e61f81d452e62b76d7ec20ebdbd17ad11b86b9b23c1881ed61594da0",
+  "other_entries_verification": {
+    "expected_count": 12,
+    "strict_matches": 12,
+    "authorized_differences": [],
+    "authorization_sha256": null
+  },
+  "limitation": "前次產製時誤將建立中的manifest本身以空檔SHA列入，非有效自我雜湊錨點；保留原始bytes，不更新／宣稱該自我列項通過。新紀錄獨立綁定舊manifest完整bytes及所有其餘可驗證項目。"
+}

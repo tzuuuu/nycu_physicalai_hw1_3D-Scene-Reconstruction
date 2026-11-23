@@ -1,0 +1,26 @@
+{
+  "status": "Preparation verified; M4.3 formal Selected pending native Terminal",
+  "git_commit": "c91078d879f4a65c9525bcfcfc76468929c7a292",
+  "working_tree_clean": true,
+  "preflight": "research_outputs/m43_preflight_20261119T080651Z_9e767553",
+  "checks_passed": 10,
+  "checks_total": 11,
+  "remaining": "Native process-tree permission and all six native tests; all formal results and human acceptance",
+  "sandbox_tests": {
+    "passed": 34,
+    "native_skipped": 6
+  },
+  "frozen": {
+    "frames": 204,
+    "factors": 1626,
+    "rule_sha256": "2117058e33c89b84f44c63a8ae3e1f48592e86e1d15d5db47889924605d8dabe",
+    "query_sha256": "0252c1cd23cceeb3ac1b1953d67a672f116d3a7f51ef050501a3039f7abf834d",
+    "git_commit": "c91078d879f4a65c9525bcfcfc76468929c7a292",
+    "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+    "branch": "main"
+  },
+  "formal_selected_started": false,
+  "baseline_rerun": false,
+  "P2_C_cancelled": true,
+  "command": "cd /Users/alyssa/Documents/Codex_Workspace/physicalai_hw1 && OMP_NUM_THREADS=1 MPLCONFIGDIR=/private/tmp/m43_matplotlib /Users/alyssa/.pixi/bin/pixi run -e habitat python -m scripts.m43_selected run"
+}

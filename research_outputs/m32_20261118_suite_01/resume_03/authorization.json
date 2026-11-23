@@ -1,0 +1,40 @@
+{
+  "user_instruction": "M3.2 \u6700\u7d42\u6062\u5fa9\u6388\u6b0a\uff08OS Metadata \u7cbe\u78ba\u6392\u9664\uff09\uff1a\u50c5experiments/.DS_Store\u8207research_outputs/.DS_Store\uff1bC2\u552f\u8b80\u5be9\u8a08\u5f8cC3\u518dC4\u5404\u4e00\u6b21",
+  "remaining_conditions": [
+    "C3",
+    "C4"
+  ],
+  "C2_reconstruction_authorized": false,
+  "metadata_exclusion": [
+    "experiments/.DS_Store",
+    "research_outputs/.DS_Store"
+  ],
+  "registration_failure_policy": "preserve_verify_then_continue",
+  "historical_links": {
+    "suite_stopped.json": "233919e3e5382f7316213adef8405c3c664c7b7701235d7ee533dd10b26ffdbb",
+    "resume_failed.json": "30c3dadd3a83afcaf4a6a0f8c3349fe56ee8da1d47ae867de357678ecc5815d1",
+    "resume_authorization.json": "955e25fe324aa8f839ec3f7f497cb8bbdd4420cdbfd9b144d6a90733c8f11f8e",
+    "suite.json": "11e41dffa5a2bcbec5ebc4cf809da42d4f0b15621dd0e07524bb6ddbe950b535",
+    "resume_02/authorization.json": "27fa289bdf35199264bacb53d422331c047b972bd90fe4b01de062ebc6f60333",
+    "resume_02/system_stopped.json": "6816e5a7919e83e98c33112ba8786f937266787d5f25a3e21e0f2a6d00614e1f"
+  },
+  "prior_recovery_links": {
+    "research_outputs/m32_20261118_final_recovery_stop_01/final_manifest.json": "f4d0eaead749623b45b40bcfca7d20696cd6d386578d55b56f2cd2adab4d1795",
+    "research_outputs/m32_20261118_final_recovery_stop_01/final_provenance.json": "53c71cac4dfc5450e113dfb662c88c777a13f8bdd13d759d03f48267cf7aba7e",
+    "research_outputs/m32_20261118_final_recovery_stop_01/manifest.json": "516bbaa76f968dc43ecdc3f2293f2457c87addf62770223d4e52d9ac498ed0d1",
+    "research_outputs/m32_20261118_final_recovery_stop_01/system_stopped.json": "de1b1e16d9f2fc604d6a8bca2fa8685f350b222c6beeca1d451703e22307b73e"
+  },
+  "B0_postprocess_output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_suite_01/resume_01/B0_postprocess",
+  "prior_authorization_sha256": "27fa289bdf35199264bacb53d422331c047b972bd90fe4b01de062ebc6f60333",
+  "tool_sha256": {
+    "scripts/m32_analysis.py": "3d1f00dbba348d079ac377e3f09b2bbdba2927bc48bd6178176a3a526e3f779d",
+    "scripts/m32_experiments.py": "cc461ac939a3b4ff9a2165f7c7bfe4dd75b936fb9c68214dce84419e76abacc3",
+    "scripts/m32_final_recovery.py": "21b172978c398ccefc0c3aa3491e5d2e6759845da1a6ed788846155de0b3a465",
+    "scripts/m32_metadata_policy.py": "36c3efe299be78db3b7e553b5539f9d5efaf0a968f1214172e9d180a9dce971e",
+    "scripts/m32_sensitivity.py": "24eb8b1a150b03d6678022934b35ff5b1149676e2d009675c9daa99f4241400e",
+    "scripts/record_command.py": "d54535881964e204482d7b46bb2bff5c0a210992a5ec60745ea7441e969565f3"
+  },
+  "git_commit": "d91dfa3aa4c9d54cdc5ca27caef76d8d44dd0dc7",
+  "suite_sha256": "11e41dffa5a2bcbec5ebc4cf809da42d4f0b15621dd0e07524bb6ddbe950b535",
+  "created_unix": 1795015653.7487192
+}

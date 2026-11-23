@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "date_taipei": "2026-11-19",
+  "four_reconstructions_each_once": true,
+  "additional_open3d_reconstructions": 0,
+  "protected_historical_files_unchanged": 1282,
+  "changed_utils_functions": [
+    "my_local_icp_algorithm",
+    "reconstruct"
+  ],
+  "original_open3d_function_unchanged": true,
+  "all_other_utils_functions_unchanged": true,
+  "original_open3d_function_sha256": "235948574d1db8b0c3878a4ba0fccbf34b6dd31af45e821a2efa6011bc30691d",
+  "sources": {
+    "utils.py": "92c16c4a6d54e9cf2f83e18ae60089e31a63d4ad3a6fc00bf255a95059b3af00",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "README.md": "5b9c99ccac3d5a224b81aa5497a508a44cca7994e186e40a27427d91b86e668f",
+    "scripts/m5_bonus.py": "3fc13e17551344e21340cbf9e67c24a8c680e677c95312ba5467872017a36c73",
+    "scripts/m5_analysis.py": "ad67a38bd89325e338524721b056e6e3cab3b9f6d0f3467d6c4728cc9d507205",
+    "scripts/m5_report_assets.py": "04bfdc28e1a6b1437fde3b9be97b2114dd388e4c4ecebd7ff4409f2711077bf7",
+    "tests/test_custom_icp.py": "c298690661eac8298c6e4dc23527a02c1a24c2f8a7dea70893c09c65967ee389",
+    "tests/test_reconstruction.py": "06513980249c83eb6359ad3c12bb2c4ed1f5d759ca6b658debe685ca1a259d19",
+    "docs/implementation/M5_Bonus_Plan.md": "d664914cdaf2c24bda28025376bb0ba840026000a6bfe7374f9ea2f4391d499d",
+    "docs/implementation/M5_Bonus_Acceptance.md": "3b340950523c16a31a4549285e06fff6721dda532f18ad4117aa09ae687f1272"
+  },
+  "source_parent_commit": "9ebc514ad0568351d2fb21745b31d20c4d91b4a1",
+  "final_report_pdf_created": false,
+  "submission_zip_created": false,
+  "artifacts": "Use report_assets for reviewed figures, English captions and Bonus section material; analysis drafts remain preserved."
+}

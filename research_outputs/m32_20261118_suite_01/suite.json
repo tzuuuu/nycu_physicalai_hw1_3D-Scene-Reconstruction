@@ -1,0 +1,114 @@
+{
+  "kind": "M3.2 preregistered seven full-batch conditions",
+  "conditions": [
+    {
+      "condition": "B0",
+      "voxel": 0.05,
+      "seed": 0,
+      "name": "p1_m32_20261118_b_v005_s0_01",
+      "experiment": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_b_v005_s0_01",
+      "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_b_v005_s0_01"
+    },
+    {
+      "condition": "B1",
+      "voxel": 0.03,
+      "seed": 0,
+      "name": "p1_m32_20261118_b_v003_s0_01",
+      "experiment": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_b_v003_s0_01",
+      "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_b_v003_s0_01"
+    },
+    {
+      "condition": "B2",
+      "voxel": 0.08,
+      "seed": 0,
+      "name": "p1_m32_20261118_b_v008_s0_01",
+      "experiment": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_b_v008_s0_01",
+      "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_b_v008_s0_01"
+    },
+    {
+      "condition": "C1",
+      "voxel": 0.05,
+      "seed": 1,
+      "name": "p1_m32_20261118_c_v005_s1_01",
+      "experiment": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s1_01",
+      "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_c_v005_s1_01"
+    },
+    {
+      "condition": "C2",
+      "voxel": 0.05,
+      "seed": 2,
+      "name": "p1_m32_20261118_c_v005_s2_01",
+      "experiment": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s2_01",
+      "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_c_v005_s2_01"
+    },
+    {
+      "condition": "C3",
+      "voxel": 0.05,
+      "seed": 3,
+      "name": "p1_m32_20261118_c_v005_s3_01",
+      "experiment": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s3_01",
+      "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_c_v005_s3_01"
+    },
+    {
+      "condition": "C4",
+      "voxel": 0.05,
+      "seed": 4,
+      "name": "p1_m32_20261118_c_v005_s4_01",
+      "experiment": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p1_m32_20261118_c_v005_s4_01",
+      "output": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_c_v005_s4_01"
+    }
+  ],
+  "capture_sha256": "22270c4923745ffdf9b3a1fbe98bf311ac05721a54e37eec6ff3c16a59e227c2",
+  "versions": {
+    "open3d": "0.18.0",
+    "numpy": "1.26.4",
+    "opencv-python": "4.8.0.76",
+    "rdflib": "7.1.4",
+    "scipy": "1.13.1",
+    "panel": "1.4.5",
+    "bokeh": "3.4.3",
+    "habitat-lab": "0.3.3"
+  },
+  "algorithm_control": {
+    "backend": "open3d",
+    "registration_voxel_m": 0.05,
+    "map_down_voxel_m": 0.05,
+    "seed": 0,
+    "normal_radius_m": 0.1,
+    "normal_max_nn": 30,
+    "fpfh_radius_m": 0.25,
+    "fpfh_max_nn": 100,
+    "ransac_mutual_filter": true,
+    "ransac_distance_m": 0.075,
+    "ransac_edge_length_checker": 0.9,
+    "ransac_n": 3,
+    "ransac_max_iteration": 100000,
+    "ransac_confidence": 0.999,
+    "icp_estimator": "PointToPlane",
+    "icp_distance_m": 0.075,
+    "icp_max_iteration": 100,
+    "icp_relative_fitness": 1e-06,
+    "icp_relative_rmse": 1e-06,
+    "build_cloud": true,
+    "ceiling_margin_m": 1.0,
+    "depth_scale_divisor": 1000.0,
+    "gt_usage": "evaluation_only_no_best_fit"
+  },
+  "core_sha256": {
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "load.py": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+    "ontology/hw1.ttl": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+    "pixi.lock": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794",
+    "pixi.toml": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+    "plot.py": "7a624b52bc8f9121fd9fc69d7045404d8c62566d018e776a4541460e4d6e6337",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "utils.py": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41"
+  },
+  "git_commit": "860e84279c5aaedbd8f81767a93806f732ccfe97",
+  "OMP_NUM_THREADS": "1",
+  "disk_free_bytes": 11723902976,
+  "rss_limit_gib": 3,
+  "seed_zero_shared_between_B_and_C": true,
+  "GT_selection": "offline diagnosis informed hypothesis; never choose minimum-GT seed",
+  "stop": "Any registration, resource or integrity failure stops subsequent conditions; no retries."
+}

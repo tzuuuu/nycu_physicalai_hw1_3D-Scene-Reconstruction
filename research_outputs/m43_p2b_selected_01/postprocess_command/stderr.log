@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m43_selected.py", line 252, in <module>
+    results(a.OUT)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m43_results.py", line 110, in results
+    np.testing.assert_allclose(be.mean(),read(a.BASE/'observation/official_evaluation.json')['mean_l2_raw_m'],atol=1e-12,rtol=0)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 1504, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=0, atol=1e-12
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference: 3.20207288e-09
+Max relative difference: 4.55756251e-08
+ x: array(0.070258)
+ y: array(0.070258)

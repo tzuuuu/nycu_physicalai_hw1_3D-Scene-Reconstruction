@@ -1,0 +1,35 @@
+{
+  "initial": {
+    "count": 553,
+    "unchanged": 552,
+    "differences": [
+      {
+        "path": "experiments/.DS_Store",
+        "before": "c58b7c32125c5542846c1a020beff62119d939b6320db407c45f801705e3a6ad",
+        "after": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad"
+      }
+    ]
+  },
+  "resume02": {
+    "count": 669,
+    "unchanged": 668,
+    "differences": [
+      {
+        "path": "experiments/.DS_Store",
+        "before": "c58b7c32125c5542846c1a020beff62119d939b6320db407c45f801705e3a6ad",
+        "after": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad"
+      }
+    ]
+  },
+  "C2": {
+    "count": 792,
+    "unchanged": 791,
+    "differences": [
+      {
+        "path": "experiments/.DS_Store",
+        "before": "c58b7c32125c5542846c1a020beff62119d939b6320db407c45f801705e3a6ad",
+        "after": "4eacb80ef42c2fba48a71ba7b7bf62db1964908e72fe0216ab0b0465ebb191ad"
+      }
+    ]
+  }
+}

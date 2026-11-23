@@ -1,0 +1,12 @@
+{
+  "argv": [
+    ".pixi/envs/habitat/bin/python",
+    "-m",
+    "scripts.m43_report_details"
+  ],
+  "pid": 42449,
+  "pgid": 42449,
+  "watchdog_pid": 42450,
+  "unix": 1795076249.5868611,
+  "limit_bytes": 3221225472
+}

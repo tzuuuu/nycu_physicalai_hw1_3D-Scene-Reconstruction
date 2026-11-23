@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "frames": 320,
+  "argv": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/api.py",
+    "query",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/experiments/p2_114753116_a01_baseline_01",
+    "--query-file",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m42_p2a_closeout_01/audit_frames.rq",
+    "--format",
+    "csv"
+  ],
+  "ttl_unchanged": true,
+  "ttl_sha256": "6c9713be38d94ed534b070d175fcb6ba8d60f1717e0629633719cad5be0d8050"
+}

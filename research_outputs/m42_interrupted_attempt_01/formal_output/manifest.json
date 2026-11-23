@@ -1,0 +1,30 @@
+{
+  "policy": "m42-layered-v1",
+  "scientific": {
+    "research_outputs/m42_p2_a01_baseline_01/authorization.txt": "2463d2a7ed8e3d3846f0dbc77344a2c8b78575e6ccc904eab55c7c1e62ec10fa",
+    "research_outputs/m42_p2_a01_baseline_01/command/failure.traceback.txt": "fb3e5274161e88edd9f5431251a2f7d0445241ca700818d94211c7113aa2dbf3",
+    "research_outputs/m42_p2_a01_baseline_01/command/rss.jsonl": "2877c218b00c4f19c699c7a4785123f5953f48bf6472acbc7b1b85d8ec139413",
+    "research_outputs/m42_p2_a01_baseline_01/command/started.json": "355af11f727665eb4e665f97333a4b92dcb6110930caa46678795f2d0341733d",
+    "research_outputs/m42_p2_a01_baseline_01/command/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research_outputs/m42_p2_a01_baseline_01/command/stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research_outputs/m42_p2_a01_baseline_01/command/termination.jsonl": "260065d8fa0491793f042f8ad358240c27b4af2859e805734cb0311800f116c2",
+    "research_outputs/m42_p2_a01_baseline_01/declaration.before.ttl": "8999e6cddb2d2a8e239adc1fab1b95ad924e1fc2ad7fe265151a2c787c56338b",
+    "research_outputs/m42_p2_a01_baseline_01/declare.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research_outputs/m42_p2_a01_baseline_01/declare.stdout.log": "18645c86754e9856716b7a7b259f34ae5d5d5351acdff54dcf67ee46b88fd0b1",
+    "research_outputs/m42_p2_a01_baseline_01/execution.started.json": "5b145fba45667951f6ca650c5503f38d6fe64f5cd334d5172ddbac79954eb7f0",
+    "research_outputs/m42_p2_a01_baseline_01/integrity.after.json": "ad57c9df8cb00563d69c67c9f4d6d771fc67f67fc427500e2ea39e2451a9cd7c",
+    "research_outputs/m42_p2_a01_baseline_01/observation/accepted_poses.jsonl": "19a51317591f40fe58a4dffb2c84c4b438dfbe86ccfa13b3016a035524f1f119",
+    "research_outputs/m42_p2_a01_baseline_01/observation/actual_reconstruct_arguments.json": "90f1bbf05f1befec303fce7c7740adfa8c0514dbda8d60b90b7c98986f0e7088",
+    "research_outputs/m42_p2_a01_baseline_01/observation/events.jsonl": "3d7a96fba71991a6447d321e57fdc020450078068ad562395a1f08113d1f1691",
+    "research_outputs/m42_p2_a01_baseline_01/observation/progress.jsonl": "893fdde1be1436d35c6f578e1f264a2d9a0dec08c9026dcc519af6bbc6dd8364",
+    "research_outputs/m42_p2_a01_baseline_01/observation/ransac_returns.jsonl": "825d0ee1590713b6fd1344e7b02963acfb8e2e3996e5700df0cc313e2c0a6a66",
+    "research_outputs/m42_p2_a01_baseline_01/observation/transforms.jsonl": "08e981563b58fa0bbceee28840a065d1ef08f9b5e2b9e5118aa27695d07847aa",
+    "research_outputs/m42_p2_a01_baseline_01/os_metadata.before_after.jsonl": "c7a60d767bf9c1d7c2cabab6007e47ffdfb63abbb64e5d4047ee13d672ac78a4",
+    "research_outputs/m42_p2_a01_baseline_01/preregistration.json": "e1ae7998c2e142e4852126218f88e861e55ee19b1946f8eca17fb0cb67a559d0",
+    "research_outputs/m42_p2_a01_baseline_01/runner_failure.traceback.txt": "1a85539dfb6885c153e0f355f5f3c43d533eff2b8177ef8cbe083c69ae728c55",
+    "research_outputs/m42_p2_a01_baseline_01/terminal_status.json": "815c68810a7fed9841337185f05f8dadcb10b7ec499540be013e6e12d4890f7d",
+    "experiments/p2_114753116_a01_baseline_01/p2_114753116_a01_baseline_01.ttl": "8999e6cddb2d2a8e239adc1fab1b95ad924e1fc2ad7fe265151a2c787c56338b",
+    "docs/implementation/M4_Phase2_P2A_Baseline_Acceptance.md": "2fceaddd34a77b2456dfd026e67aaa360ab5c201b0310accd2da3fc8694e5a56"
+  },
+  "os_metadata": {}
+}

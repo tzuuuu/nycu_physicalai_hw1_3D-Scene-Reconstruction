@@ -1,0 +1,15 @@
+# M4.2 visual review and report-asset verification
+
+Reviewed the saved top-down, original 3D, four spatial quadrants, per-frame L2 and all eight factor panels. All panels are from the successful authorized rerun; none is a reconstruction of the interrupted attempt.
+
+The top-down map shows a long connected central region, a lower end enclosure, a wide enclosure at low X, multiple enclosures at high X / low Z, and an upper enclosure at high Z. Boundary segments and interior surfaces are recognizable; red estimated and black GT trajectories mostly coincide in the lower and central regions. The upper route has visible separation. This is an interpretation of displayed geometry, not a recovered semantic room list.
+
+Low X / low Z: the lower boundary and central approach are visible; outer blank space cannot be classified as missing reachable space. High X / low Z: several rectangular boundaries are recognizable; interior white regions and sparse surfaces remain. Low X / high Z: a wide enclosure and central connection are visible, with locally diffuse point bands. High X / high Z: the upper enclosure and right branch are visible; the upper red/black route separation is clearest here. White areas may reflect unobserved or empty space, depth/occlusion effects, ceiling cropping or plot sampling. The images alone cannot distinguish these explanations or establish whole-floor coverage percentage.
+
+The original 3D figure has a partially clipped vertical-axis label and uses the default box aspect. It remains unchanged as original evidence. reconstruction_3d_report.png is a separate offline redraw of the SAME saved map and trajectories, with metric axis proportions, revised view and full label margins. It displays 146753 points at deterministic stride 14 from the full 2054529-point saved returned map. Display sampling may hide fine gaps; the source map has not been corrected, registered again or fitted to GT.
+
+The L2 timeline shows accumulated error, including growth around frames 130–150 and more pronounced growth in frames 297–320. Maximum error is 0.2831424867 m at frame 320; mean error is 0.0702584524 m. Positive-support registrations do not imply zero accumulated drift. The factor charts are legible, contain all eight raw definitions, and do not impose Pass/Fail thresholds.
+
+Candidate questions only: (1) How do the lower coarse/ICP fitness and correspondence support around frame 148 relate to the local geometry and accumulated drift? (2) Why does the late error rise while correspondences remain substantial? (3) Do sparse/diffuse boundaries correspond to capture viewpoints, depth validity or display sampling? Any future intervention needs a separately frozen rule and authorization; no frames, parameters or seeds were changed here. GT is evaluation evidence, not an initialization, frame-retention rule or tuning target.
+
+Baseline technical acceptance passes. This review does not prove that every reachable room or every surface is geometrically complete; detailed route labels and full surface ground truth are unavailable.

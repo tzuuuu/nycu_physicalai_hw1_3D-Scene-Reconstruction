@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_baseline.py", line 297, in terminal_run
+    execution=guarded([sys.executable,str(Path(__file__).resolve()),'_worker',str(out)],out/'command')
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_monitor.py", line 227, in run
+    stop_workload()
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_monitor.py", line 160, in stop_workload
+    result=kill_group(worker.pid)
+  File "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m42_monitor.py", line 84, in kill_group
+    os.killpg(pgid, signal.SIGKILL)
+PermissionError: [Errno 1] Operation not permitted

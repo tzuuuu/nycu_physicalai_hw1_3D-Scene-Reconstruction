@@ -1,0 +1,26 @@
+{
+  "full_regression": {
+    "command": "python -m pytest -q tests",
+    "passed": 301,
+    "skipped": 6,
+    "seconds": 18.65,
+    "note": "Before the final two additional custom geometric tests; six native ps cases skipped in sandbox."
+  },
+  "native_monitor": {
+    "command": "M42_REQUIRE_NATIVE=1 python -m pytest -q tests/test_m42_monitor.py",
+    "passed": 16,
+    "skipped": 0,
+    "seconds": 8.87,
+    "note": "Ran outside sandbox after approval; includes all six cases skipped above."
+  },
+  "final_custom": {
+    "command": "python -m pytest -q tests/test_custom_icp.py",
+    "passed": 12,
+    "skipped": 0,
+    "seconds": 1.06,
+    "note": "Includes the two added nonidentity-initialization/outlier tests; original ten overlap full regression."
+  },
+  "current_collection_summary": "309 tests collected in 1.13s",
+  "unique_test_cases_covered": 309,
+  "limitation": "Coverage is the union of the recorded runs, not a claim of one final 309-test execution. Third-party and interactive capture tests excluded."
+}

@@ -1,0 +1,15 @@
+{
+  "acceptance_stopped.json": "f00a3a85cff853ad961ddf793e35b6d05a6e6fcac02ed7e8dc1192d16407f507",
+  "capture_finish_reference_sha256.json": "33526a9e103cfd928ab29f56dc9c2179d1012a383c7dc78016b02cccf17a1a27",
+  "capture_metadata.current.bin": "382cc84dd10e9e27e63c215ad17a6d9bf0309572ddd0c1f64a39fd2de05eac0a",
+  "capture_verification_reference_sha256.json": "e67d9a4ab794174e3386ea7d5dc21a5ab07a12aa5552ae862d6e85485749c283",
+  "human_coverage_confirmation.json": "cfc54dc334e035c689f294d802504042ef971cad85c48c5186872acf4ed09a36",
+  "manifest.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "parent_metadata.current.bin": "4809a73fa9c2fe9f60e7deb62dba2884135ad96a41aa653f962d922415c0141c",
+  "provenance.json": "ba3cca9020e67d4ccddc13d100ec87f42a91f6f6230607502daad8aca72bf172",
+  "source_capture.safe.yaml": "5f60aa0ba6c3c6f67b06fe8687d9bf48d1dd00b0a387502a09d0ae613855db19",
+  "source_finish.json": "6f51de493c680bb30dff9058cba2be7e7477ffc5aac115763503a2234a752a65",
+  "source_protected.before.json": "259ece854011f3bf9bc5eaeecba21d040f5559330c70f87acda0b77ead769997",
+  "source_start.json": "3104ca4e687ef5a80dddafa05cc461d71dd6a23f1669487197e150ce336eea61",
+  "source_verification.json": "ea8be138234c1d3297a3231e05869b150cf38c2af590e6354c8a26486e94e30c"
+}

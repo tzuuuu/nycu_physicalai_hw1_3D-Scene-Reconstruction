@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "reconstruct_calls": 1,
+  "reconstruction_s_with_observation": 243.882402791,
+  "observer_overhead_s": 0.6468513050048166,
+  "icp_total_s": 35.22715267400025,
+  "pairs": 319,
+  "frames": 320
+}

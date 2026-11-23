@@ -1,0 +1,2 @@
+run,status,floor,frames,pairs,factors,mean_l2_m,registration_voxel_m,seed,map_voxel_m,runtime_s,runtime_boundary,returned_map_points,peak_tree_rss_bytes
+P2-A baseline,Success,2,320,319,2554,0.07025845236530649,0.05,0,0.05,220.751497,"guarded worker incl imports, observation, export, evaluation, plots, seal and baseline write",2054529,1198620672

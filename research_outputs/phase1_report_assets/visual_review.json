@@ -1,0 +1,120 @@
+{
+  "status": "Visually reviewed with explicit native-source limitations",
+  "asset_count": 21,
+  "reviewed_images": [
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/M2_baseline_native.png",
+      "sha256": "a81dda1b82c8047b849c5c8bf551db76f91b6a330ca8fa0557f7c0c6ab8814b6"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/M31_selected_native.png",
+      "sha256": "9d13b9cc27fc892aa0d9b6645a5e1da4af3ed6d92a139e032f3367297978567e"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/Selected_topdown.png",
+      "sha256": "443e99301082088e6a6e1965cf330a782bb1c1d6e30d4673127b629c0d4c261c"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/B0_topdown.png",
+      "sha256": "06dacc782af3b5d4f0bd9d436ee8ff80f3aa59bfde79c58310a586c6543e3562"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/B2_topdown.png",
+      "sha256": "6d4708481f3b819e5d9a62b6e018972fe0141530c0880a717dd29912702eb4fd"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C1_topdown.png",
+      "sha256": "c4da653696c8bddbaab0bcd43bceb82cee256b596102dcae86936cb78153ecd8"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C2_topdown.png",
+      "sha256": "34b57b7a331f89e0501d9314c392a325d1157be656cd88cb0be762e8e9969487"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C3_topdown.png",
+      "sha256": "52718424ffb76eb2fd79f3c9182390469d53f32b4307ac0fdf4c4ec6f28f4a7e"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/single_runs/C4_topdown.png",
+      "sha256": "0517e7b939b5c6421b46611de1bc7026a55203147dda682b66ff259634c95726"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/A_baseline_reference_vs_selected_maps.png",
+      "sha256": "6a0e06e2bd48b2663f3ef34bf34a0c8ef533a03c91e92591404bf4856c2d33a5"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/A_baseline_selected_errors.png",
+      "sha256": "9540ed8abc1d638951f0b6b561bd32513e2b7616b12efd17cb8a420920072de5"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/B_maps.png",
+      "sha256": "dc6cee0a65ebf93784c1ef7dc9ad1cade7d1a13c58a64407d056caedfa38ffb5"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/B_mean_l2.png",
+      "sha256": "ff52d2995a4d8940fca4dbdedf5a0b8a8dfad258f70e07158753f32391d2775a"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/C_maps.png",
+      "sha256": "9f4d6445475eb7ddfbc607a3bec7519434bd1a3fbaf81a67a0ac96e5f4b495c6"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/comparisons/C_mean_l2.png",
+      "sha256": "823ebebedac1b083fd4d97b1e41f25c97cb02c2f613869dbf9fba7905d87728b"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/per_frame_l2.png",
+      "sha256": "f863190ede9c6536ce48e27b78335adc7db68f472a9e90d1a8df0967033aa69e"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/local_registration_errors.png",
+      "sha256": "1d6ce0a7305770b74f16fbd2b233d982b9487ad258131bff1f4b6513ea8bee85"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/pose_flip_103_104.png",
+      "sha256": "1349412f099d2be1024be9f79f2910fcb44cecaed67ffa26595e69a96084b07f"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/B_eight_factors.png",
+      "sha256": "1b92bccfaea9e66fe47b10c7abb6768b21dc9ce28f30e67f1325ba0911931546"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/C_eight_factors.png",
+      "sha256": "22093e8786619b689c3e20cccd8ad4e1a9963ec11783e3b85be853be94240b2a"
+    },
+    {
+      "path": "research_outputs/phase1_report_assets/diagnostics/existing_pair_cloud_projections.png",
+      "sha256": "52f0959af5a09e0b90f14517bdc144935b34a3b5b009da0aa7f533773987d362"
+    }
+  ],
+  "method": "All 21 assets inspected through contact sheets; final map variants re-inspected on contacts 01-04. Remaining images are byte-identical to the reviewed second draft (contacts 05-06).",
+  "unchanged_reviewed_images": [
+    "single_runs/M2_baseline_native.png",
+    "single_runs/M31_selected_native.png",
+    "comparisons/A_baseline_selected_errors.png",
+    "comparisons/B_mean_l2.png",
+    "comparisons/C_mean_l2.png",
+    "diagnostics/per_frame_l2.png",
+    "diagnostics/local_registration_errors.png",
+    "diagnostics/pose_flip_103_104.png",
+    "diagnostics/B_eight_factors.png",
+    "diagnostics/C_eight_factors.png",
+    "diagnostics/existing_pair_cloud_projections.png"
+  ],
+  "red_black_trajectories_checked": true,
+  "scene_clouds_checked": true,
+  "labels_and_bounds_checked": true,
+  "common_group_bounds_and_sampling_checked": true,
+  "fitted_alignment": false,
+  "B1_complete_map_fabricated": false,
+  "M2_original_topdown_available": false,
+  "native_M2_png_preserved": true,
+  "B0_proxy_explicitly_labeled": true,
+  "original_scientific_sources_sha_verified": true,
+  "limitations": [
+    "Original M2 did not retain its same-run full cloud or poses. The original PNG is preserved; no exact new M2 top-down map can be made without new reconstruction.",
+    "The harmonized Baseline/Selected map comparison uses the explicitly labeled B0 matched-control cloud; it is not the original M2 map.",
+    "Saved clouds were already ceiling-cropped by the original pipeline, and were originally stride-sampled. New rendering uses the same 90,000-index cap on each saved sample; lost detail cannot be recovered.",
+    "Isometric views are not required here; original native PNGs provide their original viewpoints. No synthetic scene or repaired reconstruction is used."
+  ]
+}

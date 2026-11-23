@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_experiments.py",
+    "observe",
+    "--output",
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_p1_m32_20261118_b_v003_s0_01"
+  ],
+  "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+  "started_utc": "2026-11-18T13:00:28.337524+00:00",
+  "total_process_s": 290.755402875,
+  "exit_code": 1,
+  "child_peak_rss_bytes": 520257536,
+  "timing_boundary": "child startup through official command exit, including all command outputs",
+  "rss_limit_gib": 3,
+  "resource_guard": {
+    "reason": null,
+    "sampled_peak_rss_bytes": 513277952
+  },
+  "status": "failed"
+}

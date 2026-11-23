@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-11-19T03:34:59.072724+00:00",
+  "git_branch": "main",
+  "git_commit": "4e5c88a21c112efa242f5aa17a6f05a38e5ba2e4",
+  "git_clean": true,
+  "snapshot": "291209750bd8ecf84f337112c9b92307e6be192a",
+  "commits": [
+    "3b9d687",
+    "d5c2aac",
+    "b717b75",
+    "4e5c88a"
+  ],
+  "authorization_sha256": "c740b81237944bc3d0db775b18b1d163d401156b1ea713de16430cf9cffaa9fe",
+  "exact_metadata_paths": [
+    "experiments/.DS_Store",
+    "research_outputs/.DS_Store",
+    "research_outputs/m32_20261118_suite_01/.DS_Store"
+  ],
+  "readiness_document_sha256": "8f871fa1c79346ce953bd0fd39692738fb1ed6f7d8e3c80df636782d4cabdc16",
+  "handoff_document_sha256": "caa0a2c15addcf42313c505fbf627c0430b8bfffe43d0d643c6b132b396c1248",
+  "assets_manifest_sha256": "c6f799040a4fdf800849dde11b37166c3d00bca0c69c00f374317229a124b868",
+  "preservation_sha256": "7f7b798ff1ca7f2ff37d7ce706915c6643208161ebc89a362626fa5093af8620",
+  "F3_acceptance_sha256": "5c51395d08c60740c1e33ed33f7b8a38486cc5828c791390dff89081e6b09e19"
+}

@@ -1,0 +1,8 @@
+{
+  "referenced_without_subject_declaration": [
+    "QualityFactor",
+    "appliesTo",
+    "overProperty"
+  ],
+  "interpretation": "Inherited teacher vocabulary observation; API loading and Turtle parse pass. No ontology edit authorized; ask TA if stricter schema declarations are required."
+}

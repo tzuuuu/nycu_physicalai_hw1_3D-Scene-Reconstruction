@@ -1,0 +1,10 @@
+{
+  "status": "official_cli_returned",
+  "reconstruct_calls": 1,
+  "frame_events": 190,
+  "pair_events": 189,
+  "reconstruction_s_with_observation": 317.74218466599996,
+  "python_return_observation_overhead_s": 1.4043212079531195,
+  "source_sha256": "0f6ab212e41735679488fae658207bd055a65109917457070e38450adafc451a",
+  "git_commit": "911736e6de7d6d8e7f563740feced1ef1183c37a"
+}

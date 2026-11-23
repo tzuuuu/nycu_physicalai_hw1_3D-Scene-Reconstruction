@@ -1,0 +1,16 @@
+{
+  "status": "Completed reconstructions and analysis; closing duplicate-write guard stop preserved",
+  "scientific_evidence_sha_verified_after_closing_stop": true,
+  "protected_existing_files": 899,
+  "all_seven_terminal_evidence_sha_verified": true,
+  "all_comparison_manifests_verified": true,
+  "first_successful_final_integrity_sha256": "fc27cb5b64ad914e3b9d66aaf81cda369caf9a81d38ba5bd7e40574f07b660a0",
+  "original_stop_sha256": "a7f4dcbce7f7b3b6b31956c23a428bb84e9705d391a1b79c6feea70c74785071",
+  "closing_guard_stop_preserved": true,
+  "original_successful_receipt_not_overwritten": true,
+  "formal_attempts": 7,
+  "complete_reconstructions": 6,
+  "failed_registration": 1,
+  "not_executed": 0,
+  "no_reconstruction_or_finalize_or_verify_repeated_for_this_preservation": true
+}

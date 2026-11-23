@@ -228,7 +228,77 @@ def my_local_icp_algorithm(source_down, target_down, trans_init, voxel_size):
     # TODO: Stop on convergence or a bounded iteration count.
     # TODO: Return a result-like object exposing the final transform as
     # `.transformation`.
-    raise NotImplementedError("TODO: implement my_local_icp_algorithm")
+    # Point-to-Point + Kabsch
+    from types import SimpleNamespace
+
+    if (not np.isscalar(voxel_size)
+            or np.asarray(voxel_size).dtype.kind not in "uif"
+            or not np.isfinite(voxel_size * 1.5) or voxel_size <= 0):
+        raise ValueError("ICP voxel_size must be finite and positive")
+    source = np.asarray(source_down.points)
+    target = np.asarray(target_down.points)
+    for points in (source, target):
+        if len(points) < 3 or not np.isfinite(points).all():
+            raise ValueError("ICP requires at least 3 finite points in each cloud")
+    transform = np.array(trans_init, dtype=np.float64, copy=True)
+    if transform.shape != (4, 4) or not np.isfinite(transform).all():
+        raise ValueError("ICP initialization must be a finite 4x4 transform")
+    if (not np.allclose(transform[3], [0, 0, 0, 1], rtol=0, atol=1e-8)
+            or not np.allclose(transform[:3, :3].T @ transform[:3, :3],
+                               np.eye(3), rtol=0, atol=1e-6)
+            or not np.isclose(np.linalg.det(transform[:3, :3]), 1., rtol=0, atol=1e-6)):
+        raise ValueError("ICP initialization must be a rigid SE(3) transform")
+
+    threshold = float(voxel_size) * 1.5
+    # 目標在單次 ICP 中固定，只建立一次索引；不形成 N×M 距離矩陣。
+    tree = cKDTree(target)
+
+    def correspondences():
+        moved = source @ transform[:3, :3].T + transform[:3, 3]
+        distances, indices = tree.query(moved, k=1, workers=1)
+        keep = distances < threshold
+        return moved, distances, indices, keep
+
+    previous_error = None
+    iterations = 0
+    reason = "max_iterations"
+    for _ in range(60):
+        moved, distances, indices, keep = correspondences()
+        if np.count_nonzero(keep) < 10:
+            reason = "insufficient_correspondences"
+            break
+        x, y = moved[keep], target[indices[keep]]
+        x_mean, y_mean = x.mean(axis=0), y.mean(axis=0)
+        u, singular, vt = np.linalg.svd((x - x_mean).T @ (y - y_mean))
+        # 共線或集中在單點的支撐無法唯一決定旋轉；平面支撐仍可用。
+        if singular[0] <= 0 or singular[1] <= singular[0] * 1e-12:
+            reason = "degenerate_correspondences"
+            break
+        correction = np.eye(3)
+        correction[2, 2] = -1. if np.linalg.det(vt.T @ u.T) < 0 else 1.
+        rotation = vt.T @ correction @ u.T
+        delta = np.eye(4)
+        delta[:3, :3] = rotation
+        delta[:3, 3] = y_mean - rotation @ x_mean
+        transform = delta @ transform
+        iterations += 1
+        error = float(distances[keep].mean())
+        if previous_error is not None and abs(previous_error - error) < 1e-6:
+            reason = "converged"
+            break
+        previous_error = error
+
+    # 必須重新查詢最終姿態，不把更新前的對應或殘差當成最終結果。
+    _, distances, indices, keep = correspondences()
+    pairs = np.column_stack((np.flatnonzero(keep), indices[keep])).astype(np.int32)
+    count = len(pairs)
+    success = count >= 10 and reason not in (
+        "insufficient_correspondences", "degenerate_correspondences")
+    return SimpleNamespace(
+        transformation=transform, correspondence_set=pairs,
+        fitness=float(count / len(source)),
+        inlier_rmse=float(np.sqrt(np.mean(distances[keep] ** 2))) if count else 0.,
+        iterations=iterations, termination_reason=reason, success=success)
 
 
 def remove_ceiling_points(point_cloud, margin=1.0):
@@ -327,8 +397,8 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
     # 只讀取本批 RGB-D 與內參；缺 scale 時依既有擷取器的毫米編碼相容處理。
     intrinsics, pairs, depth_scale = _capture_inputs(data_root, frames)
     width, height, hfov = (intrinsics[key] for key in ("width", "height", "hfov"))
-    if version != "open3d":
-        raise ValueError("M1 reconstruction requires the open3d backend; Bonus is unavailable")
+    if version not in ("open3d", "my_icp"):
+        raise ValueError("Unknown ICP backend: expected open3d or my_icp")
     if pairs and frames is not None:
         _, complete_pairs, _ = _capture_inputs(data_root, None)
         if pairs[0] != complete_pairs[0]:
@@ -388,13 +458,18 @@ def reconstruct(data_root, version="open3d", voxel_size=0.05, verbose=True,
             # TODO Stage 7: Run the selected local backend: Open3D
             # Point-to-Plane ICP for `version == "open3d"`, otherwise the
             # custom ICP backend.
-            # Stage 1 已限制正式後端為 Open3D；保留教師原有後端分支。
+            # 正式成果沿用 Open3D；Bonus 只在明確選擇 my_icp 時使用。
             if version == 'open3d':
                 result_icp = local_icp_algorithm(
                     cur_down, prev_down, trans_init, icp_thr)
             else:   # my_icp
                 result_icp = my_local_icp_algorithm(
                     cur_down, prev_down, trans_init, voxel_size)
+                if not result_icp.success:
+                    raise RuntimeError(
+                        f"Custom ICP failed for {prev_stem}->{stem}: "
+                        f"{result_icp.termination_reason}, "
+                        f"correspondences={len(result_icp.correspondence_set)}")
             # TODO Stage 8: Accumulate the returned transform into the
             # frame-0 coordinate system (`T_global` maps each processed
             # frame into the frame-0 camera coordinate system;

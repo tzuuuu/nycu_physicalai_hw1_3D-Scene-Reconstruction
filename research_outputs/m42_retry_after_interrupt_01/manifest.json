@@ -1,0 +1,8 @@
+{
+  "policy": "m42-layered-v1",
+  "scientific": {
+    "research_outputs/m42_retry_after_interrupt_01/authorization.json": "ada5dbe1299af9640c8167dccf374b326455af75456181f89d0301ffc156bf64",
+    "research_outputs/m42_retry_after_interrupt_01/ready.json": "1b5f204d3ba1b432e88b2e3efce23f7aa86b441bf4e80db320d5d9cb2ef460d6"
+  },
+  "os_metadata": {}
+}

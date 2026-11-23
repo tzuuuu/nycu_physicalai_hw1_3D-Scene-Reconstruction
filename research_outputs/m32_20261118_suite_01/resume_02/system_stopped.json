@@ -1,0 +1,7 @@
+{
+  "mode": "run",
+  "condition": "C2",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_sensitivity.py\", line 163, in <module>\n    else: run(a.condition)\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_sensitivity.py\", line 147, in run\n    x.finalize(output); analysis.analyze(output)\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_experiments.py\", line 440, in finalize\n    count = verify_hashes(read(output/'protected.before.json'))\n  File \"/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/scripts/m32_experiments.py\", line 44, in verify_hashes\n    raise RuntimeError('Protected files changed: ' + repr(changed))\nRuntimeError: Protected files changed: ['experiments/.DS_Store']\n",
+  "unix": 1795010750.418339,
+  "action": "STOP SYSTEM/INTEGRITY; no automatic retry"
+}

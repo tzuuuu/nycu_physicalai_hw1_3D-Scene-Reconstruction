@@ -1,0 +1,85 @@
+ WARN Could not read the virtual package detector registrations of the channels, using pixi's built-in detection only: failed to open '/Users/alyssa/Library/Caches/rattler/cache/repodata/234d44d9.shards-cache-v1'
+/Users/alyssa/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/22/2_0s87y12934rk6kt6823t2m0000gn/T/matplotlib-_midmbzd because there was an issue with the default path (/Users/alyssa/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+{
+  "status": "M4.2 Baseline Accepted / Complete / Stopped",
+  "first_pass_success": true,
+  "frames": 320,
+  "pairs": 319,
+  "factors": 2554,
+  "mean_l2_m": 0.07025845236530649,
+  "max_l2_m": 0.28314248670728553,
+  "max_l2_frame": 320,
+  "median_l2_m": 0.06924077146919774,
+  "p95_l2_m": 0.1929482532833787,
+  "largest_error_increases": [
+    {
+      "current_frame": 301,
+      "increase_m": 0.024239848409429277
+    },
+    {
+      "current_frame": 297,
+      "increase_m": 0.023935772497387126
+    },
+    {
+      "current_frame": 299,
+      "increase_m": 0.015219544004207525
+    },
+    {
+      "current_frame": 298,
+      "increase_m": 0.011186228820680794
+    },
+    {
+      "current_frame": 305,
+      "increase_m": 0.009890274313481606
+    }
+  ],
+  "full_returned_map_points": 2054529,
+  "frozen_capture_sha_matches": 642,
+  "protected_scientific_sha_matches": 1996,
+  "original_run_manifest_verified_items": 62,
+  "same_run_factor_match": true,
+  "seal_valid": true,
+  "baseline_only": true,
+  "source_core_sha256": {
+    "utils.py": "a77176342126573647ba5bf0eeaea9fbe9620e42c901154a77c79cc8862e9d41",
+    "reconstruct.py": "9808795f16eea02d20b47b813bf87989c9cabc5fae471834e3a5d13a1b9adf28",
+    "api.py": "14684fcf3ddd72b02982828f890e127f74095ab67566ae80bed6db5127895fe2",
+    "load.py": "7b6aeea3afddd9be5f4f6c1630bc791221c45c82000f38aa4ebc34afeaf26043",
+    "plot.py": "7a624b52bc8f9121fd9fc69d7045404d8c62566d018e776a4541460e4d6e6337",
+    "ontology/hw1.ttl": "4a3d52dd838d8feae9bba042ca9bcd594e7f4de081fbdbaa3bbc290a84339258",
+    "pixi.toml": "47830fa0decaceddeaa9bc39ce112180add22864e84e22e7d4257aba545acc16",
+    "pixi.lock": "4cdd23ec892245d2a49297fd1c7a32fc9236cdcc37c15ae39abc274447312794"
+  },
+  "original_runner_document_sha256": "16179a7c743c994c49a908e794339004bfb4809bc96c65fc5e0cac87fe49a9cd",
+  "prepared_document_sha256": "1ae626367e9ee4ec5b23d325dc730f0ddcde8cc24597a70b58be8a5ac0ebb10a",
+  "monitor": [
+    {
+      "stage": "command",
+      "elapsed_s": 220.751497,
+      "samples": 438,
+      "peak_tree_rss_bytes": 1198620672,
+      "max_sample_gap_s": 0.5297550000000228
+    },
+    {
+      "stage": "postprocess_command",
+      "elapsed_s": 15.232126374999979,
+      "samples": 31,
+      "peak_tree_rss_bytes": 901513216,
+      "max_sample_gap_s": 0.5300335000000018
+    }
+  ],
+  "native_selftests": {
+    "passed": true,
+    "counts": {
+      "tests": 31,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "execution_history": "One interrupted official attempt archived after explicit user cleanup request; one explicitly authorized fresh attempt succeeded; no automatic registration retry",
+  "archived_interrupt_manifest_sha256": "166b4cade2c975b859e8662efcf4580978dd261ac70d10c04d1f7419666b60b6",
+  "retry_authorization_sha256": "ada5dbe1299af9640c8167dccf374b326455af75456181f89d0301ffc156bf64"
+}

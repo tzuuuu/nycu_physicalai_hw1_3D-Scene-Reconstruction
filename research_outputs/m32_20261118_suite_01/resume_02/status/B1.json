@@ -1,0 +1,37 @@
+{
+  "condition": "B1",
+  "status": "Failed Registration",
+  "integrity_verified": true,
+  "evidence_sha256": {
+    "experiments/p1_m32_20261118_b_v003_s0_01/p1_m32_20261118_b_v003_s0_01.ttl": "a463b3f34cef7025e6053f6c3bad768e5216960d33873f75a9259090ed5bb152",
+    "experiments/p1_m32_20261118_b_v003_s0_01/queries/audit.rq": "023a523e8fd9a74beffe093fe98861dbebcdfaaf861b72218194dc081e772d2a",
+    "research_outputs/m32_20261118_suite_01/resume_02/B1_failure_validation/offline_accepted_prefix_poses.npy": "195777453a80a3dca9ffb2fc26d4d02b41de4d7821ff5c4d61a88d582e785eba",
+    "research_outputs/m32_20261118_suite_01/resume_02/B1_failure_validation/partial_factors.csv": "5aa752c37f150fa3a8f881c30ac21ef8116bb9fbab5b5fb8b4baa29c2f98a68b",
+    "research_outputs/m32_20261118_suite_01/resume_02/B1_failure_validation/summary.json": "5e7c3843f78fd4cd14cef41d026b4f641a9a2667b1f6d9e08d3678f5ec5a87b0",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/command/console.log": "21e9f3f436f56f0c23f5e093c2975fb7dcb8caf20d56eb80093a3b3732b802fa",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/command/execution.json": "dfb098b70c4e8f1a8a248e14c14d0bdbb1123b263d97ab925464e48a9294a652",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/command/memory_samples.jsonl": "83acca5cfb3b8342cef6459e6fb6d955a7f45b00c978998e07b75a92ce12d219",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/declaration.before.ttl": "a463b3f34cef7025e6053f6c3bad768e5216960d33873f75a9259090ed5bb152",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/declare.json": "9bd9af00fb22afe5397be4f9ad2deb3d09ab75301d57f7d62a8727a8db6b7eea",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/declare.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/declare.stdout.log": "58b8358d1c71bf1f1d0fd717df4ee4ad07cbfda68f0fece0833fe11e6073a00f",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/execution.started.json": "82a8d4caaa060e30edd56a0bc345bd07fc438d428e61c2c22d086fdd2580805c",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/failure.traceback.txt": "307a302b6d3c65d4265c15c72000eb102cd2d06cffc232bffb065eb2d1b07958",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/observation/actual_pairs.json": "eb3d8c0ec2ba44e2bf812f1828dced59f90634ddadb7d197488c624d41526c86",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/observation/actual_reconstruct_arguments.json": "10a9382c738e14767343b4fc358c3a73b2785d960183dd4efbe3c07763af5eaf",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/observation/events.jsonl": "5d59a1924cab068b766bf22dfa88a9c746cc45ea61cd118961bbc7d0818c36f8",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/observation/failure.traceback.txt": "ab11bcbc4d229923509060a6e44b595e509b3e7f82dcb89b5d5b7e87bcca3ce2",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/observation/observer_summary.json": "ef664f4aea67848a67f99919b702f4774b38c847b14dc7faca8264977d39a1b2",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/observation/transforms.jsonl": "7cf217478c9775aff87c17547c2cf6a9fb7727926e23d43bc681c0b5ff5ed529",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/preregistration.json": "633ac603a0ea899ed88713919755bb57733c42193a3b4e83f90345ba9786035b",
+    "research_outputs/m32_p1_m32_20261118_b_v003_s0_01/protected.before.json": "aaf4f08f4355d692fdfedb811ee577730cc9303189fc241e0a67f87361ce7487"
+  },
+  "failure": {
+    "stage": "RANSAC",
+    "previous": 70,
+    "current": 71,
+    "accepted_pairs": 69,
+    "message": "RuntimeError: RANSAC failed for 70->71: fitness=0.0, RMSE=0.0, correspondences=0"
+  },
+  "mean_l2_m": null
+}

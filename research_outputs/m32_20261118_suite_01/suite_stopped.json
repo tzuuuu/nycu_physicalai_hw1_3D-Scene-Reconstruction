@@ -1,0 +1,7 @@
+{
+  "reason": "B0 post-run evidence serialization failed; stopped by user rule",
+  "audit": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/research_outputs/m32_20261118_stopped_audit_01",
+  "completed_reconstructions": 1,
+  "authorized_total": 7,
+  "no_further_runs_started": true
+}

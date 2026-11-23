@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1/.pixi/envs/habitat/bin/python",
+    "-c",
+    "import os,time; x=bytearray(32*2**20); print('probe child',os.getpid(),flush=True); time.sleep(2.2)"
+  ],
+  "cwd": "/Users/alyssa/Documents/Codex_Workspace/physicalai_hw1",
+  "started_utc": "2026-11-18T15:39:25.000844+00:00",
+  "total_process_s": 0.5116650419999997,
+  "exit_code": -15,
+  "child_peak_rss_bytes": 43253760,
+  "timing_boundary": "child startup through official command exit, including all command outputs",
+  "rss_limit_gib": 3,
+  "resource_guard": {
+    "reason": "Synthetic monitor unavailable; deliberate preflight fault injection",
+    "sampled_peak_rss_bytes": 0
+  },
+  "status": "failed"
+}
